@@ -132,6 +132,13 @@
   box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
 }
 
+.draft-type-description {
+  margin-top: var(--spacing-xs, 0.25rem);
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-secondary);
+  min-height: 1.2em;
+}
+
 /* ===== DRAFT HEADER ===== */
 .draft-header {
   background: var(--color-bg-card);

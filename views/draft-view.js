@@ -83,12 +83,18 @@ export class DraftView extends BaseView {
     for (const [key, meta] of Object.entries(DRAFT_TYPE_META)) {
       const option = this.createElement('option');
       option.value = key;
-      option.textContent = `${meta.label} — ${meta.description}`;
+      option.textContent = meta.label;
       if (key === savedDraftType) option.selected = true;
       dtSelect.appendChild(option);
     }
+    const dtDesc = this.createElement('div', 'draft-type-description');
+    dtDesc.textContent = DRAFT_TYPE_META[savedDraftType]?.description || '';
+    dtSelect.addEventListener('change', () => {
+      dtDesc.textContent = DRAFT_TYPE_META[dtSelect.value]?.description || '';
+    });
     dtGroup.appendChild(dtLabel);
     dtGroup.appendChild(dtSelect);
+    dtGroup.appendChild(dtDesc);
     form.appendChild(dtGroup);
 
     // Submit button
