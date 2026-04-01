@@ -89,12 +89,18 @@ export class ConstructorsListView extends BaseView {
         logoImg.alt = constructor.name;
         logoImg.className = 'constructor-logo-img';
         
-        // Fallback chain for different image formats
+        // Fallback chain for different image formats, then initials
         logoImg.onerror = () => {
           if (logoImg.src.includes('.png')) {
             logoImg.src = logoUrls.fallback1;
           } else if (logoImg.src.includes('.jpg')) {
             logoImg.src = logoUrls.fallback2;
+          } else {
+            logoImg.style.display = 'none';
+            const initials = constructor.name.split(' ').map(w => w[0]).join('').substring(0, 3);
+            const fb = this.createElement('div', 'constructor-logo');
+            fb.textContent = initials;
+            colorHeader.appendChild(fb);
           }
         };
         
