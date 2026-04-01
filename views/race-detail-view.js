@@ -108,7 +108,9 @@ export class RaceDetailView extends BaseView {
       qualifyingCard.appendChild(qualifyingTitle);
 
       const qualifyingTable = this.renderQualifyingTable(qualifyingResults);
-      qualifyingCard.appendChild(qualifyingTable);
+      const qualifyingWrapper = this.createElement('div', 'table-responsive');
+      qualifyingWrapper.appendChild(qualifyingTable);
+      qualifyingCard.appendChild(qualifyingWrapper);
 
       resultsSection.appendChild(qualifyingCard);
     }
@@ -121,7 +123,9 @@ export class RaceDetailView extends BaseView {
       raceCard.appendChild(raceTitle);
 
       const raceTable = this.renderRaceResultsTable(raceResults);
-      raceCard.appendChild(raceTable);
+      const raceWrapper = this.createElement('div', 'table-responsive');
+      raceWrapper.appendChild(raceTable);
+      raceCard.appendChild(raceWrapper);
 
       resultsSection.appendChild(raceCard);
     }

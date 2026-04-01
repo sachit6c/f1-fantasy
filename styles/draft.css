@@ -2,7 +2,7 @@
 /* Updated draft view with side-by-side panels and team selection */
 
 .draft-container {
-  max-width: 1600px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: var(--spacing-lg);
 }
@@ -31,9 +31,9 @@
 /* Season selector */
 .setup-form .season-select-group {
   padding: var(--spacing-lg);
-  background: var(--color-bg-card);
-  border-radius: var(--radius-md);
-  border: 3px solid var(--color-primary);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-primary);
 }
 
 .setup-form .season-select-group label {
@@ -65,54 +65,90 @@
 /* Player-themed input groups */
 .setup-form .player1-input-group {
   padding: var(--spacing-lg);
-  background: linear-gradient(135deg, #1A2530 0%, #0C3A52 100%);
-  border-radius: var(--radius-md);
-  border: 3px solid #0EA5E9;
+  background: rgba(14, 165, 233, 0.04);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(14, 165, 233, 0.3);
 }
 
 .setup-form .player1-input-group input {
-  background: rgba(14, 165, 233, 0.1);
-  border: 2px solid #0EA5E9;
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(14, 165, 233, 0.4);
   color: var(--color-text-primary);
 }
 
 .setup-form .player1-input-group input:focus {
   border-color: #0EA5E9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 
 .setup-form .player2-input-group {
   padding: var(--spacing-lg);
-  background: linear-gradient(135deg, #2A1F1A 0%, #4A2D1A 100%);
-  border-radius: var(--radius-md);
-  border: 3px solid #F97316;
+  background: rgba(249, 115, 22, 0.04);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(249, 115, 22, 0.3);
 }
 
 .setup-form .player2-input-group input {
-  background: rgba(249, 115, 22, 0.1);
-  border: 2px solid #F97316;
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(249, 115, 22, 0.4);
   color: var(--color-text-primary);
 }
 
 .setup-form .player2-input-group input:focus {
   border-color: #F97316;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* Draft type selector */
+.setup-form .form-group:has(select[name="draftType"]) {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.setup-form .form-group:has(select[name="draftType"]) label {
+  display: block;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.setup-form select[name="draftType"] {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  appearance: auto;
+}
+
+.setup-form select[name="draftType"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
 }
 
 /* ===== DRAFT HEADER ===== */
 .draft-header {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #A10500 100%);
-  color: white;
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
   padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   margin-bottom: var(--spacing-xl);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .draft-header h1 {
-  color: white;
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-md);
-  text-align: center;
+  text-align: left;
+  font-size: var(--font-size-xxl);
 }
 
 .draft-status-new {
@@ -131,6 +167,18 @@
 
 .pick-info {
   font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.draft-type-badge {
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--font-weight-semibold, 600);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  padding: 2px 8px;
   opacity: 0.9;
 }
 
@@ -530,6 +578,28 @@
   }
 }
 
+@media (max-width: 480px) {
+  .draft-container {
+    padding: var(--spacing-sm);
+  }
+
+  .draft-header {
+    padding: var(--spacing-md);
+  }
+
+  .draft-setup {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .draft-setup .card {
+    padding: var(--spacing-lg);
+  }
+
+  .player-panel-new {
+    padding: var(--spacing-sm);
+  }
+}
+
 /* CSS Updates for Better Player Colors, Rectangular Photos, Team Colors */
 
 /* === DRIVER PHOTOS === */
@@ -621,7 +691,7 @@
 }
 
 .team-driver-card-new.player1-hover:not(.picked):hover .draft-driver-overlay::before {
-  content: 'Player 1 Turn';
+  content: attr(data-hover-label);
   position: absolute;
   top: -30px;
   left: 50%;
@@ -652,7 +722,7 @@
 }
 
 .team-driver-card-new.player2-hover:not(.picked):hover .draft-driver-overlay::before {
-  content: 'Player 2 Turn';
+  content: attr(data-hover-label);
   position: absolute;
   top: -30px;
   left: 50%;

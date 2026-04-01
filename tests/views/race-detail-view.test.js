@@ -191,4 +191,75 @@ describe('RaceDetailView', () => {
       expect(container.querySelector('.race-detail-header').outerHTML).toMatchSnapshot();
     });
   });
+
+  // ─── Race results with completed draft ────────────────────────────────────
+
+  describe('results with completed draft (ownership columns)', () => {
+    const verDriver = {
+      driverId: 'max_verstappen', name: 'Max Verstappen', code: 'VER',
+      team: 'Red Bull Racing', teamColor: '#3671C6'
+    };
+    const lecDriver = {
+      driverId: 'charles_leclerc', name: 'Charles Leclerc', code: 'LEC',
+      team: 'Ferrari', teamColor: '#E8002D'
+    };
+
+    beforeEach(() => {
+      mockDraftStore.draft = {
+        status: 'completed',
+        players: [
+          { playerId: 'player_1', name: 'Alice', roster: ['max_verstappen'] },
+          { playerId: 'player_2', name: 'Bob', roster: ['charles_leclerc'] }
+        ]
+      };
+      mockDataStore.indexes.driverById = new Map([
+        ['max_verstappen', verDriver],
+        ['charles_leclerc', lecDriver]
+      ]);
+      mockDataStore.indexes.qualifyingByRace.set('2026_01', [
+        { driverId: 'max_verstappen', position: '1', q1: '1:18.4', q2: '1:17.8', q3: '1:17.1', raceId: '2026_01' },
+        { driverId: 'charles_leclerc', position: '3', q1: '1:18.6', q2: '1:17.9', q3: '1:17.3', raceId: '2026_01' }
+      ]);
+      mockDataStore.indexes.resultsByRace.set('2026_01', [
+        { driverId: 'max_verstappen', position: '1', grid: '1', points: '25', status: 'Finished', raceId: '2026_01' },
+        { driverId: 'charles_leclerc', position: '3', grid: '3', points: '15', status: 'Finished', raceId: '2026_01' }
+      ]);
+    });
+
+    it('renders an Owner column in the qualifying table when draft is completed', async () => {
+      await view.render(container, { raceId: '2026_01' });
+      const tables = container.querySelectorAll('table');
+      const hasOwnerCol = Array.from(tables).some(t => t.textContent.includes('Owner'));
+      expect(hasOwnerCol).toBe(true);
+    });
+
+    it('marks qualifying rows with player1-owned class for Alice drivers', async () => {
+      await view.render(container, { raceId: '2026_01' });
+      expect(container.querySelector('.player1-owned')).not.toBeNull();
+    });
+
+    it('marks qualifying rows with player2-owned class for Bob drivers', async () => {
+      await view.render(container, { raceId: '2026_01' });
+      expect(container.querySelector('.player2-owned')).not.toBeNull();
+    });
+
+    it('shows player name in the owner column', async () => {
+      await view.render(container, { raceId: '2026_01' });
+      expect(container.textContent).toContain('Alice');
+      expect(container.textContent).toContain('Bob');
+    });
+
+    it('renders driver name from driverById index when driver is found', async () => {
+      await view.render(container, { raceId: '2026_01' });
+      expect(container.textContent).toContain('Max Verstappen');
+      expect(container.textContent).toContain('Charles Leclerc');
+    });
+
+    it('falls back to driverId when driver is not in index', async () => {
+      // Remove one driver from the index
+      mockDataStore.indexes.driverById = new Map([['max_verstappen', verDriver]]);
+      await view.render(container, { raceId: '2026_01' });
+      expect(container.textContent).toContain('charles_leclerc');
+    });
+  });
 });

@@ -14,8 +14,11 @@ export class DriversListView extends BaseView {
       dataStore.setSeason(draftStore.currentSeason);
     }
 
-    // Load data
+    // Show skeleton while data loads
     if (!dataStore.loaded) {
+      this.root.innerHTML = '';
+      this.renderHeader();
+      this.renderSkeletonGrid(20);
       await dataStore.load();
     }
 
@@ -44,9 +47,15 @@ export class DriversListView extends BaseView {
     const drivers = dataStore.data.drivers;
 
     if (drivers.length === 0) {
-      const emptyMessage = this.createElement('div', 'empty-state');
-      emptyMessage.innerHTML = '<p>No driver data available</p>';
-      this.root.appendChild(emptyMessage);
+      const empty = this.createEmptyState(
+        `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>`,
+        'No drivers found',
+        'Driver data for this season hasn\'t been loaded yet.'
+      );
+      this.root.appendChild(empty);
       return;
     }
 
@@ -152,5 +161,23 @@ export class DriversListView extends BaseView {
     });
 
     this.root.appendChild(driversGrid);
+  }
+
+  renderSkeletonGrid(count = 20) {
+    const grid = this.createElement('div', 'drivers-grid');
+    for (let i = 0; i < count; i++) {
+      const card = this.createElement('div', 'driver-card');
+      card.innerHTML = `
+        <div class="driver-photo-wrapper skeleton" style="height:160px;border-radius:var(--radius-xl) var(--radius-xl) 0 0;"></div>
+        <div class="skeleton" style="height:4px;"></div>
+        <div class="driver-info-section" style="padding:var(--spacing-md);display:flex;flex-direction:column;gap:var(--spacing-sm);">
+          <div class="skeleton" style="height:13px;width:44px;border-radius:4px;"></div>
+          <div class="skeleton" style="height:17px;width:75%;border-radius:4px;"></div>
+          <div class="skeleton" style="height:13px;width:55%;border-radius:4px;"></div>
+        </div>
+      `;
+      grid.appendChild(card);
+    }
+    this.root.appendChild(grid);
   }
 }

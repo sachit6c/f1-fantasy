@@ -41,27 +41,33 @@ export class DriverProfileView extends BaseView {
   }
 
   renderNotFound() {
-    const message = this.createElement('div', 'empty-state');
-    message.innerHTML = `
-      <h2>Driver Not Found</h2>
-      <p>The driver you're looking for doesn't exist.</p>
-      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
-    `;
-    this.root.appendChild(message);
+    const empty = this.createEmptyState(
+      `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        <line x1="17" y1="11" x2="23" y2="11"/>
+      </svg>`,
+      'Driver not found',
+      'The driver you\'re looking for doesn\'t exist or has no data for this season.'
+    );
+    const backBtn = document.createElement('a');
+    backBtn.href = '#/drivers';
+    backBtn.className = 'btn btn-outline';
+    backBtn.style.marginTop = 'var(--spacing-md)';
+    backBtn.textContent = 'View all drivers';
+    empty.appendChild(backBtn);
+    this.root.appendChild(empty);
   }
 
   renderHeader() {
     const header = this.createElement('div', 'driver-profile-header');
 
-    const backLink = this.createElement('a', 'back-link');
-    backLink.href = '#/teams';
-    // Get player names for back link if draft exists
-    const draft = draftStore.draft;
-    const backText = (draft && draft.status === 'completed' && draft.players.length === 2)
-      ? `← Back to ${draft.players[0].name}-${draft.players[1].name} Comparison`
-      : '← Back to Team Comparison';
-    backLink.innerHTML = backText;
-    header.appendChild(backLink);
+    // Breadcrumb nav
+    const breadcrumb = this.createBreadcrumb([
+      { label: 'Drivers', href: '#/drivers' },
+      { label: this.driver.name }
+    ]);
+    header.appendChild(breadcrumb);
 
     // Find constructor for team logo and link
     const constructor = dataStore.data.constructors.find(c => 
@@ -463,7 +469,9 @@ export class DriverProfileView extends BaseView {
       </tbody>
     `;
 
-    historyCard.appendChild(table);
+    const tableWrapper = this.createElement('div', 'table-responsive');
+    tableWrapper.appendChild(table);
+    historyCard.appendChild(tableWrapper);
     this.root.appendChild(historyCard);
   }
 

@@ -207,4 +207,202 @@ describe('ConstructorProfileView', () => {
       expect(container.querySelector('.constructor-profile-header').outerHTML).toMatchSnapshot();
     });
   });
+
+  // ─── renderSeasonStats ────────────────────────────────────────────────────
+
+  describe('renderSeasonStats', () => {
+    const seasonSummary = {
+      constructorId: 'ferrari',
+      season: 2026,
+      position: 2,
+      points: 260,
+      wins: 3,
+      podiums: 0
+    };
+
+    it('renders a stats-card when constructor season summary exists', async () => {
+      mockDataStore.data.constructorSeasonSummary = [seasonSummary];
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('.stats-card')).not.toBeNull();
+    });
+
+    it('shows season statistics title with the season year', async () => {
+      mockDataStore.data.constructorSeasonSummary = [seasonSummary];
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.textContent).toContain('2026 Season Statistics');
+    });
+
+    it('includes wins and points in the stats grid', async () => {
+      mockDataStore.data.constructorSeasonSummary = [seasonSummary];
+      await view.render(container, { constructorId: 'ferrari' });
+      const statsText = container.querySelector('.stats-grid').textContent;
+      expect(statsText).toContain('260'); // points
+      expect(statsText).toContain('3');   // wins
+    });
+
+    it('does not render stats-card when no constructor summary exists', async () => {
+      mockDataStore.data.constructorSeasonSummary = [];
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('.stats-card')).toBeNull();
+    });
+  });
+
+  // ─── renderRaceResults ────────────────────────────────────────────────────
+
+  describe('renderRaceResults', () => {
+    const ferRace = {
+      raceId: '2026_01',
+      round: 1,
+      raceName: 'Australian Grand Prix',
+      season: 2026
+    };
+    const lecResult = {
+      raceId: '2026_01',
+      driverId: 'charles_leclerc',
+      position: 2,
+      points: 18,
+      season: 2026,
+      status: 'Finished'
+    };
+
+    it('renders a race-history-card when team race results exist', async () => {
+      mockDataStore.data.raceResults = [lecResult];
+      mockDataStore.indexes.raceById = new Map([['2026_01', ferRace]]);
+      mockDataStore.indexes.driverById = new Map([
+        ['charles_leclerc', drivers[0]],
+        ['carlos_sainz', drivers[1]]
+      ]);
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('.race-history-card')).not.toBeNull();
+    });
+
+    it('shows "Race Results" heading', async () => {
+      mockDataStore.data.raceResults = [lecResult];
+      mockDataStore.indexes.raceById = new Map([['2026_01', ferRace]]);
+      mockDataStore.indexes.driverById = new Map([['charles_leclerc', drivers[0]]]);
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.textContent).toContain('Race Results');
+    });
+
+    it('shows race name as a link in the results table', async () => {
+      mockDataStore.data.raceResults = [lecResult];
+      mockDataStore.indexes.raceById = new Map([['2026_01', ferRace]]);
+      mockDataStore.indexes.driverById = new Map([['charles_leclerc', drivers[0]]]);
+      await view.render(container, { constructorId: 'ferrari' });
+      const raceLink = container.querySelector('a[href="#/race/2026_01"]');
+      expect(raceLink).not.toBeNull();
+      expect(raceLink.textContent).toContain('Australian Grand Prix');
+    });
+
+    it('does not render race-history-card when there are no race results', async () => {
+      mockDataStore.data.raceResults = [];
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('.race-history-card')).toBeNull();
+    });
+  });
+
+  // ─── createDriverDetailCard with season data ──────────────────────────────
+
+  describe('createDriverDetailCard — with season summary', () => {
+    it('renders driver stats grid when season summary exists', async () => {
+      mockDataStore.getDriverSeasonSummary.mockReturnValue({
+        season: 2026,
+        driverId: 'charles_leclerc',
+        position: 2,
+        points: 170,
+        wins: 3
+      });
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('.driver-stats-grid')).not.toBeNull();
+    });
+
+    it('renders "No season data available" when no season summary', async () => {
+      mockDataStore.getDriverSeasonSummary.mockReturnValue(null);
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.textContent).toContain('No season data available');
+    });
+
+    it('renders driver name as a link to /driver/:id', async () => {
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('a[href="#/driver/charles_leclerc"]')).not.toBeNull();
+    });
+
+    it('shows owner badge when driver is in a player roster', async () => {
+      mockDraftStore.draft = {
+        status: 'in_progress',
+        players: [
+          { playerId: 'player_1', name: 'Alice', roster: ['charles_leclerc'] },
+          { playerId: 'player_2', name: 'Bob', roster: [] }
+        ]
+      };
+      await view.render(container, { constructorId: 'ferrari' });
+      expect(container.querySelector('.driver-owner-badge')).not.toBeNull();
+      expect(container.textContent).toContain('Drafted by: Alice');
+    });
+  });
+
+  // ─── Chart rendering (fake timers + Chart.js mock) ────────────────────────
+
+  describe('chart rendering', () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+      HTMLCanvasElement.prototype.getContext = vi.fn().mockReturnValue({});
+      global.Chart = vi.fn().mockImplementation((ctx, config) => {
+        const opts = config?.options || {};
+        const tryCall = (fn, ...args) => { try { if (typeof fn === 'function') fn(...args); } catch(e) {} };
+        tryCall(opts.plugins?.legend?.labels?.filter, { text: 'Ferrari' }, config);
+        tryCall(opts.plugins?.tooltip?.callbacks?.label, { dataset: { label: 'LEC' }, parsed: { y: 1 } });
+        tryCall(opts.scales?.y?.ticks?.callback, 1);
+        tryCall(opts.scales?.y?.ticks?.callback, 50);
+        return { destroy: vi.fn(), update: vi.fn() };
+      });
+
+      mockDataStore.data.raceResults = [
+        { driverId: 'charles_leclerc', raceId: '2026_01', position: 1, grid: 1, points: 25, status: 'Finished', fastestLapRank: 1, season: 2026, round: 1 },
+        { driverId: 'carlos_sainz', raceId: '2026_01', position: 3, grid: 3, points: 15, status: 'Finished', fastestLapRank: null, season: 2026, round: 1 }
+      ];
+      mockDataStore.data.races = [
+        { raceId: '2026_01', raceName: 'Australian Grand Prix', name: 'Australian Grand Prix', round: 1, season: 2026 }
+      ];
+      mockDataStore.data.sprintResults = [];
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+      delete global.Chart;
+      delete HTMLCanvasElement.prototype.getContext;
+    });
+
+    it('renders rank progression chart section when race data exists', async () => {
+      await view.render(container, { constructorId: 'ferrari' });
+      vi.runAllTimers();
+      expect(container.querySelector('.rank-progression')).not.toBeNull();
+    });
+
+    it('creates a Chart instance for the rank progression chart', async () => {
+      await view.render(container, { constructorId: 'ferrari' });
+      vi.runAllTimers();
+      expect(global.Chart).toHaveBeenCalled();
+    });
+
+    it('renders points progression chart section when cumulative points exist', async () => {
+      await view.render(container, { constructorId: 'ferrari' });
+      vi.runAllTimers();
+      expect(container.querySelector('.points-progression')).not.toBeNull();
+    });
+
+    it('creates two Chart instances (rank + points progression)', async () => {
+      await view.render(container, { constructorId: 'ferrari' });
+      vi.runAllTimers();
+      expect(global.Chart).toHaveBeenCalledTimes(2);
+    });
+
+    it('does not render charts when no race data exists', async () => {
+      mockDataStore.data.raceResults = [];
+      await view.render(container, { constructorId: 'ferrari' });
+      vi.runAllTimers();
+      expect(container.querySelector('.rank-progression')).toBeNull();
+      expect(container.querySelector('.points-progression')).toBeNull();
+    });
+  });
 });

@@ -175,4 +175,35 @@ describe('ViewManager', () => {
       expect(window.location.hash).toBe('#/draft');
     });
   });
+
+  // ─── init ─────────────────────────────────────────────────────────────────
+
+  describe('init', () => {
+    it('calls handleRouteChange immediately on init', async () => {
+      const view = makeView();
+      manager.registerView('draft', view);
+      window.location.hash = '#/draft';
+      manager.init();
+      await new Promise(r => setTimeout(r, 0)); // flush microtasks
+      expect(view.render).toHaveBeenCalled();
+    });
+
+    it('responds to hashchange events after init', async () => {
+      const draftView = makeView();
+      const teamsView = makeView();
+      manager.registerView('draft', draftView);
+      manager.registerView('teams', teamsView);
+
+      window.location.hash = '#/draft';
+      manager.init();
+      await new Promise(r => setTimeout(r, 0));
+
+      // Change hash and fire hashchange to trigger the registered listener
+      window.location.hash = '#/teams';
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+      await new Promise(r => setTimeout(r, 0));
+
+      expect(teamsView.render).toHaveBeenCalled();
+    });
+  });
 });

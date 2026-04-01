@@ -18,6 +18,21 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] }
+    },
+    {
+      name: 'mobile-chrome',
+      use: { ...devices['Pixel 5'] },
+      testMatch: ['**/mobile.spec.js']
+    },
+    {
+      name: 'mobile-safari',
+      use: { ...devices['iPhone 13'] },
+      testMatch: ['**/mobile.spec.js']
+    },
+    {
+      name: 'tablet',
+      use: { ...devices['iPad (gen 7)'] },
+      testMatch: ['**/mobile.spec.js']
     }
   ],
   webServer: {

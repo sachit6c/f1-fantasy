@@ -62,15 +62,18 @@ export class CalendarView extends BaseView {
     // View mode switcher
     const viewSwitcher = this.createElement('div', 'view-switcher');
     
+    const svgGrid = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`;
+    const svgWeek = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>`;
+
     const gridBtn = this.createElement('button', ['view-btn', this.viewMode === 'grid' ? 'active' : '']);
-    gridBtn.textContent = '📅 Grid View';
+    gridBtn.innerHTML = `<span class="tab-icon">${svgGrid}</span><span>Grid View</span>`;
     gridBtn.addEventListener('click', () => {
       this.viewMode = 'grid';
       this.render(this.root, {});
     });
-    
+
     const weekBtn = this.createElement('button', ['view-btn', this.viewMode === 'week' ? 'active' : '']);
-    weekBtn.textContent = '📆 Week View';
+    weekBtn.innerHTML = `<span class="tab-icon">${svgWeek}</span><span>Week View</span>`;
     weekBtn.addEventListener('click', () => {
       this.viewMode = 'week';
       this.render(this.root, {});
@@ -90,7 +93,7 @@ export class CalendarView extends BaseView {
 
     if (!races || races.length === 0) {
       const emptyMessage = this.createElement('div', 'empty-state');
-      emptyMessage.style.cssText = 'padding: 2rem; text-align: center; background: white; border-radius: 1rem; margin: 2rem;';
+      emptyMessage.style.cssText = 'padding: var(--spacing-xl); text-align: center; background: var(--color-bg-card); border-radius: var(--radius-lg); margin: var(--spacing-lg);';
       emptyMessage.innerHTML = `
         <p style="font-size: 1.5rem; color: #666;">No race data available for ${dataStore.season} season</p>
         <p style="margin-top: 1rem; color: #999;">Please check that races_${dataStore.season}.csv exists in data/canonical/</p>
@@ -128,7 +131,7 @@ export class CalendarView extends BaseView {
   _initLeafletMap(mapEl, races) {
     if (typeof L === 'undefined') {
       console.error('[CalendarView] Leaflet (L) is not loaded. Check CDN script in index.html.');
-      mapEl.style.cssText = 'display:flex;align-items:center;justify-content:center;background:#1a1a2e;color:#888;font-size:14px;';
+      mapEl.style.cssText = 'display:flex;align-items:center;justify-content:center;background:#1a1a2e;color:#888;font-size:var(--font-size-sm);';
       mapEl.textContent = 'Map unavailable — could not load mapping library.';
       return;
     }

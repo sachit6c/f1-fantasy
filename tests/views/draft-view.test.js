@@ -161,21 +161,197 @@ describe('DraftView', () => {
   // ─── Routing to existing draft ─────────────────────────────────────────────
 
   describe('when draft already exists', () => {
-    it('does not render the setup form when a draft is active', async () => {
-      mockDraftStore.draft = {
-        status: 'in_progress',
-        season: 2026,
-        players: [
-          { playerId: 'player_1', name: 'Alice', roster: [], draftOrder: 0 },
-          { playerId: 'player_2', name: 'Bob', roster: [], draftOrder: 1 }
-        ],
-        picks: [],
-        currentPickIndex: 0,
-        config: { rounds: 5, season: 2026, driversPerTeam: 5 }
-      };
+    const makeDraft = (status = 'in_progress', roster1 = [], roster2 = [], picks = []) => ({
+      status,
+      season: 2026,
+      players: [
+        { playerId: 'player_1', name: 'Alice', roster: roster1, draftOrder: 0 },
+        { playerId: 'player_2', name: 'Bob', roster: roster2, draftOrder: 1 }
+      ],
+      picks,
+      currentPickIndex: picks.length,
+      config: { rosterSize: 5, season: 2026 }
+    });
 
+    it('does not render the setup form when a draft is active', async () => {
+      mockDraftStore.draft = makeDraft();
       await view.render(container, {});
       expect(container.querySelector('.setup-form')).toBeNull();
+    });
+
+    it('renders a draft-header when in-progress', async () => {
+      mockDraftStore.draft = makeDraft();
+      mockDraftStore.getCurrentPlayer.mockReturnValue({ playerId: 'player_1', name: 'Alice' });
+      await view.render(container, {});
+      expect(container.querySelector('.draft-header')).not.toBeNull();
+      expect(container.textContent).toContain("Alice's turn to pick");
+    });
+
+    it('renders draft-content-new side-by-side panels', async () => {
+      mockDraftStore.draft = makeDraft();
+      await view.render(container, {});
+      expect(container.querySelector('.draft-content-new')).not.toBeNull();
+      expect(container.querySelectorAll('.player-panel-new').length).toBe(2);
+    });
+
+    it('renders roster drivers when roster contains known drivers', async () => {
+      const verDriver = {
+        driverId: 'max_verstappen', name: 'Max Verstappen', code: 'VER',
+        team: 'Red Bull Racing', teamColor: '#3671C6',
+        photoUrl: 'data/images/drivers/max_verstappen.jpg', number: 1
+      };
+      mockDataStore.indexes.driverById = new Map([['max_verstappen', verDriver]]);
+      const picks = [{ driverId: 'max_verstappen', playerId: 'player_1', autoPicked: false }];
+      mockDraftStore.draft = makeDraft('in_progress', ['max_verstappen'], [], picks);
+      mockDraftStore.getDraftedDrivers.mockReturnValue(['max_verstappen']);
+
+      await view.render(container, {});
+      expect(container.querySelector('.roster-driver-new')).not.toBeNull();
+      expect(container.textContent).toContain('VER');
+    });
+
+    it('marks auto-picked roster drivers with AUTO badge', async () => {
+      const perDriver = {
+        driverId: 'sergio_perez', name: 'Sergio Perez', code: 'PER',
+        team: 'Red Bull Racing', teamColor: '#3671C6',
+        photoUrl: 'data/images/drivers/sergio_perez.jpg', number: 11
+      };
+      mockDataStore.indexes.driverById = new Map([['sergio_perez', perDriver]]);
+      const picks = [{ driverId: 'sergio_perez', playerId: 'player_2', autoPicked: true }];
+      mockDraftStore.draft = makeDraft('in_progress', [], ['sergio_perez'], picks);
+      mockDraftStore.getDraftedDrivers.mockReturnValue(['sergio_perez']);
+
+      await view.render(container, {});
+      expect(container.querySelector('.auto-picked')).not.toBeNull();
+      expect(container.innerHTML).toContain('AUTO');
+    });
+
+    it('renders team cards in draft area when getDriversByTeam returns teams', async () => {
+      const verDriver = {
+        driverId: 'max_verstappen', name: 'Max Verstappen', code: 'VER',
+        team: 'Red Bull Racing', teamColor: '#3671C6',
+        photoUrl: 'data/images/drivers/max_verstappen.jpg', number: 1
+      };
+      const teamsMap = new Map([['Red Bull Racing', [verDriver]]]);
+      mockDataStore.getDriversByTeam.mockReturnValue(teamsMap);
+      mockDraftStore.getDraftedDrivers.mockReturnValue([]);
+      mockDraftStore.draft = makeDraft();
+
+      await view.render(container, {});
+      expect(container.querySelector('.team-card-new')).not.toBeNull();
+      expect(container.textContent).toContain('Red Bull Racing');
+    });
+
+    it('marks team as drafted when one of its drivers is picked', async () => {
+      const verDriver = {
+        driverId: 'max_verstappen', name: 'Max Verstappen', code: 'VER',
+        team: 'Red Bull Racing', teamColor: '#3671C6',
+        photoUrl: 'data/images/drivers/max_verstappen.jpg', number: 1
+      };
+      mockDataStore.getDriversByTeam.mockReturnValue(new Map([['Red Bull Racing', [verDriver]]]));
+      mockDraftStore.getDraftedDrivers.mockReturnValue(['max_verstappen']);
+      mockDraftStore.draft = makeDraft('in_progress', ['max_verstappen'], [], [
+        { driverId: 'max_verstappen', playerId: 'player_1', autoPicked: false }
+      ]);
+
+      await view.render(container, {});
+      const teamCard = container.querySelector('.team-card-new');
+      expect(teamCard.classList.contains('drafted')).toBe(true);
+    });
+
+    it('shows "Draft in progress" when there is no current player', async () => {
+      mockDraftStore.draft = makeDraft();
+      mockDraftStore.getCurrentPlayer.mockReturnValue(null);
+      await view.render(container, {});
+      expect(container.textContent).toContain('Draft in progress');
+    });
+
+    it('shows "Draft Complete" in pick counter when all picks are made', async () => {
+      mockDraftStore.draft = makeDraft();
+      mockDraftStore.getProgress.mockReturnValue({ picksMade: 10, totalPicks: 10 });
+      await view.render(container, {});
+      expect(container.textContent).toContain('Draft Complete');
+    });
+
+    it('renders the Confirm Draft action button', async () => {
+      mockDraftStore.draft = makeDraft();
+      await view.render(container, {});
+      const confirmBtn = Array.from(container.querySelectorAll('button'))
+        .find(b => b.textContent === 'Confirm Draft');
+      expect(confirmBtn).not.toBeNull();
+    });
+  });
+
+  // ─── renderDraftComplete ──────────────────────────────────────────────────
+
+  describe('renderDraftComplete()', () => {
+    it('renders draft-complete container with completion message', () => {
+      mockDraftStore.draft = {
+        players: [{ name: 'Alice' }, { name: 'Bob' }]
+      };
+      document.body.appendChild(container);
+      view.root = container;
+      view.renderDraftComplete();
+      expect(container.querySelector('.draft-complete')).not.toBeNull();
+      expect(container.textContent).toContain('Draft Complete');
+      document.body.removeChild(container);
+    });
+
+    it('includes a view comparison button with player names', () => {
+      mockDraftStore.draft = {
+        players: [{ name: 'Alice' }, { name: 'Bob' }]
+      };
+      document.body.appendChild(container);
+      view.root = container;
+      view.renderDraftComplete();
+      const btn = container.querySelector('button');
+      expect(btn).not.toBeNull();
+      expect(btn.textContent).toContain('Alice');
+      expect(btn.textContent).toContain('Bob');
+      document.body.removeChild(container);
+    });
+  });
+
+  // ─── handleSetupSubmit ────────────────────────────────────────────────────
+
+  describe('handleSetupSubmit', () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+      mockDraftStore.savePlayerNames = vi.fn();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it('calls startNewDraft when form is submitted with player names', async () => {
+      await view.render(container, {});
+
+      const input1 = container.querySelector('input[name="player1"]');
+      const input2 = container.querySelector('input[name="player2"]');
+      input1.value = 'Alice';
+      input2.value = 'Bob';
+
+      const form = container.querySelector('.setup-form');
+      form.dispatchEvent(new Event('submit', { bubbles: true }));
+
+      // Let dataStore.load() promise resolve (microtask)
+      await Promise.resolve();
+      await Promise.resolve();
+
+      expect(mockDraftStore.savePlayerNames).toHaveBeenCalledWith('Alice', 'Bob');
+    });
+
+    it('uses default player names when inputs are empty', async () => {
+      await view.render(container, {});
+
+      const form = container.querySelector('.setup-form');
+      form.dispatchEvent(new Event('submit', { bubbles: true }));
+
+      await Promise.resolve();
+      await Promise.resolve();
+
+      expect(mockDraftStore.savePlayerNames).toHaveBeenCalledWith('Player 1', 'Player 2');
     });
   });
 });

@@ -40,27 +40,33 @@ export class ConstructorProfileView extends BaseView {
   }
 
   renderNotFound() {
-    const message = this.createElement('div', 'empty-state');
-    message.innerHTML = `
-      <h2>Constructor Not Found</h2>
-      <p>The constructor you're looking for doesn't exist.</p>
-      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
-    `;
-    this.root.appendChild(message);
+    const empty = this.createEmptyState(
+      `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+        <line x1="17" y1="11" x2="23" y2="11"/>
+      </svg>`,
+      'Constructor not found',
+      'The team you\'re looking for doesn\'t exist or has no data for this season.'
+    );
+    const backBtn = document.createElement('a');
+    backBtn.href = '#/constructors';
+    backBtn.className = 'btn btn-outline';
+    backBtn.style.marginTop = 'var(--spacing-md)';
+    backBtn.textContent = 'View all constructors';
+    empty.appendChild(backBtn);
+    this.root.appendChild(empty);
   }
 
   renderHeader() {
     const header = this.createElement('div', 'constructor-profile-header');
 
-    const backLink = this.createElement('a', 'back-link');
-    backLink.href = '#/teams';
-    // Get player names for back link if draft exists
-    const draft = draftStore.draft;
-    const backText = (draft && draft.status === 'completed' && draft.players.length === 2)
-      ? `← Back to ${draft.players[0].name}-${draft.players[1].name} Comparison`
-      : '← Back to Team Comparison';
-    backLink.innerHTML = backText;
-    header.appendChild(backLink);
+    // Breadcrumb nav
+    const breadcrumb = this.createBreadcrumb([
+      { label: 'Constructors', href: '#/constructors' },
+      { label: this.constructor.name }
+    ]);
+    header.appendChild(breadcrumb);
 
     const teamName = this.createElement('h1', 'constructor-name', this.constructor.name);
     if (this.constructor.teamColor) {
@@ -529,7 +535,9 @@ export class ConstructorProfileView extends BaseView {
       </tbody>
     `;
 
-    historyCard.appendChild(table);
+    const tableWrapper = this.createElement('div', 'table-responsive');
+    tableWrapper.appendChild(table);
+    historyCard.appendChild(tableWrapper);
     this.root.appendChild(historyCard);
   }
 

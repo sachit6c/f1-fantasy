@@ -2,22 +2,20 @@
 /* Constructors list view styles */
 
 .constructors-header {
-  text-align: center;
   margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #A10500 100%);
-  color: white;
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .constructors-header .page-title {
-  color: white;
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
 }
 
 .constructors-header .page-subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
 }
 
 .constructors-grid {
@@ -197,5 +195,20 @@
   .constructor-stats-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .constructor-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .constructor-stat .stat-value {
+    font-size: 0.75rem;
+  }
+
+  .constructor-stat .stat-label {
+    font-size: 0.5rem;
   }
 }

@@ -5,35 +5,62 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-md) var(--spacing-xl);
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border-bottom: 3px solid var(--color-primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 0 var(--spacing-xl);
+  height: 58px;
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
   z-index: 1000;
   gap: var(--spacing-lg);
-  transition: background 0.4s ease;
+  /* era-accent strip at very bottom of header */
+  background-image: linear-gradient(to bottom, transparent calc(100% - 2px), var(--era-accent, var(--color-primary)) calc(100% - 2px));
 }
 
+/* ---- Logo / wordmark ---- */
 .header-logo {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  flex-shrink: 0;
 }
 
-.header-logo h1 {
-  margin: 0;
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  cursor: pointer;
-  transition: color 0.2s ease;
+.header-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  outline: none;
+  border-radius: var(--radius-md);
+  padding: 0.25rem 0.375rem;
+  transition: opacity var(--transition-fast);
+}
+
+.header-wordmark:hover { opacity: 0.85; }
+.header-wordmark:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.header-icon {
+  flex-shrink: 0;
+  border-radius: 7px;
+}
+
+.wordmark-text {
+  font-family: var(--font-family-display);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--letter-spacing-normal);
   white-space: nowrap;
 }
 
-.header-logo h1:hover {
-  color: var(--color-primary);
+.wordmark-text strong {
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-primary);
+  margin-left: 0.25rem;
 }
 
 /* ---- Season hamburger button ---- */
@@ -41,40 +68,43 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
+  width: 22px;
+  height: 16px;
   padding: 0;
   background: transparent;
   border: none;
   cursor: pointer;
   flex-shrink: 0;
+  border-radius: var(--radius-sm);
 }
 
 .season-hamburger span {
   display: block;
   width: 100%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-text-secondary);
   border-radius: 2px;
-  transition: all 0.25s ease;
+  transition: all var(--transition-fast);
 }
 
-.season-hamburger:hover span {
-  background: #fff;
-  transform: scaleX(0.85);
+.season-hamburger:hover span { background: var(--color-text-primary); }
+.season-hamburger:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
-/* ---- Current season badge ---- */
+/* ---- Season badge ---- */
 .season-current-badge {
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-wide);
   cursor: default;
   user-select: none;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background var(--transition-base), color var(--transition-base);
   white-space: nowrap;
+  font-family: var(--font-family-mono);
 }
 
 /* ---- Season drawer overlay ---- */
@@ -87,7 +117,8 @@
 }
 
 .season-drawer-overlay.open {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
 }
 
 /* ---- Season drawer panel ---- */
@@ -95,10 +126,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 320px;
+  width: min(300px, 85vw);
   height: 100vh;
-  background: #0F1419;
-  border-right: 2px solid #2A2A3A;
+  background: var(--color-bg-card);
+  border-right: 1px solid var(--color-border-strong);
   overflow-y: auto;
   z-index: 10000;
   transform: translateX(-100%);
@@ -115,42 +146,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.25rem 1rem;
-  border-bottom: 2px solid #2A2A3A;
+  padding: 1.125rem 1.125rem 0.875rem;
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
-  background: #0F1419;
+  background: var(--color-bg-card);
   z-index: 1;
 }
 
 .season-drawer-header span {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #E0E0E0;
-  letter-spacing: 0.03em;
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 .season-drawer-close {
   background: transparent;
   border: none;
-  color: #A0A0A0;
-  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
   line-height: 1;
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
-  transition: color 0.15s, background 0.15s;
+  transition: color var(--transition-fast), background var(--transition-fast);
 }
 
 .season-drawer-close:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-primary);
+  background: var(--color-bg-elevated);
 }
 
 /* ---- Era sections ---- */
 .season-era-section {
-  padding: 0.75rem 0.5rem 0.25rem;
-  border-bottom: 1px solid #1E2530;
+  padding: 0.5rem 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .season-era-section:last-child {
@@ -194,9 +225,9 @@
 
 .season-year-btn {
   padding: 0.45rem 0.2rem;
-  background: rgba(255, 255, 255, 0.04);
-  color: #C0C0C0;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   font-weight: 600;
@@ -221,31 +252,58 @@
   box-shadow: 0 0 8px color-mix(in srgb, var(--era-accent, #E10600) 50%, transparent);
 }
 
-/* ---- Settings button ---- */
-.btn-settings {
-  padding: 0.5rem 0.75rem;
-  font-size: 1.25rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all 0.2s ease;
+/* ---- Theme toggle button ---- */
+.theme-toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+/* ---- Settings button ---- */
+.btn-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 .btn-settings:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: rotate(45deg);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
 }
 
 .season-year {
@@ -261,44 +319,54 @@
 
 .header-nav {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 2px;
   flex: 1;
   justify-content: center;
+  align-items: center;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-sm) var(--spacing-md);
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
   text-decoration: none;
   color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-normal);
   border-radius: var(--radius-md);
-  transition: all 0.2s ease;
+  transition: color var(--transition-fast), background var(--transition-fast);
   background: transparent;
-  border: 2px solid transparent;
   white-space: nowrap;
+  height: 34px;
 }
 
 .nav-link:hover {
-  background: rgba(229, 9, 20, 0.1);
+  background: var(--color-bg-elevated);
   color: var(--color-text-primary);
-  border-color: var(--color-primary);
 }
 
 .nav-link.active {
-  background: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
 }
 
 .nav-icon {
-  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+.nav-link.active .nav-icon,
+.nav-link:hover .nav-icon {
+  opacity: 1;
 }
 
 .nav-label {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 .header-actions {
@@ -309,13 +377,15 @@
 }
 
 .draft-players {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.625rem;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 .btn-reset {
@@ -353,39 +423,89 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
-  .app-header {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
-  }
-
-  .header-logo h1 {
-    font-size: var(--font-size-lg);
-  }
-
-  .header-nav {
-    width: 100%;
-    justify-content: space-around;
+@media (max-width: 1024px) {
+  .nav-label {
+    display: none;
   }
 
   .nav-link {
-    flex-direction: column;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-sm);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
   }
 
   .nav-icon {
-    font-size: var(--font-size-base);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    height: auto;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .header-logo {
+    gap: var(--spacing-sm);
+  }
+
+  .wordmark-text {
+    display: none;
+  }
+
+  .header-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .nav-link {
+    width: auto;
+    padding: 0.375rem 0.625rem;
+    flex-direction: column;
+    height: auto;
+    gap: 2px;
   }
 
   .nav-label {
-    font-size: var(--font-size-xs);
+    display: block;
+    font-size: 10px;
   }
 
-  .header-actions {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  .header-right {
+    flex-shrink: 0;
+  }
+
+  .draft-players {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+
+  .nav-link {
+    padding: 0.25rem 0.375rem;
+    gap: 1px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+  }
+
+  .season-current-badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.4rem;
   }
 }

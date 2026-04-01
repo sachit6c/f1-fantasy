@@ -31,7 +31,8 @@ const { mockDataStore, mockDraftStore } = vi.hoisted(() => ({
       primary: 'data/images/constructors/red_bull.png',
       fallback1: 'data/images/constructors/red_bull.jpg',
       fallback2: 'data/images/constructors/red_bull.svg'
-    })
+    }),
+    getDriverSeasonSummary: vi.fn().mockReturnValue(null)
   },
   mockDraftStore: {
     currentSeason: 2026,
@@ -163,6 +164,18 @@ describe('ConstructorsListView', () => {
       expect(logo.textContent).toBe('M');
     });
 
+    it('onerror on logo image triggers fallback src chain (png → jpg)', async () => {
+      mockDataStore.data.constructors = [MOCK_CONSTRUCTORS[0]]; // red_bull has png primary
+      await view.render(container, {});
+      const img = container.querySelector('.constructor-logo-img');
+      expect(img).not.toBeNull();
+      // Simulate load error (png path)
+      img.src = 'something.png';
+      img.dispatchEvent(new Event('error'));
+      // The onerror handler should have tried fallback1
+      expect(img.src).toContain('.jpg');
+    });
+
     it('cards have cursor:pointer', async () => {
       await view.render(container, {});
       const card = container.querySelector('.constructor-card');
@@ -218,6 +231,112 @@ describe('ConstructorsListView', () => {
       mockDataStore.data.constructors = [];
       await view.render(container, {});
       expect(container.querySelector('.empty-state').outerHTML).toMatchSnapshot();
+    });
+  });
+
+  // ─── Season stats grid ────────────────────────────────────────────────────
+
+  describe('season stats grid', () => {
+    const DRIVERS = [
+      { driverId: 'max_verstappen', name: 'Max Verstappen', code: 'VER', team: 'Red Bull Racing', teamColor: '#3671C6' },
+      { driverId: 'sergio_perez', name: 'Sergio Perez', code: 'PER', team: 'Red Bull Racing', teamColor: '#3671C6' }
+    ];
+
+    beforeEach(() => {
+      mockDataStore.data.constructors = [MOCK_CONSTRUCTORS[0]]; // red_bull
+      mockDataStore.data.constructorSeasonSummary = [
+        { constructorId: 'red_bull', position: 1, points: 260, wins: 5 }
+      ];
+      mockDataStore.data.drivers = DRIVERS;
+    });
+
+    it('renders stats grid when season summary exists for constructor', async () => {
+      await view.render(container, {});
+      expect(container.querySelector('.constructor-stats-grid')).not.toBeNull();
+    });
+
+    it('computes podiums from race results', async () => {
+      mockDataStore.data.raceResults = [
+        { driverId: 'max_verstappen', season: 2026, position: '1', status: 'Finished', fastestLapRank: '1' },
+        { driverId: 'sergio_perez', season: 2026, position: '3', status: 'Finished', fastestLapRank: null }
+      ];
+      await view.render(container, {});
+      const grid = container.querySelector('.constructor-stats-grid');
+      expect(grid).not.toBeNull();
+      // 2 podiums (P1 + P3)
+      const statValues = Array.from(grid.querySelectorAll('.stat-value')).map(el => el.textContent);
+      expect(statValues.some(v => v.includes('2'))).toBe(true);
+    });
+
+    it('renders driver links when constructor has drivers', async () => {
+      await view.render(container, {});
+      const driverLinks = container.querySelectorAll('.driver-link');
+      expect(driverLinks.length).toBe(DRIVERS.length);
+      expect(driverLinks[0].href).toContain('/driver/max_verstappen');
+    });
+
+    it('renders drivers section label', async () => {
+      await view.render(container, {});
+      expect(container.textContent).toContain('Drivers:');
+    });
+  });
+
+  // ─── Winner badge with completed draft ────────────────────────────────────
+
+  describe('team winner badge', () => {
+    const DRIVERS = [
+      { driverId: 'max_verstappen', name: 'Max Verstappen', code: 'VER', team: 'Red Bull Racing', teamColor: '#3671C6' },
+      { driverId: 'sergio_perez', name: 'Sergio Perez', code: 'PER', team: 'Red Bull Racing', teamColor: '#3671C6' }
+    ];
+
+    beforeEach(() => {
+      mockDataStore.data.constructors = [MOCK_CONSTRUCTORS[0]]; // red_bull with logoUrl
+      mockDataStore.data.constructorSeasonSummary = [
+        { constructorId: 'red_bull', position: 1, points: 260, wins: 5 }
+      ];
+      mockDataStore.data.drivers = DRIVERS;
+      mockDraftStore.draft = {
+        status: 'completed',
+        players: [
+          { playerId: 'player_1', name: 'Alice', roster: ['max_verstappen'] },
+          { playerId: 'player_2', name: 'Bob', roster: ['sergio_perez'] }
+        ]
+      };
+      // VER has more points than PER
+      mockDataStore.getDriverSeasonSummary.mockImplementation((season, driverId) => {
+        if (driverId === 'max_verstappen') return { points: 200 };
+        if (driverId === 'sergio_perez') return { points: 60 };
+        return null;
+      });
+    });
+
+    it('renders winner badge when two drafted drivers from same team have different points', async () => {
+      await view.render(container, {});
+      expect(container.querySelector('.team-winner-badge')).not.toBeNull();
+    });
+
+    it('winner badge shows the winning player name', async () => {
+      await view.render(container, {});
+      const badge = container.querySelector('.team-winner-badge');
+      expect(badge.textContent).toContain('Alice');
+    });
+
+    it('does not render winner badge when points are tied', async () => {
+      mockDataStore.getDriverSeasonSummary.mockReturnValue({ points: 100 });
+      await view.render(container, {});
+      expect(container.querySelector('.team-winner-badge')).toBeNull();
+    });
+
+    it('does not render winner badge when both drivers belong to same player', async () => {
+      mockDraftStore.draft = {
+        status: 'completed',
+        players: [
+          { playerId: 'player_1', name: 'Alice', roster: ['max_verstappen', 'sergio_perez'] },
+          { playerId: 'player_2', name: 'Bob', roster: [] }
+        ]
+      };
+      await view.render(container, {});
+      expect(container.querySelector('.team-winner-badge')).toBeNull();
     });
   });
 });

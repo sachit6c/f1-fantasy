@@ -146,25 +146,29 @@ export class TeamComparisonView extends BaseView {
     const tabNav = this.createElement('div', 'tab-navigation');
     
     // Get player names for comparison tab label
-    let comparisonLabel = '⚔️ Team Comparison';
+    let comparisonLabel = 'Team Comparison';
     if (hasDraft) {
       const draft = draftStore.draft;
       const [player1, player2] = draft.players;
-      comparisonLabel = `⚔️ ${player1.name}-${player2.name} Comparison`;
+      comparisonLabel = `${player1.name} vs ${player2.name}`;
     }
-    
+
+    const svgComparison = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="4" y1="19" x2="6" y2="21"/></svg>`;
+    const svgDrivers = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>`;
+    const svgConstructors = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`;
+
     const tabs = [
-      { id: 'comparison', label: comparisonLabel, disabled: !hasDraft },
-      { id: 'driver-standings', label: '🏁 Driver Standings', disabled: false },
-      { id: 'constructor-standings', label: '🏆 Constructor Standings', disabled: false }
+      { id: 'comparison',            label: comparisonLabel,         icon: svgComparison,   disabled: !hasDraft },
+      { id: 'driver-standings',      label: 'Driver Standings',      icon: svgDrivers,      disabled: false },
+      { id: 'constructor-standings', label: 'Constructor Standings', icon: svgConstructors, disabled: false }
     ];
-    
+
     tabs.forEach(tab => {
       const btn = this.createElement('button', [
         'tab-btn',
         this.currentTab === tab.id ? 'active' : ''
       ]);
-      btn.textContent = tab.label;
+      btn.innerHTML = `<span class="tab-icon" aria-hidden="true">${tab.icon}</span><span>${tab.label}</span>`;
       btn.disabled = tab.disabled;
       
       if (!tab.disabled) {
@@ -466,6 +470,7 @@ export class TeamComparisonView extends BaseView {
     });
 
     // Display each matchup with bar graphs
+    const cards = [];
     comparison.driverMatchups.matchups.forEach(matchup => {
       const matchupCard = this.createElement('div', 'teammate-matchup-card');
       
@@ -622,8 +627,81 @@ export class TeamComparisonView extends BaseView {
       });
 
       matchupCard.appendChild(statsContainer);
-      section.appendChild(matchupCard);
+      cards.push(matchupCard);
     });
+
+    if (cards.length === 1) {
+      section.appendChild(cards[0]);
+    } else {
+      // Carousel wrapper
+      const carousel = this.createElement('div', 'matchup-carousel');
+
+      const prevBtn = this.createElement('button', ['carousel-nav-btn', 'carousel-prev-btn']);
+      prevBtn.setAttribute('aria-label', 'Previous matchup');
+      prevBtn.innerHTML = '&#8249;';
+
+      const viewport = this.createElement('div', 'carousel-viewport');
+      cards.forEach(card => viewport.appendChild(card));
+
+      const nextBtn = this.createElement('button', ['carousel-nav-btn', 'carousel-next-btn']);
+      nextBtn.setAttribute('aria-label', 'Next matchup');
+      nextBtn.innerHTML = '&#8250;';
+
+      carousel.appendChild(prevBtn);
+      carousel.appendChild(viewport);
+      carousel.appendChild(nextBtn);
+
+      // Footer: dots + counter
+      const footer = this.createElement('div', 'carousel-footer');
+      const dotsEl = this.createElement('div', 'carousel-dots');
+      const counter = this.createElement('span', 'carousel-counter');
+
+      cards.forEach((_, i) => {
+        const dot = this.createElement('button', 'carousel-dot');
+        dot.setAttribute('aria-label', `Go to matchup ${i + 1}`);
+        dotsEl.appendChild(dot);
+      });
+
+      footer.appendChild(dotsEl);
+      footer.appendChild(counter);
+
+      section.appendChild(carousel);
+      section.appendChild(footer);
+
+      // Navigation state
+      let current = 0;
+      const total = cards.length;
+      const dotEls = Array.from(dotsEl.querySelectorAll('.carousel-dot'));
+
+      const updateUI = () => {
+        dotEls.forEach((d, i) => d.classList.toggle('active', i === current));
+        counter.textContent = `${current + 1} / ${total}`;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+      };
+
+      const goTo = (index) => {
+        const clamped = Math.max(0, Math.min(index, total - 1));
+        viewport.scrollTo({ left: clamped * viewport.offsetWidth, behavior: 'smooth' });
+      };
+
+      // Sync dots/counter/buttons as the viewport scrolls (covers trackpad, touch, button clicks)
+      let scrollRaf = null;
+      viewport.addEventListener('scroll', () => {
+        if (scrollRaf) cancelAnimationFrame(scrollRaf);
+        scrollRaf = requestAnimationFrame(() => {
+          current = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+          updateUI();
+        });
+      }, { passive: true });
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+      dotEls.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+      // Initialize
+      updateUI();
+    }
 
     container.appendChild(section);
   }
@@ -694,7 +772,9 @@ export class TeamComparisonView extends BaseView {
       tbody.appendChild(row);
     });
 
-    container.appendChild(table);
+    const tableWrapper = this.createElement('div', 'table-responsive');
+    tableWrapper.appendChild(table);
+    container.appendChild(tableWrapper);
     return container;
   }
 
@@ -753,7 +833,9 @@ export class TeamComparisonView extends BaseView {
       tbody.appendChild(row);
     });
 
-    section.appendChild(table);
+    const tableWrapper = this.createElement('div', 'table-responsive');
+    tableWrapper.appendChild(table);
+    section.appendChild(tableWrapper);
     container.appendChild(section);
   }
 

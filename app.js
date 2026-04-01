@@ -1,5 +1,6 @@
 // app.js - Application bootstrap
 
+import { initTheme } from './lib/theme.js';
 import { ViewManager } from './views/view-manager.js';
 import { DraftView } from './views/draft-view.js';
 import { TeamComparisonView } from './views/team-comparison-view.js';
@@ -9,6 +10,9 @@ import { DriverProfileView } from './views/driver-profile-view.js';
 import { ConstructorProfileView } from './views/constructor-profile-view.js';
 import { DriversListView } from './views/drivers-list-view.js';
 import { ConstructorsListView } from './views/constructors-list-view.js';
+
+// Apply theme immediately at module parse time — avoids flash of wrong theme
+initTheme();
 
 async function init() {
   console.log('[App] Starting F1 Fantasy League...');

@@ -71,4 +71,54 @@ export class BaseView {
     `;
     return error;
   }
+
+  /**
+   * Helper: Creates a polished empty state element.
+   * @param {string} svgIcon - SVG string for the icon
+   * @param {string} title - Heading text
+   * @param {string} subtitle - Subtext description
+   * @returns {HTMLElement}
+   */
+  createEmptyState(svgIcon, title, subtitle) {
+    const el = this.createElement('div', 'empty-state');
+    el.innerHTML = `
+      <div class="empty-state-icon">${svgIcon}</div>
+      <h3>${title}</h3>
+      <p>${subtitle}</p>
+    `;
+    return el;
+  }
+
+  /**
+   * Helper: Creates a breadcrumb nav element.
+   * @param {Array<{label: string, href?: string}>} items - Crumb items; last item is current page
+   * @returns {HTMLElement}
+   */
+  createBreadcrumb(items) {
+    const nav = document.createElement('nav');
+    nav.className = 'breadcrumb';
+    nav.setAttribute('aria-label', 'breadcrumb');
+
+    const ol = document.createElement('ol');
+    ol.className = 'breadcrumb-list';
+
+    items.forEach((item, i) => {
+      const li = document.createElement('li');
+      const isCurrent = i === items.length - 1;
+      li.className = isCurrent ? 'breadcrumb-item breadcrumb-current' : 'breadcrumb-item';
+      if (isCurrent) {
+        li.setAttribute('aria-current', 'page');
+        li.textContent = item.label;
+      } else {
+        const a = document.createElement('a');
+        a.href = item.href || '#';
+        a.textContent = item.label;
+        li.appendChild(a);
+      }
+      ol.appendChild(li);
+    });
+
+    nav.appendChild(ol);
+    return nav;
+  }
 }
