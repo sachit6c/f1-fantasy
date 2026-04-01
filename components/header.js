@@ -3,6 +3,7 @@
 
 import { draftStore } from '../lib/draft-store.js';
 import { dataStore } from '../lib/data-store.js';
+import { toggleTheme, getTheme } from '../lib/theme.js';
 
 // ---------------------------------------------------------------------------
 // F1 Era definitions — used for header gradient + drawer colour coding
@@ -72,7 +73,8 @@ export class Header {
     // Get current season and its era
     const season = draftStore.currentSeason || 2026;
     const era = getEra(season);
-    header.style.background = `linear-gradient(135deg, ${era.from} 0%, ${era.to} 100%)`;
+    // Use era accent as a CSS variable — the CSS handles the 2px bottom strip
+    header.style.setProperty('--era-accent', era.accent);
     header.dataset.era = era.id;
 
     // --- Hamburger button ---
@@ -86,10 +88,21 @@ export class Header {
     const logoSection = document.createElement('div');
     logoSection.className = 'header-logo';
 
-    const logo = document.createElement('h1');
-    logo.innerHTML = `🏎️ F1 Fantasy League`;
+    const logo = document.createElement('div');
+    logo.className = 'header-wordmark';
+    logo.setAttribute('role', 'link');
+    logo.setAttribute('tabindex', '0');
+    logo.setAttribute('aria-label', 'F1 Fantasy League Home');
+    logo.innerHTML = `
+      <svg class="header-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="#E10600"/>
+        <text x="16" y="22" font-family="Arial Black, Arial" font-weight="900" font-size="13" fill="white" text-anchor="middle" letter-spacing="-0.5">F1</text>
+      </svg>
+      <span class="wordmark-text">Fantasy<strong>League</strong></span>
+    `;
     logo.style.cursor = 'pointer';
     logo.addEventListener('click', () => { window.location.hash = '#/draft'; });
+    logo.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') window.location.hash = '#/draft'; });
 
     // Current season badge (replaces dropdown)
     const seasonBadge = document.createElement('span');
@@ -110,25 +123,31 @@ export class Header {
     nav.className = 'header-nav';
 
     const navItems = [
-      { label: 'Draft', hash: '#/draft', icon: '📋' },
-      { label: 'Teams & Standings', hash: '#/teams', icon: '🏆' },
-      { label: 'Constructors', hash: '#/constructors', icon: '🏎️' },
-      { label: 'Drivers', hash: '#/drivers', icon: '👥' },
-      { label: 'Calendar', hash: '#/calendar', icon: '📅' }
+      { label: 'Draft', hash: '#/draft', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>` },
+      { label: 'Teams', hash: '#/teams', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>` },
+      { label: 'Constructors', hash: '#/constructors', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0H9"/></svg>` },
+      { label: 'Drivers', hash: '#/drivers', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>` },
+      { label: 'Calendar', hash: '#/calendar', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>` }
     ];
 
     navItems.forEach(item => {
       const link = document.createElement('a');
       link.href = item.hash;
       link.className = 'nav-link';
+      link.dataset.hash = item.hash;
 
-      // Add active class if current route matches
-      if (window.location.hash === item.hash ||
-          (window.location.hash === '' && item.hash === '#/draft')) {
-        link.classList.add('active');
-      }
+      const updateActive = () => {
+        const current = window.location.hash || '#/draft';
+        const isActive = current === item.hash ||
+          (item.hash !== '#/draft' && current.startsWith(item.hash.replace('#/', '#/')));
+        link.classList.toggle('active', isActive);
+      };
 
-      link.innerHTML = `<span class="nav-icon">${item.icon}</span><span class="nav-label">${item.label}</span>`;
+      updateActive();
+      // Update active state on route changes
+      window.addEventListener('hashchange', updateActive);
+
+      link.innerHTML = `<span class="nav-icon" aria-hidden="true">${item.icon}</span><span class="nav-label">${item.label}</span>`;
 
       nav.appendChild(link);
     });
@@ -139,7 +158,6 @@ export class Header {
     const headerRight = document.createElement('div');
     headerRight.className = 'header-right';
     
-    // Draft status (if draft exists)
     if (draftStore.draft && draftStore.draft.players) {
       const players = draftStore.draft.players;
       const statusText = document.createElement('span');
@@ -148,9 +166,21 @@ export class Header {
       headerRight.appendChild(statusText);
     }
     
+    const themeBtn = document.createElement('button');
+    themeBtn.className = 'theme-toggle-btn btn-icon';
+    const isDark = getTheme() === 'dark';
+    themeBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeBtn.innerHTML = `
+      <svg class="theme-icon-moon" style="display:${isDark ? 'block' : 'none'}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="theme-icon-sun" style="display:${isDark ? 'none' : 'block'}" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    `;
+    themeBtn.addEventListener('click', () => toggleTheme());
+    headerRight.appendChild(themeBtn);
+
     const settingsBtn = document.createElement('button');
-    settingsBtn.className = 'btn-settings';
-    settingsBtn.innerHTML = '⚙️';
+    settingsBtn.className = 'btn-settings btn-icon';
+    settingsBtn.setAttribute('aria-label', 'Settings');
+    settingsBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`;
     settingsBtn.title = 'Settings';
     settingsBtn.addEventListener('click', () => {
       this.showSettingsModal();
@@ -295,17 +325,18 @@ export class Header {
     const modal = document.createElement('div');
     modal.className = 'settings-modal';
     modal.style.cssText = `
-      background: white;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
       border-radius: 1rem;
       padding: 2rem;
-      max-width: 500px;
+      max-width: min(500px, calc(100vw - 2rem));
       width: 90%;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: var(--shadow-xl);
     `;
 
     const title = document.createElement('h2');
     title.textContent = 'Settings';
-    title.style.cssText = 'color: #E10600; margin-bottom: 1.5rem;';
+    title.style.cssText = 'color: var(--color-primary); margin-bottom: 1.5rem;';
     modal.appendChild(title);
 
     // Player names section
@@ -318,41 +349,41 @@ export class Header {
     
     const namesTitle = document.createElement('h3');
     namesTitle.textContent = 'Player Names';
-    namesTitle.style.cssText = 'font-size: 1.125rem; margin-bottom: 1rem; color: #1A1A1A;';
+    namesTitle.style.cssText = 'font-size: 1.125rem; margin-bottom: 1rem; color: var(--color-text-primary);';
     namesSection.appendChild(namesTitle);
 
     const namesDesc = document.createElement('p');
     namesDesc.textContent = 'These names will be used across all seasons.';
-    namesDesc.style.cssText = 'font-size: 0.875rem; color: #666; margin-bottom: 1rem;';
+    namesDesc.style.cssText = 'font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 1rem;';
     namesSection.appendChild(namesDesc);
 
     const player1Input = document.createElement('input');
     player1Input.type = 'text';
     player1Input.placeholder = 'Player 1 Name';
     player1Input.value = player1Current;
-    player1Input.style.cssText = 'width: 100%; padding: 0.75rem; border: 2px solid #E0E0E0; border-radius: 0.5rem; margin-bottom: 0.75rem; font-size: 1rem; box-sizing: border-box;';
+    player1Input.style.cssText = 'width: 100%; padding: 0.75rem; background: var(--color-bg-secondary); color: var(--color-text-primary); border: 1px solid var(--color-border); border-radius: 0.5rem; margin-bottom: 0.75rem; font-size: 1rem; box-sizing: border-box;';
     namesSection.appendChild(player1Input);
 
     const player2Input = document.createElement('input');
     player2Input.type = 'text';
     player2Input.placeholder = 'Player 2 Name';
     player2Input.value = player2Current;
-    player2Input.style.cssText = 'width: 100%; padding: 0.75rem; border: 2px solid #E0E0E0; border-radius: 0.5rem; font-size: 1rem; box-sizing: border-box;';
+    player2Input.style.cssText = 'width: 100%; padding: 0.75rem; background: var(--color-bg-secondary); color: var(--color-text-primary); border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 1rem; box-sizing: border-box;';
     namesSection.appendChild(player2Input);
 
     modal.appendChild(namesSection);
 
     // Refresh section
     const refreshSection = document.createElement('div');
-    refreshSection.style.cssText = 'border-top: 1px solid #E0E0E0; padding-top: 1.5rem; margin-bottom: 1.5rem;';
+    refreshSection.style.cssText = 'border-top: 1px solid var(--color-border); padding-top: 1.5rem; margin-bottom: 1.5rem;';
 
     const refreshTitle = document.createElement('h3');
     refreshTitle.textContent = 'Refresh Season Data';
-    refreshTitle.style.cssText = 'font-size: 1.125rem; margin-bottom: 0.5rem; color: #1A1A1A;';
+    refreshTitle.style.cssText = 'font-size: 1.125rem; margin-bottom: 0.5rem; color: var(--color-text-primary);';
     refreshSection.appendChild(refreshTitle);
 
     const refreshDesc = document.createElement('p');
-    refreshDesc.style.cssText = 'font-size: 0.875rem; color: #666; margin-bottom: 1rem;';
+    refreshDesc.style.cssText = 'font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 1rem;';
     refreshDesc.textContent = `Fetch the latest qualifying / race results for the ${dataStore.season} season from the F1 API.`;
     refreshSection.appendChild(refreshDesc);
 
@@ -366,7 +397,7 @@ export class Header {
     refreshBtn.addEventListener('click', async () => {
       refreshBtn.disabled = true;
       refreshBtn.textContent = '⏳ Fetching from API…';
-      refreshStatus.style.color = '#666';
+      refreshStatus.style.color = 'var(--color-text-secondary)';
       refreshStatus.textContent = '';
       try {
         const result = await dataStore.refreshLiveData();
@@ -387,16 +418,16 @@ export class Header {
 
     // Reset section
     const resetSection = document.createElement('div');
-    resetSection.style.cssText = 'border-top: 1px solid #E0E0E0; padding-top: 1.5rem; margin-bottom: 1.5rem;';
+    resetSection.style.cssText = 'border-top: 1px solid var(--color-border); padding-top: 1.5rem; margin-bottom: 1.5rem;';
     
     const resetTitle = document.createElement('h3');
     resetTitle.textContent = 'Reset All Data';
-    resetTitle.style.cssText = 'font-size: 1.125rem; margin-bottom: 0.5rem; color: #1A1A1A;';
+    resetTitle.style.cssText = 'font-size: 1.125rem; margin-bottom: 0.5rem; color: var(--color-text-primary);';
     resetSection.appendChild(resetTitle);
 
     const resetDesc = document.createElement('p');
     resetDesc.textContent = 'This will clear all drafts from all seasons, as well as player names.';
-    resetDesc.style.cssText = 'font-size: 0.875rem; color: #666; margin-bottom: 1rem;';
+    resetDesc.style.cssText = 'font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 1rem;';
     resetSection.appendChild(resetDesc);
 
     const resetBtn = document.createElement('button');
@@ -420,7 +451,7 @@ export class Header {
 
     const cancelBtn = document.createElement('button');
     cancelBtn.textContent = 'Cancel';
-    cancelBtn.style.cssText = 'padding: 0.75rem 1.5rem; background: #F5F5F5; color: #1A1A1A; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;';
+    cancelBtn.style.cssText = 'padding: 0.75rem 1.5rem; background: var(--color-bg-elevated); color: var(--color-text-primary); border: 1px solid var(--color-border); border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;';
     cancelBtn.addEventListener('click', () => {
       document.body.removeChild(overlay);
     });

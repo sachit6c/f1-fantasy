@@ -53,13 +53,13 @@
 .profile-top {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--spacing-xl);
   margin-top: var(--spacing-lg);
   padding: var(--spacing-xl);
   background: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
 }
 
 .driver-photo-large-container {
@@ -197,7 +197,7 @@
 .stat-item:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--color-bg-elevated);
   border: 1px solid var(--color-primary);
   z-index: 2001;
 }
@@ -433,15 +433,16 @@
 .driver-stat-item:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--color-bg-elevated);
   border: 1px solid var(--color-primary);
   z-index: 2001;
 }
 
 .stat-tooltip {
   position: absolute;
-  background: white;
-  color: #000000;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-strong);
   padding: var(--spacing-md) var(--spacing-lg);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
@@ -521,15 +522,22 @@
   .profile-top {
     flex-direction: column;
     text-align: center;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+
+  .driver-photo-large {
+    width: 120px;
+    height: 120px;
   }
 
   .driver-name-large,
   .constructor-name {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
   }
 
@@ -538,6 +546,10 @@
   .drivers-comparison-grid,
   .driver-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .drivers-comparison-grid {
+    grid-template-columns: 1fr;
   }
 
   .driver-detail-photo {
@@ -553,6 +565,47 @@
     white-space: pre-line;
     max-width: 90vw !important;
     word-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-top {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .driver-photo-large {
+    width: 100px;
+    height: 100px;
+  }
+
+  .driver-name-large,
+  .constructor-name {
+    font-size: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .stat-item {
+    padding: var(--spacing-md);
+    min-height: 90px;
+  }
+
+  .stat-value {
+    font-size: var(--font-size-xl);
+  }
+
+  .info-grid,
+  .drivers-grid,
+  .driver-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-mini-card {
+    padding: var(--spacing-md);
   }
 }
 

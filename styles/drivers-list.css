@@ -2,22 +2,20 @@
 /* Drivers list view styles */
 
 .drivers-header {
-  text-align: center;
   margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #A10500 100%);
-  color: white;
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .drivers-header .page-title {
-  color: white;
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
 }
 
 .drivers-header .page-subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
 }
 
 .drivers-grid {
@@ -29,11 +27,11 @@
 
 .driver-card {
   background: var(--color-bg-card);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  border: 2px solid var(--color-border);
-  transition: all var(--transition-base);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   position: relative;
   height: 400px;
   display: flex;
@@ -41,9 +39,9 @@
 }
 
 .driver-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary);
+  border-color: var(--color-border-strong);
 }
 
 .driver-photo-wrapper {
@@ -53,7 +51,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  background: var(--color-bg-elevated);
   display: flex;
   align-items: center;
   justify-content: center;

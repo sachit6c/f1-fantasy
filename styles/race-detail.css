@@ -194,3 +194,18 @@
     padding: var(--spacing-sm);
   }
 }
+
+@media (max-width: 480px) {
+  .race-info-card {
+    padding: var(--spacing-md);
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: var(--spacing-xs);
+  }
+
+  .results-card {
+    padding: var(--spacing-md);
+  }
+}

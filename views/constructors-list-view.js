@@ -14,8 +14,11 @@ export class ConstructorsListView extends BaseView {
       dataStore.setSeason(draftStore.currentSeason);
     }
 
-    // Load data
+    // Show skeleton while data loads
     if (!dataStore.loaded) {
+      this.root.innerHTML = '';
+      this.renderHeader();
+      this.renderSkeletonGrid(10);
       await dataStore.load();
     }
 
@@ -44,9 +47,15 @@ export class ConstructorsListView extends BaseView {
     const constructors = dataStore.data.constructors;
 
     if (constructors.length === 0) {
-      const emptyMessage = this.createElement('div', 'empty-state');
-      emptyMessage.innerHTML = '<p>No constructor data available</p>';
-      this.root.appendChild(emptyMessage);
+      const empty = this.createEmptyState(
+        `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+        </svg>`,
+        'No constructors found',
+        'Team data for this season hasn\'t been loaded yet.'
+      );
+      this.root.appendChild(empty);
       return;
     }
 
@@ -248,5 +257,22 @@ export class ConstructorsListView extends BaseView {
     });
 
     this.root.appendChild(constructorsGrid);
+  }
+
+  renderSkeletonGrid(count = 10) {
+    const grid = this.createElement('div', 'constructors-grid');
+    for (let i = 0; i < count; i++) {
+      const card = this.createElement('div', 'constructor-card');
+      card.innerHTML = `
+        <div class="constructor-color-header skeleton" style="height:100px;border-radius:var(--radius-xl) var(--radius-xl) 0 0;"></div>
+        <div class="constructor-info-section" style="padding:var(--spacing-md);display:flex;flex-direction:column;gap:var(--spacing-sm);">
+          <div class="skeleton" style="height:18px;width:70%;border-radius:4px;"></div>
+          <div class="skeleton" style="height:13px;width:45%;border-radius:4px;"></div>
+          <div class="skeleton" style="height:13px;width:55%;border-radius:4px;"></div>
+        </div>
+      `;
+      grid.appendChild(card);
+    }
+    this.root.appendChild(grid);
   }
 }

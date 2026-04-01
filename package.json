@@ -8,6 +8,10 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
+    "test:e2e:mobile": "playwright test --project=mobile-chrome --project=mobile-safari --project=tablet",
+    "test:e2e:mobile-chrome": "playwright test --project=mobile-chrome",
+    "test:e2e:mobile-safari": "playwright test --project=mobile-safari",
+    "test:e2e:tablet": "playwright test --project=tablet",
     "serve": "node_modules/.bin/serve . -p 4173 -s"
   },
   "devDependencies": {

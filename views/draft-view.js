@@ -4,7 +4,7 @@
 import { BaseView } from './base-view.js';
 import { draftStore } from '../lib/draft-store.js';
 import { dataStore } from '../lib/data-store.js';
-import { createDraftConfig } from '../lib/draft-config.js';
+import { createDraftConfig, DRAFT_TYPE_META } from '../lib/draft-config.js';
 
 export class DraftView extends BaseView {
   async render(container, params) {
@@ -23,8 +23,8 @@ export class DraftView extends BaseView {
       }
       this.renderExistingDraft();
     } else if (savedNames) {
-      // Auto-start new draft with saved names
-      this.startNewDraft(savedNames.player1, savedNames.player2);
+      // Auto-start new draft with saved names and last-used draft type
+      this.startNewDraft(savedNames.player1, savedNames.player2, null, savedNames.draftType || 'snake');
     } else {
       // First time - show setup
       this.renderSetup();
@@ -74,6 +74,23 @@ export class DraftView extends BaseView {
     form.appendChild(p1Group);
     form.appendChild(p2Group);
 
+    // Draft type selector
+    const dtGroup = this.createElement('div', 'form-group');
+    const dtLabel = this.createElement('label', [], 'Draft Type');
+    const dtSelect = this.createElement('select');
+    dtSelect.name = 'draftType';
+    const savedDraftType = savedNames?.draftType || 'snake';
+    for (const [key, meta] of Object.entries(DRAFT_TYPE_META)) {
+      const option = this.createElement('option');
+      option.value = key;
+      option.textContent = `${meta.label} — ${meta.description}`;
+      if (key === savedDraftType) option.selected = true;
+      dtSelect.appendChild(option);
+    }
+    dtGroup.appendChild(dtLabel);
+    dtGroup.appendChild(dtSelect);
+    form.appendChild(dtGroup);
+
     // Submit button
     const submitBtn = this.createElement('button', 'btn-primary');
     submitBtn.type = 'submit';
@@ -100,15 +117,17 @@ export class DraftView extends BaseView {
     if (!player1) player1 = 'Player 1';
     if (!player2) player2 = 'Player 2';
 
-    // Save player names
-    draftStore.savePlayerNames(player1, player2);
+    const draftType = formData.get('draftType') || 'snake';
+
+    // Save player names and draft type preference
+    draftStore.savePlayerNames(player1, player2, draftType);
 
     // Start new draft with current season from draftStore
     const season = draftStore.currentSeason || 2026;
-    this.startNewDraft(player1, player2, season);
+    this.startNewDraft(player1, player2, season, draftType);
   }
 
-  startNewDraft(player1Name, player2Name, season = null) {
+  startNewDraft(player1Name, player2Name, season = null, draftType = 'snake') {
     // Use current season from draft store if not specified
     if (!season) {
       season = draftStore.currentSeason || 2026;
@@ -120,8 +139,7 @@ export class DraftView extends BaseView {
     // Load data for the selected season
     dataStore.setSeason(season);
     dataStore.load().then(() => {
-      const config = createDraftConfig(dataStore);
-      config.season = season; // Set season in config
+      const config = createDraftConfig(dataStore, season, draftType);
 
       const players = [
         { name: player1Name, draftOrder: 0 },
@@ -205,6 +223,14 @@ export class DraftView extends BaseView {
       ? `Draft Complete: ${progress.totalPicks} of ${progress.totalPicks}`
       : `Pick ${currentPickNumber} of ${progress.totalPicks}`;
     status.appendChild(progressText);
+
+    // Show draft type badge
+    const draftTypeMeta = DRAFT_TYPE_META[draft.config?.draftType];
+    if (draftTypeMeta) {
+      const typeBadge = this.createElement('div', 'draft-type-badge');
+      typeBadge.textContent = draftTypeMeta.label;
+      status.appendChild(typeBadge);
+    }
 
     header.appendChild(status);
 
@@ -376,8 +402,9 @@ export class DraftView extends BaseView {
           pickedColor = playerColors[playerId] || '#999999';
         }
 
+        const hoverLabel = currentPlayer ? `${currentPlayer.name}'s Turn` : '';
         driverCard.innerHTML = `
-          <div class="draft-driver-overlay ${isDrafted ? 'picked-overlay' : ''}" ${isDrafted && pickedColor ? `style="background: linear-gradient(135deg, ${pickedColor}CC 0%, ${pickedColor}99 100%); border-top-color: ${pickedColor};"` : ''}>
+          <div class="draft-driver-overlay ${isDrafted ? 'picked-overlay' : ''}" data-hover-label="${hoverLabel}" ${isDrafted && pickedColor ? `style="background: linear-gradient(135deg, ${pickedColor}CC 0%, ${pickedColor}99 100%); border-top-color: ${pickedColor};"` : ''}>
             <div class="draft-driver-name">${driver.name}</div>
             ${isDrafted ? '<div class="picked-indicator">PICKED</div>' : ''}
           </div>
