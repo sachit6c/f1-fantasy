@@ -1,0 +1,100 @@
+<caption><span class="nowrap">Teams and drivers that are contracted to compete in the 2026 World Championship</span>
+</caption>
+<tbody><tr>
+<th scope="col" rowspan="2">Entrant
+</th>
+<th scope="col" rowspan="2"><a href="/wiki/List_of_Formula_One_constructors" title="List of Formula One constructors">Constructor</a>
+</th>
+<th rowspan="2" class="unsortable">Chassis
+</th>
+<th rowspan="2" scope="col" nowrap=""><a href="/wiki/Formula_One_engines" title="Formula One engines">Power unit</a>
+</th>
+<th colspan="2" scope="col" class="unsortable">Race drivers
+</th></tr>
+<tr>
+<th scope="col" class="unsortable"><a href="/wiki/List_of_Formula_One_driver_numbers" title="List of Formula One driver numbers">No.</a>
+</th>
+<th scope="col" class="unsortable"><a href="/wiki/List_of_Formula_One_drivers" title="List of Formula One drivers">Driver name</a>
+</th></tr>
+<tr>
+<td data-sort-value="Alpine"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/France" title="France"><img alt="France" src="//upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/40px-Flag_of_France.svg.png" decoding="async" width="23" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/60px-Flag_of_France.svg.png 2x" data-file-width="900" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/BWT_(company)" title="BWT (company)">BWT</a> Alpine Formula One Team<sup id="cite&#95;ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Alpine_F1_Team" title="Alpine F1 Team">Alpine</a>-<a href="/wiki/Mercedes_AMG_High_Performance_Powertrains" title="Mercedes AMG High Performance Powertrains">Mercedes</a>
+</th>
+<td><a href="/wiki/Alpine_A526" title="Alpine A526">A526</a><sup id="cite&#95;ref-4" class="reference"><a href="#cite_note-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><span class="nowrap"><a href="/wiki/Mercedes_V6_hybrid_Formula_One_power_unit" title="Mercedes V6 hybrid Formula One power unit">Mercedes-AMG F1 M17</a><sup id="cite&#95;ref-RenaultShutdown&#95;5-0" class="reference"><a href="#cite_note-RenaultShutdown-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-AlpineMercedes&#95;6-0" class="reference"><a href="#cite_note-AlpineMercedes-6"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup></span>
+</td>
+<td style="text-align:center">10<br />43
+</td>
+<td><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/France" title="France"><img alt="France" src="//upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/40px-Flag_of_France.svg.png" decoding="async" width="23" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/60px-Flag_of_France.svg.png 2x" data-file-width="900" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/Pierre_Gasly" title="Pierre Gasly">Pierre Gasly</a><br /><span class="nowrap"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Argentina" title="Argentina"><img alt="Argentina" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/40px-Flag_of_Argentina.svg.png" decoding="async" width="23" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/60px-Flag_of_Argentina.svg.png 2x" data-file-width="800" data-file-height="500" /></a></span>&#160;</span><a href="/wiki/Franco_Colapinto" title="Franco Colapinto">Franco Colapinto</a></span>
+</td></tr>
+<tr>
+<td data-sort-value="Aston Martin"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/United_Kingdom" title="United Kingdom"><img alt="United Kingdom" src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png" decoding="async" width="23" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/60px-Flag_of_the_United_Kingdom.svg.png 2x" data-file-width="1200" data-file-height="600" /></a></span>&#160;</span>Aston Martin <a href="/wiki/Saudi_Aramco" title="Saudi Aramco">Aramco</a> Formula One Team<sup id="cite&#95;ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Aston_Martin_in_Formula_One" title="Aston Martin in Formula One">Aston Martin Aramco</a>-<a href="/wiki/Honda_in_Formula_One" title="Honda in Formula One">Honda</a>
+</th>
+<td><a href="/wiki/Aston_Martin_AMR26" title="Aston Martin AMR26">AMR26</a><sup id="cite&#95;ref-8" class="reference"><a href="#cite_note-8"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><a href="/wiki/Honda_V6_hybrid_Formula_One_power_unit" title="Honda V6 hybrid Formula One power unit">Honda RA626H</a><sup id="cite&#95;ref-AstonHondaSky&#95;9-0" class="reference"><a href="#cite_note-AstonHondaSky-9"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-10" class="reference"><a href="#cite_note-10"><span class="cite-bracket">&#91;</span>10<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td style="text-align:center">14<br />18
+</td>
+<td><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Spain" title="Spain"><img alt="Spain" src="//upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/40px-Flag_of_Spain.svg.png" decoding="async" width="23" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/60px-Flag_of_Spain.svg.png 2x" data-file-width="750" data-file-height="500" /></a></span>&#160;</span><a href="/wiki/Fernando_Alonso" title="Fernando Alonso">Fernando Alonso</a><br /><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Canada" title="Canada"><img alt="Canada" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/40px-Flag_of_Canada_%28Pantone%29.svg.png" decoding="async" width="23" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/60px-Flag_of_Canada_%28Pantone%29.svg.png 2x" data-file-width="1200" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/Lance_Stroll" title="Lance Stroll">Lance Stroll</a>
+</td></tr>
+<tr>
+<td data-sort-value="Williams"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/United_Kingdom" title="United Kingdom"><img alt="United Kingdom" src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png" decoding="async" width="23" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/60px-Flag_of_the_United_Kingdom.svg.png 2x" data-file-width="1200" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/Atlassian" title="Atlassian">Atlassian</a> Williams F1 Team<sup id="cite&#95;ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">&#91;</span>11<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-12" class="reference"><a href="#cite_note-12"><span class="cite-bracket">&#91;</span>12<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Williams_Racing" title="Williams Racing">Atlassian Williams</a>-<a href="/wiki/Mercedes_AMG_High_Performance_Powertrains" title="Mercedes AMG High Performance Powertrains">Mercedes</a>
+</th>
+<td><a href="/wiki/Williams_FW48" title="Williams FW48">FW48</a><sup id="cite&#95;ref-13" class="reference"><a href="#cite_note-13"><span class="cite-bracket">&#91;</span>13<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><a href="/wiki/Mercedes_V6_hybrid_Formula_One_power_unit" title="Mercedes V6 hybrid Formula One power unit">Mercedes-AMG F1 M17</a><sup id="cite&#95;ref-14" class="reference"><a href="#cite_note-14"><span class="cite-bracket">&#91;</span>14<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td style="text-align:center">23<br />55
+</td>
+<td><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Thailand" title="Thailand"><img alt="Thailand" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/40px-Flag_of_Thailand.svg.png" decoding="async" width="23" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/60px-Flag_of_Thailand.svg.png 2x" data-file-width="900" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/Alexander_Albon" class="mw-redirect" title="Alexander Albon">Alexander Albon</a><br /><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Spain" title="Spain"><img alt="Spain" src="//upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/40px-Flag_of_Spain.svg.png" decoding="async" width="23" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/60px-Flag_of_Spain.svg.png 2x" data-file-width="750" data-file-height="500" /></a></span></span> <a href="/wiki/Carlos_Sainz_Jr." title="Carlos Sainz Jr.">Carlos Sainz Jr.</a>
+</td></tr>
+<tr>
+<td data-sort-value="Audi"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Germany" title="Germany"><img alt="Germany" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/40px-Flag_of_Germany.svg.png" decoding="async" width="23" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/60px-Flag_of_Germany.svg.png 2x" data-file-width="1000" data-file-height="600" /></a></span>&#160;</span>Audi <a href="/wiki/Revolut" title="Revolut">Revolut</a> F1 Team<sup id="cite&#95;ref-AudiExpands&#95;15-0" class="reference"><a href="#cite_note-AudiExpands-15"><span class="cite-bracket">&#91;</span>15<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-16" class="reference"><a href="#cite_note-16"><span class="cite-bracket">&#91;</span>16<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-17" class="reference"><a href="#cite_note-17"><span class="cite-bracket">&#91;</span>17<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Audi_in_Formula_One" title="Audi in Formula One">Audi</a>
+</th>
+<td><a href="/wiki/Audi_R26" title="Audi R26">R26</a><sup id="cite&#95;ref-18" class="reference"><a href="#cite_note-18"><span class="cite-bracket">&#91;</span>18<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><a href="/wiki/Audi_V6_hybrid_Formula_One_power_unit" title="Audi V6 hybrid Formula One power unit">Audi AFR 26 Hybrid</a><sup id="cite&#95;ref-AudiExpands&#95;15-1" class="reference"><a href="#cite_note-AudiExpands-15"><span class="cite-bracket">&#91;</span>15<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td style="text-align:center">5<br />27
+</td>
+<td><span class="nowrap"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Brazil" title="Brazil"><img alt="Brazil" src="//upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/40px-Flag_of_Brazil.svg.png" decoding="async" width="22" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/60px-Flag_of_Brazil.svg.png 2x" data-file-width="1000" data-file-height="700" /></a></span>&#160;</span><a href="/wiki/Gabriel_Bortoleto" title="Gabriel Bortoleto">Gabriel Bortoleto</a></span><br /><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Germany" title="Germany"><img alt="Germany" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/40px-Flag_of_Germany.svg.png" decoding="async" width="23" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/60px-Flag_of_Germany.svg.png 2x" data-file-width="1000" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/Nico_H%C3%BClkenberg" title="Nico Hülkenberg">Nico Hülkenberg</a>
+</td></tr>
+<tr>
+<td data-sort-value="Cadillac"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/United_States" title="United States"><img alt="United States" src="//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/40px-Flag_of_the_United_States.svg.png" decoding="async" width="23" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/60px-Flag_of_the_United_States.svg.png 2x" data-file-width="1235" data-file-height="650" /></a></span>&#160;</span>Cadillac Formula 1 Team<sup id="cite&#95;ref-Cadillac&#95;19-0" class="reference"><a href="#cite_note-Cadillac-19"><span class="cite-bracket">&#91;</span>19<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Cadillac&#95;GM&#95;20-0" class="reference"><a href="#cite_note-Cadillac_GM-20"><span class="cite-bracket">&#91;</span>20<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-CadillacApproved&#95;21-0" class="reference"><a href="#cite_note-CadillacApproved-21"><span class="cite-bracket">&#91;</span>21<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Cadillac_in_Formula_One" title="Cadillac in Formula One">Cadillac</a>-<a href="/wiki/Scuderia_Ferrari" title="Scuderia Ferrari">Ferrari</a>
+</th>
+<td><a href="/wiki/Cadillac_CA01" title="Cadillac CA01">CA01</a><sup id="cite&#95;ref-22" class="reference"><a href="#cite_note-22"><span class="cite-bracket">&#91;</span>22<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><a href="/wiki/Ferrari_V6_hybrid_Formula_One_power_unit" title="Ferrari V6 hybrid Formula One power unit">Ferrari 067/6</a><sup id="cite&#95;ref-Cadillac-Ferrari&#95;23-0" class="reference"><a href="#cite_note-Cadillac-Ferrari-23"><span class="cite-bracket">&#91;</span>23<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td style="text-align:center">11<br />77
+</td>
+<td><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Mexico" title="Mexico"><img alt="Mexico" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/40px-Flag_of_Mexico.svg.png" decoding="async" width="23" height="13" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/60px-Flag_of_Mexico.svg.png 2x" data-file-width="980" data-file-height="560" /></a></span></span> <a href="/wiki/Sergio_P%C3%A9rez" title="Sergio Pérez">Sergio Pérez</a><br /><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Finland" title="Finland"><img alt="Finland" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/40px-Flag_of_Finland.svg.png" decoding="async" width="23" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/60px-Flag_of_Finland.svg.png 2x" data-file-width="1800" data-file-height="1100" /></a></span></span> <a href="/wiki/Valtteri_Bottas" title="Valtteri Bottas">Valtteri Bottas</a>
+</td></tr>
+<tr>
+<td data-sort-value="Ferrari"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Italy" title="Italy"><img alt="Italy" src="//upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/40px-Flag_of_Italy.svg.png" decoding="async" width="23" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/60px-Flag_of_Italy.svg.png 2x" data-file-width="1500" data-file-height="1000" /></a></span>&#160;</span>Scuderia Ferrari <a href="/wiki/HP_Inc." title="HP Inc.">HP</a><sup id="cite&#95;ref-24" class="reference"><a href="#cite_note-24"><span class="cite-bracket">&#91;</span>24<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Scuderia_Ferrari" title="Scuderia Ferrari">Ferrari</a>
+</th>
+<td><a href="/wiki/Ferrari_SF-26" title="Ferrari SF-26">SF-26</a><sup id="cite&#95;ref-25" class="reference"><a href="#cite_note-25"><span class="cite-bracket">&#91;</span>25<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><a href="/wiki/Ferrari_V6_hybrid_Formula_One_power_unit" title="Ferrari V6 hybrid Formula One power unit">Ferrari 067/6</a><sup id="cite&#95;ref-TheRaceUntil2026&#95;26-0" class="reference"><a href="#cite_note-TheRaceUntil2026-26"><span class="cite-bracket">&#91;</span>26<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-27" class="reference"><a href="#cite_note-27"><span class="cite-bracket">&#91;</span>27<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td style="text-align:center">16<br />44
+</td>
+<td><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/Monaco" title="Monaco"><img alt="Monaco" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Monaco.svg/20px-Flag_of_Monaco.svg.png" decoding="async" width="19" height="15" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Flag_of_Monaco.svg/40px-Flag_of_Monaco.svg.png 1.5x" data-file-width="1000" data-file-height="800" /></a></span>&#160;</span><a href="/wiki/Charles_Leclerc" title="Charles Leclerc">Charles Leclerc</a><br /><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/United_Kingdom" title="United Kingdom"><img alt="United Kingdom" src="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/40px-Flag_of_the_United_Kingdom.svg.png" decoding="async" width="23" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/60px-Flag_of_the_United_Kingdom.svg.png 2x" data-file-width="1200" data-file-height="600" /></a></span>&#160;</span><a href="/wiki/Lewis_Hamilton" title="Lewis Hamilton">Lewis Hamilton</a>
+</td></tr>
+<tr>
+<td data-sort-value="Haas"><span class="flagicon"><span class="mw-image-border" typeof="mw:File"><a href="/wiki/United_States" title="United States"><img alt="United States" src="//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/40px-Flag_of_the_United_States.svg.png" decoding="async" width="23" height="12" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/60px-Flag_of_the_United_States.svg.png 2x" data-file-width="1235" data-file-height="650" /></a></span>&#160;</span><a href="/wiki/Toyota_Gazoo_Racing" title="Toyota Gazoo Racing">TGR</a> Haas F1 Team<sup id="cite&#95;ref-Race&#95;HAAS&#95;TOYOTA&#95;28-0" class="reference"><a href="#cite_note-Race_HAAS_TOYOTA-28"><span class="cite-bracket">&#91;</span>28<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<th><a href="/wiki/Haas_F1_Team" title="Haas F1 Team">Haas</a>-<a href="/wiki/Scuderia_Ferrari" title="Scuderia Ferrari">Ferrari</a>

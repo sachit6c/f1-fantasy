@@ -1,0 +1,23 @@
+season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
+2021,1,Bahrain Grand Prix,bahrain,Bahrain International Circuit,Sakhir,Bahrain,26.0325,50.5106,2021-03-28,15:00:00Z
+2021,2,Emilia Romagna Grand Prix,imola,Autodromo Enzo e Dino Ferrari,Imola,Italy,44.3439,11.7167,2021-04-18,13:00:00Z
+2021,3,Portuguese Grand Prix,portimao,Autódromo Internacional do Algarve,Portimão,Portugal,37.227,-8.6267,2021-05-02,14:00:00Z
+2021,4,Spanish Grand Prix,catalunya,Circuit de Barcelona-Catalunya,Barcelona,Spain,41.57,2.26111,2021-05-09,13:00:00Z
+2021,5,Monaco Grand Prix,monaco,Circuit de Monaco,Monte Carlo,Monaco,43.7347,7.42056,2021-05-23,13:00:00Z
+2021,6,Azerbaijan Grand Prix,baku,Baku City Circuit,Baku,Azerbaijan,40.3725,49.8533,2021-06-06,12:00:00Z
+2021,7,French Grand Prix,ricard,Circuit Paul Ricard,Le Castellet,France,43.2506,5.79167,2021-06-20,13:00:00Z
+2021,8,Styrian Grand Prix,red_bull_ring,Red Bull Ring,Spielberg,Austria,47.2197,14.7647,2021-06-27,13:00:00Z
+2021,9,Austrian Grand Prix,red_bull_ring,Red Bull Ring,Spielberg,Austria,47.2197,14.7647,2021-07-04,13:00:00Z
+2021,10,British Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2021-07-18,14:00:00Z
+2021,11,Hungarian Grand Prix,hungaroring,Hungaroring,Budapest,Hungary,47.5789,19.2486,2021-08-01,13:00:00Z
+2021,12,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,Spa,Belgium,50.4372,5.97139,2021-08-29,13:00:00Z
+2021,13,Dutch Grand Prix,zandvoort,Circuit Park Zandvoort,Zandvoort,Netherlands,52.3888,4.54092,2021-09-05,13:00:00Z
+2021,14,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2021-09-12,13:00:00Z
+2021,15,Russian Grand Prix,sochi,Sochi Autodrom,Sochi,Russia,43.4057,39.9578,2021-09-26,12:00:00Z
+2021,16,Turkish Grand Prix,istanbul,Istanbul Park,Istanbul,Turkey,40.9517,29.405,2021-10-10,12:00:00Z
+2021,17,United States Grand Prix,americas,Circuit of the Americas,Austin,USA,30.1328,-97.6411,2021-10-24,19:00:00Z
+2021,18,Mexico City Grand Prix,rodriguez,Autódromo Hermanos Rodríguez,Mexico City,Mexico,19.4042,-99.0907,2021-11-07,19:00:00Z
+2021,19,São Paulo Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2021-11-14,17:00:00Z
+2021,20,Qatar Grand Prix,losail,Losail International Circuit,Lusail,Qatar,25.49,51.4542,2021-11-21,14:00:00Z
+2021,21,Saudi Arabian Grand Prix,jeddah,Jeddah Corniche Circuit,Jeddah,Saudi Arabia,21.6319,39.1044,2021-12-05,17:30:00Z
+2021,22,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2021-12-12,13:00:00Z

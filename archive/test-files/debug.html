@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Fantasy League - Debug</title>
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/draft.css">
+  <link rel="stylesheet" href="styles/team-comparison.css">
+
+  <!-- Debug CSS -->
+  <style>
+    #logs {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      max-height: 100vh;
+      overflow-y: auto;
+      background: white;
+      border-left: 2px solid #ccc;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 12px;
+      z-index: 9999;
+    }
+    .log { margin: 5px 0; padding: 5px; background: #f0f0f0; }
+    .error { background: #ffcccc; color: red; }
+    .success { background: #ccffcc; color: green; }
+  </style>
+</head>
+<body>
+  <div id="logs"></div>
+  <div id="app">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading F1 Fantasy League...</p>
+    </div>
+  </div>
+
+  <script>
+    const logs = document.getElementById('logs');
+
+    function log(message, type = 'log') {
+      const div = document.createElement('div');
+      div.className = `log ${type}`;
+      div.textContent = `${new Date().toISOString().substr(11, 8)} - ${message}`;
+      logs.appendChild(div);
+      console.log(message);
+    }
+
+    // Catch all errors
+    window.addEventListener('error', (e) => {
+      log(`ERROR: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+    });
+
+    window.addEventListener('unhandledrejection', (e) => {
+      log(`PROMISE ERROR: ${e.reason}`, 'error');
+    });
+
+    log('Starting app...', 'log');
+  </script>
+
+  <script type="module">
+    import { ViewManager } from './views/view-manager.js';
+    window.log('ViewManager imported successfully', 'success');
+
+    import { DraftView } from './views/draft-view.js';
+    window.log('DraftView imported successfully', 'success');
+
+    import { TeamComparisonView } from './views/team-comparison-view.js';
+    window.log('TeamComparisonView imported successfully', 'success');
+
+    window.log('All modules loaded! Initializing app...', 'success');
+
+    const viewManager = new ViewManager();
+    viewManager.registerView('draft', new DraftView());
+    viewManager.registerView('teams', new TeamComparisonView());
+    viewManager.init();
+
+    window.log('App initialized successfully!', 'success');
+  </script>
+</body>
+</html>

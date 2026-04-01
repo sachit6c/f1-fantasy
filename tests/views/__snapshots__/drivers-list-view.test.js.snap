@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DriversListView > snapshot > driver card structure matches snapshot 1`] = `"<div class="driver-card" style="cursor: pointer;"><div class="driver-photo-wrapper"><img src="data/images/drivers/max_verstappen.jpg" alt="Max Verstappen" class="driver-photo"></div><div class="driver-team-bar" style="background: rgb(54, 113, 198);"></div><div class="driver-info-section"><div class="driver-code" style="color: rgb(54, 113, 198);">VER</div><h2 class="driver-name">Max Verstappen</h2><div class="driver-team">Red Bull Racing</div><div class="driver-nationality">Dutch</div></div></div>"`;
+
+exports[`DriversListView > snapshot > empty state matches snapshot 1`] = `"<div class="empty-state"><p>No driver data available</p></div>"`;

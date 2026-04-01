@@ -1,0 +1,201 @@
+/* styles/constructors-list.css */
+/* Constructors list view styles */
+
+.constructors-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #A10500 100%);
+  color: white;
+  border-radius: var(--radius-lg);
+}
+
+.constructors-header .page-title {
+  color: white;
+  margin-bottom: var(--spacing-sm);
+}
+
+.constructors-header .page-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+}
+
+.constructors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.constructor-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.constructor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.constructor-color-header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.constructor-logo {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.constructor-logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.constructor-info-section {
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
+}
+
+.constructor-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+  text-align: center;
+}
+
+.constructor-nationality {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.constructor-drivers {
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+}
+
+.drivers-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.driver-link {
+  display: block;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 0.15rem 0;
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+}
+
+.driver-link:hover {
+  color: var(--color-primary);
+}
+
+.constructor-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--spacing-sm);
+}
+
+.constructor-stat {
+  text-align: center;
+}
+
+.constructor-stat .stat-value {
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  flex-direction: column;
+}
+
+.constructor-stat .stat-icon {
+  font-size: 0.9rem;
+}
+
+.constructor-stat .stat-label {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Team winner badge */
+.team-winner-badge {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  animation: fadeInScale 0.4s ease-out;
+}
+
+/* Player 1 Winner Badge - Sky Blue */
+.team-winner-badge.player-player_1 {
+  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  border: 1px solid #0EA5E9;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.3);
+}
+
+/* Player 2 Winner Badge - Orange */
+.team-winner-badge.player-player_2 {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  border: 1px solid #F97316;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
+}
+
+.team-winner-badge .winner-text {
+  line-height: 1.4;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .constructors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .constructor-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+  }
+}

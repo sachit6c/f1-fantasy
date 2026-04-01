@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ConstructorsListView > snapshot > constructor card (with logo) matches snapshot 1`] = `"<div class="constructor-card" style="cursor: pointer;"><div class="constructor-color-header" style="background: linear-gradient(135deg, #3671C6 0%, #3671C6DD 100%);"><img src="data/images/constructors/red_bull.png" alt="Red Bull Racing" class="constructor-logo-img"></div><div class="constructor-info-section"><h2 class="constructor-name">Red Bull Racing</h2><div class="constructor-nationality">🏁 Austrian</div></div></div>"`;
+
+exports[`ConstructorsListView > snapshot > empty state matches snapshot 1`] = `"<div class="empty-state"><p>No constructor data available</p></div>"`;

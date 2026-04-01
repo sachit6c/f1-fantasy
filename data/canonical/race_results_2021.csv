@@ -1,0 +1,441 @@
+season,round,circuitId,driverId,position,grid,points,laps,status,fastestLapRank
+2021,1,bahrain,hamilton,1,2,25,56,Finished,4
+2021,1,bahrain,max_verstappen,2,1,18,56,Finished,2
+2021,1,bahrain,bottas,3,3,16,56,Finished,1
+2021,1,bahrain,norris,4,7,12,56,Finished,6
+2021,1,bahrain,perez,5,0,10,56,Finished,3
+2021,1,bahrain,leclerc,6,4,8,56,Finished,11
+2021,1,bahrain,ricciardo,7,6,6,56,Finished,10
+2021,1,bahrain,sainz,8,8,4,56,Finished,7
+2021,1,bahrain,tsunoda,9,13,2,56,Finished,8
+2021,1,bahrain,stroll,10,10,1,56,Finished,9
+2021,1,bahrain,raikkonen,11,14,0,56,Finished,14
+2021,1,bahrain,giovinazzi,12,12,0,55,+1 Lap,13
+2021,1,bahrain,ocon,13,16,0,55,+1 Lap,15
+2021,1,bahrain,russell,14,15,0,55,+1 Lap,12
+2021,1,bahrain,vettel,15,20,0,55,+1 Lap,16
+2021,1,bahrain,mick_schumacher,16,18,0,55,+1 Lap,18
+2021,1,bahrain,gasly,17,5,0,52,Retired,5
+2021,1,bahrain,latifi,18,17,0,51,Retired,19
+2021,1,bahrain,alonso,19,9,0,32,Brakes,17
+2021,1,bahrain,mazepin,20,19,0,0,Accident,
+2021,2,imola,max_verstappen,1,3,25,63,Finished,2
+2021,2,imola,hamilton,2,1,19,63,Finished,1
+2021,2,imola,norris,3,7,15,63,Finished,3
+2021,2,imola,leclerc,4,4,12,63,Finished,6
+2021,2,imola,sainz,5,11,10,63,Finished,7
+2021,2,imola,ricciardo,6,6,8,63,Finished,12
+2021,2,imola,gasly,7,5,6,63,Finished,9
+2021,2,imola,stroll,8,10,4,63,Finished,8
+2021,2,imola,ocon,9,9,2,63,Finished,15
+2021,2,imola,alonso,10,15,1,63,Finished,14
+2021,2,imola,perez,11,2,0,63,Finished,13
+2021,2,imola,tsunoda,12,20,0,63,Finished,4
+2021,2,imola,raikkonen,13,16,0,63,Finished,5
+2021,2,imola,giovinazzi,14,17,0,62,+1 Lap,16
+2021,2,imola,vettel,15,0,0,61,Gearbox,10
+2021,2,imola,mick_schumacher,16,18,0,61,+2 Laps,11
+2021,2,imola,mazepin,17,19,0,61,+2 Laps,17
+2021,2,imola,bottas,18,8,0,30,Collision,19
+2021,2,imola,russell,19,12,0,30,Collision,18
+2021,2,imola,latifi,20,14,0,0,Collision,
+2021,3,portimao,hamilton,1,2,25,66,Finished,4
+2021,3,portimao,max_verstappen,2,3,18,66,Finished,3
+2021,3,portimao,bottas,3,1,16,66,Finished,1
+2021,3,portimao,perez,4,4,12,66,Finished,2
+2021,3,portimao,norris,5,7,10,66,Finished,7
+2021,3,portimao,leclerc,6,8,8,66,Finished,6
+2021,3,portimao,ocon,7,6,6,66,Finished,8
+2021,3,portimao,alonso,8,13,4,66,Finished,5
+2021,3,portimao,ricciardo,9,16,2,66,Finished,10
+2021,3,portimao,gasly,10,9,1,66,Finished,11
+2021,3,portimao,sainz,11,5,0,66,Finished,14
+2021,3,portimao,giovinazzi,12,12,0,65,+1 Lap,13
+2021,3,portimao,vettel,13,10,0,65,+1 Lap,15
+2021,3,portimao,stroll,14,17,0,65,+1 Lap,9
+2021,3,portimao,tsunoda,15,14,0,65,+1 Lap,12
+2021,3,portimao,russell,16,11,0,65,+1 Lap,16
+2021,3,portimao,mick_schumacher,17,19,0,64,+2 Laps,17
+2021,3,portimao,latifi,18,18,0,64,+2 Laps,18
+2021,3,portimao,mazepin,19,20,0,64,+2 Laps,19
+2021,3,portimao,raikkonen,20,15,0,1,Collision damage,
+2021,4,catalunya,hamilton,1,1,25,66,Finished,5
+2021,4,catalunya,max_verstappen,2,2,19,66,Finished,1
+2021,4,catalunya,bottas,3,3,15,66,Finished,2
+2021,4,catalunya,leclerc,4,4,12,66,Finished,4
+2021,4,catalunya,perez,5,8,10,66,Finished,3
+2021,4,catalunya,ricciardo,6,7,8,66,Finished,10
+2021,4,catalunya,sainz,7,6,6,66,Finished,9
+2021,4,catalunya,norris,8,9,4,65,+1 Lap,7
+2021,4,catalunya,ocon,9,5,2,65,+1 Lap,18
+2021,4,catalunya,gasly,10,12,1,65,+1 Lap,8
+2021,4,catalunya,stroll,11,11,0,65,+1 Lap,11
+2021,4,catalunya,raikkonen,12,17,0,65,+1 Lap,15
+2021,4,catalunya,vettel,13,13,0,65,+1 Lap,14
+2021,4,catalunya,russell,14,15,0,65,+1 Lap,17
+2021,4,catalunya,giovinazzi,15,14,0,65,+1 Lap,13
+2021,4,catalunya,latifi,16,19,0,65,+1 Lap,16
+2021,4,catalunya,alonso,17,10,0,65,+1 Lap,6
+2021,4,catalunya,mick_schumacher,18,18,0,64,+2 Laps,12
+2021,4,catalunya,mazepin,19,20,0,64,+2 Laps,19
+2021,4,catalunya,tsunoda,20,16,0,6,Electrical,20
+2021,5,monaco,max_verstappen,1,2,25,78,Finished,6
+2021,5,monaco,sainz,2,4,18,78,Finished,5
+2021,5,monaco,norris,3,5,15,78,Finished,7
+2021,5,monaco,perez,4,9,12,78,Finished,3
+2021,5,monaco,vettel,5,8,10,78,Finished,11
+2021,5,monaco,gasly,6,6,8,78,Finished,14
+2021,5,monaco,hamilton,7,7,7,78,Finished,1
+2021,5,monaco,stroll,8,13,4,77,+1 Lap,8
+2021,5,monaco,ocon,9,11,2,77,+1 Lap,12
+2021,5,monaco,giovinazzi,10,10,1,77,+1 Lap,13
+2021,5,monaco,raikkonen,11,14,0,77,+1 Lap,9
+2021,5,monaco,ricciardo,12,12,0,77,+1 Lap,4
+2021,5,monaco,alonso,13,17,0,77,+1 Lap,10
+2021,5,monaco,russell,14,15,0,77,+1 Lap,15
+2021,5,monaco,latifi,15,18,0,77,+1 Lap,16
+2021,5,monaco,tsunoda,16,16,0,77,+1 Lap,2
+2021,5,monaco,mazepin,17,19,0,75,+3 Laps,19
+2021,5,monaco,mick_schumacher,18,20,0,75,+3 Laps,18
+2021,5,monaco,bottas,19,3,0,29,Wheel nut,17
+2021,5,monaco,leclerc,20,1,0,0,Driveshaft,
+2021,6,baku,perez,1,6,25,51,Finished,2
+2021,6,baku,vettel,2,11,18,51,Finished,4
+2021,6,baku,gasly,3,4,15,51,Finished,6
+2021,6,baku,leclerc,4,1,12,51,Finished,8
+2021,6,baku,norris,5,9,10,51,Finished,7
+2021,6,baku,alonso,6,8,8,51,Finished,11
+2021,6,baku,tsunoda,7,7,6,51,Finished,5
+2021,6,baku,sainz,8,5,4,51,Finished,13
+2021,6,baku,ricciardo,9,13,2,51,Finished,14
+2021,6,baku,raikkonen,10,14,1,51,Finished,10
+2021,6,baku,giovinazzi,11,20,0,51,Finished,9
+2021,6,baku,bottas,12,10,0,51,Finished,12
+2021,6,baku,mick_schumacher,13,17,0,51,Finished,18
+2021,6,baku,mazepin,14,18,0,51,Finished,19
+2021,6,baku,hamilton,15,2,0,51,Finished,3
+2021,6,baku,latifi,16,16,0,51,Finished,17
+2021,6,baku,russell,17,15,0,48,Gearbox,15
+2021,6,baku,max_verstappen,18,3,0,45,Accident,1
+2021,6,baku,stroll,19,19,0,29,Accident,16
+2021,6,baku,ocon,20,12,0,3,Turbo,20
+2021,7,ricard,max_verstappen,1,1,26,53,Finished,1
+2021,7,ricard,hamilton,2,2,18,53,Finished,5
+2021,7,ricard,perez,3,4,15,53,Finished,2
+2021,7,ricard,bottas,4,3,12,53,Finished,3
+2021,7,ricard,norris,5,8,10,53,Finished,6
+2021,7,ricard,ricciardo,6,10,8,53,Finished,14
+2021,7,ricard,gasly,7,6,6,53,Finished,11
+2021,7,ricard,alonso,8,9,4,53,Finished,7
+2021,7,ricard,vettel,9,12,2,53,Finished,4
+2021,7,ricard,stroll,10,19,1,53,Finished,9
+2021,7,ricard,sainz,11,5,0,53,Finished,18
+2021,7,ricard,russell,12,14,0,52,+1 Lap,13
+2021,7,ricard,tsunoda,13,0,0,52,+1 Lap,19
+2021,7,ricard,ocon,14,11,0,52,+1 Lap,15
+2021,7,ricard,giovinazzi,15,13,0,52,+1 Lap,16
+2021,7,ricard,leclerc,16,7,0,52,+1 Lap,8
+2021,7,ricard,raikkonen,17,17,0,52,+1 Lap,10
+2021,7,ricard,latifi,18,16,0,52,+1 Lap,12
+2021,7,ricard,mick_schumacher,19,15,0,52,+1 Lap,17
+2021,7,ricard,mazepin,20,18,0,52,+1 Lap,20
+2021,8,red_bull_ring,max_verstappen,1,1,25,71,Finished,3
+2021,8,red_bull_ring,hamilton,2,2,19,71,Finished,1
+2021,8,red_bull_ring,bottas,3,5,15,71,Finished,5
+2021,8,red_bull_ring,perez,4,4,12,71,Finished,2
+2021,8,red_bull_ring,norris,5,3,10,70,+1 Lap,7
+2021,8,red_bull_ring,sainz,6,12,8,70,+1 Lap,4
+2021,8,red_bull_ring,leclerc,7,7,6,70,+1 Lap,6
+2021,8,red_bull_ring,stroll,8,9,4,70,+1 Lap,14
+2021,8,red_bull_ring,alonso,9,8,2,70,+1 Lap,13
+2021,8,red_bull_ring,tsunoda,10,11,1,70,+1 Lap,11
+2021,8,red_bull_ring,raikkonen,11,18,0,70,+1 Lap,8
+2021,8,red_bull_ring,vettel,12,14,0,70,+1 Lap,15
+2021,8,red_bull_ring,ricciardo,13,13,0,70,+1 Lap,9
+2021,8,red_bull_ring,ocon,14,17,0,70,+1 Lap,10
+2021,8,red_bull_ring,giovinazzi,15,15,0,70,+1 Lap,12
+2021,8,red_bull_ring,mick_schumacher,16,19,0,69,+2 Laps,16
+2021,8,red_bull_ring,latifi,17,16,0,68,+3 Laps,17
+2021,8,red_bull_ring,mazepin,18,20,0,68,+3 Laps,19
+2021,8,red_bull_ring,russell,19,10,0,36,Engine,18
+2021,8,red_bull_ring,gasly,20,6,0,1,Collision,
+2021,9,red_bull_ring,max_verstappen,1,1,26,71,Finished,1
+2021,9,red_bull_ring,bottas,2,5,18,71,Finished,6
+2021,9,red_bull_ring,norris,3,2,15,71,Finished,10
+2021,9,red_bull_ring,hamilton,4,4,12,71,Finished,3
+2021,9,red_bull_ring,sainz,5,10,10,71,Finished,2
+2021,9,red_bull_ring,perez,6,3,8,71,Finished,5
+2021,9,red_bull_ring,ricciardo,7,13,6,71,Finished,14
+2021,9,red_bull_ring,leclerc,8,12,4,71,Finished,13
+2021,9,red_bull_ring,gasly,9,6,2,71,Finished,4
+2021,9,red_bull_ring,alonso,10,14,1,70,+1 Lap,7
+2021,9,red_bull_ring,russell,11,8,0,70,+1 Lap,16
+2021,9,red_bull_ring,tsunoda,12,7,0,70,+1 Lap,9
+2021,9,red_bull_ring,stroll,13,9,0,70,+1 Lap,12
+2021,9,red_bull_ring,giovinazzi,14,15,0,70,+1 Lap,17
+2021,9,red_bull_ring,raikkonen,15,16,0,70,+1 Lap,15
+2021,9,red_bull_ring,latifi,16,18,0,70,+1 Lap,11
+2021,9,red_bull_ring,vettel,17,11,0,69,Collision,8
+2021,9,red_bull_ring,mick_schumacher,18,19,0,69,+2 Laps,18
+2021,9,red_bull_ring,mazepin,19,20,0,69,+2 Laps,19
+2021,9,red_bull_ring,ocon,20,17,0,0,Collision,
+2021,10,silverstone,hamilton,1,2,25,52,Finished,2
+2021,10,silverstone,leclerc,2,4,18,52,Finished,5
+2021,10,silverstone,bottas,3,3,15,52,Finished,4
+2021,10,silverstone,norris,4,5,12,52,Finished,9
+2021,10,silverstone,ricciardo,5,6,10,52,Finished,8
+2021,10,silverstone,sainz,6,10,8,52,Finished,7
+2021,10,silverstone,alonso,7,7,6,52,Finished,10
+2021,10,silverstone,stroll,8,14,4,52,Finished,12
+2021,10,silverstone,ocon,9,9,2,52,Finished,14
+2021,10,silverstone,tsunoda,10,16,1,52,Finished,6
+2021,10,silverstone,gasly,11,11,0,52,Finished,3
+2021,10,silverstone,russell,12,12,0,51,+1 Lap,13
+2021,10,silverstone,giovinazzi,13,15,0,51,+1 Lap,15
+2021,10,silverstone,latifi,14,17,0,51,+1 Lap,16
+2021,10,silverstone,raikkonen,15,13,0,51,+1 Lap,11
+2021,10,silverstone,perez,16,0,0,51,+1 Lap,1
+2021,10,silverstone,mazepin,17,19,0,51,+1 Lap,18
+2021,10,silverstone,mick_schumacher,18,18,0,51,+1 Lap,17
+2021,10,silverstone,vettel,19,8,0,40,Retired,19
+2021,10,silverstone,max_verstappen,20,1,0,0,Collision,
+2021,11,hungaroring,ocon,1,8,25,70,Finished,5
+2021,11,hungaroring,hamilton,2,1,18,70,Finished,2
+2021,11,hungaroring,sainz,3,15,15,70,Finished,6
+2021,11,hungaroring,alonso,4,9,12,70,Finished,3
+2021,11,hungaroring,gasly,5,5,11,70,Finished,1
+2021,11,hungaroring,tsunoda,6,16,8,70,Finished,10
+2021,11,hungaroring,latifi,7,18,6,70,Finished,14
+2021,11,hungaroring,russell,8,17,4,70,Finished,9
+2021,11,hungaroring,max_verstappen,9,3,2,70,Finished,4
+2021,11,hungaroring,raikkonen,10,13,1,69,+1 Lap,8
+2021,11,hungaroring,ricciardo,11,11,0,69,+1 Lap,13
+2021,11,hungaroring,mick_schumacher,12,20,0,69,+1 Lap,11
+2021,11,hungaroring,giovinazzi,13,0,0,69,+1 Lap,12
+2021,11,hungaroring,mazepin,14,19,0,3,Collision,
+2021,11,hungaroring,norris,15,6,0,2,Collision,
+2021,11,hungaroring,bottas,16,2,0,0,Collision,
+2021,11,hungaroring,perez,17,4,0,0,Collision,
+2021,11,hungaroring,leclerc,18,7,0,0,Collision,
+2021,11,hungaroring,stroll,19,12,0,0,Collision,
+2021,11,hungaroring,vettel,20,10,0,70,Disqualified,7
+2021,12,spa,max_verstappen,1,1,12.5,1,Finished,
+2021,12,spa,russell,2,2,9,1,Finished,
+2021,12,spa,hamilton,3,3,7.5,1,Finished,
+2021,12,spa,ricciardo,4,4,6,1,Finished,
+2021,12,spa,vettel,5,5,5,1,Finished,
+2021,12,spa,gasly,6,6,4,1,Finished,
+2021,12,spa,ocon,7,8,3,1,Finished,
+2021,12,spa,leclerc,8,9,2,1,Finished,
+2021,12,spa,latifi,9,10,1,1,Finished,
+2021,12,spa,sainz,10,11,0.5,1,Finished,
+2021,12,spa,alonso,11,12,0,1,Finished,
+2021,12,spa,bottas,12,13,0,1,Finished,
+2021,12,spa,giovinazzi,13,14,0,1,Finished,
+2021,12,spa,norris,14,15,0,1,Finished,
+2021,12,spa,tsunoda,15,16,0,1,Finished,
+2021,12,spa,mick_schumacher,16,17,0,1,Finished,
+2021,12,spa,mazepin,17,18,0,1,Finished,
+2021,12,spa,raikkonen,18,0,0,1,Finished,
+2021,12,spa,perez,19,0,0,1,Finished,
+2021,12,spa,stroll,20,19,0,1,Finished,
+2021,13,zandvoort,max_verstappen,1,1,25,72,Finished,3
+2021,13,zandvoort,hamilton,2,2,19,72,Finished,1
+2021,13,zandvoort,bottas,3,3,15,72,Finished,2
+2021,13,zandvoort,gasly,4,4,12,71,+1 Lap,10
+2021,13,zandvoort,leclerc,5,5,10,71,+1 Lap,9
+2021,13,zandvoort,alonso,6,9,8,71,+1 Lap,7
+2021,13,zandvoort,sainz,7,6,6,71,+1 Lap,13
+2021,13,zandvoort,perez,8,0,4,71,+1 Lap,4
+2021,13,zandvoort,ocon,9,8,2,71,+1 Lap,8
+2021,13,zandvoort,norris,10,13,1,71,+1 Lap,6
+2021,13,zandvoort,ricciardo,11,10,0,71,+1 Lap,11
+2021,13,zandvoort,stroll,12,12,0,70,+2 Laps,15
+2021,13,zandvoort,vettel,13,15,0,70,+2 Laps,5
+2021,13,zandvoort,giovinazzi,14,7,0,70,+2 Laps,12
+2021,13,zandvoort,kubica,15,16,0,70,+2 Laps,14
+2021,13,zandvoort,latifi,16,0,0,70,+2 Laps,18
+2021,13,zandvoort,russell,17,11,0,69,Gearbox,16
+2021,13,zandvoort,mick_schumacher,18,17,0,69,+3 Laps,19
+2021,13,zandvoort,tsunoda,19,14,0,48,Power Unit,17
+2021,13,zandvoort,mazepin,20,18,0,41,Hydraulics,20
+2021,14,monza,ricciardo,1,2,26,53,Finished,1
+2021,14,monza,norris,2,3,18,53,Finished,3
+2021,14,monza,bottas,3,19,15,53,Finished,2
+2021,14,monza,leclerc,4,5,12,53,Finished,6
+2021,14,monza,perez,5,8,10,53,Finished,4
+2021,14,monza,sainz,6,6,8,53,Finished,8
+2021,14,monza,stroll,7,9,6,53,Finished,13
+2021,14,monza,alonso,8,10,4,53,Finished,7
+2021,14,monza,russell,9,14,2,53,Finished,11
+2021,14,monza,ocon,10,12,1,53,Finished,9
+2021,14,monza,latifi,11,13,0,53,Finished,16
+2021,14,monza,vettel,12,11,0,53,Finished,15
+2021,14,monza,giovinazzi,13,7,0,53,Finished,10
+2021,14,monza,kubica,14,17,0,53,Finished,12
+2021,14,monza,mick_schumacher,15,18,0,53,Finished,17
+2021,14,monza,mazepin,16,16,0,41,Power Unit,18
+2021,14,monza,hamilton,17,4,0,25,Collision,14
+2021,14,monza,max_verstappen,18,1,0,25,Collision,5
+2021,14,monza,gasly,19,0,0,3,Suspension,19
+2021,14,monza,tsunoda,20,0,0,0,Brakes,
+2021,15,sochi,hamilton,1,4,25,53,Finished,2
+2021,15,sochi,max_verstappen,2,20,18,53,Finished,5
+2021,15,sochi,sainz,3,2,15,53,Finished,12
+2021,15,sochi,ricciardo,4,5,12,53,Finished,9
+2021,15,sochi,bottas,5,16,10,53,Finished,3
+2021,15,sochi,alonso,6,6,8,53,Finished,6
+2021,15,sochi,norris,7,1,7,53,Finished,1
+2021,15,sochi,raikkonen,8,13,4,53,Finished,16
+2021,15,sochi,perez,9,8,2,53,Finished,10
+2021,15,sochi,russell,10,3,1,53,Finished,18
+2021,15,sochi,stroll,11,7,0,53,Finished,17
+2021,15,sochi,vettel,12,10,0,52,+1 Lap,11
+2021,15,sochi,gasly,13,11,0,52,+1 Lap,4
+2021,15,sochi,ocon,14,9,0,52,+1 Lap,19
+2021,15,sochi,leclerc,15,19,0,52,+1 Lap,7
+2021,15,sochi,giovinazzi,16,17,0,52,+1 Lap,8
+2021,15,sochi,tsunoda,17,12,0,52,+1 Lap,13
+2021,15,sochi,mazepin,18,15,0,51,+2 Laps,20
+2021,15,sochi,latifi,19,18,0,47,Accident,14
+2021,15,sochi,mick_schumacher,20,14,0,32,Oil leak,15
+2021,16,istanbul,bottas,1,1,26,58,Finished,1
+2021,16,istanbul,max_verstappen,2,2,18,58,Finished,9
+2021,16,istanbul,perez,3,6,15,58,Finished,4
+2021,16,istanbul,leclerc,4,3,12,58,Finished,8
+2021,16,istanbul,hamilton,5,11,10,58,Finished,10
+2021,16,istanbul,gasly,6,4,8,58,Finished,11
+2021,16,istanbul,norris,7,7,6,58,Finished,3
+2021,16,istanbul,sainz,8,19,4,58,Finished,2
+2021,16,istanbul,stroll,9,8,2,58,Finished,6
+2021,16,istanbul,ocon,10,12,1,57,+1 Lap,19
+2021,16,istanbul,giovinazzi,11,16,0,57,+1 Lap,13
+2021,16,istanbul,raikkonen,12,17,0,57,+1 Lap,5
+2021,16,istanbul,ricciardo,13,20,0,57,+1 Lap,15
+2021,16,istanbul,tsunoda,14,9,0,57,+1 Lap,12
+2021,16,istanbul,russell,15,13,0,57,+1 Lap,16
+2021,16,istanbul,alonso,16,5,0,57,+1 Lap,14
+2021,16,istanbul,latifi,17,15,0,57,+1 Lap,17
+2021,16,istanbul,vettel,18,10,0,57,+1 Lap,7
+2021,16,istanbul,mick_schumacher,19,14,0,56,+2 Laps,18
+2021,16,istanbul,mazepin,20,18,0,56,+2 Laps,20
+2021,17,americas,max_verstappen,1,1,25,56,Finished,2
+2021,17,americas,hamilton,2,2,19,56,Finished,1
+2021,17,americas,perez,3,3,15,56,Finished,4
+2021,17,americas,leclerc,4,4,12,56,Finished,3
+2021,17,americas,ricciardo,5,6,10,56,Finished,8
+2021,17,americas,bottas,6,9,8,56,Finished,6
+2021,17,americas,sainz,7,5,6,56,Finished,9
+2021,17,americas,norris,8,7,4,56,Finished,7
+2021,17,americas,tsunoda,9,10,2,55,+1 Lap,13
+2021,17,americas,vettel,10,18,1,55,+1 Lap,10
+2021,17,americas,giovinazzi,11,12,0,55,+1 Lap,12
+2021,17,americas,stroll,12,13,0,55,+1 Lap,14
+2021,17,americas,raikkonen,13,15,0,55,+1 Lap,15
+2021,17,americas,russell,14,20,0,55,+1 Lap,11
+2021,17,americas,latifi,15,14,0,55,+1 Lap,17
+2021,17,americas,mick_schumacher,16,16,0,54,+2 Laps,16
+2021,17,americas,mazepin,17,17,0,54,+2 Laps,20
+2021,17,americas,alonso,18,19,0,49,Rear wing,5
+2021,17,americas,ocon,19,11,0,40,Mechanical,19
+2021,17,americas,gasly,20,8,0,14,Suspension,18
+2021,18,rodriguez,max_verstappen,1,3,25,71,Finished,2
+2021,18,rodriguez,hamilton,2,2,18,71,Finished,4
+2021,18,rodriguez,perez,3,4,15,71,Finished,3
+2021,18,rodriguez,gasly,4,5,12,71,Finished,7
+2021,18,rodriguez,leclerc,5,8,10,71,Finished,9
+2021,18,rodriguez,sainz,6,6,8,70,+1 Lap,5
+2021,18,rodriguez,vettel,7,9,6,70,+1 Lap,6
+2021,18,rodriguez,raikkonen,8,10,4,70,+1 Lap,11
+2021,18,rodriguez,alonso,9,12,2,70,+1 Lap,10
+2021,18,rodriguez,norris,10,18,1,70,+1 Lap,8
+2021,18,rodriguez,giovinazzi,11,11,0,70,+1 Lap,16
+2021,18,rodriguez,ricciardo,12,7,0,70,+1 Lap,13
+2021,18,rodriguez,ocon,13,19,0,70,+1 Lap,14
+2021,18,rodriguez,stroll,14,20,0,69,+2 Laps,12
+2021,18,rodriguez,bottas,15,1,0,69,+2 Laps,1
+2021,18,rodriguez,russell,16,16,0,69,+2 Laps,18
+2021,18,rodriguez,latifi,17,13,0,69,+2 Laps,17
+2021,18,rodriguez,mazepin,18,15,0,68,+3 Laps,15
+2021,18,rodriguez,mick_schumacher,19,14,0,0,Collision,
+2021,18,rodriguez,tsunoda,20,17,0,0,Collision,
+2021,19,interlagos,hamilton,1,10,25,71,Finished,2
+2021,19,interlagos,max_verstappen,2,2,18,71,Finished,3
+2021,19,interlagos,bottas,3,1,15,71,Finished,4
+2021,19,interlagos,perez,4,4,13,71,Finished,1
+2021,19,interlagos,leclerc,5,6,10,71,Finished,7
+2021,19,interlagos,sainz,6,3,8,71,Finished,6
+2021,19,interlagos,gasly,7,7,6,70,+1 Lap,8
+2021,19,interlagos,ocon,8,8,4,70,+1 Lap,16
+2021,19,interlagos,alonso,9,12,2,70,+1 Lap,12
+2021,19,interlagos,norris,10,5,1,70,+1 Lap,10
+2021,19,interlagos,vettel,11,9,0,70,+1 Lap,9
+2021,19,interlagos,raikkonen,12,0,0,70,+1 Lap,5
+2021,19,interlagos,russell,13,17,0,70,+1 Lap,15
+2021,19,interlagos,giovinazzi,14,13,0,70,+1 Lap,14
+2021,19,interlagos,tsunoda,15,15,0,70,+1 Lap,13
+2021,19,interlagos,latifi,16,16,0,70,+1 Lap,18
+2021,19,interlagos,mazepin,17,19,0,69,+2 Laps,19
+2021,19,interlagos,mick_schumacher,18,18,0,69,+2 Laps,11
+2021,19,interlagos,ricciardo,19,11,0,49,Power loss,17
+2021,19,interlagos,stroll,20,14,0,47,Collision damage,20
+2021,20,losail,hamilton,1,1,25,57,Finished,2
+2021,20,losail,max_verstappen,2,7,19,57,Finished,1
+2021,20,losail,alonso,3,3,15,57,Finished,10
+2021,20,losail,perez,4,11,12,57,Finished,3
+2021,20,losail,ocon,5,9,10,57,Finished,13
+2021,20,losail,stroll,6,12,8,57,Finished,17
+2021,20,losail,sainz,7,5,6,57,Finished,9
+2021,20,losail,leclerc,8,13,4,57,Finished,8
+2021,20,losail,norris,9,4,2,56,+1 Lap,4
+2021,20,losail,vettel,10,10,1,56,+1 Lap,7
+2021,20,losail,gasly,11,2,0,56,+1 Lap,11
+2021,20,losail,ricciardo,12,14,0,56,+1 Lap,14
+2021,20,losail,tsunoda,13,8,0,56,+1 Lap,12
+2021,20,losail,raikkonen,14,16,0,56,+1 Lap,6
+2021,20,losail,giovinazzi,15,18,0,56,+1 Lap,18
+2021,20,losail,mick_schumacher,16,19,0,56,+1 Lap,19
+2021,20,losail,russell,17,15,0,55,+2 Laps,5
+2021,20,losail,mazepin,18,20,0,55,+2 Laps,16
+2021,20,losail,latifi,19,17,0,50,Puncture,20
+2021,20,losail,bottas,20,6,0,48,Damage,15
+2021,21,jeddah,hamilton,1,1,26,50,Finished,1
+2021,21,jeddah,max_verstappen,2,3,18,50,Finished,3
+2021,21,jeddah,bottas,3,2,15,50,Finished,2
+2021,21,jeddah,ocon,4,9,12,50,Finished,6
+2021,21,jeddah,ricciardo,5,11,10,50,Finished,11
+2021,21,jeddah,gasly,6,6,8,50,Finished,9
+2021,21,jeddah,leclerc,7,4,6,50,Finished,4
+2021,21,jeddah,sainz,8,15,4,50,Finished,7
+2021,21,jeddah,giovinazzi,9,10,2,50,Finished,15
+2021,21,jeddah,norris,10,7,1,50,Finished,8
+2021,21,jeddah,stroll,11,18,0,50,Finished,14
+2021,21,jeddah,latifi,12,16,0,50,Finished,12
+2021,21,jeddah,alonso,13,13,0,49,+1 Lap,5
+2021,21,jeddah,tsunoda,14,8,0,49,+1 Lap,10
+2021,21,jeddah,raikkonen,15,12,0,49,+1 Lap,13
+2021,21,jeddah,vettel,16,17,0,44,Collision damage,16
+2021,21,jeddah,perez,17,5,0,14,Collision,17
+2021,21,jeddah,mazepin,18,20,0,14,Collision,20
+2021,21,jeddah,russell,19,14,0,14,Collision,19
+2021,21,jeddah,mick_schumacher,20,19,0,8,Accident,18
+2021,22,yas_marina,max_verstappen,1,1,26,58,Finished,1
+2021,22,yas_marina,hamilton,2,2,18,58,Finished,3
+2021,22,yas_marina,sainz,3,5,15,58,Finished,9
+2021,22,yas_marina,tsunoda,4,8,12,58,Finished,7
+2021,22,yas_marina,gasly,5,12,10,58,Finished,6
+2021,22,yas_marina,bottas,6,6,8,58,Finished,5
+2021,22,yas_marina,norris,7,3,6,58,Finished,4
+2021,22,yas_marina,alonso,8,11,4,58,Finished,8
+2021,22,yas_marina,ocon,9,9,2,58,Finished,10
+2021,22,yas_marina,leclerc,10,7,1,58,Finished,12
+2021,22,yas_marina,vettel,11,15,0,58,Finished,11
+2021,22,yas_marina,ricciardo,12,10,0,57,+1 Lap,14
+2021,22,yas_marina,stroll,13,13,0,57,+1 Lap,13
+2021,22,yas_marina,mick_schumacher,14,19,0,57,+1 Lap,17
+2021,22,yas_marina,perez,15,4,0,55,Engine,2
+2021,22,yas_marina,latifi,16,16,0,50,Accident,15
+2021,22,yas_marina,giovinazzi,17,14,0,33,Gearbox,16
+2021,22,yas_marina,russell,18,17,0,26,Gearbox,19
+2021,22,yas_marina,raikkonen,19,18,0,25,Brakes,18
+2021,22,yas_marina,mazepin,20,20,0,0,Illness,

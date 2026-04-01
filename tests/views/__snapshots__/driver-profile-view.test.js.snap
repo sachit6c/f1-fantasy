@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DriverProfileView > driver not found > not-found state matches snapshot 1`] = `
+"<div class="empty-state">
+      <h2>Driver Not Found</h2>
+      <p>The driver you're looking for doesn't exist.</p>
+      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
+    </div>"
+`;

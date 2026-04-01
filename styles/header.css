@@ -1,0 +1,391 @@
+/* components/header.css */
+/* Global navigation header */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-bottom: 3px solid var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: var(--spacing-lg);
+  transition: background 0.4s ease;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-logo h1 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-logo h1:hover {
+  color: var(--color-primary);
+}
+
+/* ---- Season hamburger button ---- */
+.season-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.season-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.season-hamburger:hover span {
+  background: #fff;
+  transform: scaleX(0.85);
+}
+
+/* ---- Current season badge ---- */
+.season-current-badge {
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  cursor: default;
+  user-select: none;
+  transition: background 0.4s ease, color 0.4s ease;
+  white-space: nowrap;
+}
+
+/* ---- Season drawer overlay ---- */
+.season-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  transition: background 0.3s ease;
+}
+
+.season-drawer-overlay.open {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Season drawer panel ---- */
+.season-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: #0F1419;
+  border-right: 2px solid #2A2A3A;
+  overflow-y: auto;
+  z-index: 10000;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.season-drawer-overlay.open .season-drawer {
+  transform: translateX(0);
+}
+
+.season-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 2px solid #2A2A3A;
+  position: sticky;
+  top: 0;
+  background: #0F1419;
+  z-index: 1;
+}
+
+.season-drawer-header span {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #E0E0E0;
+  letter-spacing: 0.03em;
+}
+
+.season-drawer-close {
+  background: transparent;
+  border: none;
+  color: #A0A0A0;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+
+.season-drawer-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Era sections ---- */
+.season-era-section {
+  padding: 0.75rem 0.5rem 0.25rem;
+  border-bottom: 1px solid #1E2530;
+}
+
+.season-era-section:last-child {
+  border-bottom: none;
+}
+
+.season-era-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.1rem 0.5rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--era-accent, #A0A0A0);
+}
+
+.season-era-heading .era-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--era-accent, #A0A0A0);
+  flex-shrink: 0;
+}
+
+.season-era-heading .era-range {
+  margin-left: auto;
+  font-size: 0.65rem;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+/* ---- Year button grid ---- */
+.season-year-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+  padding: 0 0.25rem 0.5rem;
+}
+
+.season-year-btn {
+  padding: 0.45rem 0.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #C0C0C0;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+  letter-spacing: 0.01em;
+}
+
+.season-year-btn:hover {
+  background: color-mix(in srgb, var(--era-accent, #888) 18%, transparent);
+  color: var(--era-text, #fff);
+  border-color: var(--era-accent, #888);
+  transform: translateY(-1px);
+}
+
+.season-year-btn.active {
+  background: var(--era-accent, #E10600);
+  color: #0F0F0F;
+  border-color: var(--era-accent, #E10600);
+  font-weight: 800;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--era-accent, #E10600) 50%, transparent);
+}
+
+/* ---- Settings button ---- */
+.btn-settings {
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-settings:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.season-year {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  margin-left: var(--spacing-sm);
+  padding: 2px 8px;
+  background: rgba(229, 9, 20, 0.1);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-primary);
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(229, 9, 20, 0.1);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+}
+
+.nav-link.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.nav-icon {
+  font-size: var(--font-size-lg);
+}
+
+.nav-label {
+  font-size: var(--font-size-base);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  white-space: nowrap;
+}
+
+.draft-players {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  color: #ff9800;
+  border: 2px solid #ff9800;
+  border-radius: 50%;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-reset:hover {
+  background: #ff9800;
+  color: #1a1a1a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+.btn-reset:active {
+  transform: translateY(0);
+}
+
+/* View content wrapper */
+.view-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .header-logo h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  .header-nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .nav-link {
+    flex-direction: column;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .nav-icon {
+    font-size: var(--font-size-base);
+  }
+
+  .nav-label {
+    font-size: var(--font-size-xs);
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

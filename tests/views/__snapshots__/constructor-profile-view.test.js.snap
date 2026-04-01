@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ConstructorProfileView > constructor not found > not-found state matches snapshot 1`] = `
+"<div class="empty-state">
+      <h2>Constructor Not Found</h2>
+      <p>The constructor you're looking for doesn't exist.</p>
+      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
+    </div>"
+`;
+
+exports[`ConstructorProfileView > snapshot > constructor profile header matches snapshot 1`] = `"<div class="constructor-profile-header"><a class="back-link" href="#/teams">← Back to Team Comparison</a><h1 class="constructor-name" style="color: rgb(232, 0, 45);">Ferrari</h1><div class="constructor-nationality">Italian</div></div>"`;

@@ -1,0 +1,445 @@
+/* styles/draft.css */
+/* Draft view specific styles */
+
+.draft-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* Draft Setup */
+.draft-setup {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+}
+
+.draft-setup .card {
+  padding: var(--spacing-xxl);
+}
+
+.setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.setup-form .form-group {
+  margin-bottom: 0;
+}
+
+.player-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.setup-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.setup-actions button {
+  flex: 1;
+}
+
+/* Draft Header */
+.draft-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #A10500 100%);
+  color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.draft-header h1 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.draft-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.current-pick {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.pick-info {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+/* Progress Bar */
+.draft-progress {
+  margin-top: var(--spacing-lg);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  transition: width var(--transition-slow);
+  border-radius: 4px;
+}
+
+/* Draft Content */
+.draft-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Player Rosters */
+.rosters-section {
+  position: sticky;
+  top: var(--spacing-lg);
+}
+
+.rosters-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.roster-panel {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 3px solid transparent;
+  transition: all var(--transition-base);
+}
+
+.roster-panel.active {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
+}
+
+.roster-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.roster-player-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.roster-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.roster-drivers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-height: 100px;
+}
+
+.roster-driver {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.roster-driver-code {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  width: 50px;
+}
+
+.roster-driver-name {
+  flex: 1;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.roster-empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Available Drivers */
+.drivers-section h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.driver-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.driver-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.driver-card.picked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-bg-secondary);
+}
+
+.driver-card.picked:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border);
+}
+
+.driver-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.driver-code {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-family: var(--font-family-mono);
+  letter-spacing: 1px;
+}
+
+.driver-card.picked .driver-code {
+  color: var(--color-text-muted);
+}
+
+.picked-badge {
+  background-color: var(--color-text-secondary);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.driver-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.driver-team {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Draft Actions */
+.draft-actions {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.draft-actions button {
+  min-width: 200px;
+}
+
+/* Draft Complete */
+.draft-complete {
+  text-align: center;
+  padding: var(--spacing-xxl) 0;
+}
+
+.draft-complete .card {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  padding: var(--spacing-xxl);
+}
+
+.completion-message {
+  font-size: var(--font-size-xl);
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xl);
+}
+
+.completion-message::before {
+  content: '🏁 ';
+  font-size: 2rem;
+  margin-right: var(--spacing-sm);
+}
+
+.final-rosters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.final-roster-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.final-roster-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.final-roster-name {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.final-roster-drivers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.final-roster-drivers li {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.final-driver-code {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-lg);
+  width: 50px;
+}
+
+.final-driver-name {
+  flex: 1;
+  color: var(--color-text-primary);
+}
+
+.completion-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.completion-actions button {
+  min-width: 220px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .draft-content {
+    grid-template-columns: 1fr;
+  }
+
+  .rosters-section {
+    position: static;
+  }
+
+  .rosters-container {
+    grid-template-columns: 1fr;
+  }
+
+  .drivers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .draft-container {
+    padding: var(--spacing-md);
+  }
+
+  .draft-header {
+    padding: var(--spacing-lg);
+  }
+
+  .draft-status {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .player-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .final-rosters {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-actions,
+  .completion-actions {
+    flex-direction: column;
+  }
+
+  .draft-actions button,
+  .completion-actions button {
+    width: 100%;
+  }
+}

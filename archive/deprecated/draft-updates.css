@@ -1,0 +1,136 @@
+/* CSS Updates for Better Player Colors, Rectangular Photos, Team Colors */
+
+/* === DRIVER PHOTOS === */
+.driver-photo-small {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px; /* Rectangular, not circular */
+  object-fit: cover;
+  border: 2px solid currentColor;
+}
+
+.driver-photo-medium {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px; /* Rectangular, not circular */
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* === STRONGER PLAYER COLORS === */
+
+/* Player 1 (Left Panel) - Sky Blue */
+.draft-content-new > .player-panel-new:nth-child(1) {
+  border: 4px solid #0EA5E9 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #E0F2FE 100%);
+}
+
+.draft-content-new > .player-panel-new:nth-child(1) .panel-header h2 {
+  color: #0EA5E9;
+  font-size: var(--font-size-xxl);
+}
+
+.draft-content-new > .player-panel-new:nth-child(1) .roster-driver-new {
+  border-left: 4px solid #0EA5E9;
+  background: #F0F9FF;
+}
+
+.draft-content-new > .player-panel-new:nth-child(1) .driver-code-small {
+  color: #0EA5E9;
+}
+
+/* Player 2 (Right Panel) - Orange */
+.draft-content-new > .player-panel-new:nth-child(3) {
+  border: 4px solid #F97316 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 100%);
+}
+
+.draft-content-new > .player-panel-new:nth-child(3) .panel-header h2 {
+  color: #F97316;
+  font-size: var(--font-size-xxl);
+}
+
+.draft-content-new > .player-panel-new:nth-child(3) .roster-driver-new {
+  border-left: 4px solid #F97316;
+  background: #FFF7ED;
+}
+
+.draft-content-new > .player-panel-new:nth-child(3) .driver-code-small {
+  color: #F97316;
+}
+
+/* Active player - even stronger highlight */
+.player-panel-new.active {
+  border-color: var(--color-accent) !important;
+  border-width: 5px !important;
+  box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.3), var(--shadow-lg);
+  transform: scale(1.03);
+}
+
+.player-panel-new.active .panel-header h2 {
+  color: var(--color-accent);
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+/* === PLAYER-COLORED HOVER STATES === */
+
+/* Player 1's hover (Sky Blue) */
+.team-driver-card-new.player1-hover:not(.picked):hover {
+  background: linear-gradient(135deg, #E0F2FE 0%, #BFDBFE 100%) !important;
+  border-color: #0EA5E9 !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3), var(--shadow-lg);
+  transform: scale(1.05) !important;
+}
+
+/* Player 2's hover (Orange) */
+.team-driver-card-new.player2-hover:not(.picked):hover {
+  background: linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%) !important;
+  border-color: #F97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3), var(--shadow-lg);
+  transform: scale(1.05) !important;
+}
+
+/* === TEAM HEADER WITH TEAM COLORS === */
+.team-header-new {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-md);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 1px;
+}
+
+/* === DRIVER CARDS === */
+.team-driver-card-new {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  border-left: 4px solid transparent; /* Will be set via inline style */
+}
+
+.team-driver-card-new:last-child {
+  border-bottom: none;
+}
+
+.team-driver-card-new.picked {
+  background: var(--color-bg-secondary);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* === DRAFT INSTRUCTIONS === */
+.draft-instructions {
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+}

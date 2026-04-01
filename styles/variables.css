@@ -1,0 +1,63 @@
+/* styles/variables.css */
+/* CSS Custom Properties */
+
+:root {
+  /* Colors - Dark Mode Theme */
+  --color-primary: #E10600;        /* F1 Red */
+  --color-secondary: #000000;      /* Black */
+  --color-accent: #FFD700;         /* Gold */
+
+  --color-bg-primary: #0F1419;     /* Dark background */
+  --color-bg-secondary: #1C2127;   /* Slightly lighter */
+  --color-bg-card: #282C34;        /* Dark card background */
+
+  --color-text-primary: #E0E0E0;   /* Light text */
+  --color-text-secondary: #A0A0A0; /* Muted light text */
+  --color-text-muted: #707070;     /* Very muted */
+
+  --color-border: #30363D;         /* Dark border */
+
+  /* Status colors */
+  --color-success: #28A745;
+  --color-warning: #FFC107;
+  --color-danger: #DC3545;
+  --color-info: #17A2B8;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Courier New', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Shadows - Lighter for dark mode */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+}

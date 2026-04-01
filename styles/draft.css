@@ -1,0 +1,714 @@
+/* styles/draft.css */
+/* Updated draft view with side-by-side panels and team selection */
+
+.draft-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* ===== SETUP SCREEN ===== */
+.draft-setup {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+}
+
+.draft-setup .card {
+  padding: var(--spacing-xxl);
+}
+
+.setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.setup-form .form-group {
+  margin-bottom: 0;
+}
+
+/* Season selector */
+.setup-form .season-select-group {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 3px solid var(--color-primary);
+}
+
+.setup-form .season-select-group label {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.setup-form .season-select-group select {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+.setup-form .season-select-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+}
+
+/* Player-themed input groups */
+.setup-form .player1-input-group {
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #1A2530 0%, #0C3A52 100%);
+  border-radius: var(--radius-md);
+  border: 3px solid #0EA5E9;
+}
+
+.setup-form .player1-input-group input {
+  background: rgba(14, 165, 233, 0.1);
+  border: 2px solid #0EA5E9;
+  color: var(--color-text-primary);
+}
+
+.setup-form .player1-input-group input:focus {
+  border-color: #0EA5E9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+}
+
+.setup-form .player2-input-group {
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #2A1F1A 0%, #4A2D1A 100%);
+  border-radius: var(--radius-md);
+  border: 3px solid #F97316;
+}
+
+.setup-form .player2-input-group input {
+  background: rgba(249, 115, 22, 0.1);
+  border: 2px solid #F97316;
+  color: var(--color-text-primary);
+}
+
+.setup-form .player2-input-group input:focus {
+  border-color: #F97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+}
+
+/* ===== DRAFT HEADER ===== */
+.draft-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #A10500 100%);
+  color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.draft-header h1 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.draft-status-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.current-pick {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.pick-info {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.draft-progress {
+  margin-top: var(--spacing-lg);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  transition: width var(--transition-slow);
+  border-radius: 4px;
+}
+
+/* ===== MAIN DRAFT LAYOUT ===== */
+.draft-content-new {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: var(--spacing-xl);
+  align-items: start;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ===== PLAYER PANELS (SIDE) ===== */
+.player-panel-new {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--color-border);
+  position: sticky;
+  top: var(--spacing-lg);
+  transition: all var(--transition-base);
+}
+
+.player-panel-new.active {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2), var(--shadow-lg);
+  transform: scale(1.02);
+}
+
+.panel-header {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.panel-header h2 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+  transition: color var(--transition-base);
+}
+
+.roster-count-new {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.roster-list-new {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-height: 200px;
+  overflow-y: auto;
+}
+
+.roster-empty-new {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: var(--spacing-xl);
+}
+
+.roster-driver-new {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  transition: transform var(--transition-fast);
+  position: relative;
+}
+
+.roster-driver-new:hover {
+  transform: translateX(4px);
+}
+
+.roster-driver-new.deselectable {
+  cursor: pointer;
+  position: relative;
+}
+
+.roster-driver-new.deselectable:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: translateX(0);
+}
+
+.driver-code-small {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  width: 45px;
+  font-family: var(--font-family-mono);
+}
+
+.driver-details-small {
+  flex: 1;
+}
+
+.driver-name-small {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.driver-team-small {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+}
+
+/* Auto-picked driver styling */
+.roster-driver-new.auto-picked {
+  opacity: 0.75;
+  border-left-style: dashed;
+}
+
+.auto-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== DRAFT AREA (CENTER) ===== */
+.draft-area-new {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.draft-area-heading {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+}
+
+.draft-instructions {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-sm);
+}
+
+/* ===== TEAMS GRID ===== */
+.teams-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.team-card-new {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-new:hover:not(.drafted) {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.team-card-new.drafted {
+  opacity: 0.6;
+  background: var(--color-bg-secondary);
+}
+
+.team-header-new {
+  background: var(--color-secondary);
+  color: white;
+  padding: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-drivers-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.team-driver-card-new {
+  flex: 1;
+  padding: 0;
+  border-right: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.team-driver-card-new:last-child {
+  border-right: none;
+}
+
+.team-driver-card-new:hover:not(.picked) {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.team-driver-card-new:hover:not(.picked) .draft-driver-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.team-driver-card-new.picked {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.draft-driver-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  padding: var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.draft-driver-overlay.picked-overlay {
+  background: rgba(30, 30, 30, 0.85);
+}
+
+.draft-driver-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+}
+
+.picked-indicator {
+  margin-top: var(--spacing-xs);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== DRAFT ACTIONS ===== */
+.draft-actions {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== DRAFT COMPLETE SCREEN ===== */
+.draft-complete {
+  text-align: center;
+  padding: var(--spacing-xxl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.completion-message {
+  font-size: 2.5rem;
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xl);
+}
+
+.completion-message::before {
+  content: '🏁 ';
+  font-size: 3rem;
+  margin-right: var(--spacing-sm);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .draft-content-new {
+    grid-template-columns: 250px 1fr 250px;
+    gap: var(--spacing-md);
+  }
+
+  .teams-grid-new {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .draft-content-new {
+    grid-template-columns: 1fr;
+  }
+
+  .player-panel-new {
+    position: static;
+  }
+
+  /* Stack: Player 1, Draft Area, Player 2 */
+  .draft-content-new > :nth-child(1) { order: 1; }
+  .draft-content-new > :nth-child(2) { order: 2; }
+  .draft-content-new > :nth-child(3) { order: 3; }
+
+  .teams-grid-new {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .draft-container {
+    padding: var(--spacing-md);
+  }
+
+  .draft-header {
+    padding: var(--spacing-lg);
+  }
+
+  .draft-status-new {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .teams-grid-new {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-actions {
+    flex-direction: column;
+  }
+
+  .draft-actions button {
+    width: 100%;
+  }
+}
+
+/* CSS Updates for Better Player Colors, Rectangular Photos, Team Colors */
+
+/* === DRIVER PHOTOS === */
+.driver-photo-small {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px; /* Rectangular, not circular */
+  object-fit: cover;
+  border: 2px solid currentColor;
+}
+
+.driver-photo-medium {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px; /* Rectangular, not circular */
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* === STRONGER PLAYER COLORS === */
+
+/* Player 1 (Left Panel) - Sky Blue */
+.draft-content-new > .player-panel-new:nth-child(1) {
+  border: 4px solid #0EA5E9 !important;
+  background: linear-gradient(135deg, #1A2530 0%, #0C3A52 100%);
+}
+
+.draft-content-new > .player-panel-new:nth-child(1) .panel-header h2 {
+  color: #0EA5E9;
+  font-size: var(--font-size-xxl);
+}
+
+.draft-content-new > .player-panel-new:nth-child(1) .roster-driver-new {
+  border-left: 4px solid #0EA5E9;
+  background: #0C3A52;
+}
+
+.draft-content-new > .player-panel-new:nth-child(1) .driver-code-small {
+  color: #0EA5E9;
+}
+
+/* Player 2 (Right Panel) - Orange */
+.draft-content-new > .player-panel-new:nth-child(3) {
+  border: 4px solid #F97316 !important;
+  background: linear-gradient(135deg, #2A1F1A 0%, #4A2D1A 100%);
+}
+
+.draft-content-new > .player-panel-new:nth-child(3) .panel-header h2 {
+  color: #F97316;
+  font-size: var(--font-size-xxl);
+}
+
+.draft-content-new > .player-panel-new:nth-child(3) .roster-driver-new {
+  border-left: 4px solid #F97316;
+  background: #4A2D1A;
+}
+
+.draft-content-new > .player-panel-new:nth-child(3) .driver-code-small {
+  color: #F97316;
+}
+
+/* Active player - even stronger highlight */
+.player-panel-new.active {
+  border-color: var(--color-accent) !important;
+  border-width: 5px !important;
+  box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.3), var(--shadow-lg);
+  transform: scale(1.03);
+}
+
+.player-panel-new.active .panel-header h2 {
+  color: var(--color-accent);
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+}
+
+/* === PLAYER-COLORED HOVER STATES === */
+
+/* Player 1's hover (Sky Blue) */
+.team-driver-card-new.player1-hover:not(.picked):hover {
+  border-color: #0EA5E9 !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5), var(--shadow-lg);
+  transform: scale(1.05) !important;
+}
+
+.team-driver-card-new.player1-hover:not(.picked):hover .draft-driver-overlay {
+  background: rgba(14, 165, 233, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.team-driver-card-new.player1-hover:not(.picked):hover .draft-driver-overlay::before {
+  content: 'Player 1 Turn';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 165, 233, 0.95);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Player 2's hover (Orange) */
+.team-driver-card-new.player2-hover:not(.picked):hover {
+  border-color: #F97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.5), var(--shadow-lg);
+  transform: scale(1.05) !important;
+}
+
+.team-driver-card-new.player2-hover:not(.picked):hover .draft-driver-overlay {
+  background: rgba(249, 115, 22, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.team-driver-card-new.player2-hover:not(.picked):hover .draft-driver-overlay::before {
+  content: 'Player 2 Turn';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(249, 115, 22, 0.95);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* === TEAM HEADER WITH TEAM COLORS === */
+.team-header-new {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-md);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 1px;
+}
+
+/* === DRIVER CARDS === */
+.team-driver-card-new {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  border-left: 4px solid transparent; /* Will be set via inline style */
+}
+
+.team-driver-card-new:last-child {
+  border-bottom: none;
+}
+
+.team-driver-card-new.picked {
+  background: var(--color-bg-secondary);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* === DRAFT INSTRUCTIONS === */
+.draft-instructions {
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+}

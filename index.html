@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Fantasy League</title>
+
+  <!-- CSS -->
+  <!-- Leaflet.js for interactive map -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/draft.css">
+  <link rel="stylesheet" href="styles/team-comparison.css">
+  <link rel="stylesheet" href="styles/calendar.css">
+  <link rel="stylesheet" href="styles/race-detail.css">
+  <link rel="stylesheet" href="styles/profile.css">
+  <link rel="stylesheet" href="styles/drivers-list.css">
+  <link rel="stylesheet" href="styles/constructors-list.css">
+</head>
+<body>
+  <main id="app" role="main">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading F1 Fantasy League...</p>
+    </div>
+  </main>
+
+  <!-- Leaflet.js -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+
+  <!-- Application JS -->
+  <script type="module" src="app.js?v=2.2"></script>  
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Debug utilities -->
+  <script src="debug-tooltips.js"></script>
+</body>
+</html>

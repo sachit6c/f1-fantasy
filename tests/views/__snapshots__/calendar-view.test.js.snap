@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CalendarView > snapshot > empty state matches snapshot 1`] = `
+"<div class="empty-state" style="padding: 2rem; text-align: center; background: white; border-radius: 1rem; margin: 2rem;">
+        <p style="font-size: 1.5rem; color: #666;">No race data available for 2026 season</p>
+        <p style="margin-top: 1rem; color: #999;">Please check that races_2026.csv exists in data/canonical/</p>
+      </div>"
+`;
+
+exports[`CalendarView > snapshot > header matches snapshot 1`] = `"<div class="calendar-header"><h1 class="page-title">Race Calendar</h1><p class="page-subtitle">2026 Formula 1 Season</p><div class="view-switcher"><button class="view-btn active">📅 Grid View</button><button class="view-btn">📆 Week View</button></div></div>"`;

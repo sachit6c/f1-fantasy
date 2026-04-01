@@ -1,0 +1,196 @@
+/* styles/race-detail.css */
+/* Race detail view styles */
+
+.race-detail-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+.race-subtitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-md);
+}
+
+.round-badge {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.race-info-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.info-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-weight-medium);
+}
+
+.info-value {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.race-results-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.results-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.results-title {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.results-table thead {
+  background: var(--color-bg-secondary);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.results-table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.5px;
+}
+
+.results-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.results-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table tbody tr:hover {
+  background: var(--color-bg-secondary);
+}
+
+.results-table .position {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  width: 60px;
+}
+
+.results-table .driver-name a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+.results-table .driver-name a:hover {
+  color: var(--color-primary);
+}
+
+.results-table .team-name {
+  color: var(--color-text-secondary);
+}
+
+.results-table .time {
+  font-family: var(--font-family-mono);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.results-table .points {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+}
+
+.results-table .status {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.results-table .grid-position {
+  color: var(--color-text-muted);
+}
+
+/* Player ownership highlighting */
+.results-table tr.player1-owned {
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.results-table tr.player2-owned {
+  background: rgba(249, 115, 22, 0.1);
+}
+
+.results-table .owner {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .race-info-card {
+    grid-template-columns: 1fr;
+  }
+
+  .results-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: var(--spacing-sm);
+  }
+}

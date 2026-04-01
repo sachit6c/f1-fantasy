@@ -1,0 +1,596 @@
+/* styles/profile.css */
+/* Driver and constructor profile styles */
+
+/* Common profile styles */
+.driver-profile-header,
+.constructor-profile-header {
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+/* Team logo inline with team name */
+.team-badge-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.team-logo-inline {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.team-logo-inline:hover {
+  opacity: 0.7;
+}
+
+.team-logo-inline-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.team-name-badge {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  border: 2px solid var(--color-border);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.team-name-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.driver-photo-large-container {
+  flex-shrink: 0;
+}
+
+.driver-photo-large {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 4px solid var(--color-primary);
+}
+
+.driver-details-container {
+  flex: 1;
+}
+
+.driver-code-large-profile {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  margin-bottom: var(--spacing-xs);
+}
+
+.driver-name-large,
+.constructor-name {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.team-badge {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.team-badge:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.constructor-nationality {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  margin-top: var(--spacing-sm);
+}
+
+/* Info cards */
+.driver-info-card,
+.team-info-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Stats cards */
+.stats-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.stats-title,
+.card-title {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-lg);
+  grid-auto-rows: auto;
+  overflow: visible;
+  position: relative;
+}
+
+.stat-group-header {
+  grid-column: 1 / -1;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  padding: var(--spacing-md) 0;
+  margin-top: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-group-header:first-child {
+  margin-top: 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  position: relative;
+  cursor: pointer;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid var(--color-primary);
+  z-index: 2001;
+}
+
+.stat-value {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+  word-break: break-word;
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Drivers grid (for constructor profile) */
+.drivers-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.driver-mini-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  border: 2px solid var(--color-border);
+}
+
+.driver-mini-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.driver-photo-mini {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+}
+
+.driver-mini-info {
+  flex: 1;
+}
+
+.driver-code-mini {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  margin-bottom: var(--spacing-xs);
+}
+
+.driver-name-mini a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  transition: color var(--transition-fast);
+}
+
+.driver-name-mini a:hover {
+  color: var(--color-primary);
+}
+
+/* Side-by-side driver comparison */
+.drivers-comparison-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.drivers-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.driver-detail-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.driver-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.driver-detail-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.driver-detail-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  flex-shrink: 0;
+}
+
+.driver-detail-header-info {
+  flex: 1;
+}
+
+.driver-detail-name {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  margin-bottom: var(--spacing-xs);
+  transition: color var(--transition-fast);
+}
+
+.driver-detail-name:hover {
+  color: var(--color-primary);
+}
+
+.driver-detail-number {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.driver-detail-code {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
+  text-transform: uppercase;
+}
+
+/* Driver owner badge */
+.driver-owner-badge {
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin-top: var(--spacing-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Player 1 Badge - Sky Blue */
+.driver-owner-badge.player-player_1 {
+  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  border: 2px solid #0EA5E9;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
+}
+
+/* Player 2 Badge - Orange */
+.driver-owner-badge.player-player_2 {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  border: 2px solid #F97316;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.driver-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.driver-stat-item {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  position: relative;
+  cursor: pointer;
+}
+
+.driver-stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid var(--color-primary);
+  z-index: 2001;
+}
+
+.stat-tooltip {
+  position: absolute;
+  background: white;
+  color: #000000;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  white-space: pre-line;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  text-align: left;
+  opacity: 0;
+  
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--color-border);
+  line-height: 1.6;
+  display: none;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+}
+
+.driver-stat-item .stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+  word-break: break-word;
+}
+
+.driver-stat-item .stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.no-stats {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--spacing-xl);
+  font-style: italic;
+}
+
+/* Race history */
+.race-history-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.race-history-card .race-name a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.race-history-card .race-name a:hover {
+  color: var(--color-primary);
+}
+
+.race-history-card .podium {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #DAA520 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-bold);
+}
+
+@media (max-width: 768px) {
+  .profile-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .driver-name-large,
+  .constructor-name {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .info-grid,
+  .drivers-grid,
+  .drivers-comparison-grid,
+  .driver-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .driver-detail-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .driver-detail-name {
+    font-size: 1.25rem;
+  }
+
+  .stat-tooltip {
+    white-space: pre-line;
+    max-width: 90vw !important;
+    word-wrap: break-word;
+  }
+}
+
+/* Chart sections for rank and points progression */
+.rank-progression,
+.points-progression {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+}
+
+.rank-progression .chart-container,
+.points-progression .chart-container {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-top: var(--spacing-md);
+  border: 1px solid var(--color-border);
+}
+
+.rank-progression canvas,
+.points-progression canvas {
+  max-height: 400px;
+}
+
+/* Responsive adjustments for charts */
+@media (max-width: 768px) {
+  .rank-progression .chart-container,
+  .points-progression .chart-container {
+    padding: var(--spacing-md);
+  }
+
+  .rank-progression canvas,
+  .points-progression canvas {
+    max-height: 300px;
+  }
+}
