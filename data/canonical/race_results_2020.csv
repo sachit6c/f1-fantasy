@@ -1,0 +1,341 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2020,1,red_bull_ring,bottas,mercedes,1,1,25,71,Finished,2
+2020,1,red_bull_ring,leclerc,ferrari,2,7,18,71,Finished,4
+2020,1,red_bull_ring,norris,mclaren,3,3,16,71,Finished,1
+2020,1,red_bull_ring,hamilton,mercedes,4,5,12,71,Finished,3
+2020,1,red_bull_ring,sainz,mclaren,5,8,10,71,Finished,5
+2020,1,red_bull_ring,perez,racing_point,6,6,8,71,Finished,6
+2020,1,red_bull_ring,gasly,alphatauri,7,12,6,71,Finished,11
+2020,1,red_bull_ring,ocon,renault,8,14,4,71,Finished,10
+2020,1,red_bull_ring,giovinazzi,alfa,9,18,2,71,Finished,9
+2020,1,red_bull_ring,vettel,ferrari,10,11,1,71,Finished,8
+2020,1,red_bull_ring,latifi,williams,11,20,0,71,Finished,16
+2020,1,red_bull_ring,kvyat,alphatauri,12,13,0,69,Suspension,13
+2020,1,red_bull_ring,albon,red_bull,13,4,0,67,Electronics,7
+2020,1,red_bull_ring,raikkonen,alfa,14,19,0,53,Wheel,12
+2020,1,red_bull_ring,russell,williams,15,17,0,49,Fuel pressure,14
+2020,1,red_bull_ring,grosjean,haas,16,15,0,49,Brakes,17
+2020,1,red_bull_ring,kevin_magnussen,haas,17,16,0,24,Brakes,20
+2020,1,red_bull_ring,stroll,racing_point,18,9,0,20,Engine,18
+2020,1,red_bull_ring,ricciardo,renault,19,10,0,17,Overheating,19
+2020,1,red_bull_ring,max_verstappen,red_bull,20,2,0,11,Electronics,15
+2020,2,red_bull_ring,hamilton,mercedes,1,1,25,71,Finished,3
+2020,2,red_bull_ring,bottas,mercedes,2,4,18,71,Finished,7
+2020,2,red_bull_ring,max_verstappen,red_bull,3,2,15,71,Finished,2
+2020,2,red_bull_ring,albon,red_bull,4,6,12,71,Finished,6
+2020,2,red_bull_ring,norris,mclaren,5,9,10,71,Finished,5
+2020,2,red_bull_ring,perez,racing_point,6,17,8,71,Finished,4
+2020,2,red_bull_ring,stroll,racing_point,7,12,6,71,Finished,10
+2020,2,red_bull_ring,ricciardo,renault,8,8,4,71,Finished,9
+2020,2,red_bull_ring,sainz,mclaren,9,3,3,70,+1 Lap,1
+2020,2,red_bull_ring,kvyat,alphatauri,10,13,1,70,+1 Lap,13
+2020,2,red_bull_ring,raikkonen,alfa,11,16,0,70,+1 Lap,14
+2020,2,red_bull_ring,kevin_magnussen,haas,12,15,0,70,+1 Lap,11
+2020,2,red_bull_ring,grosjean,haas,13,0,0,70,+1 Lap,12
+2020,2,red_bull_ring,giovinazzi,alfa,14,19,0,70,+1 Lap,15
+2020,2,red_bull_ring,gasly,alphatauri,15,7,0,70,+1 Lap,8
+2020,2,red_bull_ring,russell,williams,16,11,0,69,+2 Laps,16
+2020,2,red_bull_ring,latifi,williams,17,18,0,69,+2 Laps,17
+2020,2,red_bull_ring,ocon,renault,18,5,0,25,Overheating,18
+2020,2,red_bull_ring,leclerc,ferrari,19,14,0,4,Collision damage,19
+2020,2,red_bull_ring,vettel,ferrari,20,10,0,1,Collision damage,
+2020,3,hungaroring,hamilton,mercedes,1,1,26,70,Finished,1
+2020,3,hungaroring,max_verstappen,red_bull,2,7,18,70,Finished,4
+2020,3,hungaroring,bottas,mercedes,3,2,15,70,Finished,2
+2020,3,hungaroring,stroll,racing_point,4,3,12,70,Finished,3
+2020,3,hungaroring,albon,red_bull,5,13,10,70,Finished,5
+2020,3,hungaroring,vettel,ferrari,6,5,8,69,+1 Lap,14
+2020,3,hungaroring,perez,racing_point,7,4,6,69,+1 Lap,10
+2020,3,hungaroring,ricciardo,renault,8,11,4,69,+1 Lap,7
+2020,3,hungaroring,sainz,mclaren,9,9,2,69,+1 Lap,15
+2020,3,hungaroring,kevin_magnussen,haas,10,0,1,69,+1 Lap,6
+2020,3,hungaroring,leclerc,ferrari,11,6,0,69,+1 Lap,16
+2020,3,hungaroring,kvyat,alphatauri,12,17,0,69,+1 Lap,18
+2020,3,hungaroring,norris,mclaren,13,8,0,69,+1 Lap,8
+2020,3,hungaroring,ocon,renault,14,14,0,69,+1 Lap,13
+2020,3,hungaroring,raikkonen,alfa,15,20,0,69,+1 Lap,17
+2020,3,hungaroring,grosjean,haas,16,0,0,69,+1 Lap,12
+2020,3,hungaroring,giovinazzi,alfa,17,19,0,69,+1 Lap,11
+2020,3,hungaroring,russell,williams,18,12,0,69,+1 Lap,9
+2020,3,hungaroring,latifi,williams,19,15,0,65,+5 Laps,19
+2020,3,hungaroring,gasly,alphatauri,20,10,0,15,Engine,20
+2020,4,silverstone,hamilton,mercedes,1,1,25,52,Finished,3
+2020,4,silverstone,max_verstappen,red_bull,2,3,19,52,Finished,1
+2020,4,silverstone,leclerc,ferrari,3,4,15,52,Finished,9
+2020,4,silverstone,ricciardo,renault,4,8,12,52,Finished,5
+2020,4,silverstone,norris,mclaren,5,5,10,52,Finished,12
+2020,4,silverstone,ocon,renault,6,9,8,52,Finished,6
+2020,4,silverstone,gasly,alphatauri,7,11,6,52,Finished,7
+2020,4,silverstone,albon,red_bull,8,12,4,52,Finished,2
+2020,4,silverstone,stroll,racing_point,9,6,2,52,Finished,13
+2020,4,silverstone,vettel,ferrari,10,10,1,52,Finished,15
+2020,4,silverstone,bottas,mercedes,11,2,0,52,Finished,4
+2020,4,silverstone,russell,williams,12,20,0,52,Finished,16
+2020,4,silverstone,sainz,mclaren,13,7,0,52,Finished,10
+2020,4,silverstone,giovinazzi,alfa,14,15,0,52,Finished,17
+2020,4,silverstone,latifi,williams,15,18,0,52,Finished,14
+2020,4,silverstone,grosjean,haas,16,17,0,52,Finished,8
+2020,4,silverstone,raikkonen,alfa,17,16,0,51,+1 Lap,11
+2020,4,silverstone,kvyat,alphatauri,18,19,0,11,Accident,18
+2020,4,silverstone,kevin_magnussen,haas,19,14,0,1,Collision,
+2020,4,silverstone,hulkenberg,racing_point,20,13,0,0,Power Unit,
+2020,5,silverstone,max_verstappen,red_bull,1,4,25,52,Finished,2
+2020,5,silverstone,hamilton,mercedes,2,2,19,52,Finished,1
+2020,5,silverstone,bottas,mercedes,3,1,15,52,Finished,4
+2020,5,silverstone,leclerc,ferrari,4,8,12,52,Finished,8
+2020,5,silverstone,albon,red_bull,5,9,10,52,Finished,3
+2020,5,silverstone,stroll,racing_point,6,6,8,52,Finished,15
+2020,5,silverstone,hulkenberg,racing_point,7,3,6,52,Finished,6
+2020,5,silverstone,ocon,renault,8,14,4,52,Finished,10
+2020,5,silverstone,norris,mclaren,9,10,2,52,Finished,11
+2020,5,silverstone,kvyat,alphatauri,10,16,1,52,Finished,12
+2020,5,silverstone,gasly,alphatauri,11,7,0,52,Finished,7
+2020,5,silverstone,vettel,ferrari,12,11,0,52,Finished,13
+2020,5,silverstone,sainz,mclaren,13,12,0,52,Finished,9
+2020,5,silverstone,ricciardo,renault,14,5,0,51,+1 Lap,16
+2020,5,silverstone,raikkonen,alfa,15,20,0,51,+1 Lap,18
+2020,5,silverstone,grosjean,haas,16,13,0,51,+1 Lap,14
+2020,5,silverstone,giovinazzi,alfa,17,19,0,51,+1 Lap,19
+2020,5,silverstone,russell,williams,18,15,0,51,+1 Lap,17
+2020,5,silverstone,latifi,williams,19,18,0,51,+1 Lap,5
+2020,5,silverstone,kevin_magnussen,haas,20,17,0,43,Retired,20
+2020,6,catalunya,hamilton,mercedes,1,1,25,66,Finished,2
+2020,6,catalunya,max_verstappen,red_bull,2,3,18,66,Finished,4
+2020,6,catalunya,bottas,mercedes,3,2,16,66,Finished,1
+2020,6,catalunya,stroll,racing_point,4,5,12,65,+1 Lap,8
+2020,6,catalunya,perez,racing_point,5,4,10,65,+1 Lap,16
+2020,6,catalunya,sainz,mclaren,6,7,8,65,+1 Lap,5
+2020,6,catalunya,vettel,ferrari,7,11,6,65,+1 Lap,18
+2020,6,catalunya,albon,red_bull,8,6,4,65,+1 Lap,11
+2020,6,catalunya,gasly,alphatauri,9,10,2,65,+1 Lap,17
+2020,6,catalunya,norris,mclaren,10,8,1,65,+1 Lap,13
+2020,6,catalunya,ricciardo,renault,11,13,0,65,+1 Lap,14
+2020,6,catalunya,kvyat,alphatauri,12,12,0,65,+1 Lap,12
+2020,6,catalunya,ocon,renault,13,15,0,65,+1 Lap,10
+2020,6,catalunya,raikkonen,alfa,14,14,0,65,+1 Lap,7
+2020,6,catalunya,kevin_magnussen,haas,15,16,0,65,+1 Lap,19
+2020,6,catalunya,giovinazzi,alfa,16,20,0,65,+1 Lap,6
+2020,6,catalunya,russell,williams,17,18,0,65,+1 Lap,15
+2020,6,catalunya,latifi,williams,18,19,0,64,+2 Laps,9
+2020,6,catalunya,grosjean,haas,19,17,0,64,+2 Laps,3
+2020,6,catalunya,leclerc,ferrari,20,9,0,38,Electronics,20
+2020,7,spa,hamilton,mercedes,1,1,25,44,Finished,2
+2020,7,spa,bottas,mercedes,2,2,18,44,Finished,5
+2020,7,spa,max_verstappen,red_bull,3,3,15,44,Finished,8
+2020,7,spa,ricciardo,renault,4,4,13,44,Finished,1
+2020,7,spa,ocon,renault,5,6,10,44,Finished,10
+2020,7,spa,albon,red_bull,6,5,8,44,Finished,12
+2020,7,spa,norris,mclaren,7,10,6,44,Finished,11
+2020,7,spa,gasly,alphatauri,8,12,4,44,Finished,3
+2020,7,spa,stroll,racing_point,9,9,2,44,Finished,13
+2020,7,spa,perez,racing_point,10,8,1,44,Finished,9
+2020,7,spa,kvyat,alphatauri,11,11,0,44,Finished,15
+2020,7,spa,raikkonen,alfa,12,16,0,44,Finished,14
+2020,7,spa,vettel,ferrari,13,14,0,44,Finished,16
+2020,7,spa,leclerc,ferrari,14,13,0,44,Finished,4
+2020,7,spa,grosjean,haas,15,17,0,44,Finished,17
+2020,7,spa,latifi,williams,16,19,0,44,Finished,6
+2020,7,spa,kevin_magnussen,haas,17,20,0,44,Finished,7
+2020,7,spa,giovinazzi,alfa,18,18,0,9,Accident,19
+2020,7,spa,russell,williams,19,15,0,9,Debris,18
+2020,7,spa,sainz,mclaren,20,7,0,0,Exhaust,
+2020,8,monza,gasly,alphatauri,1,10,25,53,Finished,6
+2020,8,monza,sainz,mclaren,2,3,18,53,Finished,2
+2020,8,monza,stroll,racing_point,3,8,15,53,Finished,3
+2020,8,monza,norris,mclaren,4,6,12,53,Finished,7
+2020,8,monza,bottas,mercedes,5,2,10,53,Finished,5
+2020,8,monza,ricciardo,renault,6,7,8,53,Finished,4
+2020,8,monza,hamilton,mercedes,7,1,7,53,Finished,1
+2020,8,monza,ocon,renault,8,12,4,53,Finished,11
+2020,8,monza,kvyat,alphatauri,9,11,2,53,Finished,10
+2020,8,monza,perez,racing_point,10,4,1,53,Finished,8
+2020,8,monza,latifi,williams,11,20,0,53,Finished,16
+2020,8,monza,grosjean,haas,12,16,0,53,Finished,12
+2020,8,monza,raikkonen,alfa,13,14,0,53,Finished,13
+2020,8,monza,russell,williams,14,19,0,53,Finished,9
+2020,8,monza,albon,red_bull,15,9,0,53,Finished,15
+2020,8,monza,giovinazzi,alfa,16,18,0,53,Finished,14
+2020,8,monza,max_verstappen,red_bull,17,5,0,30,Power Unit,17
+2020,8,monza,leclerc,ferrari,18,13,0,23,Accident,19
+2020,8,monza,kevin_magnussen,haas,19,15,0,17,Power Unit,18
+2020,8,monza,vettel,ferrari,20,17,0,6,Brakes,20
+2020,9,mugello,hamilton,mercedes,1,1,26,59,Finished,1
+2020,9,mugello,bottas,mercedes,2,2,18,59,Finished,2
+2020,9,mugello,albon,red_bull,3,4,15,59,Finished,3
+2020,9,mugello,ricciardo,renault,4,8,12,59,Finished,4
+2020,9,mugello,perez,racing_point,5,7,10,59,Finished,5
+2020,9,mugello,norris,mclaren,6,11,8,59,Finished,7
+2020,9,mugello,kvyat,alphatauri,7,12,6,59,Finished,10
+2020,9,mugello,leclerc,ferrari,8,5,4,59,Finished,9
+2020,9,mugello,raikkonen,alfa,9,13,2,59,Finished,6
+2020,9,mugello,vettel,ferrari,10,14,1,59,Finished,8
+2020,9,mugello,russell,williams,11,18,0,59,Finished,11
+2020,9,mugello,grosjean,haas,12,15,0,59,Finished,13
+2020,9,mugello,stroll,racing_point,13,6,0,42,Puncture,12
+2020,9,mugello,ocon,renault,14,10,0,7,Brakes,15
+2020,9,mugello,latifi,williams,15,19,0,6,Collision,14
+2020,9,mugello,kevin_magnussen,haas,16,20,0,5,Collision,17
+2020,9,mugello,giovinazzi,alfa,17,17,0,5,Collision,16
+2020,9,mugello,sainz,mclaren,18,9,0,5,Collision,18
+2020,9,mugello,max_verstappen,red_bull,19,3,0,0,Collision,
+2020,9,mugello,gasly,alphatauri,20,16,0,0,Collision,
+2020,10,sochi,bottas,mercedes,1,3,26,53,Finished,1
+2020,10,sochi,max_verstappen,red_bull,2,2,18,53,Finished,3
+2020,10,sochi,hamilton,mercedes,3,1,15,53,Finished,7
+2020,10,sochi,perez,racing_point,4,4,12,53,Finished,8
+2020,10,sochi,ricciardo,renault,5,5,10,53,Finished,6
+2020,10,sochi,leclerc,ferrari,6,10,8,53,Finished,11
+2020,10,sochi,ocon,renault,7,7,6,53,Finished,13
+2020,10,sochi,kvyat,alphatauri,8,11,4,53,Finished,12
+2020,10,sochi,gasly,alphatauri,9,9,2,53,Finished,2
+2020,10,sochi,albon,red_bull,10,15,1,53,Finished,9
+2020,10,sochi,giovinazzi,alfa,11,17,0,52,+1 Lap,16
+2020,10,sochi,kevin_magnussen,haas,12,18,0,52,+1 Lap,17
+2020,10,sochi,vettel,ferrari,13,14,0,52,+1 Lap,14
+2020,10,sochi,raikkonen,alfa,14,19,0,52,+1 Lap,10
+2020,10,sochi,norris,mclaren,15,8,0,52,+1 Lap,5
+2020,10,sochi,latifi,williams,16,20,0,52,+1 Lap,18
+2020,10,sochi,grosjean,haas,17,16,0,52,+1 Lap,15
+2020,10,sochi,russell,williams,18,13,0,52,+1 Lap,4
+2020,10,sochi,sainz,mclaren,19,6,0,0,Accident,
+2020,10,sochi,stroll,racing_point,20,12,0,0,Collision,
+2020,11,nurburgring,hamilton,mercedes,1,2,25,60,Finished,2
+2020,11,nurburgring,max_verstappen,red_bull,2,3,19,60,Finished,1
+2020,11,nurburgring,ricciardo,renault,3,6,15,60,Finished,3
+2020,11,nurburgring,perez,racing_point,4,9,12,60,Finished,4
+2020,11,nurburgring,sainz,mclaren,5,10,10,60,Finished,6
+2020,11,nurburgring,gasly,alphatauri,6,12,8,60,Finished,5
+2020,11,nurburgring,leclerc,ferrari,7,4,6,60,Finished,10
+2020,11,nurburgring,hulkenberg,racing_point,8,20,4,60,Finished,11
+2020,11,nurburgring,grosjean,haas,9,16,2,60,Finished,14
+2020,11,nurburgring,giovinazzi,alfa,10,14,1,60,Finished,12
+2020,11,nurburgring,vettel,ferrari,11,11,0,60,Finished,7
+2020,11,nurburgring,raikkonen,alfa,12,19,0,60,Finished,9
+2020,11,nurburgring,kevin_magnussen,haas,13,15,0,60,Finished,8
+2020,11,nurburgring,latifi,williams,14,18,0,60,Finished,13
+2020,11,nurburgring,kvyat,alphatauri,15,13,0,60,Finished,16
+2020,11,nurburgring,norris,mclaren,16,8,0,42,Power Unit,17
+2020,11,nurburgring,albon,red_bull,17,5,0,23,Radiator,18
+2020,11,nurburgring,ocon,renault,18,7,0,22,Gearbox,19
+2020,11,nurburgring,bottas,mercedes,19,1,0,18,Power Unit,15
+2020,11,nurburgring,russell,williams,20,17,0,12,Collision,20
+2020,12,portimao,hamilton,mercedes,1,1,26,66,Finished,1
+2020,12,portimao,bottas,mercedes,2,2,18,66,Finished,2
+2020,12,portimao,max_verstappen,red_bull,3,3,15,66,Finished,4
+2020,12,portimao,leclerc,ferrari,4,4,12,66,Finished,7
+2020,12,portimao,gasly,alphatauri,5,9,10,65,+1 Lap,9
+2020,12,portimao,sainz,mclaren,6,7,8,65,+1 Lap,6
+2020,12,portimao,perez,racing_point,7,5,6,65,+1 Lap,11
+2020,12,portimao,ocon,renault,8,11,4,65,+1 Lap,12
+2020,12,portimao,ricciardo,renault,9,10,2,65,+1 Lap,14
+2020,12,portimao,vettel,ferrari,10,15,1,65,+1 Lap,10
+2020,12,portimao,raikkonen,alfa,11,16,0,65,+1 Lap,15
+2020,12,portimao,albon,red_bull,12,6,0,65,+1 Lap,5
+2020,12,portimao,norris,mclaren,13,8,0,65,+1 Lap,3
+2020,12,portimao,russell,williams,14,14,0,65,+1 Lap,13
+2020,12,portimao,giovinazzi,alfa,15,17,0,65,+1 Lap,20
+2020,12,portimao,kevin_magnussen,haas,16,19,0,65,+1 Lap,16
+2020,12,portimao,grosjean,haas,17,18,0,65,+1 Lap,17
+2020,12,portimao,latifi,williams,18,20,0,64,+2 Laps,19
+2020,12,portimao,kvyat,alphatauri,19,13,0,64,+2 Laps,8
+2020,12,portimao,stroll,racing_point,20,12,0,51,Collision damage,18
+2020,13,imola,hamilton,mercedes,1,2,26,63,Finished,1
+2020,13,imola,bottas,mercedes,2,1,18,63,Finished,2
+2020,13,imola,ricciardo,renault,3,5,15,63,Finished,4
+2020,13,imola,kvyat,alphatauri,4,8,12,63,Finished,6
+2020,13,imola,leclerc,ferrari,5,7,10,63,Finished,12
+2020,13,imola,perez,racing_point,6,11,8,63,Finished,9
+2020,13,imola,sainz,mclaren,7,10,6,63,Finished,11
+2020,13,imola,norris,mclaren,8,9,4,63,Finished,8
+2020,13,imola,raikkonen,alfa,9,18,2,63,Finished,10
+2020,13,imola,giovinazzi,alfa,10,20,1,63,Finished,15
+2020,13,imola,latifi,williams,11,19,0,63,Finished,14
+2020,13,imola,vettel,ferrari,12,14,0,63,Finished,7
+2020,13,imola,stroll,racing_point,13,15,0,63,Finished,13
+2020,13,imola,grosjean,haas,14,16,0,63,Finished,17
+2020,13,imola,albon,red_bull,15,6,0,63,Finished,3
+2020,13,imola,russell,williams,16,13,0,51,Accident,16
+2020,13,imola,max_verstappen,red_bull,17,3,0,50,Puncture,5
+2020,13,imola,kevin_magnussen,haas,18,17,0,47,Illness,18
+2020,13,imola,ocon,renault,19,12,0,27,Gearbox,19
+2020,13,imola,gasly,alphatauri,20,4,0,8,Water pressure,20
+2020,14,istanbul,hamilton,mercedes,1,6,25,58,Finished,6
+2020,14,istanbul,perez,racing_point,2,3,18,58,Finished,12
+2020,14,istanbul,vettel,ferrari,3,11,15,58,Finished,8
+2020,14,istanbul,leclerc,ferrari,4,12,12,58,Finished,11
+2020,14,istanbul,sainz,mclaren,5,15,10,58,Finished,4
+2020,14,istanbul,max_verstappen,red_bull,6,2,8,58,Finished,3
+2020,14,istanbul,albon,red_bull,7,4,6,58,Finished,5
+2020,14,istanbul,norris,mclaren,8,14,5,58,Finished,1
+2020,14,istanbul,stroll,racing_point,9,1,2,58,Finished,10
+2020,14,istanbul,ricciardo,renault,10,5,1,58,Finished,13
+2020,14,istanbul,ocon,renault,11,7,0,57,+1 Lap,16
+2020,14,istanbul,kvyat,alphatauri,12,16,0,57,+1 Lap,17
+2020,14,istanbul,gasly,alphatauri,13,19,0,57,+1 Lap,7
+2020,14,istanbul,bottas,mercedes,14,9,0,57,+1 Lap,2
+2020,14,istanbul,raikkonen,alfa,15,8,0,57,+1 Lap,9
+2020,14,istanbul,russell,williams,16,0,0,57,+1 Lap,14
+2020,14,istanbul,kevin_magnussen,haas,17,13,0,55,Withdrew,15
+2020,14,istanbul,grosjean,haas,18,17,0,49,Collision damage,18
+2020,14,istanbul,latifi,williams,19,0,0,39,Collision damage,19
+2020,14,istanbul,giovinazzi,alfa,20,10,0,11,Gearbox,20
+2020,15,bahrain,hamilton,mercedes,1,1,25,57,Finished,3
+2020,15,bahrain,max_verstappen,red_bull,2,3,19,57,Finished,1
+2020,15,bahrain,albon,red_bull,3,4,15,57,Finished,10
+2020,15,bahrain,norris,mclaren,4,9,12,57,Finished,7
+2020,15,bahrain,sainz,mclaren,5,15,10,57,Finished,5
+2020,15,bahrain,gasly,alphatauri,6,8,8,57,Finished,16
+2020,15,bahrain,ricciardo,renault,7,6,6,57,Finished,2
+2020,15,bahrain,bottas,mercedes,8,2,4,57,Finished,4
+2020,15,bahrain,ocon,renault,9,7,2,57,Finished,13
+2020,15,bahrain,leclerc,ferrari,10,12,1,56,+1 Lap,8
+2020,15,bahrain,kvyat,alphatauri,11,10,0,56,+1 Lap,12
+2020,15,bahrain,russell,williams,12,14,0,56,+1 Lap,17
+2020,15,bahrain,vettel,ferrari,13,11,0,56,+1 Lap,11
+2020,15,bahrain,latifi,williams,14,20,0,56,+1 Lap,15
+2020,15,bahrain,raikkonen,alfa,15,17,0,56,+1 Lap,6
+2020,15,bahrain,giovinazzi,alfa,16,16,0,56,+1 Lap,14
+2020,15,bahrain,kevin_magnussen,haas,17,18,0,56,+1 Lap,18
+2020,15,bahrain,perez,racing_point,18,5,0,53,Engine,9
+2020,15,bahrain,stroll,racing_point,19,13,0,2,Collision,
+2020,15,bahrain,grosjean,haas,20,19,0,0,Collision,
+2020,16,bahrain,perez,racing_point,1,5,25,87,Finished,3
+2020,16,bahrain,ocon,renault,2,11,18,87,Finished,12
+2020,16,bahrain,stroll,racing_point,3,10,15,87,Finished,14
+2020,16,bahrain,sainz,mclaren,4,8,12,87,Finished,9
+2020,16,bahrain,ricciardo,renault,5,7,10,87,Finished,6
+2020,16,bahrain,albon,red_bull,6,12,8,87,Finished,8
+2020,16,bahrain,kvyat,alphatauri,7,6,6,87,Finished,7
+2020,16,bahrain,bottas,mercedes,8,1,4,87,Finished,2
+2020,16,bahrain,russell,mercedes,9,2,3,87,Finished,1
+2020,16,bahrain,norris,mclaren,10,19,1,87,Finished,11
+2020,16,bahrain,gasly,alphatauri,11,9,0,87,Finished,10
+2020,16,bahrain,vettel,ferrari,12,13,0,87,Finished,5
+2020,16,bahrain,giovinazzi,alfa,13,14,0,87,Finished,4
+2020,16,bahrain,raikkonen,alfa,14,18,0,87,Finished,13
+2020,16,bahrain,kevin_magnussen,haas,15,15,0,87,Finished,16
+2020,16,bahrain,aitken,williams,16,17,0,87,Finished,15
+2020,16,bahrain,pietro_fittipaldi,haas,17,20,0,87,Finished,17
+2020,16,bahrain,latifi,williams,18,16,0,52,Engine,18
+2020,16,bahrain,max_verstappen,red_bull,19,3,0,0,Accident,
+2020,16,bahrain,leclerc,ferrari,20,4,0,0,Collision,
+2020,17,yas_marina,max_verstappen,red_bull,1,1,25,55,Finished,2
+2020,17,yas_marina,bottas,mercedes,2,2,18,55,Finished,3
+2020,17,yas_marina,hamilton,mercedes,3,3,15,55,Finished,5
+2020,17,yas_marina,albon,red_bull,4,5,12,55,Finished,4
+2020,17,yas_marina,norris,mclaren,5,4,10,55,Finished,12
+2020,17,yas_marina,sainz,mclaren,6,6,8,55,Finished,11
+2020,17,yas_marina,ricciardo,renault,7,11,7,55,Finished,1
+2020,17,yas_marina,gasly,alphatauri,8,9,4,55,Finished,15
+2020,17,yas_marina,ocon,renault,9,10,2,55,Finished,18
+2020,17,yas_marina,stroll,racing_point,10,8,1,55,Finished,9
+2020,17,yas_marina,kvyat,alphatauri,11,7,0,54,+1 Lap,17
+2020,17,yas_marina,raikkonen,alfa,12,15,0,54,+1 Lap,14
+2020,17,yas_marina,leclerc,ferrari,13,12,0,54,+1 Lap,10
+2020,17,yas_marina,vettel,ferrari,14,13,0,54,+1 Lap,6
+2020,17,yas_marina,russell,williams,15,16,0,54,+1 Lap,20
+2020,17,yas_marina,giovinazzi,alfa,16,14,0,54,+1 Lap,7
+2020,17,yas_marina,latifi,williams,17,18,0,54,+1 Lap,16
+2020,17,yas_marina,kevin_magnussen,haas,18,20,0,54,+1 Lap,13
+2020,17,yas_marina,pietro_fittipaldi,haas,19,17,0,53,+2 Laps,8
+2020,17,yas_marina,perez,racing_point,20,19,0,8,Transmission,19

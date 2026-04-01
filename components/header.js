@@ -4,6 +4,7 @@
 import { draftStore } from '../lib/draft-store.js';
 import { dataStore } from '../lib/data-store.js';
 import { toggleTheme, getTheme } from '../lib/theme.js';
+import { showToast } from '../lib/toast.js';
 
 // ---------------------------------------------------------------------------
 // F1 Era definitions — used for header gradient + drawer colour coding
@@ -77,12 +78,18 @@ export class Header {
     header.style.setProperty('--era-accent', era.accent);
     header.dataset.era = era.id;
 
-    // --- Hamburger button ---
-    const hamburger = document.createElement('button');
-    hamburger.className = 'season-hamburger';
-    hamburger.setAttribute('aria-label', 'Select season');
-    hamburger.innerHTML = `<span></span><span></span><span></span>`;
-    hamburger.addEventListener('click', () => this.openSeasonDrawer());
+    // Season pill button (replaces 3-line hamburger)
+    const seasonPill = document.createElement('button');
+    seasonPill.className = 'season-pill-btn';
+    seasonPill.setAttribute('aria-label', `Season ${season} — click to change season`);
+    seasonPill.innerHTML = `
+      <span class="season-pill-label">Season</span>
+      <span class="season-pill-year">${season}</span>
+      <span class="season-pill-chevron" aria-hidden="true">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    `;
+    seasonPill.addEventListener('click', () => this.openSeasonDrawer());
 
     // --- Logo/Title section ---
     const logoSection = document.createElement('div');
@@ -98,11 +105,11 @@ export class Header {
         <rect width="32" height="32" rx="7" fill="#E10600"/>
         <text x="16" y="22" font-family="Arial Black, Arial" font-weight="900" font-size="13" fill="white" text-anchor="middle" letter-spacing="-0.5">F1</text>
       </svg>
-      <span class="wordmark-text">Fantasy<strong>League</strong></span>
+      <span class="wordmark-text"><strong>PitWall</strong></span>
     `;
     logo.style.cursor = 'pointer';
-    logo.addEventListener('click', () => { window.location.hash = '#/draft'; });
-    logo.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') window.location.hash = '#/draft'; });
+    logo.addEventListener('click', () => { window.location.hash = '#/home'; });
+    logo.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') window.location.hash = '#/home'; });
 
     // Current season badge (replaces dropdown)
     const seasonBadge = document.createElement('span');
@@ -112,9 +119,8 @@ export class Header {
     seasonBadge.style.background = era.accent;
     seasonBadge.style.color = era.from;
 
-    logoSection.appendChild(hamburger);
+    logoSection.appendChild(seasonPill);
     logoSection.appendChild(logo);
-    logoSection.appendChild(seasonBadge);
 
     header.appendChild(logoSection);
 
@@ -123,11 +129,12 @@ export class Header {
     nav.className = 'header-nav';
 
     const navItems = [
-      { label: 'Draft', hash: '#/draft', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>` },
-      { label: 'Teams', hash: '#/teams', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>` },
+      { label: 'Home',         hash: '#/home',         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>` },
+      { label: 'Draft',        hash: '#/draft',        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>` },
+      { label: 'Teams',        hash: '#/teams',        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>` },
       { label: 'Constructors', hash: '#/constructors', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0H9"/></svg>` },
-      { label: 'Drivers', hash: '#/drivers', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>` },
-      { label: 'Calendar', hash: '#/calendar', icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>` }
+      { label: 'Drivers',      hash: '#/drivers',      icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>` },
+      { label: 'Calendar',     hash: '#/calendar',     icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>` }
     ];
 
     navItems.forEach(item => {
@@ -137,9 +144,9 @@ export class Header {
       link.dataset.hash = item.hash;
 
       const updateActive = () => {
-        const current = window.location.hash || '#/draft';
+        const current = window.location.hash || '#/home';
         const isActive = current === item.hash ||
-          (item.hash !== '#/draft' && current.startsWith(item.hash.replace('#/', '#/')));
+          (item.hash !== '#/home' && current.startsWith(item.hash.replace('#/', '#/')));
         link.classList.toggle('active', isActive);
       };
 
@@ -297,8 +304,9 @@ export class Header {
     const links = this.element.querySelectorAll('.nav-link');
     links.forEach(link => {
       link.classList.remove('active');
-      if (link.hash === window.location.hash ||
-          (window.location.hash === '' && link.hash === '#/draft')) {
+      const currentHash = window.location.hash || '#/home';
+      if (link.hash === currentHash ||
+          (currentHash === '' && link.hash === '#/home')) {
         link.classList.add('active');
       }
     });

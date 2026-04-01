@@ -1,0 +1,26 @@
+driverId,permanentNumber,code,givenName,familyName,dateOfBirth,nationality,url
+alguersuari,,ALG,Jaime,Alguersuari,1990-03-23,Spanish,http://en.wikipedia.org/wiki/Jaime_Alguersuari
+alonso,14,ALO,Fernando,Alonso,1981-07-29,Spanish,http://en.wikipedia.org/wiki/Fernando_Alonso
+badoer,,BAD,Luca,Badoer,1971-01-25,Italian,http://en.wikipedia.org/wiki/Luca_Badoer
+barrichello,,BAR,Rubens,Barrichello,1972-05-23,Brazilian,http://en.wikipedia.org/wiki/Rubens_Barrichello
+bourdais,,BOU,Sébastien,Bourdais,1979-02-28,French,http://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais
+buemi,,BUE,Sébastien,Buemi,1988-10-31,Swiss,http://en.wikipedia.org/wiki/S%C3%A9bastien_Buemi
+button,22,BUT,Jenson,Button,1980-01-19,British,http://en.wikipedia.org/wiki/Jenson_Button
+fisichella,,FIS,Giancarlo,Fisichella,1973-01-14,Italian,http://en.wikipedia.org/wiki/Giancarlo_Fisichella
+glock,,GLO,Timo,Glock,1982-03-18,German,http://en.wikipedia.org/wiki/Timo_Glock
+grosjean,8,GRO,Romain,Grosjean,1986-04-17,French,http://en.wikipedia.org/wiki/Romain_Grosjean
+hamilton,44,HAM,Lewis,Hamilton,1985-01-07,British,http://en.wikipedia.org/wiki/Lewis_Hamilton
+heidfeld,,HEI,Nick,Heidfeld,1977-05-10,German,http://en.wikipedia.org/wiki/Nick_Heidfeld
+kobayashi,10,KOB,Kamui,Kobayashi,1986-09-13,Japanese,http://en.wikipedia.org/wiki/Kamui_Kobayashi
+kovalainen,,KOV,Heikki,Kovalainen,1981-10-19,Finnish,http://en.wikipedia.org/wiki/Heikki_Kovalainen
+kubica,88,KUB,Robert,Kubica,1984-12-07,Polish,http://en.wikipedia.org/wiki/Robert_Kubica
+liuzzi,,LIU,Vitantonio,Liuzzi,1980-08-06,Italian,http://en.wikipedia.org/wiki/Vitantonio_Liuzzi
+massa,19,MAS,Felipe,Massa,1981-04-25,Brazilian,http://en.wikipedia.org/wiki/Felipe_Massa
+nakajima,,NAK,Kazuki,Nakajima,1985-01-11,Japanese,http://en.wikipedia.org/wiki/Kazuki_Nakajima
+piquet_jr,,PIQ,Nelson,Piquet Jr.,1985-07-25,Brazilian,"http://en.wikipedia.org/wiki/Nelson_Piquet,_Jr."
+rosberg,6,ROS,Nico,Rosberg,1985-06-27,German,http://en.wikipedia.org/wiki/Nico_Rosberg
+raikkonen,7,RAI,Kimi,Räikkönen,1979-10-17,Finnish,http://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen
+sutil,99,SUT,Adrian,Sutil,1983-01-11,German,http://en.wikipedia.org/wiki/Adrian_Sutil
+trulli,,TRU,Jarno,Trulli,1974-07-13,Italian,http://en.wikipedia.org/wiki/Jarno_Trulli
+vettel,5,VET,Sebastian,Vettel,1987-07-03,German,http://en.wikipedia.org/wiki/Sebastian_Vettel
+webber,,WEB,Mark,Webber,1976-08-27,Australian,http://en.wikipedia.org/wiki/Mark_Webber_(racing_driver)

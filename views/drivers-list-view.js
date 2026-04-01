@@ -32,14 +32,10 @@ export class DriversListView extends BaseView {
   }
 
   renderHeader() {
-    const header = this.createElement('div', 'drivers-header');
-
-    const title = this.createElement('h1', 'page-title', 'Drivers');
-    header.appendChild(title);
-
-    const subtitle = this.createElement('p', 'page-subtitle', `${dataStore.season} F1 Drivers`);
-    header.appendChild(subtitle);
-
+    const header = this.createPageHeader(
+      'Drivers',
+      `${dataStore.season} Formula 1 Drivers`
+    );
     this.root.appendChild(header);
   }
 

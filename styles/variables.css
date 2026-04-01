@@ -7,7 +7,7 @@
   --color-primary-hover: #C10500;        /* Darker red */
   --color-primary-subtle: rgba(225, 6, 0, 0.08); /* Tint background */
   --color-secondary: #000000;            /* Black */
-  --color-accent: #FFD700;               /* Gold */
+  --color-accent: #C9A227;               /* Amber gold — refined from #FFD700 */
 
   --color-bg-primary: #0F1419;           /* Page background */
   --color-bg-secondary: #1C2127;         /* Section background */

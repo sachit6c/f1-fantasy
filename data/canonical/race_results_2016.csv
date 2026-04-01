@@ -1,0 +1,463 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2016,1,albert_park,rosberg,mercedes,1,2,25,57,Finished,3
+2016,1,albert_park,hamilton,mercedes,2,1,18,57,Finished,4
+2016,1,albert_park,vettel,ferrari,3,3,15,57,Finished,2
+2016,1,albert_park,ricciardo,red_bull,4,8,12,57,Finished,1
+2016,1,albert_park,massa,williams,5,6,10,57,Finished,9
+2016,1,albert_park,grosjean,haas,6,19,8,57,Finished,17
+2016,1,albert_park,hulkenberg,force_india,7,10,6,57,Finished,16
+2016,1,albert_park,bottas,williams,8,16,4,57,Finished,14
+2016,1,albert_park,sainz,toro_rosso,9,7,2,57,Finished,7
+2016,1,albert_park,max_verstappen,toro_rosso,10,5,1,57,Finished,6
+2016,1,albert_park,jolyon_palmer,renault,11,13,0,57,Finished,18
+2016,1,albert_park,kevin_magnussen,renault,12,14,0,57,Finished,10
+2016,1,albert_park,perez,force_india,13,9,0,57,Finished,15
+2016,1,albert_park,button,mclaren,14,12,0,56,+1 Lap,8
+2016,1,albert_park,nasr,sauber,15,17,0,56,+1 Lap,13
+2016,1,albert_park,wehrlein,manor,16,21,0,56,+1 Lap,12
+2016,1,albert_park,ericsson,sauber,17,15,0,38,Engine,21
+2016,1,albert_park,raikkonen,ferrari,18,4,0,21,Engine,5
+2016,1,albert_park,haryanto,manor,19,22,0,17,Mechanical,20
+2016,1,albert_park,gutierrez,haas,20,20,0,16,Collision,19
+2016,1,albert_park,alonso,mclaren,21,11,0,16,Collision,11
+2016,1,albert_park,kvyat,red_bull,22,18,0,0,Retired,
+2016,2,bahrain,rosberg,mercedes,1,2,25,57,Finished,1
+2016,2,bahrain,raikkonen,ferrari,2,4,18,57,Finished,3
+2016,2,bahrain,hamilton,mercedes,3,1,15,57,Finished,2
+2016,2,bahrain,ricciardo,red_bull,4,5,12,57,Finished,9
+2016,2,bahrain,grosjean,haas,5,9,10,57,Finished,11
+2016,2,bahrain,max_verstappen,toro_rosso,6,10,8,57,Finished,7
+2016,2,bahrain,kvyat,red_bull,7,15,6,56,+1 Lap,8
+2016,2,bahrain,massa,williams,8,7,4,56,+1 Lap,16
+2016,2,bahrain,bottas,williams,9,6,2,56,+1 Lap,15
+2016,2,bahrain,vandoorne,mclaren,10,12,1,56,+1 Lap,12
+2016,2,bahrain,kevin_magnussen,renault,11,22,0,56,+1 Lap,14
+2016,2,bahrain,ericsson,sauber,12,17,0,56,+1 Lap,17
+2016,2,bahrain,wehrlein,manor,13,16,0,56,+1 Lap,6
+2016,2,bahrain,nasr,sauber,14,21,0,56,+1 Lap,5
+2016,2,bahrain,hulkenberg,force_india,15,8,0,56,+1 Lap,4
+2016,2,bahrain,perez,force_india,16,18,0,56,+1 Lap,10
+2016,2,bahrain,haryanto,manor,17,20,0,56,+1 Lap,13
+2016,2,bahrain,sainz,toro_rosso,18,11,0,29,Retired,18
+2016,2,bahrain,gutierrez,haas,19,13,0,9,Retired,19
+2016,2,bahrain,button,mclaren,20,14,0,6,Power Unit,20
+2016,2,bahrain,vettel,ferrari,21,3,0,0,Engine,
+2016,2,bahrain,jolyon_palmer,renault,22,19,0,0,Hydraulics,
+2016,3,shanghai,rosberg,mercedes,1,1,25,56,Finished,6
+2016,3,shanghai,vettel,ferrari,2,4,18,56,Finished,9
+2016,3,shanghai,kvyat,red_bull,3,6,15,56,Finished,14
+2016,3,shanghai,ricciardo,red_bull,4,2,12,56,Finished,11
+2016,3,shanghai,raikkonen,ferrari,5,3,10,56,Finished,8
+2016,3,shanghai,massa,williams,6,10,8,56,Finished,16
+2016,3,shanghai,hamilton,mercedes,7,22,6,56,Finished,10
+2016,3,shanghai,max_verstappen,toro_rosso,8,9,4,56,Finished,5
+2016,3,shanghai,sainz,toro_rosso,9,8,2,56,Finished,12
+2016,3,shanghai,bottas,williams,10,5,1,56,Finished,15
+2016,3,shanghai,perez,force_india,11,7,0,56,Finished,17
+2016,3,shanghai,alonso,mclaren,12,11,0,56,Finished,19
+2016,3,shanghai,button,mclaren,13,12,0,56,Finished,3
+2016,3,shanghai,gutierrez,haas,14,18,0,55,+1 Lap,4
+2016,3,shanghai,hulkenberg,force_india,15,13,0,55,+1 Lap,1
+2016,3,shanghai,ericsson,sauber,16,15,0,55,+1 Lap,22
+2016,3,shanghai,kevin_magnussen,renault,17,17,0,55,+1 Lap,21
+2016,3,shanghai,wehrlein,manor,18,21,0,55,+1 Lap,13
+2016,3,shanghai,grosjean,haas,19,14,0,55,+1 Lap,2
+2016,3,shanghai,nasr,sauber,20,16,0,55,+1 Lap,7
+2016,3,shanghai,haryanto,manor,21,20,0,55,+1 Lap,18
+2016,3,shanghai,jolyon_palmer,renault,22,19,0,55,+1 Lap,20
+2016,4,sochi,rosberg,mercedes,1,1,25,53,Finished,1
+2016,4,sochi,hamilton,mercedes,2,10,18,53,Finished,4
+2016,4,sochi,raikkonen,ferrari,3,3,15,53,Finished,3
+2016,4,sochi,bottas,williams,4,2,12,53,Finished,6
+2016,4,sochi,massa,williams,5,4,10,53,Finished,2
+2016,4,sochi,alonso,mclaren,6,14,8,52,+1 Lap,5
+2016,4,sochi,kevin_magnussen,renault,7,17,6,52,+1 Lap,9
+2016,4,sochi,grosjean,haas,8,15,4,52,+1 Lap,12
+2016,4,sochi,perez,force_india,9,6,2,52,+1 Lap,10
+2016,4,sochi,button,mclaren,10,12,1,52,+1 Lap,8
+2016,4,sochi,ricciardo,red_bull,11,5,0,52,+1 Lap,7
+2016,4,sochi,sainz,toro_rosso,12,11,0,52,+1 Lap,15
+2016,4,sochi,jolyon_palmer,renault,13,18,0,52,+1 Lap,19
+2016,4,sochi,ericsson,sauber,14,22,0,52,+1 Lap,14
+2016,4,sochi,kvyat,red_bull,15,8,0,52,+1 Lap,17
+2016,4,sochi,nasr,sauber,16,19,0,52,+1 Lap,16
+2016,4,sochi,gutierrez,haas,17,16,0,52,+1 Lap,18
+2016,4,sochi,wehrlein,manor,18,20,0,51,+2 Laps,11
+2016,4,sochi,max_verstappen,toro_rosso,19,9,0,33,Power Unit,13
+2016,4,sochi,vettel,ferrari,20,7,0,0,Collision,
+2016,4,sochi,hulkenberg,force_india,21,13,0,0,Collision,
+2016,4,sochi,haryanto,manor,22,21,0,0,Collision,
+2016,5,catalunya,max_verstappen,red_bull,1,4,25,66,Finished,6
+2016,5,catalunya,raikkonen,ferrari,2,5,18,66,Finished,4
+2016,5,catalunya,vettel,ferrari,3,6,15,66,Finished,2
+2016,5,catalunya,ricciardo,red_bull,4,3,12,66,Finished,3
+2016,5,catalunya,bottas,williams,5,7,10,66,Finished,8
+2016,5,catalunya,sainz,toro_rosso,6,8,8,66,Finished,11
+2016,5,catalunya,perez,force_india,7,9,6,66,Finished,15
+2016,5,catalunya,massa,williams,8,18,4,66,Finished,9
+2016,5,catalunya,button,mclaren,9,12,2,65,+1 Lap,18
+2016,5,catalunya,kvyat,toro_rosso,10,13,1,65,+1 Lap,1
+2016,5,catalunya,gutierrez,haas,11,16,0,65,+1 Lap,17
+2016,5,catalunya,ericsson,sauber,12,19,0,65,+1 Lap,12
+2016,5,catalunya,jolyon_palmer,renault,13,17,0,65,+1 Lap,14
+2016,5,catalunya,kevin_magnussen,renault,14,15,0,65,+1 Lap,5
+2016,5,catalunya,nasr,sauber,15,20,0,65,+1 Lap,16
+2016,5,catalunya,wehrlein,manor,16,21,0,65,+1 Lap,19
+2016,5,catalunya,haryanto,manor,17,22,0,65,+1 Lap,10
+2016,5,catalunya,grosjean,haas,18,14,0,56,Engine,7
+2016,5,catalunya,alonso,mclaren,19,10,0,45,Engine,13
+2016,5,catalunya,hulkenberg,force_india,20,11,0,20,Engine,20
+2016,5,catalunya,hamilton,mercedes,21,1,0,0,Collision,
+2016,5,catalunya,rosberg,mercedes,22,2,0,0,Collision,
+2016,6,monaco,hamilton,mercedes,1,3,25,78,Finished,1
+2016,6,monaco,ricciardo,red_bull,2,1,18,78,Finished,3
+2016,6,monaco,perez,force_india,3,7,15,78,Finished,4
+2016,6,monaco,vettel,ferrari,4,4,12,78,Finished,2
+2016,6,monaco,alonso,mclaren,5,9,10,78,Finished,8
+2016,6,monaco,hulkenberg,force_india,6,5,8,78,Finished,11
+2016,6,monaco,rosberg,mercedes,7,2,6,78,Finished,6
+2016,6,monaco,sainz,toro_rosso,8,6,4,77,+1 Lap,5
+2016,6,monaco,button,mclaren,9,13,2,77,+1 Lap,12
+2016,6,monaco,massa,williams,10,14,1,77,+1 Lap,9
+2016,6,monaco,gutierrez,haas,11,12,0,77,+1 Lap,7
+2016,6,monaco,bottas,williams,12,10,0,77,+1 Lap,10
+2016,6,monaco,grosjean,haas,13,15,0,76,+2 Laps,14
+2016,6,monaco,wehrlein,manor,14,20,0,76,+2 Laps,15
+2016,6,monaco,haryanto,manor,15,19,0,74,+4 Laps,13
+2016,6,monaco,ericsson,sauber,16,17,0,51,Collision,16
+2016,6,monaco,nasr,sauber,17,0,0,48,Retired,17
+2016,6,monaco,max_verstappen,red_bull,18,0,0,34,Accident,18
+2016,6,monaco,kevin_magnussen,renault,19,16,0,32,Retired,19
+2016,6,monaco,kvyat,toro_rosso,20,8,0,18,Accident,20
+2016,6,monaco,raikkonen,ferrari,21,11,0,10,Accident,21
+2016,6,monaco,jolyon_palmer,renault,22,18,0,7,Accident,22
+2016,7,villeneuve,hamilton,mercedes,1,1,25,70,Finished,2
+2016,7,villeneuve,vettel,ferrari,2,3,18,70,Finished,3
+2016,7,villeneuve,bottas,williams,3,7,15,70,Finished,10
+2016,7,villeneuve,max_verstappen,red_bull,4,5,12,70,Finished,4
+2016,7,villeneuve,rosberg,mercedes,5,2,10,70,Finished,1
+2016,7,villeneuve,raikkonen,ferrari,6,6,8,70,Finished,9
+2016,7,villeneuve,ricciardo,red_bull,7,4,6,70,Finished,5
+2016,7,villeneuve,hulkenberg,force_india,8,9,4,69,+1 Lap,8
+2016,7,villeneuve,sainz,toro_rosso,9,20,2,69,+1 Lap,7
+2016,7,villeneuve,perez,force_india,10,11,1,69,+1 Lap,6
+2016,7,villeneuve,alonso,mclaren,11,10,0,69,+1 Lap,13
+2016,7,villeneuve,kvyat,toro_rosso,12,15,0,69,+1 Lap,11
+2016,7,villeneuve,gutierrez,haas,13,13,0,68,+2 Laps,15
+2016,7,villeneuve,grosjean,haas,14,14,0,68,+2 Laps,12
+2016,7,villeneuve,ericsson,sauber,15,21,0,68,+2 Laps,17
+2016,7,villeneuve,kevin_magnussen,renault,16,22,0,68,+2 Laps,18
+2016,7,villeneuve,wehrlein,manor,17,17,0,68,+2 Laps,19
+2016,7,villeneuve,nasr,sauber,18,18,0,68,+2 Laps,16
+2016,7,villeneuve,haryanto,manor,19,19,0,68,+2 Laps,20
+2016,7,villeneuve,massa,williams,20,8,0,35,Retired,14
+2016,7,villeneuve,jolyon_palmer,renault,21,16,0,16,Retired,22
+2016,7,villeneuve,button,mclaren,22,12,0,9,Power Unit,21
+2016,8,baku,rosberg,mercedes,1,1,25,51,Finished,1
+2016,8,baku,vettel,ferrari,2,3,18,51,Finished,5
+2016,8,baku,perez,force_india,3,7,15,51,Finished,4
+2016,8,baku,raikkonen,ferrari,4,4,12,51,Finished,6
+2016,8,baku,hamilton,mercedes,5,10,10,51,Finished,2
+2016,8,baku,bottas,williams,6,8,8,51,Finished,9
+2016,8,baku,ricciardo,red_bull,7,2,6,51,Finished,12
+2016,8,baku,max_verstappen,red_bull,8,9,4,51,Finished,3
+2016,8,baku,hulkenberg,force_india,9,12,2,51,Finished,15
+2016,8,baku,massa,williams,10,5,1,51,Finished,13
+2016,8,baku,button,mclaren,11,19,0,51,Finished,10
+2016,8,baku,nasr,sauber,12,15,0,50,+1 Lap,11
+2016,8,baku,grosjean,haas,13,11,0,50,+1 Lap,14
+2016,8,baku,kevin_magnussen,renault,14,22,0,50,+1 Lap,19
+2016,8,baku,jolyon_palmer,renault,15,21,0,50,+1 Lap,8
+2016,8,baku,gutierrez,haas,16,14,0,50,+1 Lap,7
+2016,8,baku,ericsson,sauber,17,20,0,50,+1 Lap,17
+2016,8,baku,haryanto,manor,18,16,0,49,+2 Laps,21
+2016,8,baku,alonso,mclaren,19,13,0,42,Gearbox,18
+2016,8,baku,wehrlein,manor,20,17,0,39,Brakes,20
+2016,8,baku,sainz,toro_rosso,21,18,0,31,Suspension,16
+2016,8,baku,kvyat,toro_rosso,22,6,0,6,Suspension,22
+2016,9,red_bull_ring,hamilton,mercedes,1,1,25,71,Finished,1
+2016,9,red_bull_ring,max_verstappen,red_bull,2,8,18,71,Finished,5
+2016,9,red_bull_ring,raikkonen,ferrari,3,4,15,71,Finished,4
+2016,9,red_bull_ring,rosberg,mercedes,4,6,12,71,Finished,2
+2016,9,red_bull_ring,ricciardo,red_bull,5,5,10,71,Finished,3
+2016,9,red_bull_ring,button,mclaren,6,3,8,71,Finished,9
+2016,9,red_bull_ring,grosjean,haas,7,13,6,71,Finished,8
+2016,9,red_bull_ring,sainz,toro_rosso,8,15,4,71,Finished,11
+2016,9,red_bull_ring,bottas,williams,9,7,2,70,+1 Lap,12
+2016,9,red_bull_ring,wehrlein,manor,10,12,1,70,+1 Lap,19
+2016,9,red_bull_ring,gutierrez,haas,11,11,0,70,+1 Lap,6
+2016,9,red_bull_ring,jolyon_palmer,renault,12,19,0,70,+1 Lap,13
+2016,9,red_bull_ring,nasr,sauber,13,21,0,70,+1 Lap,16
+2016,9,red_bull_ring,kevin_magnussen,renault,14,17,0,70,+1 Lap,17
+2016,9,red_bull_ring,ericsson,sauber,15,18,0,70,+1 Lap,18
+2016,9,red_bull_ring,haryanto,manor,16,20,0,70,+1 Lap,15
+2016,9,red_bull_ring,perez,force_india,17,16,0,69,Brakes,10
+2016,9,red_bull_ring,alonso,mclaren,18,14,0,64,Battery,20
+2016,9,red_bull_ring,hulkenberg,force_india,19,2,0,64,Brakes,14
+2016,9,red_bull_ring,massa,williams,20,0,0,63,Brakes,7
+2016,9,red_bull_ring,vettel,ferrari,21,9,0,26,Tyre,21
+2016,9,red_bull_ring,kvyat,toro_rosso,22,0,0,2,Retired,22
+2016,10,silverstone,hamilton,mercedes,1,1,25,52,Finished,3
+2016,10,silverstone,max_verstappen,red_bull,2,3,18,52,Finished,6
+2016,10,silverstone,rosberg,mercedes,3,2,15,52,Finished,1
+2016,10,silverstone,ricciardo,red_bull,4,4,12,52,Finished,4
+2016,10,silverstone,raikkonen,ferrari,5,5,10,52,Finished,8
+2016,10,silverstone,perez,force_india,6,10,8,52,Finished,15
+2016,10,silverstone,hulkenberg,force_india,7,8,6,52,Finished,11
+2016,10,silverstone,sainz,toro_rosso,8,7,4,52,Finished,10
+2016,10,silverstone,vettel,ferrari,9,11,2,52,Finished,7
+2016,10,silverstone,kvyat,toro_rosso,10,15,1,52,Finished,13
+2016,10,silverstone,massa,williams,11,12,0,51,+1 Lap,5
+2016,10,silverstone,button,mclaren,12,17,0,51,+1 Lap,16
+2016,10,silverstone,alonso,mclaren,13,9,0,51,+1 Lap,2
+2016,10,silverstone,bottas,williams,14,6,0,51,+1 Lap,9
+2016,10,silverstone,nasr,sauber,15,21,0,51,+1 Lap,17
+2016,10,silverstone,gutierrez,haas,16,14,0,51,+1 Lap,14
+2016,10,silverstone,kevin_magnussen,renault,17,16,0,49,Gearbox,12
+2016,10,silverstone,jolyon_palmer,renault,18,18,0,37,Gearbox,18
+2016,10,silverstone,haryanto,manor,19,19,0,24,Spun off,19
+2016,10,silverstone,grosjean,haas,20,13,0,17,Retired,20
+2016,10,silverstone,ericsson,sauber,21,22,0,11,Power Unit,21
+2016,10,silverstone,wehrlein,manor,22,20,0,6,Spun off,22
+2016,11,hungaroring,hamilton,mercedes,1,2,25,70,Finished,3
+2016,11,hungaroring,rosberg,mercedes,2,1,18,70,Finished,2
+2016,11,hungaroring,ricciardo,red_bull,3,3,15,70,Finished,5
+2016,11,hungaroring,vettel,ferrari,4,5,12,70,Finished,4
+2016,11,hungaroring,max_verstappen,red_bull,5,4,10,70,Finished,7
+2016,11,hungaroring,raikkonen,ferrari,6,14,8,70,Finished,1
+2016,11,hungaroring,alonso,mclaren,7,7,6,69,+1 Lap,8
+2016,11,hungaroring,sainz,toro_rosso,8,6,4,69,+1 Lap,10
+2016,11,hungaroring,bottas,williams,9,10,2,69,+1 Lap,11
+2016,11,hungaroring,hulkenberg,force_india,10,9,1,69,+1 Lap,13
+2016,11,hungaroring,perez,force_india,11,13,0,69,+1 Lap,9
+2016,11,hungaroring,jolyon_palmer,renault,12,17,0,69,+1 Lap,16
+2016,11,hungaroring,gutierrez,haas,13,15,0,69,+1 Lap,17
+2016,11,hungaroring,grosjean,haas,14,11,0,69,+1 Lap,18
+2016,11,hungaroring,kevin_magnussen,renault,15,19,0,69,+1 Lap,19
+2016,11,hungaroring,kvyat,toro_rosso,16,12,0,69,+1 Lap,6
+2016,11,hungaroring,nasr,sauber,17,16,0,69,+1 Lap,15
+2016,11,hungaroring,massa,williams,18,18,0,68,+2 Laps,12
+2016,11,hungaroring,wehrlein,manor,19,20,0,68,+2 Laps,20
+2016,11,hungaroring,ericsson,sauber,20,22,0,68,+2 Laps,14
+2016,11,hungaroring,haryanto,manor,21,21,0,68,+2 Laps,22
+2016,11,hungaroring,button,mclaren,22,8,0,60,Oil leak,21
+2016,12,hockenheimring,hamilton,mercedes,1,2,25,67,Finished,3
+2016,12,hockenheimring,ricciardo,red_bull,2,3,18,67,Finished,1
+2016,12,hockenheimring,max_verstappen,red_bull,3,4,15,67,Finished,4
+2016,12,hockenheimring,rosberg,mercedes,4,1,12,67,Finished,5
+2016,12,hockenheimring,vettel,ferrari,5,6,10,67,Finished,2
+2016,12,hockenheimring,raikkonen,ferrari,6,5,8,67,Finished,6
+2016,12,hockenheimring,hulkenberg,force_india,7,8,6,67,Finished,12
+2016,12,hockenheimring,button,mclaren,8,12,4,66,+1 Lap,9
+2016,12,hockenheimring,bottas,williams,9,7,2,66,+1 Lap,15
+2016,12,hockenheimring,perez,force_india,10,9,1,66,+1 Lap,8
+2016,12,hockenheimring,gutierrez,haas,11,11,0,66,+1 Lap,10
+2016,12,hockenheimring,alonso,mclaren,12,13,0,66,+1 Lap,13
+2016,12,hockenheimring,grosjean,haas,13,20,0,66,+1 Lap,14
+2016,12,hockenheimring,sainz,toro_rosso,14,15,0,66,+1 Lap,11
+2016,12,hockenheimring,kvyat,toro_rosso,15,18,0,66,+1 Lap,7
+2016,12,hockenheimring,kevin_magnussen,renault,16,16,0,66,+1 Lap,21
+2016,12,hockenheimring,wehrlein,manor,17,17,0,65,+2 Laps,16
+2016,12,hockenheimring,ericsson,sauber,18,22,0,65,+2 Laps,18
+2016,12,hockenheimring,jolyon_palmer,renault,19,14,0,65,+2 Laps,17
+2016,12,hockenheimring,haryanto,manor,20,19,0,65,+2 Laps,22
+2016,12,hockenheimring,nasr,sauber,21,21,0,57,Power Unit,19
+2016,12,hockenheimring,massa,williams,22,10,0,36,Suspension,20
+2016,13,spa,rosberg,mercedes,1,1,25,44,Finished,2
+2016,13,spa,ricciardo,red_bull,2,5,18,44,Finished,4
+2016,13,spa,hamilton,mercedes,3,21,15,44,Finished,1
+2016,13,spa,hulkenberg,force_india,4,7,12,44,Finished,10
+2016,13,spa,perez,force_india,5,6,10,44,Finished,8
+2016,13,spa,vettel,ferrari,6,4,8,44,Finished,5
+2016,13,spa,alonso,mclaren,7,22,6,44,Finished,15
+2016,13,spa,bottas,williams,8,8,4,44,Finished,12
+2016,13,spa,raikkonen,ferrari,9,3,2,44,Finished,9
+2016,13,spa,massa,williams,10,10,1,44,Finished,14
+2016,13,spa,max_verstappen,red_bull,11,2,0,44,Finished,7
+2016,13,spa,gutierrez,haas,12,18,0,44,Finished,13
+2016,13,spa,grosjean,haas,13,11,0,44,Finished,11
+2016,13,spa,kvyat,toro_rosso,14,19,0,44,Finished,3
+2016,13,spa,jolyon_palmer,renault,15,13,0,44,Finished,6
+2016,13,spa,ocon,manor,16,17,0,43,+1 Lap,16
+2016,13,spa,nasr,sauber,17,16,0,43,+1 Lap,17
+2016,13,spa,kevin_magnussen,renault,18,12,0,5,Accident,18
+2016,13,spa,ericsson,sauber,19,20,0,3,Gearbox,19
+2016,13,spa,sainz,toro_rosso,20,14,0,1,Puncture,
+2016,13,spa,button,mclaren,21,9,0,1,Collision damage,
+2016,13,spa,wehrlein,manor,22,15,0,0,Collision damage,
+2016,14,monza,rosberg,mercedes,1,2,25,53,Finished,9
+2016,14,monza,hamilton,mercedes,2,1,18,53,Finished,4
+2016,14,monza,vettel,ferrari,3,3,15,53,Finished,5
+2016,14,monza,raikkonen,ferrari,4,4,12,53,Finished,3
+2016,14,monza,ricciardo,red_bull,5,6,10,53,Finished,2
+2016,14,monza,bottas,williams,6,5,8,53,Finished,10
+2016,14,monza,max_verstappen,red_bull,7,7,6,53,Finished,8
+2016,14,monza,perez,force_india,8,8,4,53,Finished,12
+2016,14,monza,massa,williams,9,11,2,53,Finished,7
+2016,14,monza,hulkenberg,force_india,10,9,1,53,Finished,13
+2016,14,monza,grosjean,haas,11,17,0,52,+1 Lap,15
+2016,14,monza,button,mclaren,12,14,0,52,+1 Lap,6
+2016,14,monza,gutierrez,haas,13,10,0,52,+1 Lap,14
+2016,14,monza,alonso,mclaren,14,12,0,52,+1 Lap,1
+2016,14,monza,sainz,toro_rosso,15,15,0,52,+1 Lap,11
+2016,14,monza,ericsson,sauber,16,19,0,52,+1 Lap,19
+2016,14,monza,kevin_magnussen,renault,17,21,0,52,+1 Lap,16
+2016,14,monza,ocon,manor,18,22,0,51,+2 Laps,18
+2016,14,monza,kvyat,toro_rosso,19,16,0,36,Battery,17
+2016,14,monza,wehrlein,manor,20,13,0,26,Oil leak,20
+2016,14,monza,jolyon_palmer,renault,21,20,0,7,Collision damage,21
+2016,14,monza,nasr,sauber,22,18,0,6,Collision damage,
+2016,15,marina_bay,rosberg,mercedes,1,1,25,61,Finished,6
+2016,15,marina_bay,ricciardo,red_bull,2,2,18,61,Finished,1
+2016,15,marina_bay,hamilton,mercedes,3,3,15,61,Finished,3
+2016,15,marina_bay,raikkonen,ferrari,4,5,12,61,Finished,4
+2016,15,marina_bay,vettel,ferrari,5,22,10,61,Finished,2
+2016,15,marina_bay,max_verstappen,red_bull,6,4,8,61,Finished,5
+2016,15,marina_bay,alonso,mclaren,7,9,6,61,Finished,12
+2016,15,marina_bay,perez,force_india,8,17,4,61,Finished,15
+2016,15,marina_bay,kvyat,toro_rosso,9,7,2,61,Finished,9
+2016,15,marina_bay,kevin_magnussen,renault,10,15,1,61,Finished,8
+2016,15,marina_bay,gutierrez,haas,11,13,0,60,+1 Lap,11
+2016,15,marina_bay,massa,williams,12,11,0,60,+1 Lap,14
+2016,15,marina_bay,nasr,sauber,13,16,0,60,+1 Lap,17
+2016,15,marina_bay,sainz,toro_rosso,14,6,0,60,+1 Lap,7
+2016,15,marina_bay,jolyon_palmer,renault,15,18,0,60,+1 Lap,19
+2016,15,marina_bay,wehrlein,manor,16,19,0,60,+1 Lap,20
+2016,15,marina_bay,ericsson,sauber,17,14,0,60,+1 Lap,10
+2016,15,marina_bay,ocon,manor,18,21,0,59,+2 Laps,18
+2016,15,marina_bay,button,mclaren,19,12,0,43,Brakes,16
+2016,15,marina_bay,bottas,williams,20,10,0,35,Overheating,13
+2016,15,marina_bay,hulkenberg,force_india,21,8,0,0,Collision,
+2016,15,marina_bay,grosjean,haas,22,20,0,0,Withdrew,
+2016,16,sepang,ricciardo,red_bull,1,4,25,56,Finished,3
+2016,16,sepang,max_verstappen,red_bull,2,3,18,56,Finished,2
+2016,16,sepang,rosberg,mercedes,3,2,15,56,Finished,1
+2016,16,sepang,raikkonen,ferrari,4,6,12,56,Finished,4
+2016,16,sepang,bottas,williams,5,11,10,56,Finished,9
+2016,16,sepang,perez,force_india,6,7,8,56,Finished,11
+2016,16,sepang,alonso,mclaren,7,22,6,56,Finished,6
+2016,16,sepang,hulkenberg,force_india,8,8,4,56,Finished,5
+2016,16,sepang,button,mclaren,9,9,2,56,Finished,8
+2016,16,sepang,jolyon_palmer,renault,10,19,1,56,Finished,12
+2016,16,sepang,sainz,toro_rosso,11,16,0,56,Finished,10
+2016,16,sepang,ericsson,sauber,12,17,0,55,+1 Lap,14
+2016,16,sepang,massa,williams,13,10,0,55,+1 Lap,16
+2016,16,sepang,kvyat,toro_rosso,14,15,0,55,+1 Lap,15
+2016,16,sepang,wehrlein,manor,15,21,0,55,+1 Lap,13
+2016,16,sepang,ocon,manor,16,20,0,55,+1 Lap,18
+2016,16,sepang,nasr,sauber,17,18,0,46,Brakes,17
+2016,16,sepang,hamilton,mercedes,18,1,0,40,Engine,7
+2016,16,sepang,gutierrez,haas,19,13,0,39,Wheel nut,19
+2016,16,sepang,kevin_magnussen,renault,20,14,0,17,Power loss,21
+2016,16,sepang,grosjean,haas,21,12,0,7,Brakes,20
+2016,16,sepang,vettel,ferrari,22,5,0,0,Collision,
+2016,17,suzuka,rosberg,mercedes,1,1,25,53,Finished,5
+2016,17,suzuka,max_verstappen,red_bull,2,3,18,53,Finished,6
+2016,17,suzuka,hamilton,mercedes,3,2,15,53,Finished,2
+2016,17,suzuka,vettel,ferrari,4,6,12,53,Finished,1
+2016,17,suzuka,raikkonen,ferrari,5,8,10,53,Finished,4
+2016,17,suzuka,ricciardo,red_bull,6,4,8,53,Finished,3
+2016,17,suzuka,perez,force_india,7,5,6,53,Finished,7
+2016,17,suzuka,hulkenberg,force_india,8,9,4,53,Finished,10
+2016,17,suzuka,massa,williams,9,12,2,53,Finished,14
+2016,17,suzuka,bottas,williams,10,11,1,53,Finished,15
+2016,17,suzuka,grosjean,haas,11,7,0,53,Finished,8
+2016,17,suzuka,jolyon_palmer,renault,12,16,0,52,+1 Lap,16
+2016,17,suzuka,kvyat,toro_rosso,13,13,0,52,+1 Lap,11
+2016,17,suzuka,kevin_magnussen,renault,14,17,0,52,+1 Lap,18
+2016,17,suzuka,ericsson,sauber,15,18,0,52,+1 Lap,21
+2016,17,suzuka,alonso,mclaren,16,15,0,52,+1 Lap,19
+2016,17,suzuka,sainz,toro_rosso,17,14,0,52,+1 Lap,12
+2016,17,suzuka,button,mclaren,18,22,0,52,+1 Lap,9
+2016,17,suzuka,nasr,sauber,19,19,0,52,+1 Lap,22
+2016,17,suzuka,gutierrez,haas,20,10,0,52,+1 Lap,13
+2016,17,suzuka,ocon,manor,21,20,0,52,+1 Lap,20
+2016,17,suzuka,wehrlein,manor,22,21,0,52,+1 Lap,17
+2016,18,americas,hamilton,mercedes,1,1,25,56,Finished,4
+2016,18,americas,rosberg,mercedes,2,2,18,56,Finished,3
+2016,18,americas,ricciardo,red_bull,3,3,15,56,Finished,7
+2016,18,americas,vettel,ferrari,4,6,12,56,Finished,1
+2016,18,americas,alonso,mclaren,5,12,10,56,Finished,10
+2016,18,americas,sainz,toro_rosso,6,10,8,56,Finished,8
+2016,18,americas,massa,williams,7,9,6,55,+1 Lap,9
+2016,18,americas,perez,force_india,8,11,4,55,+1 Lap,12
+2016,18,americas,button,mclaren,9,19,2,55,+1 Lap,15
+2016,18,americas,grosjean,haas,10,17,1,55,+1 Lap,14
+2016,18,americas,kvyat,toro_rosso,11,13,0,55,+1 Lap,6
+2016,18,americas,kevin_magnussen,renault,12,18,0,55,+1 Lap,17
+2016,18,americas,jolyon_palmer,renault,13,15,0,55,+1 Lap,16
+2016,18,americas,ericsson,sauber,14,16,0,55,+1 Lap,19
+2016,18,americas,nasr,sauber,15,21,0,55,+1 Lap,13
+2016,18,americas,bottas,williams,16,8,0,55,+1 Lap,18
+2016,18,americas,wehrlein,manor,17,20,0,55,+1 Lap,21
+2016,18,americas,ocon,manor,18,22,0,54,+2 Laps,11
+2016,18,americas,raikkonen,ferrari,19,5,0,38,Wheel,2
+2016,18,americas,max_verstappen,red_bull,20,4,0,28,Gearbox,5
+2016,18,americas,gutierrez,haas,21,14,0,16,Brakes,20
+2016,18,americas,hulkenberg,force_india,22,7,0,1,Collision,
+2016,19,rodriguez,hamilton,mercedes,1,1,25,71,Finished,4
+2016,19,rodriguez,rosberg,mercedes,2,2,18,71,Finished,5
+2016,19,rodriguez,ricciardo,red_bull,3,4,15,71,Finished,1
+2016,19,rodriguez,max_verstappen,red_bull,4,3,12,71,Finished,6
+2016,19,rodriguez,vettel,ferrari,5,7,10,71,Finished,2
+2016,19,rodriguez,raikkonen,ferrari,6,6,8,71,Finished,3
+2016,19,rodriguez,hulkenberg,force_india,7,5,6,71,Finished,9
+2016,19,rodriguez,bottas,williams,8,8,4,71,Finished,11
+2016,19,rodriguez,massa,williams,9,9,2,71,Finished,12
+2016,19,rodriguez,perez,force_india,10,12,1,71,Finished,13
+2016,19,rodriguez,ericsson,sauber,11,15,0,70,+1 Lap,18
+2016,19,rodriguez,button,mclaren,12,13,0,70,+1 Lap,17
+2016,19,rodriguez,alonso,mclaren,13,11,0,70,+1 Lap,16
+2016,19,rodriguez,jolyon_palmer,renault,14,21,0,70,+1 Lap,20
+2016,19,rodriguez,nasr,sauber,15,19,0,70,+1 Lap,15
+2016,19,rodriguez,sainz,toro_rosso,16,10,0,70,+1 Lap,19
+2016,19,rodriguez,kevin_magnussen,renault,17,14,0,70,+1 Lap,7
+2016,19,rodriguez,kvyat,toro_rosso,18,18,0,70,+1 Lap,14
+2016,19,rodriguez,gutierrez,haas,19,17,0,70,+1 Lap,10
+2016,19,rodriguez,grosjean,haas,20,22,0,70,+1 Lap,8
+2016,19,rodriguez,ocon,manor,21,20,0,69,+2 Laps,21
+2016,19,rodriguez,wehrlein,manor,22,16,0,0,Collision,
+2016,20,interlagos,hamilton,mercedes,1,1,25,71,Finished,3
+2016,20,interlagos,rosberg,mercedes,2,2,18,71,Finished,6
+2016,20,interlagos,max_verstappen,red_bull,3,4,15,71,Finished,1
+2016,20,interlagos,perez,force_india,4,9,12,71,Finished,11
+2016,20,interlagos,vettel,ferrari,5,5,10,71,Finished,5
+2016,20,interlagos,sainz,toro_rosso,6,15,8,71,Finished,13
+2016,20,interlagos,hulkenberg,force_india,7,8,6,71,Finished,8
+2016,20,interlagos,ricciardo,red_bull,8,6,4,71,Finished,2
+2016,20,interlagos,nasr,sauber,9,21,2,71,Finished,15
+2016,20,interlagos,alonso,mclaren,10,10,1,71,Finished,12
+2016,20,interlagos,bottas,williams,11,11,0,71,Finished,4
+2016,20,interlagos,ocon,manor,12,22,0,71,Finished,16
+2016,20,interlagos,kvyat,toro_rosso,13,14,0,71,Finished,14
+2016,20,interlagos,kevin_magnussen,renault,14,18,0,71,Finished,7
+2016,20,interlagos,wehrlein,manor,15,19,0,71,Finished,18
+2016,20,interlagos,button,mclaren,16,17,0,71,Finished,10
+2016,20,interlagos,gutierrez,haas,17,12,0,60,Retired,17
+2016,20,interlagos,massa,williams,18,13,0,46,Collision,9
+2016,20,interlagos,jolyon_palmer,renault,19,16,0,20,Collision damage,21
+2016,20,interlagos,raikkonen,ferrari,20,3,0,19,Collision,19
+2016,20,interlagos,ericsson,sauber,21,20,0,11,Collision,20
+2016,20,interlagos,grosjean,haas,22,7,0,0,Withdrew,
+2016,21,yas_marina,hamilton,mercedes,1,1,25,55,Finished,5
+2016,21,yas_marina,rosberg,mercedes,2,2,18,55,Finished,9
+2016,21,yas_marina,vettel,ferrari,3,5,15,55,Finished,1
+2016,21,yas_marina,max_verstappen,red_bull,4,6,12,55,Finished,7
+2016,21,yas_marina,ricciardo,red_bull,5,3,10,55,Finished,3
+2016,21,yas_marina,raikkonen,ferrari,6,4,8,55,Finished,6
+2016,21,yas_marina,hulkenberg,force_india,7,7,6,55,Finished,13
+2016,21,yas_marina,perez,force_india,8,8,4,55,Finished,8
+2016,21,yas_marina,massa,williams,9,10,2,55,Finished,10
+2016,21,yas_marina,alonso,mclaren,10,9,1,55,Finished,2
+2016,21,yas_marina,grosjean,haas,11,14,0,55,Finished,4
+2016,21,yas_marina,gutierrez,haas,12,13,0,55,Finished,12
+2016,21,yas_marina,ocon,manor,13,20,0,54,+1 Lap,15
+2016,21,yas_marina,wehrlein,manor,14,16,0,54,+1 Lap,14
+2016,21,yas_marina,ericsson,sauber,15,22,0,54,+1 Lap,16
+2016,21,yas_marina,nasr,sauber,16,19,0,54,+1 Lap,17
+2016,21,yas_marina,jolyon_palmer,renault,17,15,0,54,+1 Lap,11
+2016,21,yas_marina,sainz,toro_rosso,18,21,0,41,Collision damage,18
+2016,21,yas_marina,kvyat,toro_rosso,19,17,0,14,Gearbox,21
+2016,21,yas_marina,button,mclaren,20,12,0,12,Suspension,22
+2016,21,yas_marina,bottas,williams,21,11,0,6,Suspension,19
+2016,21,yas_marina,kevin_magnussen,renault,22,18,0,5,Suspension,20

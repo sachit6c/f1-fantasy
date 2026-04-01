@@ -1,0 +1,19 @@
+season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
+2008,1,Australian Grand Prix,albert_park,Albert Park Grand Prix Circuit,Melbourne,Australia,-37.8497,144.968,2008-03-16,04:30:00Z
+2008,2,Malaysian Grand Prix,sepang,Sepang International Circuit,Kuala Lumpur,Malaysia,2.76083,101.738,2008-03-23,07:00:00Z
+2008,3,Bahrain Grand Prix,bahrain,Bahrain International Circuit,Sakhir,Bahrain,26.0325,50.5106,2008-04-06,11:30:00Z
+2008,4,Spanish Grand Prix,catalunya,Circuit de Barcelona-Catalunya,Barcelona,Spain,41.57,2.26111,2008-04-27,12:00:00Z
+2008,5,Turkish Grand Prix,istanbul,Istanbul Park,Istanbul,Turkey,40.9517,29.405,2008-05-11,12:00:00Z
+2008,6,Monaco Grand Prix,monaco,Circuit de Monaco,Monte Carlo,Monaco,43.7347,7.42056,2008-05-25,12:00:00Z
+2008,7,Canadian Grand Prix,villeneuve,Circuit Gilles Villeneuve,Montreal,Canada,45.5,-73.5228,2008-06-08,17:00:00Z
+2008,8,French Grand Prix,magny_cours,Circuit de Nevers Magny-Cours,Magny Cours,France,46.8642,3.16361,2008-06-22,12:00:00Z
+2008,9,British Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2008-07-06,12:00:00Z
+2008,10,German Grand Prix,hockenheimring,Hockenheimring,Hockenheim,Germany,49.3278,8.56583,2008-07-20,12:00:00Z
+2008,11,Hungarian Grand Prix,hungaroring,Hungaroring,Budapest,Hungary,47.5789,19.2486,2008-08-03,12:00:00Z
+2008,12,European Grand Prix,valencia,Valencia Street Circuit,Valencia,Spain,39.4589,-0.331667,2008-08-24,12:00:00Z
+2008,13,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,Spa,Belgium,50.4372,5.97139,2008-09-07,12:00:00Z
+2008,14,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2008-09-14,12:00:00Z
+2008,15,Singapore Grand Prix,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,1.2914,103.864,2008-09-28,12:00:00Z
+2008,16,Japanese Grand Prix,fuji,Fuji Speedway,Oyama,Japan,35.3717,138.927,2008-10-12,04:30:00Z
+2008,17,Chinese Grand Prix,shanghai,Shanghai International Circuit,Shanghai,China,31.3389,121.22,2008-10-19,07:00:00Z
+2008,18,Brazilian Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2008-11-02,17:00:00Z

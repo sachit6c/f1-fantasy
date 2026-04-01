@@ -4,6 +4,7 @@
 import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
+import { getChartTheme } from '../lib/theme.js';
 
 export class DriverProfileView extends BaseView {
   async render(container, params) {
@@ -571,7 +572,8 @@ export class DriverProfileView extends BaseView {
           order: isCurrentDriver ? 1 : 2
         });
       });
-      
+
+      const ct = getChartTheme();
       new Chart(ctx, {
         type: 'line',
         data: {
@@ -587,7 +589,7 @@ export class DriverProfileView extends BaseView {
               display: true,
               position: 'top',
               labels: {
-                color: '#E0E0E0',
+                color: ct.titleColor,
                 font: {
                   size: 10
                 },
@@ -602,10 +604,10 @@ export class DriverProfileView extends BaseView {
             tooltip: {
               mode: 'index',
               intersect: false,
-              backgroundColor: 'rgba(28, 33, 39, 0.95)',
-              titleColor: '#E0E0E0',
-              bodyColor: '#E0E0E0',
-              borderColor: '#30363D',
+              backgroundColor: ct.tooltipBg,
+              titleColor: ct.titleColor,
+              bodyColor: ct.titleColor,
+              borderColor: ct.tooltipBorder,
               borderWidth: 1,
               padding: 12,
               callbacks: {
@@ -619,10 +621,10 @@ export class DriverProfileView extends BaseView {
             x: {
               grid: {
                 display: false,
-                color: 'rgba(48, 54, 61, 0.3)'
+                color: ct.gridColor
               },
               ticks: {
-                color: '#A0A0A0',
+                color: ct.textColor,
                 font: {
                   size: 11
                 },
@@ -634,11 +636,11 @@ export class DriverProfileView extends BaseView {
               reverse: true,
               min: 1,
               grid: {
-                color: 'rgba(48, 54, 61, 0.3)'
+                color: ct.gridColor
               },
               ticks: {
                 stepSize: 1,
-                color: '#A0A0A0',
+                color: ct.textColor,
                 font: {
                   size: 12
                 },
@@ -649,7 +651,7 @@ export class DriverProfileView extends BaseView {
               title: {
                 display: true,
                 text: 'Championship Position',
-                color: '#E0E0E0',
+                color: ct.titleColor,
                 font: {
                   size: 13,
                   weight: 'bold'
@@ -765,7 +767,8 @@ export class DriverProfileView extends BaseView {
           order: isCurrentDriver ? 1 : 2
         });
       });
-      
+
+      const ct = getChartTheme();
       new Chart(ctx, {
         type: 'line',
         data: {
@@ -781,7 +784,7 @@ export class DriverProfileView extends BaseView {
               display: true,
               position: 'top',
               labels: {
-                color: '#E0E0E0',
+                color: ct.titleColor,
                 font: {
                   size: 10
                 },
@@ -796,10 +799,10 @@ export class DriverProfileView extends BaseView {
             tooltip: {
               mode: 'index',
               intersect: false,
-              backgroundColor: 'rgba(28, 33, 39, 0.95)',
-              titleColor: '#E0E0E0',
-              bodyColor: '#E0E0E0',
-              borderColor: '#30363D',
+              backgroundColor: ct.tooltipBg,
+              titleColor: ct.titleColor,
+              bodyColor: ct.titleColor,
+              borderColor: ct.tooltipBorder,
               borderWidth: 1,
               padding: 12,
               callbacks: {
@@ -813,10 +816,10 @@ export class DriverProfileView extends BaseView {
             x: {
               grid: {
                 display: false,
-                color: 'rgba(48, 54, 61, 0.3)'
+                color: ct.gridColor
               },
               ticks: {
-                color: '#A0A0A0',
+                color: ct.textColor,
                 font: {
                   size: 11
                 },
@@ -828,10 +831,10 @@ export class DriverProfileView extends BaseView {
               type: 'logarithmic',
               min: 1,
               grid: {
-                color: 'rgba(48, 54, 61, 0.3)'
+                color: ct.gridColor
               },
               ticks: {
-                color: '#A0A0A0',
+                color: ct.textColor,
                 font: {
                   size: 12
                 },
@@ -845,7 +848,7 @@ export class DriverProfileView extends BaseView {
               title: {
                 display: true,
                 text: 'Cumulative Points (Log Scale)',
-                color: '#E0E0E0',
+                color: ct.titleColor,
                 font: {
                   size: 13,
                   weight: 'bold'

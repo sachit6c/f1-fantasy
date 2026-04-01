@@ -471,6 +471,7 @@ export class TeamComparisonView extends BaseView {
 
     // Display each matchup with bar graphs
     const cards = [];
+    const carouselConstructors = [];
     comparison.driverMatchups.matchups.forEach(matchup => {
       const matchupCard = this.createElement('div', 'teammate-matchup-card');
       
@@ -628,6 +629,7 @@ export class TeamComparisonView extends BaseView {
 
       matchupCard.appendChild(statsContainer);
       cards.push(matchupCard);
+      carouselConstructors.push(constructor || null);
     });
 
     if (cards.length === 1) {
@@ -656,9 +658,26 @@ export class TeamComparisonView extends BaseView {
       const dotsEl = this.createElement('div', 'carousel-dots');
       const counter = this.createElement('span', 'carousel-counter');
 
-      cards.forEach((_, i) => {
+      comparison.driverMatchups.matchups.forEach((matchup, i) => {
         const dot = this.createElement('button', 'carousel-dot');
-        dot.setAttribute('aria-label', `Go to matchup ${i + 1}`);
+        dot.setAttribute('aria-label', `Go to ${matchup.team} matchup`);
+        const constructor = carouselConstructors[i];
+        if (constructor) {
+          const logoImg = this.createElement('img', 'carousel-dot-logo');
+          logoImg.src = dataStore.getConstructorLogoUrl(constructor.constructorId);
+          logoImg.alt = matchup.team;
+          logoImg.onerror = () => {
+            logoImg.style.display = 'none';
+            const fallback = this.createElement('span', 'carousel-dot-fallback');
+            fallback.textContent = matchup.team.slice(0, 3).toUpperCase();
+            dot.appendChild(fallback);
+          };
+          dot.appendChild(logoImg);
+        } else {
+          const fallback = this.createElement('span', 'carousel-dot-fallback');
+          fallback.textContent = matchup.team.slice(0, 3).toUpperCase();
+          dot.appendChild(fallback);
+        }
         dotsEl.appendChild(dot);
       });
 

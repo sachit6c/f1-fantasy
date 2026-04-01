@@ -107,19 +107,19 @@
 }
 
 .status-completed {
-  background: rgba(40, 167, 69, 0.2);
+  background: var(--color-success-subtle);
   color: var(--color-success);
   border: 1px solid var(--color-success);
 }
 
 .status-today {
-  background: rgba(255, 193, 7, 0.2);
+  background: var(--color-warning-subtle);
   color: var(--color-warning);
   border: 1px solid var(--color-warning);
 }
 
 .status-upcoming {
-  background: rgba(23, 162, 184, 0.2);
+  background: var(--color-info-subtle);
   color: var(--color-info);
   border: 1px solid var(--color-info);
 }
@@ -545,12 +545,12 @@
 
 /* ---- Leaflet popup overrides ---- */
 .lf-popup-wrapper .leaflet-popup-content-wrapper {
-  background: #1a1a2e;
+  background: var(--color-bg-elevated);
   border: 1.5px solid var(--color-primary);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-lg);
   padding: 0;
-  color: #e0e0e0;
+  color: var(--color-text-primary);
 }
 
 .lf-popup-wrapper .leaflet-popup-content {
@@ -572,7 +572,7 @@
   align-items: center;
   margin-bottom: var(--spacing-sm);
   padding-bottom: var(--spacing-xs);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .lf-popup-round {
@@ -600,13 +600,13 @@
 .lf-popup-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
-  color: #fff;
+  color: var(--color-text-primary);
   margin: var(--spacing-xs) 0;
 }
 
 .lf-popup-detail {
   font-size: var(--font-size-sm);
-  color: #b0b0c0;
+  color: var(--color-text-secondary);
   margin: 3px 0;
   line-height: 1.5;
 }
@@ -615,7 +615,7 @@
   display: block;
   margin-top: var(--spacing-sm);
   padding-top: var(--spacing-xs);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid var(--color-border-subtle);
   font-size: var(--font-size-xs);
   color: var(--color-primary);
   text-decoration: none;
@@ -650,8 +650,40 @@
     gap: var(--spacing-xs);
   }
 
+  /* Stack race info above podium + status on mobile */
+  .week-race-item {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .week-race-info {
+    flex-basis: 100%;
+  }
+
+  /* Podium scrolls horizontally so it never truncates the race name */
   .week-podium {
+    flex: 1 1 auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0;
     justify-content: flex-start;
+  }
+
+  .week-podium::-webkit-scrollbar {
+    display: none;
+  }
+
+  .week-race-status {
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  /* Prevent long race names from overflowing */
+  .week-race-name {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
@@ -670,5 +702,27 @@
 
   .calendar-card {
     padding: var(--spacing-md);
+  }
+
+  /* Shrink week title text on very small screens */
+  .week-title {
+    font-size: var(--font-size-base);
+  }
+
+  /* Stack the current-week badge onto its own line */
+  .current-week-badge {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--spacing-xs);
+  }
+
+  /* Shrink race details text */
+  .week-race-details {
+    font-size: 11px;
+  }
+
+  /* Condensed podium items */
+  .week-podium-item {
+    padding: 3px 6px;
   }
 }
