@@ -83,7 +83,13 @@ export class DriverProfileView extends BaseView {
     const photo = this.createElement('img', 'driver-photo-large');
     photo.src = this.driver.photoUrl;
     photo.alt = this.driver.name;
-    // Don't hide on error - SVG data URIs are locally generated
+    photo.onerror = () => {
+      photo.style.display = 'none';
+      const fallback = this.createElement('div', 'driver-photo-large-fallback');
+      fallback.textContent = this.driver.code || this.driver.name.charAt(0);
+      if (this.driver.teamColor) fallback.style.background = this.driver.teamColor;
+      photoContainer.appendChild(fallback);
+    };
     photoContainer.appendChild(photo);
     profileTop.appendChild(photoContainer);
 
