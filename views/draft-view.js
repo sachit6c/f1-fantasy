@@ -209,7 +209,6 @@ export class DraftView extends BaseView {
     const header = this.createElement('div', 'draft-header');
 
     const title = this.createElement('h1', [], 'F1 Fantasy Draft');
-    title.style.color = 'white';
     header.appendChild(title);
 
     const status = this.createElement('div', 'draft-status-new');
@@ -258,7 +257,7 @@ export class DraftView extends BaseView {
     const header = this.createElement('div', 'panel-header');
     const name = this.createElement('h2', [], player.name);
     if (isActive) {
-      name.style.color = '#FFD700'; // Gold for active player
+      name.style.color = 'var(--color-accent)'; // Gold for active player
     }
     header.appendChild(name);
 

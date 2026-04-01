@@ -1,0 +1,241 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2010,1,bahrain,alonso,ferrari,1,3,25,49,Finished,1
+2010,1,bahrain,massa,ferrari,2,2,18,49,Finished,5
+2010,1,bahrain,hamilton,mclaren,3,4,15,49,Finished,4
+2010,1,bahrain,vettel,red_bull,4,1,12,49,Finished,12
+2010,1,bahrain,rosberg,mercedes,5,5,10,49,Finished,13
+2010,1,bahrain,michael_schumacher,mercedes,6,7,8,49,Finished,11
+2010,1,bahrain,button,mclaren,7,8,6,49,Finished,9
+2010,1,bahrain,webber,red_bull,8,6,4,49,Finished,3
+2010,1,bahrain,liuzzi,force_india,9,12,2,49,Finished,7
+2010,1,bahrain,barrichello,williams,10,11,1,49,Finished,6
+2010,1,bahrain,kubica,renault,11,9,0,49,Finished,14
+2010,1,bahrain,sutil,force_india,12,10,0,49,Finished,2
+2010,1,bahrain,alguersuari,toro_rosso,13,18,0,49,Finished,8
+2010,1,bahrain,hulkenberg,williams,14,13,0,48,+1 Lap,15
+2010,1,bahrain,kovalainen,lotus_racing,15,21,0,47,+2 Laps,17
+2010,1,bahrain,buemi,toro_rosso,16,15,0,46,Electrical,10
+2010,1,bahrain,trulli,lotus_racing,17,20,0,46,Hydraulics,18
+2010,1,bahrain,rosa,sauber,18,14,0,28,Hydraulics,16
+2010,1,bahrain,bruno_senna,hrt,19,23,0,17,Overheating,22
+2010,1,bahrain,glock,virgin,20,19,0,16,Gearbox,21
+2010,1,bahrain,petrov,renault,21,17,0,13,Suspension,19
+2010,1,bahrain,kobayashi,sauber,22,16,0,11,Hydraulics,20
+2010,1,bahrain,grassi,virgin,23,22,0,2,Hydraulics,23
+2010,1,bahrain,chandhok,hrt,24,24,0,1,Accident,
+2010,2,albert_park,button,mclaren,1,4,25,58,Finished,6
+2010,2,albert_park,kubica,renault,2,9,18,58,Finished,8
+2010,2,albert_park,massa,ferrari,3,5,15,58,Finished,7
+2010,2,albert_park,alonso,ferrari,4,3,12,58,Finished,10
+2010,2,albert_park,rosberg,mercedes,5,6,10,58,Finished,2
+2010,2,albert_park,hamilton,mclaren,6,11,8,58,Finished,3
+2010,2,albert_park,liuzzi,force_india,7,13,6,58,Finished,9
+2010,2,albert_park,barrichello,williams,8,8,4,58,Finished,5
+2010,2,albert_park,webber,red_bull,9,2,2,58,Finished,1
+2010,2,albert_park,michael_schumacher,mercedes,10,7,1,58,Finished,4
+2010,2,albert_park,alguersuari,toro_rosso,11,17,0,58,Finished,11
+2010,2,albert_park,rosa,sauber,12,14,0,58,Finished,12
+2010,2,albert_park,kovalainen,lotus_racing,13,19,0,56,+2 Laps,14
+2010,2,albert_park,chandhok,hrt,14,22,0,53,+5 Laps,16
+2010,2,albert_park,glock,virgin,15,23,0,41,Suspension,15
+2010,2,albert_park,grassi,virgin,16,24,0,26,Hydraulics,17
+2010,2,albert_park,vettel,red_bull,17,1,0,25,Wheel,13
+2010,2,albert_park,sutil,force_india,18,10,0,9,Engine,19
+2010,2,albert_park,petrov,renault,19,18,0,9,Spun off,18
+2010,2,albert_park,bruno_senna,hrt,20,21,0,4,Hydraulics,20
+2010,2,albert_park,buemi,toro_rosso,21,12,0,0,Collision,
+2010,2,albert_park,hulkenberg,williams,22,15,0,0,Collision,
+2010,2,albert_park,kobayashi,sauber,23,16,0,0,Collision,
+2010,2,albert_park,trulli,lotus_racing,24,20,0,0,Hydraulics,
+2010,3,sepang,vettel,red_bull,1,3,25,56,Finished,6
+2010,3,sepang,webber,red_bull,2,1,18,56,Finished,1
+2010,3,sepang,rosberg,mercedes,3,2,15,56,Finished,8
+2010,3,sepang,kubica,renault,4,6,12,56,Finished,7
+2010,3,sepang,sutil,force_india,5,4,10,56,Finished,9
+2010,3,sepang,hamilton,mclaren,6,20,8,56,Finished,4
+2010,3,sepang,massa,ferrari,7,21,6,56,Finished,5
+2010,3,sepang,button,mclaren,8,17,4,56,Finished,10
+2010,3,sepang,alguersuari,toro_rosso,9,14,2,56,Finished,13
+2010,3,sepang,hulkenberg,williams,10,5,1,56,Finished,11
+2010,3,sepang,buemi,toro_rosso,11,13,0,56,Finished,3
+2010,3,sepang,barrichello,williams,12,7,0,55,+1 Lap,12
+2010,3,sepang,alonso,ferrari,13,19,0,54,Engine,2
+2010,3,sepang,grassi,virgin,14,24,0,53,+3 Laps,18
+2010,3,sepang,chandhok,hrt,15,22,0,53,+3 Laps,21
+2010,3,sepang,bruno_senna,hrt,16,23,0,52,+4 Laps,22
+2010,3,sepang,trulli,lotus_racing,17,18,0,51,+5 Laps,20
+2010,3,sepang,kovalainen,lotus_racing,18,15,0,46,+10 Laps,17
+2010,3,sepang,petrov,renault,19,11,0,32,Gearbox,14
+2010,3,sepang,liuzzi,force_india,20,10,0,12,Throttle,16
+2010,3,sepang,michael_schumacher,mercedes,21,8,0,9,Wheel,15
+2010,3,sepang,kobayashi,sauber,22,9,0,8,Engine,19
+2010,3,sepang,glock,virgin,23,16,0,2,Spun off,23
+2010,3,sepang,rosa,sauber,24,12,0,0,Engine,
+2010,4,shanghai,button,mclaren,1,5,25,56,Finished,4
+2010,4,shanghai,hamilton,mclaren,2,6,18,56,Finished,1
+2010,4,shanghai,rosberg,mercedes,3,4,15,56,Finished,5
+2010,4,shanghai,alonso,ferrari,4,3,12,56,Finished,9
+2010,4,shanghai,kubica,renault,5,8,10,56,Finished,6
+2010,4,shanghai,vettel,red_bull,6,1,8,56,Finished,2
+2010,4,shanghai,petrov,renault,7,14,6,56,Finished,8
+2010,4,shanghai,webber,red_bull,8,2,4,56,Finished,3
+2010,4,shanghai,massa,ferrari,9,7,2,56,Finished,13
+2010,4,shanghai,michael_schumacher,mercedes,10,9,1,56,Finished,10
+2010,4,shanghai,sutil,force_india,11,10,0,56,Finished,11
+2010,4,shanghai,barrichello,williams,12,11,0,56,Finished,14
+2010,4,shanghai,alguersuari,toro_rosso,13,12,0,56,Finished,7
+2010,4,shanghai,kovalainen,lotus_racing,14,21,0,55,+1 Lap,15
+2010,4,shanghai,hulkenberg,williams,15,16,0,55,+1 Lap,12
+2010,4,shanghai,bruno_senna,hrt,16,23,0,54,+2 Laps,17
+2010,4,shanghai,chandhok,hrt,17,24,0,52,+4 Laps,18
+2010,4,shanghai,trulli,lotus_racing,18,20,0,26,Hydraulics,19
+2010,4,shanghai,grassi,virgin,19,22,0,8,Clutch,20
+2010,4,shanghai,rosa,sauber,20,17,0,7,Technical,16
+2010,4,shanghai,buemi,toro_rosso,21,13,0,0,Accident,
+2010,4,shanghai,kobayashi,sauber,22,15,0,0,Accident,
+2010,4,shanghai,liuzzi,force_india,23,18,0,0,Accident,
+2010,4,shanghai,glock,virgin,24,19,0,0,Engine,
+2010,5,catalunya,webber,red_bull,1,1,25,66,Finished,2
+2010,5,catalunya,alonso,ferrari,2,4,18,66,Finished,3
+2010,5,catalunya,vettel,red_bull,3,2,15,66,Finished,5
+2010,5,catalunya,michael_schumacher,mercedes,4,6,12,66,Finished,10
+2010,5,catalunya,button,mclaren,5,5,10,66,Finished,4
+2010,5,catalunya,massa,ferrari,6,9,8,66,Finished,9
+2010,5,catalunya,sutil,force_india,7,11,6,66,Finished,13
+2010,5,catalunya,kubica,renault,8,7,4,66,Finished,7
+2010,5,catalunya,barrichello,williams,9,17,2,65,+1 Lap,12
+2010,5,catalunya,alguersuari,toro_rosso,10,15,1,65,+1 Lap,11
+2010,5,catalunya,petrov,renault,11,19,0,65,+1 Lap,8
+2010,5,catalunya,kobayashi,sauber,12,10,0,65,+1 Lap,15
+2010,5,catalunya,rosberg,mercedes,13,8,0,65,+1 Lap,6
+2010,5,catalunya,hamilton,mclaren,14,3,0,64,Puncture,1
+2010,5,catalunya,liuzzi,force_india,15,16,0,64,Engine,14
+2010,5,catalunya,hulkenberg,williams,16,13,0,64,+2 Laps,17
+2010,5,catalunya,trulli,lotus_racing,17,18,0,63,+3 Laps,18
+2010,5,catalunya,glock,virgin,18,22,0,63,+3 Laps,19
+2010,5,catalunya,grassi,virgin,19,23,0,62,+4 Laps,20
+2010,5,catalunya,buemi,toro_rosso,20,14,0,42,Hydraulics,16
+2010,5,catalunya,chandhok,hrt,21,24,0,27,Suspension,22
+2010,5,catalunya,rosa,sauber,22,12,0,18,Collision,21
+2010,5,catalunya,bruno_senna,hrt,23,21,0,0,Accident,
+2010,5,catalunya,kovalainen,lotus_racing,24,20,0,0,Gearbox,
+2010,6,monaco,webber,red_bull,1,1,25,78,Finished,2
+2010,6,monaco,vettel,red_bull,2,3,18,78,Finished,1
+2010,6,monaco,kubica,renault,3,2,15,78,Finished,3
+2010,6,monaco,massa,ferrari,4,4,12,78,Finished,4
+2010,6,monaco,hamilton,mclaren,5,5,10,78,Finished,10
+2010,6,monaco,alonso,ferrari,6,24,8,78,Finished,6
+2010,6,monaco,rosberg,mercedes,7,6,6,78,Finished,7
+2010,6,monaco,sutil,force_india,8,12,4,78,Finished,8
+2010,6,monaco,liuzzi,force_india,9,10,2,78,Finished,9
+2010,6,monaco,buemi,toro_rosso,10,13,1,78,Finished,13
+2010,6,monaco,alguersuari,toro_rosso,11,17,0,78,Finished,11
+2010,6,monaco,michael_schumacher,mercedes,12,7,0,78,Finished,5
+2010,6,monaco,petrov,renault,13,14,0,73,Brakes,12
+2010,6,monaco,chandhok,hrt,14,23,0,70,Collision,19
+2010,6,monaco,trulli,lotus_racing,15,19,0,70,Collision,18
+2010,6,monaco,kovalainen,lotus_racing,16,18,0,58,Steering,14
+2010,6,monaco,bruno_senna,hrt,17,22,0,58,Hydraulics,20
+2010,6,monaco,barrichello,williams,18,9,0,30,Suspension,16
+2010,6,monaco,kobayashi,sauber,19,16,0,26,Gearbox,15
+2010,6,monaco,grassi,virgin,20,21,0,25,Wheel,22
+2010,6,monaco,glock,virgin,21,20,0,22,Track rod,21
+2010,6,monaco,rosa,sauber,22,15,0,21,Hydraulics,17
+2010,6,monaco,button,mclaren,23,8,0,2,Engine,23
+2010,6,monaco,hulkenberg,williams,24,11,0,0,Front wing,
+2010,7,istanbul,hamilton,mclaren,1,2,25,58,Finished,12
+2010,7,istanbul,button,mclaren,2,4,18,58,Finished,7
+2010,7,istanbul,webber,red_bull,3,1,15,58,Finished,2
+2010,7,istanbul,michael_schumacher,mercedes,4,5,12,58,Finished,6
+2010,7,istanbul,rosberg,mercedes,5,6,10,58,Finished,9
+2010,7,istanbul,kubica,renault,6,7,8,58,Finished,4
+2010,7,istanbul,massa,ferrari,7,8,6,58,Finished,10
+2010,7,istanbul,alonso,ferrari,8,12,4,58,Finished,11
+2010,7,istanbul,sutil,force_india,9,11,2,58,Finished,8
+2010,7,istanbul,kobayashi,sauber,10,10,1,58,Finished,16
+2010,7,istanbul,rosa,sauber,11,13,0,58,Finished,14
+2010,7,istanbul,alguersuari,toro_rosso,12,16,0,58,Finished,3
+2010,7,istanbul,liuzzi,force_india,13,18,0,57,+1 Lap,18
+2010,7,istanbul,barrichello,williams,14,15,0,57,+1 Lap,17
+2010,7,istanbul,petrov,renault,15,9,0,57,+1 Lap,1
+2010,7,istanbul,buemi,toro_rosso,16,14,0,57,+1 Lap,5
+2010,7,istanbul,hulkenberg,williams,17,17,0,57,+1 Lap,15
+2010,7,istanbul,glock,virgin,18,21,0,55,+3 Laps,19
+2010,7,istanbul,grassi,virgin,19,23,0,55,+3 Laps,20
+2010,7,istanbul,chandhok,hrt,20,24,0,52,Fuel pump,24
+2010,7,istanbul,bruno_senna,hrt,21,22,0,46,Fuel pressure,21
+2010,7,istanbul,vettel,red_bull,22,3,0,39,Collision,13
+2010,7,istanbul,kovalainen,lotus_racing,23,20,0,33,Hydraulics,22
+2010,7,istanbul,trulli,lotus_racing,24,19,0,32,Hydraulics,23
+2010,8,villeneuve,hamilton,mclaren,1,1,25,70,Finished,2
+2010,8,villeneuve,button,mclaren,2,4,18,70,Finished,4
+2010,8,villeneuve,alonso,ferrari,3,3,15,70,Finished,6
+2010,8,villeneuve,vettel,red_bull,4,2,12,70,Finished,8
+2010,8,villeneuve,webber,red_bull,5,7,10,70,Finished,5
+2010,8,villeneuve,rosberg,mercedes,6,10,8,70,Finished,3
+2010,8,villeneuve,kubica,renault,7,8,6,70,Finished,1
+2010,8,villeneuve,buemi,toro_rosso,8,15,4,69,+1 Lap,15
+2010,8,villeneuve,liuzzi,force_india,9,5,2,69,+1 Lap,11
+2010,8,villeneuve,sutil,force_india,10,9,1,69,+1 Lap,13
+2010,8,villeneuve,michael_schumacher,mercedes,11,13,0,69,+1 Lap,14
+2010,8,villeneuve,alguersuari,toro_rosso,12,16,0,69,+1 Lap,16
+2010,8,villeneuve,hulkenberg,williams,13,12,0,69,+1 Lap,9
+2010,8,villeneuve,barrichello,williams,14,11,0,69,+1 Lap,10
+2010,8,villeneuve,massa,ferrari,15,6,0,69,+1 Lap,7
+2010,8,villeneuve,kovalainen,lotus_racing,16,19,0,68,+2 Laps,18
+2010,8,villeneuve,petrov,renault,17,14,0,68,+2 Laps,12
+2010,8,villeneuve,chandhok,hrt,18,24,0,66,+4 Laps,21
+2010,8,villeneuve,grassi,virgin,19,23,0,65,+5 Laps,22
+2010,8,villeneuve,glock,virgin,20,21,0,55,Mechanical,20
+2010,8,villeneuve,trulli,lotus_racing,21,20,0,47,Brakes,19
+2010,8,villeneuve,rosa,sauber,22,17,0,31,Engine,17
+2010,8,villeneuve,bruno_senna,hrt,23,22,0,14,Hydraulics,23
+2010,8,villeneuve,kobayashi,sauber,24,18,0,1,Accident,
+2010,9,valencia,vettel,red_bull,1,1,25,57,Finished,3
+2010,9,valencia,hamilton,mclaren,2,3,18,57,Finished,4
+2010,9,valencia,button,mclaren,3,7,15,57,Finished,1
+2010,9,valencia,barrichello,williams,4,9,12,57,Finished,5
+2010,9,valencia,kubica,renault,5,6,10,57,Finished,7
+2010,9,valencia,sutil,force_india,6,13,8,57,Finished,8
+2010,9,valencia,kobayashi,sauber,7,18,6,57,Finished,6
+2010,9,valencia,alonso,ferrari,8,4,4,57,Finished,10
+2010,9,valencia,buemi,toro_rosso,9,11,2,57,Finished,11
+2010,9,valencia,rosberg,mercedes,10,12,1,57,Finished,9
+2010,9,valencia,massa,ferrari,11,5,0,57,Finished,13
+2010,9,valencia,rosa,sauber,12,16,0,57,Finished,16
+2010,9,valencia,alguersuari,toro_rosso,13,17,0,57,Finished,15
+2010,9,valencia,petrov,renault,14,10,0,57,Finished,12
+2010,9,valencia,michael_schumacher,mercedes,15,15,0,57,Finished,2
+2010,9,valencia,liuzzi,force_india,16,14,0,57,Finished,14
+2010,9,valencia,grassi,virgin,17,21,0,56,+1 Lap,20
+2010,9,valencia,chandhok,hrt,18,23,0,55,+2 Laps,22
+2010,9,valencia,glock,virgin,19,22,0,55,+2 Laps,19
+2010,9,valencia,bruno_senna,hrt,20,24,0,55,+2 Laps,21
+2010,9,valencia,trulli,lotus_racing,21,19,0,53,+4 Laps,18
+2010,9,valencia,hulkenberg,williams,22,8,0,49,Exhaust,17
+2010,9,valencia,kovalainen,lotus_racing,23,20,0,8,Collision,24
+2010,9,valencia,webber,red_bull,24,2,0,8,Collision,23
+2010,10,silverstone,webber,red_bull,1,2,25,52,Finished,4
+2010,10,silverstone,hamilton,mclaren,2,4,18,52,Finished,6
+2010,10,silverstone,rosberg,mercedes,3,5,15,52,Finished,7
+2010,10,silverstone,button,mclaren,4,14,12,52,Finished,9
+2010,10,silverstone,barrichello,williams,5,8,10,52,Finished,11
+2010,10,silverstone,kobayashi,sauber,6,12,8,52,Finished,10
+2010,10,silverstone,vettel,red_bull,7,1,6,52,Finished,3
+2010,10,silverstone,sutil,force_india,8,11,4,52,Finished,16
+2010,10,silverstone,michael_schumacher,mercedes,9,10,2,52,Finished,15
+2010,10,silverstone,hulkenberg,williams,10,13,1,52,Finished,13
+2010,10,silverstone,liuzzi,force_india,11,20,0,52,Finished,14
+2010,10,silverstone,buemi,toro_rosso,12,16,0,52,Finished,8
+2010,10,silverstone,petrov,renault,13,15,0,52,Finished,5
+2010,10,silverstone,alonso,ferrari,14,3,0,52,Finished,1
+2010,10,silverstone,massa,ferrari,15,7,0,52,Finished,2
+2010,10,silverstone,trulli,lotus_racing,16,21,0,51,+1 Lap,20
+2010,10,silverstone,kovalainen,lotus_racing,17,18,0,51,+1 Lap,18
+2010,10,silverstone,glock,virgin,18,19,0,50,+2 Laps,19
+2010,10,silverstone,chandhok,hrt,19,23,0,50,+2 Laps,23
+2010,10,silverstone,yamamoto,hrt,20,24,0,50,+2 Laps,22
+2010,10,silverstone,alguersuari,toro_rosso,21,17,0,44,Brakes,12
+2010,10,silverstone,rosa,sauber,22,9,0,29,Collision,17
+2010,10,silverstone,kubica,renault,23,6,0,19,Driveshaft,21
+2010,10,silverstone,grassi,virgin,24,22,0,9,Hydraulics,24

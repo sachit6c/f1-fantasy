@@ -116,12 +116,13 @@
 
 .setup-form select[name="draftType"] {
   width: 100%;
-  padding: var(--spacing-md);
+  padding: 0.5rem var(--spacing-md);
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   color: var(--color-text-primary);
   font-size: var(--font-size-base);
+  height: auto;
   cursor: pointer;
   appearance: auto;
 }
@@ -540,17 +541,26 @@
 
 @media (max-width: 992px) {
   .draft-content-new {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "p1 p2"
+      "draft draft";
   }
+
+  /* Player panels side-by-side at top; draft area full-width below */
+  .draft-content-new > :nth-child(1) { grid-area: p1; }
+  .draft-content-new > :nth-child(2) { grid-area: draft; }
+  .draft-content-new > :nth-child(3) { grid-area: p2; }
 
   .player-panel-new {
     position: static;
   }
 
-  /* Stack: Player 1, Draft Area, Player 2 */
-  .draft-content-new > :nth-child(1) { order: 1; }
-  .draft-content-new > :nth-child(2) { order: 2; }
-  .draft-content-new > :nth-child(3) { order: 3; }
+  .roster-list-new {
+    max-height: 200px;
+    min-height: unset;
+    overflow-y: auto;
+  }
 
   .teams-grid-new {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -583,6 +593,49 @@
   .draft-actions button {
     width: 100%;
   }
+
+  /* Compact player panels for mobile side-by-side view */
+  .player-panel-new {
+    padding: var(--spacing-sm);
+  }
+
+  .panel-header {
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .panel-header h2 {
+    font-size: var(--font-size-base);
+    margin-bottom: 2px;
+  }
+
+  .roster-count-new {
+    font-size: var(--font-size-xs);
+  }
+
+  .roster-list-new {
+    max-height: 150px;
+    gap: 4px;
+  }
+
+  .roster-driver-new {
+    padding: 4px var(--spacing-xs);
+    gap: 4px;
+  }
+
+  .driver-photo-small {
+    width: 28px;
+    height: 28px;
+  }
+
+  .driver-code-small {
+    font-size: var(--font-size-sm);
+    width: 30px;
+  }
+
+  .driver-team-small {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -603,7 +656,38 @@
   }
 
   .player-panel-new {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-xs);
+  }
+
+  .panel-header h2 {
+    font-size: var(--font-size-sm);
+  }
+
+  .roster-count-new {
+    display: none;
+  }
+
+  .roster-list-new {
+    max-height: 120px;
+  }
+
+  .roster-driver-new {
+    gap: 3px;
+  }
+
+  .driver-photo-small {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+  }
+
+  .driver-code-small {
+    font-size: var(--font-size-xs);
+    width: 26px;
+  }
+
+  .driver-name-small {
+    font-size: var(--font-size-xs);
   }
 }
 
@@ -632,7 +716,7 @@
 /* Player 1 (Left Panel) - Sky Blue */
 .draft-content-new > .player-panel-new:nth-child(1) {
   border: 4px solid #0EA5E9 !important;
-  background: linear-gradient(135deg, #1A2530 0%, #0C3A52 100%);
+  background: var(--draft-p1-bg, linear-gradient(135deg, #1A2530 0%, #0C3A52 100%));
 }
 
 .draft-content-new > .player-panel-new:nth-child(1) .panel-header h2 {
@@ -642,7 +726,7 @@
 
 .draft-content-new > .player-panel-new:nth-child(1) .roster-driver-new {
   border-left: 4px solid #0EA5E9;
-  background: #0C3A52;
+  background: var(--draft-p1-row-bg, #0C3A52);
 }
 
 .draft-content-new > .player-panel-new:nth-child(1) .driver-code-small {
@@ -652,7 +736,7 @@
 /* Player 2 (Right Panel) - Orange */
 .draft-content-new > .player-panel-new:nth-child(3) {
   border: 4px solid #F97316 !important;
-  background: linear-gradient(135deg, #2A1F1A 0%, #4A2D1A 100%);
+  background: var(--draft-p2-bg, linear-gradient(135deg, #2A1F1A 0%, #4A2D1A 100%));
 }
 
 .draft-content-new > .player-panel-new:nth-child(3) .panel-header h2 {
@@ -662,7 +746,7 @@
 
 .draft-content-new > .player-panel-new:nth-child(3) .roster-driver-new {
   border-left: 4px solid #F97316;
-  background: #4A2D1A;
+  background: var(--draft-p2-row-bg, #4A2D1A);
 }
 
 .draft-content-new > .player-panel-new:nth-child(3) .driver-code-small {
@@ -788,4 +872,12 @@
   padding: var(--spacing-md);
   background: var(--color-bg-secondary);
   border-radius: var(--radius-md);
+}
+
+/* ===== LIGHT MODE OVERRIDES ===== */
+[data-theme="light"] {
+  --draft-p1-bg:      linear-gradient(135deg, rgba(14, 165, 233, 0.06) 0%, rgba(14, 165, 233, 0.12) 100%);
+  --draft-p1-row-bg:  rgba(14, 165, 233, 0.08);
+  --draft-p2-bg:      linear-gradient(135deg, rgba(249, 115, 22, 0.06) 0%, rgba(249, 115, 22, 0.12) 100%);
+  --draft-p2-row-bg:  rgba(249, 115, 22, 0.08);
 }

@@ -1,0 +1,22 @@
+season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
+2019,1,Australian Grand Prix,albert_park,Albert Park Grand Prix Circuit,Melbourne,Australia,-37.8497,144.968,2019-03-17,05:10:00Z
+2019,2,Bahrain Grand Prix,bahrain,Bahrain International Circuit,Sakhir,Bahrain,26.0325,50.5106,2019-03-31,15:10:00Z
+2019,3,Chinese Grand Prix,shanghai,Shanghai International Circuit,Shanghai,China,31.3389,121.22,2019-04-14,06:10:00Z
+2019,4,Azerbaijan Grand Prix,baku,Baku City Circuit,Baku,Azerbaijan,40.3725,49.8533,2019-04-28,12:10:00Z
+2019,5,Spanish Grand Prix,catalunya,Circuit de Barcelona-Catalunya,Barcelona,Spain,41.57,2.26111,2019-05-12,13:10:00Z
+2019,6,Monaco Grand Prix,monaco,Circuit de Monaco,Monte Carlo,Monaco,43.7347,7.42056,2019-05-26,13:10:00Z
+2019,7,Canadian Grand Prix,villeneuve,Circuit Gilles Villeneuve,Montreal,Canada,45.5,-73.5228,2019-06-09,18:10:00Z
+2019,8,French Grand Prix,ricard,Circuit Paul Ricard,Le Castellet,France,43.2506,5.79167,2019-06-23,13:10:00Z
+2019,9,Austrian Grand Prix,red_bull_ring,Red Bull Ring,Spielberg,Austria,47.2197,14.7647,2019-06-30,13:10:00Z
+2019,10,British Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2019-07-14,13:10:00Z
+2019,11,German Grand Prix,hockenheimring,Hockenheimring,Hockenheim,Germany,49.3278,8.56583,2019-07-28,13:10:00Z
+2019,12,Hungarian Grand Prix,hungaroring,Hungaroring,Budapest,Hungary,47.5789,19.2486,2019-08-04,13:10:00Z
+2019,13,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,Spa,Belgium,50.4372,5.97139,2019-09-01,13:10:00Z
+2019,14,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2019-09-08,13:10:00Z
+2019,15,Singapore Grand Prix,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,1.2914,103.864,2019-09-22,12:10:00Z
+2019,16,Russian Grand Prix,sochi,Sochi Autodrom,Sochi,Russia,43.4057,39.9578,2019-09-29,11:10:00Z
+2019,17,Japanese Grand Prix,suzuka,Suzuka Circuit,Suzuka,Japan,34.8431,136.541,2019-10-13,05:10:00Z
+2019,18,Mexican Grand Prix,rodriguez,Autódromo Hermanos Rodríguez,Mexico City,Mexico,19.4042,-99.0907,2019-10-27,19:10:00Z
+2019,19,United States Grand Prix,americas,Circuit of the Americas,Austin,USA,30.1328,-97.6411,2019-11-03,19:10:00Z
+2019,20,Brazilian Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2019-11-17,17:10:00Z
+2019,21,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2019-12-01,13:10:00Z

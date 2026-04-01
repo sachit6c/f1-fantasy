@@ -2,6 +2,11 @@
 // Client-side routing and view management
 
 import { Header } from '../components/header.js';
+import { draftStore } from '../lib/draft-store.js';
+
+// Seasons with local CSV data available
+const FIRST_SUPPORTED_SEASON = 2000;
+const LAST_SUPPORTED_SEASON = 2026;
 
 export class ViewManager {
   constructor() {
@@ -32,7 +37,7 @@ export class ViewManager {
    * Handles route changes based on window.location.hash.
    */
   handleRouteChange() {
-    const hash = window.location.hash || '#/draft';
+    const hash = window.location.hash || '#/home';
     const [_, route, ...params] = hash.split('/');
 
     this.navigateTo(route, params);
@@ -61,6 +66,14 @@ export class ViewManager {
     contentContainer.className = 'view-content';
     this.viewContainer.appendChild(contentContainer);
 
+    // Show coming soon page for seasons without local data
+    const season = draftStore.currentSeason || LAST_SUPPORTED_SEASON;
+    if (season < FIRST_SUPPORTED_SEASON || season > LAST_SUPPORTED_SEASON) {
+      this.renderComingSoon(contentContainer, season);
+      this.currentView = null;
+      return;
+    }
+
     // Render new view
     const view = this.views.get(viewName);
     if (!view) {
@@ -74,8 +87,36 @@ export class ViewManager {
     this.currentView = view;
     await view.render(contentContainer, paramsObj);
 
+    // Render footer after view content
+    this._renderFooter();
+
     // Update active nav link
     this.header.updateActiveLink();
+  }
+
+  /**
+   * Renders a "coming soon" page for seasons without local data.
+   * @param {HTMLElement} container
+   * @param {number} season
+   */
+  renderComingSoon(container, season) {
+    container.innerHTML = `
+      <div class="coming-soon-page">
+        <div class="coming-soon-inner">
+          <div class="coming-soon-icon">🏎️</div>
+          <h1 class="coming-soon-title">${season} Season</h1>
+          <p class="coming-soon-message">Historical data for this season is coming soon.</p>
+          <p class="coming-soon-sub">We currently have data from 2000 to 2026.<br>Select a different season to continue.</p>
+          <button class="coming-soon-btn" id="coming-soon-back-btn">Back to Current Season</button>
+        </div>
+      </div>
+    `;
+    container.querySelector('#coming-soon-back-btn').addEventListener('click', () => {
+      draftStore.setCurrentSeason(LAST_SUPPORTED_SEASON);
+      window.location.hash = '#/home';
+      this.navigateTo('home');
+    });
+    this._renderFooter();
   }
 
   /**
@@ -103,6 +144,38 @@ export class ViewManager {
     }
 
     return paramsObj;
+  }
+
+  /**
+   * Renders the app footer into the view container.
+   */
+  _renderFooter() {
+    const existing = this.viewContainer.querySelector('.app-footer');
+    if (existing) existing.remove();
+
+    const footer = document.createElement('footer');
+    footer.className = 'app-footer';
+    footer.innerHTML = `
+      <div class="app-footer-left">
+        <a href="#/home" class="app-footer-brand" aria-label="PitWall Home">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#E10600"/>
+            <text x="16" y="22" font-family="Arial Black, Arial" font-weight="900" font-size="13" fill="white" text-anchor="middle">F1</text>
+          </svg>
+          PitWall
+        </a>
+        <span class="app-footer-copy">&copy; ${new Date().getFullYear()} PitWall Fantasy</span>
+      </div>
+      <div class="app-footer-right">
+        <div class="app-footer-links">
+          <a href="#/calendar">Calendar</a>
+          <a href="#/drivers">Drivers</a>
+          <a href="#/constructors">Constructors</a>
+        </div>
+        <span class="app-footer-meta">v2.2</span>
+      </div>
+    `;
+    this.viewContainer.appendChild(footer);
   }
 
   /**

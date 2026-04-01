@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+/* Prevent the browser's default canvas (influenced by color-scheme) from
+   showing as pure black behind body on short pages or during transitions */
+html {
+  background-color: var(--color-bg-primary);
+  min-height: 100%;
+}
+
 body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
@@ -13,6 +20,7 @@ body {
   background-color: var(--color-bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
 
 /* Focus ring — accessible & consistent */
@@ -117,6 +125,67 @@ a:hover { color: var(--color-primary-hover); }
   overflow-y: auto;
 }
 
+/* ===== PAGE ENTRY ANIMATION ===== */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-content {
+  animation: fadeSlideIn 220ms ease both;
+}
+
+/* Staggered children — apply to grid/list containers */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeSlideIn 260ms ease both;
+}
+.stagger-children > *:nth-child(1)  { animation-delay: 40ms; }
+.stagger-children > *:nth-child(2)  { animation-delay: 80ms; }
+.stagger-children > *:nth-child(3)  { animation-delay: 120ms; }
+.stagger-children > *:nth-child(4)  { animation-delay: 160ms; }
+.stagger-children > *:nth-child(5)  { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6)  { animation-delay: 240ms; }
+.stagger-children > *:nth-child(n+7) { animation-delay: 280ms; }
+
+/* ===== PAGE HEADER BAR ===== */
+.page-header-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-wrap: wrap;
+}
+
+.page-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.page-header-bar .page-title {
+  margin-bottom: 0;
+}
+
+.page-header-bar .page-subtitle {
+  margin-bottom: 0;
+}
+
+.page-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
 /* Breadcrumb */
 .breadcrumb {
   margin-bottom: var(--spacing-lg);
@@ -175,24 +244,30 @@ a:hover { color: var(--color-primary-hover); }
 }
 
 .empty-state-icon {
-  width: 48px;
-  height: 48px;
-  color: var(--color-text-muted);
-  opacity: 0.5;
+  width: 64px;
+  height: 64px;
+  color: var(--color-primary);
+  opacity: 0.4;
+  margin-bottom: var(--spacing-sm);
 }
 
 .empty-state h3 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
 .empty-state p {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-text-secondary);
-  margin-bottom: 0;
-  max-width: 320px;
+  margin-bottom: var(--spacing-lg);
+  max-width: 360px;
+  line-height: var(--line-height-normal);
+}
+
+.empty-state .btn-primary {
+  margin-top: var(--spacing-xs);
 }
 
 /* Utility classes */

@@ -1,0 +1,18 @@
+season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
+2020,1,Austrian Grand Prix,red_bull_ring,Red Bull Ring,Spielberg,Austria,47.2197,14.7647,2020-07-05,13:10:00Z
+2020,2,Styrian Grand Prix,red_bull_ring,Red Bull Ring,Spielberg,Austria,47.2197,14.7647,2020-07-12,13:10:00Z
+2020,3,Hungarian Grand Prix,hungaroring,Hungaroring,Budapest,Hungary,47.5789,19.2486,2020-07-19,13:10:00Z
+2020,4,British Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2020-08-02,13:10:00Z
+2020,5,70th Anniversary Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2020-08-09,13:10:00Z
+2020,6,Spanish Grand Prix,catalunya,Circuit de Barcelona-Catalunya,Barcelona,Spain,41.57,2.26111,2020-08-16,13:10:00Z
+2020,7,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,Spa,Belgium,50.4372,5.97139,2020-08-30,13:10:00Z
+2020,8,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2020-09-06,13:10:00Z
+2020,9,Tuscan Grand Prix,mugello,Autodromo Internazionale del Mugello,Mugello,Italy,43.9975,11.3719,2020-09-13,13:10:00Z
+2020,10,Russian Grand Prix,sochi,Sochi Autodrom,Sochi,Russia,43.4057,39.9578,2020-09-27,11:10:00Z
+2020,11,Eifel Grand Prix,nurburgring,Nürburgring,Nürburg,Germany,50.3356,6.9475,2020-10-11,13:10:00Z
+2020,12,Portuguese Grand Prix,portimao,Autódromo Internacional do Algarve,Portimão,Portugal,37.227,-8.6267,2020-10-25,12:10:00Z
+2020,13,Emilia Romagna Grand Prix,imola,Autodromo Enzo e Dino Ferrari,Imola,Italy,44.3439,11.7167,2020-11-01,12:10:00Z
+2020,14,Turkish Grand Prix,istanbul,Istanbul Park,Istanbul,Turkey,40.9517,29.405,2020-11-15,10:10:00Z
+2020,15,Bahrain Grand Prix,bahrain,Bahrain International Circuit,Sakhir,Bahrain,26.0325,50.5106,2020-11-29,14:10:00Z
+2020,16,Sakhir Grand Prix,bahrain,Bahrain International Circuit,Sakhir,Bahrain,26.0325,50.5106,2020-12-06,17:10:00Z
+2020,17,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2020-12-13,13:10:00Z

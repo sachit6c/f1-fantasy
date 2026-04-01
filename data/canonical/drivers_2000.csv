@@ -1,0 +1,24 @@
+driverId,permanentNumber,code,givenName,familyName,dateOfBirth,nationality,url
+alesi,,,Jean,Alesi,1964-06-11,French,http://en.wikipedia.org/wiki/Jean_Alesi
+barrichello,,BAR,Rubens,Barrichello,1972-05-23,Brazilian,http://en.wikipedia.org/wiki/Rubens_Barrichello
+burti,,,Luciano,Burti,1975-03-05,Brazilian,http://en.wikipedia.org/wiki/Luciano_Burti
+button,22,BUT,Jenson,Button,1980-01-19,British,http://en.wikipedia.org/wiki/Jenson_Button
+coulthard,,COU,David,Coulthard,1971-03-27,British,http://en.wikipedia.org/wiki/David_Coulthard
+diniz,,,Pedro,Diniz,1970-05-22,Brazilian,http://en.wikipedia.org/wiki/Pedro_Diniz
+fisichella,,FIS,Giancarlo,Fisichella,1973-01-14,Italian,http://en.wikipedia.org/wiki/Giancarlo_Fisichella
+frentzen,,,Heinz-Harald,Frentzen,1967-05-18,German,http://en.wikipedia.org/wiki/Heinz-Harald_Frentzen
+gene,,,Marc,Gené,1974-03-29,Spanish,http://en.wikipedia.org/wiki/Marc_Gen%C3%A9
+heidfeld,,HEI,Nick,Heidfeld,1977-05-10,German,http://en.wikipedia.org/wiki/Nick_Heidfeld
+herbert,,,Johnny,Herbert,1964-06-25,British,http://en.wikipedia.org/wiki/Johnny_Herbert
+hakkinen,,,Mika,Häkkinen,1968-09-28,Finnish,http://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen
+irvine,,,Eddie,Irvine,1965-11-10,British,http://en.wikipedia.org/wiki/Eddie_Irvine
+mazzacane,,,Gastón,Mazzacane,1975-05-08,Argentine,http://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane
+salo,,,Mika,Salo,1966-11-30,Finnish,http://en.wikipedia.org/wiki/Mika_Salo
+michael_schumacher,,MSC,Michael,Schumacher,1969-01-03,German,http://en.wikipedia.org/wiki/Michael_Schumacher
+ralf_schumacher,,SCH,Ralf,Schumacher,1975-06-30,German,http://en.wikipedia.org/wiki/Ralf_Schumacher
+trulli,,TRU,Jarno,Trulli,1974-07-13,Italian,http://en.wikipedia.org/wiki/Jarno_Trulli
+verstappen,,,Jos,Verstappen,1972-03-04,Dutch,http://en.wikipedia.org/wiki/Jos_Verstappen
+villeneuve,,VIL,Jacques,Villeneuve,1971-04-09,Canadian,http://en.wikipedia.org/wiki/Jacques_Villeneuve
+wurz,,WUR,Alexander,Wurz,1974-02-15,Austrian,http://en.wikipedia.org/wiki/Alexander_Wurz
+zonta,,ZON,Ricardo,Zonta,1976-03-23,Brazilian,http://en.wikipedia.org/wiki/Ricardo_Zonta
+rosa,,DLR,Pedro,de la Rosa,1971-02-24,Spanish,http://en.wikipedia.org/wiki/Pedro_de_la_Rosa

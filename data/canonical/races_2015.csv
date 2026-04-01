@@ -1,0 +1,20 @@
+season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
+2015,1,Australian Grand Prix,albert_park,Albert Park Grand Prix Circuit,Melbourne,Australia,-37.8497,144.968,2015-03-15,05:00:00Z
+2015,2,Malaysian Grand Prix,sepang,Sepang International Circuit,Kuala Lumpur,Malaysia,2.76083,101.738,2015-03-29,07:00:00Z
+2015,3,Chinese Grand Prix,shanghai,Shanghai International Circuit,Shanghai,China,31.3389,121.22,2015-04-12,06:00:00Z
+2015,4,Bahrain Grand Prix,bahrain,Bahrain International Circuit,Sakhir,Bahrain,26.0325,50.5106,2015-04-19,15:00:00Z
+2015,5,Spanish Grand Prix,catalunya,Circuit de Barcelona-Catalunya,Barcelona,Spain,41.57,2.26111,2015-05-10,12:00:00Z
+2015,6,Monaco Grand Prix,monaco,Circuit de Monaco,Monte Carlo,Monaco,43.7347,7.42056,2015-05-24,12:00:00Z
+2015,7,Canadian Grand Prix,villeneuve,Circuit Gilles Villeneuve,Montreal,Canada,45.5,-73.5228,2015-06-07,18:00:00Z
+2015,8,Austrian Grand Prix,red_bull_ring,Red Bull Ring,Spielberg,Austria,47.2197,14.7647,2015-06-21,12:00:00Z
+2015,9,British Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2015-07-05,12:00:00Z
+2015,10,Hungarian Grand Prix,hungaroring,Hungaroring,Budapest,Hungary,47.5789,19.2486,2015-07-26,12:00:00Z
+2015,11,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,Spa,Belgium,50.4372,5.97139,2015-08-23,12:00:00Z
+2015,12,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2015-09-06,12:00:00Z
+2015,13,Singapore Grand Prix,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,1.2914,103.864,2015-09-20,12:00:00Z
+2015,14,Japanese Grand Prix,suzuka,Suzuka Circuit,Suzuka,Japan,34.8431,136.541,2015-09-27,05:00:00Z
+2015,15,Russian Grand Prix,sochi,Sochi Autodrom,Sochi,Russia,43.4057,39.9578,2015-10-11,11:00:00Z
+2015,16,United States Grand Prix,americas,Circuit of the Americas,Austin,USA,30.1328,-97.6411,2015-10-25,19:00:00Z
+2015,17,Mexican Grand Prix,rodriguez,Autódromo Hermanos Rodríguez,Mexico City,Mexico,19.4042,-99.0907,2015-11-01,19:00:00Z
+2015,18,Brazilian Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2015-11-15,16:00:00Z
+2015,19,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2015-11-29,13:00:00Z

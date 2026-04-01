@@ -1,0 +1,421 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2019,1,albert_park,bottas,mercedes,1,2,26,58,Finished,1
+2019,1,albert_park,hamilton,mercedes,2,1,18,58,Finished,2
+2019,1,albert_park,max_verstappen,red_bull,3,4,15,58,Finished,3
+2019,1,albert_park,vettel,ferrari,4,3,12,58,Finished,8
+2019,1,albert_park,leclerc,ferrari,5,5,10,58,Finished,4
+2019,1,albert_park,kevin_magnussen,haas,6,7,8,58,Finished,9
+2019,1,albert_park,hulkenberg,renault,7,11,6,57,+1 Lap,12
+2019,1,albert_park,raikkonen,alfa,8,9,4,57,+1 Lap,11
+2019,1,albert_park,stroll,racing_point,9,16,2,57,+1 Lap,7
+2019,1,albert_park,kvyat,toro_rosso,10,15,1,57,+1 Lap,6
+2019,1,albert_park,gasly,red_bull,11,17,0,57,+1 Lap,5
+2019,1,albert_park,norris,mclaren,12,8,0,57,+1 Lap,16
+2019,1,albert_park,perez,racing_point,13,10,0,57,+1 Lap,15
+2019,1,albert_park,albon,toro_rosso,14,13,0,57,+1 Lap,10
+2019,1,albert_park,giovinazzi,alfa,15,14,0,57,+1 Lap,14
+2019,1,albert_park,russell,williams,16,19,0,56,+2 Laps,17
+2019,1,albert_park,kubica,williams,17,20,0,55,+3 Laps,18
+2019,1,albert_park,grosjean,haas,18,6,0,29,Wheel,13
+2019,1,albert_park,ricciardo,renault,19,12,0,28,Damage,19
+2019,1,albert_park,sainz,mclaren,20,18,0,9,Engine,20
+2019,2,bahrain,hamilton,mercedes,1,3,25,57,Finished,2
+2019,2,bahrain,bottas,mercedes,2,4,18,57,Finished,3
+2019,2,bahrain,leclerc,ferrari,3,1,16,57,Finished,1
+2019,2,bahrain,max_verstappen,red_bull,4,5,12,57,Finished,9
+2019,2,bahrain,vettel,ferrari,5,2,10,57,Finished,4
+2019,2,bahrain,norris,mclaren,6,9,8,57,Finished,12
+2019,2,bahrain,raikkonen,alfa,7,8,6,57,Finished,11
+2019,2,bahrain,gasly,red_bull,8,13,4,57,Finished,8
+2019,2,bahrain,albon,toro_rosso,9,12,2,57,Finished,16
+2019,2,bahrain,perez,racing_point,10,14,1,57,Finished,14
+2019,2,bahrain,giovinazzi,alfa,11,16,0,57,Finished,7
+2019,2,bahrain,kvyat,toro_rosso,12,15,0,56,+1 Lap,5
+2019,2,bahrain,kevin_magnussen,haas,13,6,0,56,+1 Lap,13
+2019,2,bahrain,stroll,racing_point,14,18,0,56,+1 Lap,17
+2019,2,bahrain,russell,williams,15,19,0,56,+1 Lap,19
+2019,2,bahrain,kubica,williams,16,20,0,55,+2 Laps,20
+2019,2,bahrain,hulkenberg,renault,17,17,0,53,Engine,6
+2019,2,bahrain,ricciardo,renault,18,10,0,53,Out of fuel,15
+2019,2,bahrain,sainz,mclaren,19,7,0,53,Collision damage,10
+2019,2,bahrain,grosjean,haas,20,11,0,16,Retired,18
+2019,3,shanghai,hamilton,mercedes,1,2,25,56,Finished,5
+2019,3,shanghai,bottas,mercedes,2,1,18,56,Finished,4
+2019,3,shanghai,vettel,ferrari,3,3,15,56,Finished,2
+2019,3,shanghai,max_verstappen,red_bull,4,5,12,56,Finished,6
+2019,3,shanghai,leclerc,ferrari,5,4,10,56,Finished,3
+2019,3,shanghai,gasly,red_bull,6,6,9,56,Finished,1
+2019,3,shanghai,ricciardo,renault,7,7,6,55,+1 Lap,16
+2019,3,shanghai,perez,racing_point,8,12,4,55,+1 Lap,17
+2019,3,shanghai,raikkonen,alfa,9,13,2,55,+1 Lap,12
+2019,3,shanghai,albon,toro_rosso,10,0,1,55,+1 Lap,18
+2019,3,shanghai,grosjean,haas,11,10,0,55,+1 Lap,8
+2019,3,shanghai,stroll,racing_point,12,16,0,55,+1 Lap,7
+2019,3,shanghai,kevin_magnussen,haas,13,9,0,55,+1 Lap,10
+2019,3,shanghai,sainz,mclaren,14,14,0,55,+1 Lap,11
+2019,3,shanghai,giovinazzi,alfa,15,19,0,55,+1 Lap,14
+2019,3,shanghai,russell,williams,16,17,0,54,+2 Laps,9
+2019,3,shanghai,kubica,williams,17,18,0,54,+2 Laps,20
+2019,3,shanghai,norris,mclaren,18,15,0,50,Collision,15
+2019,3,shanghai,kvyat,toro_rosso,19,11,0,41,Collision,13
+2019,3,shanghai,hulkenberg,renault,20,8,0,16,Power Unit,19
+2019,4,baku,bottas,mercedes,1,1,25,51,Finished,2
+2019,4,baku,hamilton,mercedes,2,2,18,51,Finished,3
+2019,4,baku,vettel,ferrari,3,3,15,51,Finished,4
+2019,4,baku,max_verstappen,red_bull,4,4,12,51,Finished,5
+2019,4,baku,leclerc,ferrari,5,8,11,51,Finished,1
+2019,4,baku,perez,racing_point,6,5,8,51,Finished,7
+2019,4,baku,sainz,mclaren,7,9,6,51,Finished,10
+2019,4,baku,norris,mclaren,8,7,4,51,Finished,6
+2019,4,baku,stroll,racing_point,9,13,2,51,Finished,12
+2019,4,baku,raikkonen,alfa,10,0,1,50,+1 Lap,13
+2019,4,baku,albon,toro_rosso,11,11,0,50,+1 Lap,9
+2019,4,baku,giovinazzi,alfa,12,17,0,50,+1 Lap,11
+2019,4,baku,kevin_magnussen,haas,13,12,0,50,+1 Lap,14
+2019,4,baku,hulkenberg,renault,14,15,0,50,+1 Lap,17
+2019,4,baku,russell,williams,15,16,0,49,+2 Laps,16
+2019,4,baku,kubica,williams,16,0,0,49,+2 Laps,19
+2019,4,baku,gasly,red_bull,17,0,0,38,Transmission,8
+2019,4,baku,grosjean,haas,18,14,0,38,Brakes,20
+2019,4,baku,kvyat,toro_rosso,19,6,0,33,Collision,18
+2019,4,baku,ricciardo,renault,20,10,0,31,Collision,15
+2019,5,catalunya,hamilton,mercedes,1,2,26,66,Finished,1
+2019,5,catalunya,bottas,mercedes,2,1,18,66,Finished,2
+2019,5,catalunya,max_verstappen,red_bull,3,4,15,66,Finished,3
+2019,5,catalunya,vettel,ferrari,4,3,12,66,Finished,4
+2019,5,catalunya,leclerc,ferrari,5,5,10,66,Finished,5
+2019,5,catalunya,gasly,red_bull,6,6,8,66,Finished,6
+2019,5,catalunya,kevin_magnussen,haas,7,8,6,66,Finished,9
+2019,5,catalunya,sainz,mclaren,8,12,4,66,Finished,10
+2019,5,catalunya,kvyat,toro_rosso,9,9,2,66,Finished,8
+2019,5,catalunya,grosjean,haas,10,7,1,66,Finished,12
+2019,5,catalunya,albon,toro_rosso,11,11,0,66,Finished,11
+2019,5,catalunya,ricciardo,renault,12,13,0,66,Finished,7
+2019,5,catalunya,hulkenberg,renault,13,0,0,66,Finished,13
+2019,5,catalunya,raikkonen,alfa,14,14,0,66,Finished,14
+2019,5,catalunya,perez,racing_point,15,15,0,66,Finished,16
+2019,5,catalunya,giovinazzi,alfa,16,18,0,66,Finished,15
+2019,5,catalunya,russell,williams,17,19,0,65,+1 Lap,17
+2019,5,catalunya,kubica,williams,18,17,0,65,+1 Lap,19
+2019,5,catalunya,stroll,racing_point,19,16,0,44,Collision,20
+2019,5,catalunya,norris,mclaren,20,10,0,44,Collision,18
+2019,6,monaco,hamilton,mercedes,1,1,25,78,Finished,6
+2019,6,monaco,vettel,ferrari,2,4,18,78,Finished,9
+2019,6,monaco,bottas,mercedes,3,2,15,78,Finished,2
+2019,6,monaco,max_verstappen,red_bull,4,3,12,78,Finished,7
+2019,6,monaco,gasly,red_bull,5,8,11,78,Finished,1
+2019,6,monaco,sainz,mclaren,6,9,8,78,Finished,5
+2019,6,monaco,kvyat,toro_rosso,7,7,6,78,Finished,10
+2019,6,monaco,albon,toro_rosso,8,10,4,78,Finished,3
+2019,6,monaco,ricciardo,renault,9,6,2,78,Finished,4
+2019,6,monaco,grosjean,haas,10,13,1,78,Finished,16
+2019,6,monaco,norris,mclaren,11,12,0,78,Finished,13
+2019,6,monaco,perez,racing_point,12,16,0,77,+1 Lap,15
+2019,6,monaco,hulkenberg,renault,13,11,0,77,+1 Lap,8
+2019,6,monaco,kevin_magnussen,haas,14,5,0,77,+1 Lap,17
+2019,6,monaco,russell,williams,15,19,0,77,+1 Lap,18
+2019,6,monaco,stroll,racing_point,16,17,0,77,+1 Lap,12
+2019,6,monaco,raikkonen,alfa,17,14,0,77,+1 Lap,14
+2019,6,monaco,kubica,williams,18,20,0,77,+1 Lap,19
+2019,6,monaco,giovinazzi,alfa,19,18,0,76,+2 Laps,11
+2019,6,monaco,leclerc,ferrari,20,15,0,16,Collision,20
+2019,7,villeneuve,hamilton,mercedes,1,2,25,70,Finished,4
+2019,7,villeneuve,vettel,ferrari,2,1,18,70,Finished,5
+2019,7,villeneuve,leclerc,ferrari,3,3,15,70,Finished,2
+2019,7,villeneuve,bottas,mercedes,4,6,13,70,Finished,1
+2019,7,villeneuve,max_verstappen,red_bull,5,9,10,70,Finished,3
+2019,7,villeneuve,ricciardo,renault,6,4,8,69,+1 Lap,9
+2019,7,villeneuve,hulkenberg,renault,7,7,6,69,+1 Lap,7
+2019,7,villeneuve,gasly,red_bull,8,5,4,69,+1 Lap,10
+2019,7,villeneuve,stroll,racing_point,9,17,2,69,+1 Lap,8
+2019,7,villeneuve,kvyat,toro_rosso,10,10,1,69,+1 Lap,11
+2019,7,villeneuve,sainz,mclaren,11,11,0,69,+1 Lap,15
+2019,7,villeneuve,perez,racing_point,12,15,0,69,+1 Lap,13
+2019,7,villeneuve,giovinazzi,alfa,13,12,0,69,+1 Lap,14
+2019,7,villeneuve,grosjean,haas,14,14,0,69,+1 Lap,12
+2019,7,villeneuve,raikkonen,alfa,15,16,0,69,+1 Lap,6
+2019,7,villeneuve,russell,williams,16,18,0,68,+2 Laps,17
+2019,7,villeneuve,kevin_magnussen,haas,17,0,0,68,+2 Laps,19
+2019,7,villeneuve,kubica,williams,18,19,0,67,+3 Laps,18
+2019,7,villeneuve,albon,toro_rosso,19,13,0,59,Collision damage,16
+2019,7,villeneuve,norris,mclaren,20,8,0,8,Suspension,20
+2019,8,ricard,hamilton,mercedes,1,1,25,53,Finished,2
+2019,8,ricard,bottas,mercedes,2,2,18,53,Finished,3
+2019,8,ricard,leclerc,ferrari,3,3,15,53,Finished,4
+2019,8,ricard,max_verstappen,red_bull,4,4,12,53,Finished,5
+2019,8,ricard,vettel,ferrari,5,7,11,53,Finished,1
+2019,8,ricard,sainz,mclaren,6,6,8,53,Finished,6
+2019,8,ricard,raikkonen,alfa,7,12,6,52,+1 Lap,8
+2019,8,ricard,hulkenberg,renault,8,13,4,52,+1 Lap,10
+2019,8,ricard,norris,mclaren,9,5,2,52,+1 Lap,7
+2019,8,ricard,gasly,red_bull,10,9,1,52,+1 Lap,15
+2019,8,ricard,ricciardo,renault,11,8,0,52,+1 Lap,14
+2019,8,ricard,perez,racing_point,12,14,0,52,+1 Lap,11
+2019,8,ricard,stroll,racing_point,13,17,0,52,+1 Lap,9
+2019,8,ricard,kvyat,toro_rosso,14,19,0,52,+1 Lap,16
+2019,8,ricard,albon,toro_rosso,15,11,0,52,+1 Lap,12
+2019,8,ricard,giovinazzi,alfa,16,10,0,52,+1 Lap,13
+2019,8,ricard,kevin_magnussen,haas,17,15,0,52,+1 Lap,18
+2019,8,ricard,kubica,williams,18,18,0,51,+2 Laps,20
+2019,8,ricard,russell,williams,19,20,0,51,+2 Laps,19
+2019,8,ricard,grosjean,haas,20,16,0,44,Retired,17
+2019,9,red_bull_ring,max_verstappen,red_bull,1,2,26,71,Finished,1
+2019,9,red_bull_ring,leclerc,ferrari,2,1,18,71,Finished,3
+2019,9,red_bull_ring,bottas,mercedes,3,3,15,71,Finished,7
+2019,9,red_bull_ring,vettel,ferrari,4,9,12,71,Finished,2
+2019,9,red_bull_ring,hamilton,mercedes,5,4,10,71,Finished,5
+2019,9,red_bull_ring,norris,mclaren,6,5,8,70,+1 Lap,8
+2019,9,red_bull_ring,gasly,red_bull,7,8,6,70,+1 Lap,9
+2019,9,red_bull_ring,sainz,mclaren,8,19,4,70,+1 Lap,6
+2019,9,red_bull_ring,raikkonen,alfa,9,6,2,70,+1 Lap,15
+2019,9,red_bull_ring,giovinazzi,alfa,10,7,1,70,+1 Lap,13
+2019,9,red_bull_ring,perez,racing_point,11,13,0,70,+1 Lap,14
+2019,9,red_bull_ring,ricciardo,renault,12,12,0,70,+1 Lap,4
+2019,9,red_bull_ring,hulkenberg,renault,13,15,0,70,+1 Lap,16
+2019,9,red_bull_ring,stroll,racing_point,14,14,0,70,+1 Lap,17
+2019,9,red_bull_ring,albon,toro_rosso,15,18,0,70,+1 Lap,11
+2019,9,red_bull_ring,grosjean,haas,16,11,0,70,+1 Lap,12
+2019,9,red_bull_ring,kvyat,toro_rosso,17,16,0,70,+1 Lap,18
+2019,9,red_bull_ring,russell,williams,18,0,0,69,+2 Laps,19
+2019,9,red_bull_ring,kevin_magnussen,haas,19,10,0,69,+2 Laps,10
+2019,9,red_bull_ring,kubica,williams,20,17,0,68,+3 Laps,20
+2019,10,silverstone,hamilton,mercedes,1,2,26,52,Finished,1
+2019,10,silverstone,bottas,mercedes,2,1,18,52,Finished,2
+2019,10,silverstone,leclerc,ferrari,3,3,15,52,Finished,5
+2019,10,silverstone,gasly,red_bull,4,5,12,52,Finished,8
+2019,10,silverstone,max_verstappen,red_bull,5,4,10,52,Finished,4
+2019,10,silverstone,sainz,mclaren,6,13,8,52,Finished,11
+2019,10,silverstone,ricciardo,renault,7,7,6,52,Finished,9
+2019,10,silverstone,raikkonen,alfa,8,12,4,52,Finished,14
+2019,10,silverstone,kvyat,toro_rosso,9,17,2,52,Finished,12
+2019,10,silverstone,hulkenberg,renault,10,10,1,52,Finished,13
+2019,10,silverstone,norris,mclaren,11,8,0,52,Finished,10
+2019,10,silverstone,albon,toro_rosso,12,9,0,52,Finished,15
+2019,10,silverstone,stroll,racing_point,13,18,0,52,Finished,6
+2019,10,silverstone,russell,williams,14,19,0,51,+1 Lap,16
+2019,10,silverstone,kubica,williams,15,20,0,51,+1 Lap,17
+2019,10,silverstone,vettel,ferrari,16,6,0,51,+1 Lap,3
+2019,10,silverstone,perez,racing_point,17,15,0,51,+1 Lap,7
+2019,10,silverstone,giovinazzi,alfa,18,11,0,18,Spun off,18
+2019,10,silverstone,grosjean,haas,19,14,0,9,Collision,20
+2019,10,silverstone,kevin_magnussen,haas,20,16,0,6,Collision,19
+2019,11,hockenheimring,max_verstappen,red_bull,1,2,26,64,Finished,1
+2019,11,hockenheimring,vettel,ferrari,2,20,18,64,Finished,2
+2019,11,hockenheimring,kvyat,toro_rosso,3,14,15,64,Finished,6
+2019,11,hockenheimring,stroll,racing_point,4,15,12,64,Finished,8
+2019,11,hockenheimring,sainz,mclaren,5,7,10,64,Finished,9
+2019,11,hockenheimring,albon,toro_rosso,6,16,8,64,Finished,10
+2019,11,hockenheimring,grosjean,haas,7,6,6,64,Finished,7
+2019,11,hockenheimring,kevin_magnussen,haas,8,12,4,64,Finished,5
+2019,11,hockenheimring,hamilton,mercedes,9,1,2,64,Finished,12
+2019,11,hockenheimring,kubica,williams,10,18,1,64,Finished,13
+2019,11,hockenheimring,russell,williams,11,17,0,64,Finished,3
+2019,11,hockenheimring,raikkonen,alfa,12,5,0,64,Finished,15
+2019,11,hockenheimring,giovinazzi,alfa,13,11,0,64,Finished,14
+2019,11,hockenheimring,gasly,red_bull,14,4,0,61,Collision,4
+2019,11,hockenheimring,bottas,mercedes,15,3,0,56,Accident,11
+2019,11,hockenheimring,hulkenberg,renault,16,9,0,39,Accident,17
+2019,11,hockenheimring,leclerc,ferrari,17,10,0,27,Accident,16
+2019,11,hockenheimring,norris,mclaren,18,19,0,25,Power loss,18
+2019,11,hockenheimring,ricciardo,renault,19,13,0,13,Exhaust,19
+2019,11,hockenheimring,perez,racing_point,20,8,0,1,Spun off,
+2019,12,hungaroring,hamilton,mercedes,1,3,25,70,Finished,2
+2019,12,hungaroring,max_verstappen,red_bull,2,1,19,70,Finished,1
+2019,12,hungaroring,vettel,ferrari,3,5,15,70,Finished,4
+2019,12,hungaroring,leclerc,ferrari,4,4,12,70,Finished,5
+2019,12,hungaroring,sainz,mclaren,5,8,10,69,+1 Lap,10
+2019,12,hungaroring,gasly,red_bull,6,6,8,69,+1 Lap,12
+2019,12,hungaroring,raikkonen,alfa,7,10,6,69,+1 Lap,9
+2019,12,hungaroring,bottas,mercedes,8,2,4,69,+1 Lap,3
+2019,12,hungaroring,norris,mclaren,9,7,2,69,+1 Lap,13
+2019,12,hungaroring,albon,toro_rosso,10,12,1,69,+1 Lap,7
+2019,12,hungaroring,perez,racing_point,11,16,0,69,+1 Lap,15
+2019,12,hungaroring,hulkenberg,renault,12,11,0,69,+1 Lap,14
+2019,12,hungaroring,kevin_magnussen,haas,13,14,0,69,+1 Lap,11
+2019,12,hungaroring,ricciardo,renault,14,20,0,69,+1 Lap,8
+2019,12,hungaroring,kvyat,toro_rosso,15,13,0,68,+2 Laps,16
+2019,12,hungaroring,russell,williams,16,15,0,68,+2 Laps,17
+2019,12,hungaroring,stroll,racing_point,17,18,0,68,+2 Laps,6
+2019,12,hungaroring,giovinazzi,alfa,18,17,0,68,+2 Laps,19
+2019,12,hungaroring,kubica,williams,19,19,0,67,+3 Laps,20
+2019,12,hungaroring,grosjean,haas,20,9,0,49,Water pressure,18
+2019,13,spa,leclerc,ferrari,1,1,25,44,Finished,4
+2019,13,spa,hamilton,mercedes,2,3,18,44,Finished,3
+2019,13,spa,bottas,mercedes,3,4,15,44,Finished,2
+2019,13,spa,vettel,ferrari,4,2,13,44,Finished,1
+2019,13,spa,albon,red_bull,5,17,10,44,Finished,5
+2019,13,spa,perez,racing_point,6,7,8,44,Finished,13
+2019,13,spa,kvyat,toro_rosso,7,19,6,44,Finished,7
+2019,13,spa,hulkenberg,renault,8,12,4,44,Finished,9
+2019,13,spa,gasly,toro_rosso,9,13,2,44,Finished,17
+2019,13,spa,stroll,racing_point,10,16,1,44,Finished,10
+2019,13,spa,norris,mclaren,11,11,0,43,Engine,8
+2019,13,spa,kevin_magnussen,haas,12,8,0,43,+1 Lap,11
+2019,13,spa,grosjean,haas,13,9,0,43,+1 Lap,16
+2019,13,spa,ricciardo,renault,14,10,0,43,+1 Lap,18
+2019,13,spa,russell,williams,15,14,0,43,+1 Lap,14
+2019,13,spa,raikkonen,alfa,16,6,0,43,+1 Lap,12
+2019,13,spa,kubica,williams,17,0,0,43,+1 Lap,15
+2019,13,spa,giovinazzi,alfa,18,18,0,42,Accident,6
+2019,13,spa,sainz,mclaren,19,15,0,1,Power loss,
+2019,13,spa,max_verstappen,red_bull,20,5,0,0,Accident,
+2019,14,monza,leclerc,ferrari,1,1,25,53,Finished,4
+2019,14,monza,bottas,mercedes,2,3,18,53,Finished,3
+2019,14,monza,hamilton,mercedes,3,2,16,53,Finished,1
+2019,14,monza,ricciardo,renault,4,5,12,53,Finished,7
+2019,14,monza,hulkenberg,renault,5,6,10,53,Finished,8
+2019,14,monza,albon,red_bull,6,8,8,53,Finished,6
+2019,14,monza,perez,racing_point,7,18,6,53,Finished,9
+2019,14,monza,max_verstappen,red_bull,8,19,4,53,Finished,5
+2019,14,monza,giovinazzi,alfa,9,10,2,52,+1 Lap,15
+2019,14,monza,norris,mclaren,10,16,1,52,+1 Lap,11
+2019,14,monza,gasly,toro_rosso,11,17,0,52,+1 Lap,10
+2019,14,monza,stroll,racing_point,12,9,0,52,+1 Lap,12
+2019,14,monza,vettel,ferrari,13,4,0,52,+1 Lap,2
+2019,14,monza,russell,williams,14,14,0,52,+1 Lap,16
+2019,14,monza,raikkonen,alfa,15,0,0,52,+1 Lap,13
+2019,14,monza,grosjean,haas,16,13,0,52,+1 Lap,17
+2019,14,monza,kubica,williams,17,15,0,51,+2 Laps,18
+2019,14,monza,kevin_magnussen,haas,18,11,0,43,Hydraulics,14
+2019,14,monza,kvyat,toro_rosso,19,12,0,29,Engine,20
+2019,14,monza,sainz,mclaren,20,7,0,27,Wheel,19
+2019,15,marina_bay,vettel,ferrari,1,3,25,61,Finished,5
+2019,15,marina_bay,leclerc,ferrari,2,1,18,61,Finished,4
+2019,15,marina_bay,max_verstappen,red_bull,3,4,15,61,Finished,8
+2019,15,marina_bay,hamilton,mercedes,4,2,12,61,Finished,7
+2019,15,marina_bay,bottas,mercedes,5,5,10,61,Finished,2
+2019,15,marina_bay,albon,red_bull,6,6,8,61,Finished,9
+2019,15,marina_bay,norris,mclaren,7,9,6,61,Finished,11
+2019,15,marina_bay,gasly,toro_rosso,8,11,4,61,Finished,13
+2019,15,marina_bay,hulkenberg,renault,9,8,2,61,Finished,12
+2019,15,marina_bay,giovinazzi,alfa,10,10,1,61,Finished,10
+2019,15,marina_bay,grosjean,haas,11,17,0,61,Finished,16
+2019,15,marina_bay,sainz,mclaren,12,7,0,61,Finished,15
+2019,15,marina_bay,stroll,racing_point,13,16,0,61,Finished,6
+2019,15,marina_bay,ricciardo,renault,14,20,0,61,Finished,14
+2019,15,marina_bay,kvyat,toro_rosso,15,14,0,61,Finished,3
+2019,15,marina_bay,kubica,williams,16,19,0,61,Finished,18
+2019,15,marina_bay,kevin_magnussen,haas,17,13,0,61,Finished,1
+2019,15,marina_bay,raikkonen,alfa,18,12,0,49,Collision,19
+2019,15,marina_bay,perez,racing_point,19,15,0,42,Engine,17
+2019,15,marina_bay,russell,williams,20,18,0,34,Collision,20
+2019,16,sochi,hamilton,mercedes,1,2,26,53,Finished,1
+2019,16,sochi,bottas,mercedes,2,4,18,53,Finished,3
+2019,16,sochi,leclerc,ferrari,3,1,15,53,Finished,2
+2019,16,sochi,max_verstappen,red_bull,4,9,12,53,Finished,5
+2019,16,sochi,albon,red_bull,5,0,10,53,Finished,4
+2019,16,sochi,sainz,mclaren,6,5,8,53,Finished,6
+2019,16,sochi,perez,racing_point,7,11,6,53,Finished,7
+2019,16,sochi,norris,mclaren,8,7,4,53,Finished,11
+2019,16,sochi,kevin_magnussen,haas,9,13,2,53,Finished,8
+2019,16,sochi,hulkenberg,renault,10,6,1,53,Finished,12
+2019,16,sochi,stroll,racing_point,11,14,0,53,Finished,15
+2019,16,sochi,kvyat,toro_rosso,12,19,0,53,Finished,9
+2019,16,sochi,raikkonen,alfa,13,15,0,53,Finished,13
+2019,16,sochi,gasly,toro_rosso,14,16,0,53,Finished,14
+2019,16,sochi,giovinazzi,alfa,15,12,0,53,Finished,16
+2019,16,sochi,kubica,williams,16,18,0,28,Brakes,19
+2019,16,sochi,russell,williams,17,17,0,27,Brakes,18
+2019,16,sochi,vettel,ferrari,18,3,0,26,Power loss,10
+2019,16,sochi,ricciardo,renault,19,10,0,24,Collision,17
+2019,16,sochi,grosjean,haas,20,8,0,0,Collision,
+2019,17,suzuka,bottas,mercedes,1,3,25,52,Finished,4
+2019,17,suzuka,vettel,ferrari,2,1,18,52,Finished,5
+2019,17,suzuka,hamilton,mercedes,3,4,16,52,Finished,1
+2019,17,suzuka,albon,red_bull,4,6,12,52,Finished,8
+2019,17,suzuka,sainz,mclaren,5,7,10,52,Finished,12
+2019,17,suzuka,leclerc,ferrari,6,2,8,51,+1 Lap,2
+2019,17,suzuka,gasly,toro_rosso,7,9,6,51,+1 Lap,17
+2019,17,suzuka,perez,racing_point,8,17,4,51,+1 Lap,7
+2019,17,suzuka,stroll,racing_point,9,12,2,51,+1 Lap,14
+2019,17,suzuka,kvyat,toro_rosso,10,14,1,51,+1 Lap,10
+2019,17,suzuka,norris,mclaren,11,8,0,51,+1 Lap,13
+2019,17,suzuka,raikkonen,alfa,12,13,0,51,+1 Lap,9
+2019,17,suzuka,grosjean,haas,13,10,0,51,+1 Lap,16
+2019,17,suzuka,giovinazzi,alfa,14,11,0,51,+1 Lap,6
+2019,17,suzuka,kevin_magnussen,haas,15,19,0,51,+1 Lap,3
+2019,17,suzuka,russell,williams,16,18,0,50,+2 Laps,18
+2019,17,suzuka,kubica,williams,17,0,0,50,+2 Laps,19
+2019,17,suzuka,max_verstappen,red_bull,18,5,0,14,Brakes,20
+2019,17,suzuka,ricciardo,renault,19,16,0,51,Disqualified,11
+2019,17,suzuka,hulkenberg,renault,20,15,0,51,Disqualified,15
+2019,18,rodriguez,hamilton,mercedes,1,3,25,71,Finished,4
+2019,18,rodriguez,vettel,ferrari,2,2,18,71,Finished,3
+2019,18,rodriguez,bottas,mercedes,3,6,15,71,Finished,5
+2019,18,rodriguez,leclerc,ferrari,4,1,13,71,Finished,1
+2019,18,rodriguez,albon,red_bull,5,5,10,71,Finished,2
+2019,18,rodriguez,max_verstappen,red_bull,6,4,8,71,Finished,11
+2019,18,rodriguez,perez,racing_point,7,11,6,71,Finished,12
+2019,18,rodriguez,ricciardo,renault,8,13,4,71,Finished,9
+2019,18,rodriguez,gasly,toro_rosso,9,10,2,70,+1 Lap,6
+2019,18,rodriguez,hulkenberg,renault,10,12,1,70,+1 Lap,14
+2019,18,rodriguez,kvyat,toro_rosso,11,9,0,70,+1 Lap,7
+2019,18,rodriguez,stroll,racing_point,12,16,0,70,+1 Lap,15
+2019,18,rodriguez,sainz,mclaren,13,7,0,70,+1 Lap,10
+2019,18,rodriguez,giovinazzi,alfa,14,15,0,70,+1 Lap,16
+2019,18,rodriguez,kevin_magnussen,haas,15,17,0,69,+2 Laps,20
+2019,18,rodriguez,russell,williams,16,19,0,69,+2 Laps,17
+2019,18,rodriguez,grosjean,haas,17,18,0,69,+2 Laps,18
+2019,18,rodriguez,kubica,williams,18,20,0,69,+2 Laps,13
+2019,18,rodriguez,raikkonen,alfa,19,14,0,58,Overheating,8
+2019,18,rodriguez,norris,mclaren,20,8,0,48,Withdrew,19
+2019,19,americas,bottas,mercedes,1,1,25,56,Finished,2
+2019,19,americas,hamilton,mercedes,2,5,18,56,Finished,7
+2019,19,americas,max_verstappen,red_bull,3,3,15,56,Finished,5
+2019,19,americas,leclerc,ferrari,4,4,13,56,Finished,1
+2019,19,americas,albon,red_bull,5,6,10,56,Finished,3
+2019,19,americas,ricciardo,renault,6,9,8,56,Finished,14
+2019,19,americas,norris,mclaren,7,8,6,56,Finished,4
+2019,19,americas,sainz,mclaren,8,7,4,55,+1 Lap,15
+2019,19,americas,hulkenberg,renault,9,11,2,55,+1 Lap,6
+2019,19,americas,perez,racing_point,10,0,1,55,+1 Lap,11
+2019,19,americas,raikkonen,alfa,11,17,0,55,+1 Lap,9
+2019,19,americas,kvyat,toro_rosso,12,13,0,55,+1 Lap,8
+2019,19,americas,stroll,racing_point,13,14,0,55,+1 Lap,13
+2019,19,americas,giovinazzi,alfa,14,16,0,55,+1 Lap,10
+2019,19,americas,grosjean,haas,15,15,0,55,+1 Lap,18
+2019,19,americas,gasly,toro_rosso,16,10,0,54,Suspension,16
+2019,19,americas,russell,williams,17,18,0,54,+2 Laps,17
+2019,19,americas,kevin_magnussen,haas,18,12,0,52,Brakes,12
+2019,19,americas,kubica,williams,19,19,0,31,Oil leak,20
+2019,19,americas,vettel,ferrari,20,2,0,7,Suspension,19
+2019,20,interlagos,max_verstappen,red_bull,1,1,25,71,Finished,2
+2019,20,interlagos,gasly,toro_rosso,2,6,18,71,Finished,9
+2019,20,interlagos,sainz,mclaren,3,20,15,71,Finished,16
+2019,20,interlagos,raikkonen,alfa,4,8,12,71,Finished,15
+2019,20,interlagos,giovinazzi,alfa,5,12,10,71,Finished,14
+2019,20,interlagos,ricciardo,renault,6,11,8,71,Finished,11
+2019,20,interlagos,hamilton,mercedes,7,3,6,71,Finished,3
+2019,20,interlagos,norris,mclaren,8,10,4,71,Finished,7
+2019,20,interlagos,perez,racing_point,9,15,2,71,Finished,12
+2019,20,interlagos,kvyat,toro_rosso,10,16,1,71,Finished,8
+2019,20,interlagos,kevin_magnussen,haas,11,9,0,71,Finished,17
+2019,20,interlagos,russell,williams,12,18,0,71,Finished,19
+2019,20,interlagos,grosjean,haas,13,7,0,71,Finished,18
+2019,20,interlagos,albon,red_bull,14,5,0,71,Finished,4
+2019,20,interlagos,hulkenberg,renault,15,13,0,71,Finished,13
+2019,20,interlagos,kubica,williams,16,19,0,70,+1 Lap,20
+2019,20,interlagos,vettel,ferrari,17,2,0,65,Collision,5
+2019,20,interlagos,leclerc,ferrari,18,14,0,65,Collision,6
+2019,20,interlagos,stroll,racing_point,19,17,0,65,Suspension,10
+2019,20,interlagos,bottas,mercedes,20,4,0,51,Power Unit,1
+2019,21,yas_marina,hamilton,mercedes,1,1,26,55,Finished,1
+2019,21,yas_marina,max_verstappen,red_bull,2,2,18,55,Finished,5
+2019,21,yas_marina,leclerc,ferrari,3,3,15,55,Finished,4
+2019,21,yas_marina,bottas,mercedes,4,20,12,55,Finished,2
+2019,21,yas_marina,vettel,ferrari,5,4,10,55,Finished,3
+2019,21,yas_marina,albon,red_bull,6,5,8,55,Finished,8
+2019,21,yas_marina,perez,racing_point,7,10,6,54,+1 Lap,11
+2019,21,yas_marina,norris,mclaren,8,6,4,54,+1 Lap,12
+2019,21,yas_marina,kvyat,toro_rosso,9,13,2,54,+1 Lap,9
+2019,21,yas_marina,sainz,mclaren,10,8,1,54,+1 Lap,7
+2019,21,yas_marina,ricciardo,renault,11,7,0,54,+1 Lap,6
+2019,21,yas_marina,hulkenberg,renault,12,9,0,54,+1 Lap,16
+2019,21,yas_marina,raikkonen,alfa,13,17,0,54,+1 Lap,14
+2019,21,yas_marina,kevin_magnussen,haas,14,14,0,54,+1 Lap,19
+2019,21,yas_marina,grosjean,haas,15,15,0,54,+1 Lap,18
+2019,21,yas_marina,giovinazzi,alfa,16,16,0,54,+1 Lap,15
+2019,21,yas_marina,russell,williams,17,18,0,54,+1 Lap,13
+2019,21,yas_marina,gasly,toro_rosso,18,11,0,53,+2 Laps,10
+2019,21,yas_marina,kubica,williams,19,19,0,53,+2 Laps,20
+2019,21,yas_marina,stroll,racing_point,20,12,0,45,Brakes,17

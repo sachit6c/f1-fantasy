@@ -1,0 +1,20 @@
+season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
+2011,1,Australian Grand Prix,albert_park,Albert Park Grand Prix Circuit,Melbourne,Australia,-37.8497,144.968,2011-03-27,06:00:00Z
+2011,2,Malaysian Grand Prix,sepang,Sepang International Circuit,Kuala Lumpur,Malaysia,2.76083,101.738,2011-04-10,08:00:00Z
+2011,3,Chinese Grand Prix,shanghai,Shanghai International Circuit,Shanghai,China,31.3389,121.22,2011-04-17,07:00:00Z
+2011,4,Turkish Grand Prix,istanbul,Istanbul Park,Istanbul,Turkey,40.9517,29.405,2011-05-08,12:00:00Z
+2011,5,Spanish Grand Prix,catalunya,Circuit de Barcelona-Catalunya,Barcelona,Spain,41.57,2.26111,2011-05-22,12:00:00Z
+2011,6,Monaco Grand Prix,monaco,Circuit de Monaco,Monte Carlo,Monaco,43.7347,7.42056,2011-05-29,12:00:00Z
+2011,7,Canadian Grand Prix,villeneuve,Circuit Gilles Villeneuve,Montreal,Canada,45.5,-73.5228,2011-06-12,17:00:00Z
+2011,8,European Grand Prix,valencia,Valencia Street Circuit,Valencia,Spain,39.4589,-0.331667,2011-06-26,12:00:00Z
+2011,9,British Grand Prix,silverstone,Silverstone Circuit,Silverstone,UK,52.0786,-1.01694,2011-07-10,12:00:00Z
+2011,10,German Grand Prix,nurburgring,Nürburgring,Nürburg,Germany,50.3356,6.9475,2011-07-24,12:00:00Z
+2011,11,Hungarian Grand Prix,hungaroring,Hungaroring,Budapest,Hungary,47.5789,19.2486,2011-07-31,12:00:00Z
+2011,12,Belgian Grand Prix,spa,Circuit de Spa-Francorchamps,Spa,Belgium,50.4372,5.97139,2011-08-28,12:00:00Z
+2011,13,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2011-09-11,12:00:00Z
+2011,14,Singapore Grand Prix,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,1.2914,103.864,2011-09-25,12:00:00Z
+2011,15,Japanese Grand Prix,suzuka,Suzuka Circuit,Suzuka,Japan,34.8431,136.541,2011-10-09,06:00:00Z
+2011,16,Korean Grand Prix,yeongam,Korean International Circuit,Yeongam County,Korea,34.7333,126.417,2011-10-16,06:00:00Z
+2011,17,Indian Grand Prix,buddh,Buddh International Circuit,Uttar Pradesh,India,28.3487,77.5331,2011-10-30,09:30:00Z
+2011,18,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2011-11-13,13:00:00Z
+2011,19,Brazilian Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2011-11-27,16:00:00Z

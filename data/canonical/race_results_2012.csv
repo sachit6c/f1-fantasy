@@ -1,0 +1,239 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2012,1,albert_park,button,mclaren,1,2,25,58,Finished,1
+2012,1,albert_park,vettel,red_bull,2,6,18,58,Finished,2
+2012,1,albert_park,hamilton,mclaren,3,1,15,58,Finished,4
+2012,1,albert_park,webber,red_bull,4,5,12,58,Finished,3
+2012,1,albert_park,alonso,ferrari,5,12,10,58,Finished,7
+2012,1,albert_park,kobayashi,sauber,6,13,8,58,Finished,10
+2012,1,albert_park,raikkonen,lotus_f1,7,17,6,58,Finished,11
+2012,1,albert_park,perez,sauber,8,22,4,58,Finished,12
+2012,1,albert_park,ricciardo,toro_rosso,9,10,2,58,Finished,8
+2012,1,albert_park,resta,force_india,10,15,1,58,Finished,9
+2012,1,albert_park,vergne,toro_rosso,11,11,0,58,Finished,6
+2012,1,albert_park,rosberg,mercedes,12,7,0,58,Finished,14
+2012,1,albert_park,maldonado,williams,13,8,0,57,Accident,5
+2012,1,albert_park,glock,marussia,14,20,0,57,+1 Lap,19
+2012,1,albert_park,pic,marussia,15,21,0,53,+5 Laps,20
+2012,1,albert_park,bruno_senna,williams,16,14,0,52,Collision,13
+2012,1,albert_park,massa,ferrari,17,16,0,46,Collision,15
+2012,1,albert_park,kovalainen,caterham,18,18,0,38,Suspension,17
+2012,1,albert_park,petrov,caterham,19,19,0,34,Steering,16
+2012,1,albert_park,michael_schumacher,mercedes,20,4,0,10,Gearbox,18
+2012,1,albert_park,grosjean,lotus_f1,21,3,0,1,Collision,
+2012,1,albert_park,hulkenberg,force_india,22,9,0,0,Collision,
+2012,2,sepang,alonso,ferrari,1,8,25,56,Finished,7
+2012,2,sepang,perez,sauber,2,9,18,56,Finished,3
+2012,2,sepang,hamilton,mclaren,3,1,15,56,Finished,6
+2012,2,sepang,webber,red_bull,4,4,12,56,Finished,2
+2012,2,sepang,raikkonen,lotus_f1,5,10,10,56,Finished,1
+2012,2,sepang,bruno_senna,williams,6,13,8,56,Finished,5
+2012,2,sepang,resta,force_india,7,14,6,56,Finished,10
+2012,2,sepang,vergne,toro_rosso,8,18,4,56,Finished,12
+2012,2,sepang,hulkenberg,force_india,9,16,2,56,Finished,15
+2012,2,sepang,michael_schumacher,mercedes,10,3,1,56,Finished,9
+2012,2,sepang,vettel,red_bull,11,5,0,56,Finished,4
+2012,2,sepang,ricciardo,toro_rosso,12,15,0,56,Finished,8
+2012,2,sepang,rosberg,mercedes,13,7,0,56,Finished,11
+2012,2,sepang,button,mclaren,14,2,0,56,Finished,14
+2012,2,sepang,massa,ferrari,15,12,0,56,Finished,13
+2012,2,sepang,petrov,caterham,16,19,0,55,+1 Lap,17
+2012,2,sepang,glock,marussia,17,20,0,55,+1 Lap,20
+2012,2,sepang,kovalainen,caterham,18,24,0,55,+1 Lap,18
+2012,2,sepang,maldonado,williams,19,11,0,54,Engine,16
+2012,2,sepang,pic,marussia,20,21,0,54,+2 Laps,21
+2012,2,sepang,karthikeyan,hrt,21,23,0,54,+2 Laps,22
+2012,2,sepang,rosa,hrt,22,22,0,54,+2 Laps,23
+2012,2,sepang,kobayashi,sauber,23,17,0,46,Retired,19
+2012,2,sepang,grosjean,lotus_f1,24,6,0,3,Collision,24
+2012,3,shanghai,rosberg,mercedes,1,1,25,56,Finished,8
+2012,3,shanghai,button,mclaren,2,5,18,56,Finished,3
+2012,3,shanghai,hamilton,mclaren,3,7,15,56,Finished,6
+2012,3,shanghai,webber,red_bull,4,6,12,56,Finished,5
+2012,3,shanghai,vettel,red_bull,5,11,10,56,Finished,7
+2012,3,shanghai,grosjean,lotus_f1,6,10,8,56,Finished,11
+2012,3,shanghai,bruno_senna,williams,7,14,6,56,Finished,16
+2012,3,shanghai,maldonado,williams,8,13,4,56,Finished,4
+2012,3,shanghai,alonso,ferrari,9,9,2,56,Finished,12
+2012,3,shanghai,kobayashi,sauber,10,3,1,56,Finished,1
+2012,3,shanghai,perez,sauber,11,8,0,56,Finished,10
+2012,3,shanghai,resta,force_india,12,15,0,56,Finished,17
+2012,3,shanghai,massa,ferrari,13,12,0,56,Finished,14
+2012,3,shanghai,raikkonen,lotus_f1,14,4,0,56,Finished,18
+2012,3,shanghai,hulkenberg,force_india,15,16,0,56,Finished,9
+2012,3,shanghai,vergne,toro_rosso,16,24,0,56,Finished,2
+2012,3,shanghai,ricciardo,toro_rosso,17,17,0,56,Finished,15
+2012,3,shanghai,petrov,caterham,18,19,0,55,+1 Lap,19
+2012,3,shanghai,glock,marussia,19,20,0,55,+1 Lap,21
+2012,3,shanghai,pic,marussia,20,21,0,55,+1 Lap,20
+2012,3,shanghai,rosa,hrt,21,22,0,55,+1 Lap,22
+2012,3,shanghai,karthikeyan,hrt,22,23,0,54,+2 Laps,23
+2012,3,shanghai,kovalainen,caterham,23,18,0,53,+3 Laps,13
+2012,3,shanghai,michael_schumacher,mercedes,24,2,0,12,Wheel nut,24
+2012,4,bahrain,vettel,red_bull,1,1,25,57,Finished,1
+2012,4,bahrain,raikkonen,lotus_f1,2,11,18,57,Finished,5
+2012,4,bahrain,grosjean,lotus_f1,3,7,15,57,Finished,3
+2012,4,bahrain,webber,red_bull,4,3,12,57,Finished,6
+2012,4,bahrain,rosberg,mercedes,5,5,10,57,Finished,10
+2012,4,bahrain,resta,force_india,6,10,8,57,Finished,18
+2012,4,bahrain,alonso,ferrari,7,9,6,57,Finished,15
+2012,4,bahrain,hamilton,mclaren,8,2,4,57,Finished,7
+2012,4,bahrain,massa,ferrari,9,14,2,57,Finished,12
+2012,4,bahrain,michael_schumacher,mercedes,10,22,1,57,Finished,13
+2012,4,bahrain,perez,sauber,11,8,0,57,Finished,14
+2012,4,bahrain,hulkenberg,force_india,12,13,0,57,Finished,17
+2012,4,bahrain,kobayashi,sauber,13,12,0,57,Finished,2
+2012,4,bahrain,vergne,toro_rosso,14,17,0,57,Finished,4
+2012,4,bahrain,ricciardo,toro_rosso,15,6,0,56,+1 Lap,8
+2012,4,bahrain,petrov,caterham,16,18,0,56,+1 Lap,16
+2012,4,bahrain,kovalainen,caterham,17,16,0,56,+1 Lap,19
+2012,4,bahrain,button,mclaren,18,4,0,55,Exhaust,9
+2012,4,bahrain,glock,marussia,19,23,0,55,+2 Laps,23
+2012,4,bahrain,rosa,hrt,20,20,0,55,+2 Laps,22
+2012,4,bahrain,karthikeyan,hrt,21,24,0,55,+2 Laps,20
+2012,4,bahrain,bruno_senna,williams,22,15,0,54,Vibrations,11
+2012,4,bahrain,maldonado,williams,23,21,0,25,Puncture,21
+2012,4,bahrain,pic,marussia,24,19,0,24,Engine,24
+2012,5,catalunya,maldonado,williams,1,1,25,66,Finished,6
+2012,5,catalunya,alonso,ferrari,2,2,18,66,Finished,3
+2012,5,catalunya,raikkonen,lotus_f1,3,4,15,66,Finished,2
+2012,5,catalunya,grosjean,lotus_f1,4,3,12,66,Finished,1
+2012,5,catalunya,kobayashi,sauber,5,9,10,66,Finished,8
+2012,5,catalunya,vettel,red_bull,6,7,8,66,Finished,4
+2012,5,catalunya,rosberg,mercedes,7,6,6,66,Finished,7
+2012,5,catalunya,hamilton,mclaren,8,24,4,66,Finished,18
+2012,5,catalunya,button,mclaren,9,10,2,66,Finished,14
+2012,5,catalunya,hulkenberg,force_india,10,13,1,65,+1 Lap,17
+2012,5,catalunya,webber,red_bull,11,11,0,65,+1 Lap,5
+2012,5,catalunya,vergne,toro_rosso,12,14,0,65,+1 Lap,9
+2012,5,catalunya,ricciardo,toro_rosso,13,15,0,65,+1 Lap,12
+2012,5,catalunya,resta,force_india,14,12,0,65,+1 Lap,10
+2012,5,catalunya,massa,ferrari,15,16,0,65,+1 Lap,11
+2012,5,catalunya,kovalainen,caterham,16,19,0,65,+1 Lap,15
+2012,5,catalunya,petrov,caterham,17,18,0,65,+1 Lap,16
+2012,5,catalunya,glock,marussia,18,21,0,64,+2 Laps,19
+2012,5,catalunya,rosa,hrt,19,22,0,63,+3 Laps,20
+2012,5,catalunya,perez,sauber,20,5,0,37,Wheel nut,13
+2012,5,catalunya,pic,marussia,21,20,0,35,Mechanical,22
+2012,5,catalunya,karthikeyan,hrt,22,23,0,22,Mechanical,24
+2012,5,catalunya,bruno_senna,williams,23,17,0,12,Collision,23
+2012,5,catalunya,michael_schumacher,mercedes,24,8,0,12,Collision,21
+2012,6,monaco,webber,red_bull,1,1,25,78,Finished,3
+2012,6,monaco,rosberg,mercedes,2,2,18,78,Finished,7
+2012,6,monaco,alonso,ferrari,3,5,15,78,Finished,5
+2012,6,monaco,vettel,red_bull,4,9,12,78,Finished,9
+2012,6,monaco,hamilton,mclaren,5,3,10,78,Finished,4
+2012,6,monaco,massa,ferrari,6,7,8,78,Finished,10
+2012,6,monaco,resta,force_india,7,14,6,78,Finished,17
+2012,6,monaco,hulkenberg,force_india,8,10,4,78,Finished,2
+2012,6,monaco,raikkonen,lotus_f1,9,8,2,78,Finished,12
+2012,6,monaco,bruno_senna,williams,10,13,1,78,Finished,11
+2012,6,monaco,perez,sauber,11,23,0,77,+1 Lap,1
+2012,6,monaco,vergne,toro_rosso,12,16,0,77,+1 Lap,8
+2012,6,monaco,kovalainen,caterham,13,17,0,77,+1 Lap,13
+2012,6,monaco,glock,marussia,14,19,0,77,+1 Lap,15
+2012,6,monaco,karthikeyan,hrt,15,22,0,76,+2 Laps,19
+2012,6,monaco,button,mclaren,16,12,0,70,Collision,18
+2012,6,monaco,ricciardo,toro_rosso,17,15,0,65,Retired,16
+2012,6,monaco,pic,marussia,18,21,0,64,Retired,14
+2012,6,monaco,michael_schumacher,mercedes,19,6,0,63,Fuel pressure,6
+2012,6,monaco,petrov,caterham,20,18,0,15,Electrical,20
+2012,6,monaco,kobayashi,sauber,21,11,0,5,Accident,21
+2012,6,monaco,rosa,hrt,22,20,0,0,Accident,
+2012,6,monaco,maldonado,williams,23,24,0,0,Accident,
+2012,6,monaco,grosjean,lotus_f1,24,4,0,0,Accident,
+2012,7,villeneuve,hamilton,mclaren,1,2,25,70,Finished,6
+2012,7,villeneuve,grosjean,lotus_f1,2,7,18,70,Finished,11
+2012,7,villeneuve,perez,sauber,3,15,15,70,Finished,3
+2012,7,villeneuve,vettel,red_bull,4,1,12,70,Finished,1
+2012,7,villeneuve,alonso,ferrari,5,3,10,70,Finished,15
+2012,7,villeneuve,rosberg,mercedes,6,5,8,70,Finished,7
+2012,7,villeneuve,webber,red_bull,7,4,6,70,Finished,8
+2012,7,villeneuve,raikkonen,lotus_f1,8,12,4,70,Finished,5
+2012,7,villeneuve,kobayashi,sauber,9,11,2,70,Finished,12
+2012,7,villeneuve,massa,ferrari,10,6,1,70,Finished,2
+2012,7,villeneuve,resta,force_india,11,8,0,70,Finished,10
+2012,7,villeneuve,hulkenberg,force_india,12,13,0,70,Finished,9
+2012,7,villeneuve,maldonado,williams,13,22,0,70,Finished,13
+2012,7,villeneuve,ricciardo,toro_rosso,14,14,0,70,Finished,4
+2012,7,villeneuve,vergne,toro_rosso,15,19,0,69,+1 Lap,17
+2012,7,villeneuve,button,mclaren,16,10,0,69,+1 Lap,16
+2012,7,villeneuve,bruno_senna,williams,17,16,0,69,+1 Lap,14
+2012,7,villeneuve,kovalainen,caterham,18,17,0,69,+1 Lap,19
+2012,7,villeneuve,petrov,caterham,19,18,0,69,+1 Lap,18
+2012,7,villeneuve,pic,marussia,20,23,0,69,+3 Laps,21
+2012,7,villeneuve,glock,marussia,21,21,0,56,Suspension,22
+2012,7,villeneuve,michael_schumacher,mercedes,22,9,0,43,Rear wing,20
+2012,7,villeneuve,rosa,hrt,23,20,0,24,Brakes,23
+2012,7,villeneuve,karthikeyan,hrt,24,24,0,22,Suspension,24
+2012,8,valencia,alonso,ferrari,1,11,25,57,Finished,5
+2012,8,valencia,raikkonen,lotus_f1,2,5,18,57,Finished,7
+2012,8,valencia,michael_schumacher,mercedes,3,12,15,57,Finished,3
+2012,8,valencia,webber,red_bull,4,19,12,57,Finished,2
+2012,8,valencia,hulkenberg,force_india,5,8,10,57,Finished,13
+2012,8,valencia,rosberg,mercedes,6,6,8,57,Finished,1
+2012,8,valencia,resta,force_india,7,10,6,57,Finished,11
+2012,8,valencia,button,mclaren,8,9,4,57,Finished,17
+2012,8,valencia,perez,sauber,9,15,2,57,Finished,4
+2012,8,valencia,bruno_senna,williams,10,14,1,57,Finished,12
+2012,8,valencia,ricciardo,toro_rosso,11,17,0,57,Finished,6
+2012,8,valencia,maldonado,williams,12,3,0,57,Finished,10
+2012,8,valencia,petrov,caterham,13,20,0,57,Finished,14
+2012,8,valencia,kovalainen,caterham,14,16,0,57,Finished,19
+2012,8,valencia,pic,marussia,15,23,0,57,Finished,22
+2012,8,valencia,massa,ferrari,16,13,0,56,+1 Lap,15
+2012,8,valencia,rosa,hrt,17,21,0,56,+1 Lap,23
+2012,8,valencia,karthikeyan,hrt,18,22,0,56,+1 Lap,21
+2012,8,valencia,hamilton,mclaren,19,2,0,55,Collision,9
+2012,8,valencia,grosjean,lotus_f1,20,4,0,40,Electronics,8
+2012,8,valencia,vettel,red_bull,21,1,0,33,Gearbox,16
+2012,8,valencia,kobayashi,sauber,22,7,0,33,Collision,18
+2012,8,valencia,vergne,toro_rosso,23,18,0,26,Collision,20
+2012,8,valencia,glock,marussia,24,0,0,0,Withdrew,
+2012,9,silverstone,webber,red_bull,1,2,25,52,Finished,4
+2012,9,silverstone,alonso,ferrari,2,1,18,52,Finished,7
+2012,9,silverstone,vettel,red_bull,3,4,15,52,Finished,3
+2012,9,silverstone,massa,ferrari,4,5,12,52,Finished,5
+2012,9,silverstone,raikkonen,lotus_f1,5,6,10,52,Finished,1
+2012,9,silverstone,grosjean,lotus_f1,6,9,8,52,Finished,2
+2012,9,silverstone,michael_schumacher,mercedes,7,3,6,52,Finished,6
+2012,9,silverstone,hamilton,mclaren,8,8,4,52,Finished,15
+2012,9,silverstone,bruno_senna,williams,9,13,2,52,Finished,12
+2012,9,silverstone,button,mclaren,10,16,1,52,Finished,14
+2012,9,silverstone,kobayashi,sauber,11,17,0,52,Finished,9
+2012,9,silverstone,hulkenberg,force_india,12,14,0,52,Finished,13
+2012,9,silverstone,ricciardo,toro_rosso,13,12,0,52,Finished,8
+2012,9,silverstone,vergne,toro_rosso,14,23,0,52,Finished,10
+2012,9,silverstone,rosberg,mercedes,15,11,0,52,Finished,11
+2012,9,silverstone,maldonado,williams,16,7,0,51,+1 Lap,17
+2012,9,silverstone,kovalainen,caterham,17,19,0,51,+1 Lap,19
+2012,9,silverstone,glock,marussia,18,20,0,51,+1 Lap,16
+2012,9,silverstone,pic,marussia,19,24,0,51,+1 Lap,18
+2012,9,silverstone,rosa,hrt,20,21,0,50,+2 Laps,21
+2012,9,silverstone,karthikeyan,hrt,21,22,0,50,+2 Laps,20
+2012,9,silverstone,perez,sauber,22,15,0,11,Collision,22
+2012,9,silverstone,resta,force_india,23,10,0,2,Collision,
+2012,9,silverstone,petrov,caterham,24,18,0,0,Engine,
+2012,10,hockenheimring,alonso,ferrari,1,1,25,67,Finished,2
+2012,10,hockenheimring,button,mclaren,2,6,18,67,Finished,8
+2012,10,hockenheimring,raikkonen,lotus_f1,3,10,15,67,Finished,13
+2012,10,hockenheimring,kobayashi,sauber,4,12,12,67,Finished,9
+2012,10,hockenheimring,vettel,red_bull,5,2,10,67,Finished,4
+2012,10,hockenheimring,perez,sauber,6,17,8,67,Finished,6
+2012,10,hockenheimring,michael_schumacher,mercedes,7,3,6,67,Finished,1
+2012,10,hockenheimring,webber,red_bull,8,8,4,67,Finished,14
+2012,10,hockenheimring,hulkenberg,force_india,9,4,2,67,Finished,7
+2012,10,hockenheimring,rosberg,mercedes,10,21,1,67,Finished,3
+2012,10,hockenheimring,resta,force_india,11,9,0,67,Finished,12
+2012,10,hockenheimring,massa,ferrari,12,13,0,67,Finished,5
+2012,10,hockenheimring,ricciardo,toro_rosso,13,11,0,67,Finished,18
+2012,10,hockenheimring,vergne,toro_rosso,14,15,0,67,Finished,11
+2012,10,hockenheimring,maldonado,williams,15,5,0,66,+1 Lap,10
+2012,10,hockenheimring,petrov,caterham,16,18,0,66,+1 Lap,16
+2012,10,hockenheimring,bruno_senna,williams,17,14,0,66,+1 Lap,15
+2012,10,hockenheimring,grosjean,lotus_f1,18,19,0,66,+1 Lap,17
+2012,10,hockenheimring,kovalainen,caterham,19,16,0,65,+2 Laps,20
+2012,10,hockenheimring,pic,marussia,20,20,0,65,+2 Laps,21
+2012,10,hockenheimring,rosa,hrt,21,23,0,64,+3 Laps,23
+2012,10,hockenheimring,glock,marussia,22,22,0,64,+3 Laps,24
+2012,10,hockenheimring,karthikeyan,hrt,23,24,0,64,+3 Laps,22
+2012,10,hockenheimring,hamilton,mclaren,24,7,0,56,Puncture,19

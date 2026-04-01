@@ -1,0 +1,287 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2007,1,albert_park,raikkonen,ferrari,1,1,10,58,Finished,1
+2007,1,albert_park,alonso,mclaren,2,2,8,58,Finished,2
+2007,1,albert_park,hamilton,mclaren,3,4,6,58,Finished,3
+2007,1,albert_park,heidfeld,bmw_sauber,4,3,5,58,Finished,6
+2007,1,albert_park,fisichella,renault,5,6,4,58,Finished,7
+2007,1,albert_park,massa,ferrari,6,22,3,58,Finished,8
+2007,1,albert_park,rosberg,williams,7,12,2,57,+1 Lap,5
+2007,1,albert_park,ralf_schumacher,toyota,8,9,1,57,+1 Lap,12
+2007,1,albert_park,trulli,toyota,9,8,0,57,+1 Lap,13
+2007,1,albert_park,kovalainen,renault,10,13,0,57,+1 Lap,10
+2007,1,albert_park,barrichello,honda,11,16,0,57,+1 Lap,14
+2007,1,albert_park,sato,super_aguri,12,10,0,57,+1 Lap,18
+2007,1,albert_park,webber,red_bull,13,7,0,57,+1 Lap,9
+2007,1,albert_park,liuzzi,toro_rosso,14,19,0,57,+1 Lap,15
+2007,1,albert_park,button,honda,15,14,0,57,+1 Lap,17
+2007,1,albert_park,davidson,super_aguri,16,11,0,56,+2 Laps,19
+2007,1,albert_park,sutil,spyker,17,20,0,56,+2 Laps,20
+2007,1,albert_park,wurz,williams,18,15,0,48,Collision,16
+2007,1,albert_park,coulthard,red_bull,19,18,0,48,Collision,11
+2007,1,albert_park,kubica,bmw_sauber,20,5,0,36,Gearbox,4
+2007,1,albert_park,speed,toro_rosso,21,17,0,28,Puncture,21
+2007,1,albert_park,albers,spyker,22,21,0,10,Accident,22
+2007,2,sepang,alonso,mclaren,1,2,10,56,Finished,2
+2007,2,sepang,hamilton,mclaren,2,4,8,56,Finished,1
+2007,2,sepang,raikkonen,ferrari,3,3,6,56,Finished,4
+2007,2,sepang,heidfeld,bmw_sauber,4,5,5,56,Finished,5
+2007,2,sepang,massa,ferrari,5,1,4,56,Finished,3
+2007,2,sepang,fisichella,renault,6,12,3,56,Finished,9
+2007,2,sepang,trulli,toyota,7,8,2,56,Finished,10
+2007,2,sepang,kovalainen,renault,8,11,1,56,Finished,7
+2007,2,sepang,wurz,williams,9,19,0,56,Finished,8
+2007,2,sepang,webber,red_bull,10,10,0,56,Finished,14
+2007,2,sepang,barrichello,honda,11,22,0,55,+1 Lap,15
+2007,2,sepang,button,honda,12,15,0,55,+1 Lap,16
+2007,2,sepang,sato,super_aguri,13,14,0,55,+1 Lap,13
+2007,2,sepang,speed,toro_rosso,14,17,0,55,+1 Lap,18
+2007,2,sepang,ralf_schumacher,toyota,15,9,0,55,+1 Lap,19
+2007,2,sepang,davidson,super_aguri,16,18,0,55,+1 Lap,20
+2007,2,sepang,liuzzi,toro_rosso,17,16,0,55,+1 Lap,12
+2007,2,sepang,kubica,bmw_sauber,18,7,0,55,+1 Lap,17
+2007,2,sepang,rosberg,williams,19,6,0,42,Hydraulics,6
+2007,2,sepang,coulthard,red_bull,20,13,0,36,Brakes,11
+2007,2,sepang,albers,spyker,21,20,0,7,Engine,21
+2007,2,sepang,sutil,spyker,22,21,0,0,Collision,
+2007,3,bahrain,massa,ferrari,1,1,10,57,Finished,1
+2007,3,bahrain,hamilton,mclaren,2,2,8,57,Finished,2
+2007,3,bahrain,raikkonen,ferrari,3,3,6,57,Finished,3
+2007,3,bahrain,heidfeld,bmw_sauber,4,5,5,57,Finished,5
+2007,3,bahrain,alonso,mclaren,5,4,4,57,Finished,4
+2007,3,bahrain,kubica,bmw_sauber,6,6,3,57,Finished,6
+2007,3,bahrain,trulli,toyota,7,9,2,57,Finished,7
+2007,3,bahrain,fisichella,renault,8,7,1,57,Finished,8
+2007,3,bahrain,kovalainen,renault,9,12,0,57,Finished,10
+2007,3,bahrain,rosberg,williams,10,10,0,57,Finished,11
+2007,3,bahrain,wurz,williams,11,11,0,56,+1 Lap,16
+2007,3,bahrain,ralf_schumacher,toyota,12,14,0,56,+1 Lap,15
+2007,3,bahrain,barrichello,honda,13,15,0,56,+1 Lap,14
+2007,3,bahrain,albers,spyker,14,22,0,55,+2 Laps,20
+2007,3,bahrain,sutil,spyker,15,20,0,53,+4 Laps,19
+2007,3,bahrain,davidson,super_aguri,16,13,0,51,Engine,17
+2007,3,bahrain,webber,red_bull,17,8,0,41,Gearbox,12
+2007,3,bahrain,coulthard,red_bull,18,21,0,36,Driveshaft,9
+2007,3,bahrain,sato,super_aguri,19,17,0,34,Engine,18
+2007,3,bahrain,liuzzi,toro_rosso,20,18,0,26,Hydraulics,13
+2007,3,bahrain,button,honda,21,16,0,0,Collision,
+2007,3,bahrain,speed,toro_rosso,22,19,0,0,Collision,
+2007,4,catalunya,massa,ferrari,1,1,10,65,Finished,1
+2007,4,catalunya,hamilton,mclaren,2,4,8,65,Finished,2
+2007,4,catalunya,alonso,mclaren,3,2,6,65,Finished,3
+2007,4,catalunya,kubica,bmw_sauber,4,5,5,65,Finished,5
+2007,4,catalunya,coulthard,red_bull,5,9,4,65,Finished,8
+2007,4,catalunya,rosberg,williams,6,11,3,65,Finished,10
+2007,4,catalunya,kovalainen,renault,7,8,2,65,Finished,4
+2007,4,catalunya,sato,super_aguri,8,13,1,64,+1 Lap,12
+2007,4,catalunya,fisichella,renault,9,10,0,64,+1 Lap,9
+2007,4,catalunya,barrichello,honda,10,12,0,64,+1 Lap,14
+2007,4,catalunya,davidson,super_aguri,11,15,0,64,+1 Lap,15
+2007,4,catalunya,button,honda,12,14,0,64,+1 Lap,13
+2007,4,catalunya,sutil,spyker,13,20,0,63,+2 Laps,16
+2007,4,catalunya,albers,spyker,14,21,0,63,+2 Laps,18
+2007,4,catalunya,heidfeld,bmw_sauber,15,7,0,46,Gearbox,7
+2007,4,catalunya,ralf_schumacher,toyota,16,17,0,44,Suspension,11
+2007,4,catalunya,liuzzi,toro_rosso,17,16,0,19,Retired,17
+2007,4,catalunya,speed,toro_rosso,18,22,0,9,Tyre,20
+2007,4,catalunya,raikkonen,ferrari,19,3,0,9,Suspension,6
+2007,4,catalunya,trulli,toyota,20,6,0,8,Fuel pressure,19
+2007,4,catalunya,webber,red_bull,21,19,0,7,Hydraulics,21
+2007,4,catalunya,wurz,williams,22,18,0,1,Collision,
+2007,5,monaco,alonso,mclaren,1,1,10,78,Finished,1
+2007,5,monaco,hamilton,mclaren,2,2,8,78,Finished,2
+2007,5,monaco,massa,ferrari,3,3,6,78,Finished,4
+2007,5,monaco,fisichella,renault,4,4,5,77,+1 Lap,5
+2007,5,monaco,kubica,bmw_sauber,5,8,4,77,+1 Lap,3
+2007,5,monaco,heidfeld,bmw_sauber,6,7,3,77,+1 Lap,12
+2007,5,monaco,wurz,williams,7,11,2,77,+1 Lap,7
+2007,5,monaco,raikkonen,ferrari,8,16,1,77,+1 Lap,6
+2007,5,monaco,speed,toro_rosso,9,18,0,77,+1 Lap,10
+2007,5,monaco,barrichello,honda,10,9,0,77,+1 Lap,13
+2007,5,monaco,button,honda,11,10,0,77,+1 Lap,9
+2007,5,monaco,rosberg,williams,12,5,0,77,+1 Lap,11
+2007,5,monaco,kovalainen,renault,13,15,0,76,Engine,14
+2007,5,monaco,coulthard,red_bull,14,13,0,76,+2 Laps,8
+2007,5,monaco,trulli,toyota,15,14,0,76,+2 Laps,18
+2007,5,monaco,ralf_schumacher,toyota,16,20,0,76,+2 Laps,17
+2007,5,monaco,sato,super_aguri,17,21,0,76,+2 Laps,15
+2007,5,monaco,davidson,super_aguri,18,17,0,76,+2 Laps,16
+2007,5,monaco,albers,spyker,19,22,0,70,Driveshaft,20
+2007,5,monaco,sutil,spyker,20,19,0,53,Accident,19
+2007,5,monaco,webber,red_bull,21,6,0,17,Gearbox,21
+2007,5,monaco,liuzzi,toro_rosso,22,12,0,2,Accident,
+2007,6,villeneuve,hamilton,mclaren,1,1,10,70,Finished,2
+2007,6,villeneuve,heidfeld,bmw_sauber,2,3,8,70,Finished,3
+2007,6,villeneuve,wurz,williams,3,19,6,70,Finished,11
+2007,6,villeneuve,kovalainen,renault,4,22,5,70,Finished,13
+2007,6,villeneuve,raikkonen,ferrari,5,4,4,70,Finished,5
+2007,6,villeneuve,sato,super_aguri,6,11,3,70,Finished,12
+2007,6,villeneuve,alonso,mclaren,7,2,2,70,Finished,1
+2007,6,villeneuve,ralf_schumacher,toyota,8,18,1,70,Finished,10
+2007,6,villeneuve,webber,red_bull,9,6,0,70,Finished,9
+2007,6,villeneuve,rosberg,williams,10,7,0,70,Finished,6
+2007,6,villeneuve,davidson,super_aguri,11,17,0,70,Finished,15
+2007,6,villeneuve,barrichello,honda,12,13,0,70,Finished,14
+2007,6,villeneuve,trulli,toyota,13,10,0,58,Accident,17
+2007,6,villeneuve,liuzzi,toro_rosso,14,12,0,54,Accident,19
+2007,6,villeneuve,albers,spyker,15,21,0,47,Front wing,18
+2007,6,villeneuve,coulthard,red_bull,16,14,0,36,Gearbox,16
+2007,6,villeneuve,kubica,bmw_sauber,17,8,0,26,Accident,8
+2007,6,villeneuve,sutil,spyker,18,20,0,21,Accident,20
+2007,6,villeneuve,speed,toro_rosso,19,16,0,8,Accident,21
+2007,6,villeneuve,button,honda,20,15,0,0,Gearbox,
+2007,6,villeneuve,massa,ferrari,21,5,0,51,Disqualified,4
+2007,6,villeneuve,fisichella,renault,22,9,0,51,Disqualified,7
+2007,7,indianapolis,hamilton,mclaren,1,1,10,73,Finished,2
+2007,7,indianapolis,alonso,mclaren,2,2,8,73,Finished,3
+2007,7,indianapolis,massa,ferrari,3,3,6,73,Finished,4
+2007,7,indianapolis,raikkonen,ferrari,4,4,5,73,Finished,1
+2007,7,indianapolis,kovalainen,renault,5,6,4,73,Finished,7
+2007,7,indianapolis,trulli,toyota,6,8,3,73,Finished,10
+2007,7,indianapolis,webber,red_bull,7,9,2,73,Finished,8
+2007,7,indianapolis,vettel,bmw_sauber,8,7,1,73,Finished,6
+2007,7,indianapolis,fisichella,renault,9,10,0,72,+1 Lap,9
+2007,7,indianapolis,wurz,williams,10,17,0,72,+1 Lap,13
+2007,7,indianapolis,davidson,super_aguri,11,16,0,72,+1 Lap,12
+2007,7,indianapolis,button,honda,12,13,0,72,+1 Lap,14
+2007,7,indianapolis,speed,toro_rosso,13,20,0,71,+2 Laps,16
+2007,7,indianapolis,sutil,spyker,14,21,0,71,+2 Laps,15
+2007,7,indianapolis,albers,spyker,15,22,0,70,+3 Laps,18
+2007,7,indianapolis,rosberg,williams,16,14,0,68,Engine,11
+2007,7,indianapolis,liuzzi,toro_rosso,17,19,0,68,Water pressure,17
+2007,7,indianapolis,heidfeld,bmw_sauber,18,5,0,56,Transmission,5
+2007,7,indianapolis,sato,super_aguri,19,18,0,13,Spun off,19
+2007,7,indianapolis,coulthard,red_bull,20,11,0,0,Collision,
+2007,7,indianapolis,barrichello,honda,21,15,0,0,Collision,
+2007,7,indianapolis,ralf_schumacher,toyota,22,12,0,0,Collision,
+2007,8,magny_cours,raikkonen,ferrari,1,3,10,70,Finished,2
+2007,8,magny_cours,massa,ferrari,2,1,8,70,Finished,1
+2007,8,magny_cours,hamilton,mclaren,3,2,6,70,Finished,4
+2007,8,magny_cours,kubica,bmw_sauber,4,4,5,70,Finished,10
+2007,8,magny_cours,heidfeld,bmw_sauber,5,7,4,70,Finished,7
+2007,8,magny_cours,fisichella,renault,6,5,3,70,Finished,5
+2007,8,magny_cours,alonso,mclaren,7,10,2,70,Finished,3
+2007,8,magny_cours,button,honda,8,12,1,70,Finished,6
+2007,8,magny_cours,rosberg,williams,9,9,0,70,Finished,9
+2007,8,magny_cours,ralf_schumacher,toyota,10,11,0,69,+1 Lap,8
+2007,8,magny_cours,barrichello,honda,11,13,0,69,+1 Lap,12
+2007,8,magny_cours,webber,red_bull,12,14,0,69,+1 Lap,14
+2007,8,magny_cours,coulthard,red_bull,13,16,0,69,+1 Lap,15
+2007,8,magny_cours,wurz,williams,14,18,0,69,+1 Lap,13
+2007,8,magny_cours,kovalainen,renault,15,6,0,69,+1 Lap,11
+2007,8,magny_cours,sato,super_aguri,16,22,0,68,+2 Laps,16
+2007,8,magny_cours,sutil,spyker,17,21,0,68,+2 Laps,18
+2007,8,magny_cours,speed,toro_rosso,18,15,0,55,Gearbox,17
+2007,8,magny_cours,albers,spyker,19,20,0,28,Refuelling,19
+2007,8,magny_cours,davidson,super_aguri,20,19,0,1,Collision,
+2007,8,magny_cours,trulli,toyota,21,8,0,1,Collision,
+2007,8,magny_cours,liuzzi,toro_rosso,22,17,0,0,Collision,
+2007,9,silverstone,raikkonen,ferrari,1,2,10,59,Finished,1
+2007,9,silverstone,alonso,mclaren,2,3,8,59,Finished,3
+2007,9,silverstone,hamilton,mclaren,3,1,6,59,Finished,4
+2007,9,silverstone,kubica,bmw_sauber,4,5,5,59,Finished,6
+2007,9,silverstone,massa,ferrari,5,4,4,59,Finished,2
+2007,9,silverstone,heidfeld,bmw_sauber,6,9,3,59,Finished,5
+2007,9,silverstone,kovalainen,renault,7,7,2,58,+1 Lap,9
+2007,9,silverstone,fisichella,renault,8,8,1,58,+1 Lap,7
+2007,9,silverstone,barrichello,honda,9,14,0,58,+1 Lap,13
+2007,9,silverstone,button,honda,10,18,0,58,+1 Lap,16
+2007,9,silverstone,coulthard,red_bull,11,12,0,58,+1 Lap,12
+2007,9,silverstone,rosberg,williams,12,17,0,58,+1 Lap,11
+2007,9,silverstone,wurz,williams,13,13,0,58,+1 Lap,10
+2007,9,silverstone,sato,super_aguri,14,21,0,57,+2 Laps,14
+2007,9,silverstone,albers,spyker,15,22,0,57,+2 Laps,21
+2007,9,silverstone,liuzzi,toro_rosso,16,16,0,53,Gearbox,17
+2007,9,silverstone,trulli,toyota,17,10,0,43,Retired,18
+2007,9,silverstone,davidson,super_aguri,18,19,0,35,Mechanical,20
+2007,9,silverstone,speed,toro_rosso,19,15,0,29,Accident,15
+2007,9,silverstone,ralf_schumacher,toyota,20,6,0,22,Wheel,8
+2007,9,silverstone,sutil,spyker,21,20,0,16,Engine,22
+2007,9,silverstone,webber,red_bull,22,11,0,8,Hydraulics,19
+2007,10,nurburgring,alonso,mclaren,1,2,10,60,Finished,2
+2007,10,nurburgring,massa,ferrari,2,3,8,60,Finished,1
+2007,10,nurburgring,webber,red_bull,3,6,6,60,Finished,8
+2007,10,nurburgring,wurz,williams,4,12,5,60,Finished,5
+2007,10,nurburgring,coulthard,red_bull,5,20,4,60,Finished,6
+2007,10,nurburgring,heidfeld,bmw_sauber,6,4,3,60,Finished,7
+2007,10,nurburgring,kubica,bmw_sauber,7,5,2,60,Finished,9
+2007,10,nurburgring,kovalainen,renault,8,7,1,59,+1 Lap,11
+2007,10,nurburgring,hamilton,mclaren,9,10,0,59,+1 Lap,3
+2007,10,nurburgring,fisichella,renault,10,13,0,59,+1 Lap,12
+2007,10,nurburgring,barrichello,honda,11,14,0,59,+1 Lap,14
+2007,10,nurburgring,davidson,super_aguri,12,15,0,59,+1 Lap,13
+2007,10,nurburgring,trulli,toyota,13,8,0,59,+1 Lap,10
+2007,10,nurburgring,raikkonen,ferrari,14,1,0,34,Hydraulics,4
+2007,10,nurburgring,sato,super_aguri,15,16,0,19,Retired,16
+2007,10,nurburgring,ralf_schumacher,toyota,16,9,0,18,Collision,15
+2007,10,nurburgring,markus_winkelhock,spyker,17,22,0,13,Hydraulics,17
+2007,10,nurburgring,button,honda,18,17,0,2,Spun off,18
+2007,10,nurburgring,sutil,spyker,19,21,0,2,Spun off,19
+2007,10,nurburgring,rosberg,williams,20,11,0,2,Spun off,20
+2007,10,nurburgring,speed,toro_rosso,21,18,0,2,Spun off,21
+2007,10,nurburgring,liuzzi,toro_rosso,22,19,0,2,Spun off,22
+2007,11,hungaroring,hamilton,mclaren,1,1,10,70,Finished,2
+2007,11,hungaroring,raikkonen,ferrari,2,3,8,70,Finished,1
+2007,11,hungaroring,heidfeld,bmw_sauber,3,2,6,70,Finished,5
+2007,11,hungaroring,alonso,mclaren,4,6,5,70,Finished,3
+2007,11,hungaroring,kubica,bmw_sauber,5,7,4,70,Finished,4
+2007,11,hungaroring,ralf_schumacher,toyota,6,5,3,70,Finished,9
+2007,11,hungaroring,rosberg,williams,7,4,2,70,Finished,6
+2007,11,hungaroring,kovalainen,renault,8,11,1,70,Finished,8
+2007,11,hungaroring,webber,red_bull,9,9,0,70,Finished,7
+2007,11,hungaroring,trulli,toyota,10,8,0,69,+1 Lap,12
+2007,11,hungaroring,coulthard,red_bull,11,10,0,69,+1 Lap,14
+2007,11,hungaroring,fisichella,renault,12,13,0,69,+1 Lap,15
+2007,11,hungaroring,massa,ferrari,13,14,0,69,+1 Lap,11
+2007,11,hungaroring,wurz,williams,14,12,0,69,+1 Lap,13
+2007,11,hungaroring,sato,super_aguri,15,19,0,69,+1 Lap,10
+2007,11,hungaroring,vettel,toro_rosso,16,20,0,69,+1 Lap,16
+2007,11,hungaroring,sutil,spyker,17,21,0,68,+2 Laps,19
+2007,11,hungaroring,barrichello,honda,18,18,0,68,+2 Laps,17
+2007,11,hungaroring,liuzzi,toro_rosso,19,16,0,42,Electrical,20
+2007,11,hungaroring,davidson,super_aguri,20,15,0,41,Accident,18
+2007,11,hungaroring,button,honda,21,17,0,35,Throttle,21
+2007,11,hungaroring,yamamoto,spyker,22,22,0,4,Accident,22
+2007,12,istanbul,massa,ferrari,1,1,10,58,Finished,2
+2007,12,istanbul,raikkonen,ferrari,2,3,8,58,Finished,1
+2007,12,istanbul,alonso,mclaren,3,4,6,58,Finished,4
+2007,12,istanbul,heidfeld,bmw_sauber,4,6,5,58,Finished,5
+2007,12,istanbul,hamilton,mclaren,5,2,4,58,Finished,3
+2007,12,istanbul,kovalainen,renault,6,7,3,58,Finished,7
+2007,12,istanbul,rosberg,williams,7,8,2,58,Finished,6
+2007,12,istanbul,kubica,bmw_sauber,8,5,1,58,Finished,11
+2007,12,istanbul,fisichella,renault,9,10,0,58,Finished,9
+2007,12,istanbul,coulthard,red_bull,10,13,0,58,Finished,13
+2007,12,istanbul,wurz,williams,11,14,0,58,Finished,8
+2007,12,istanbul,ralf_schumacher,toyota,12,16,0,57,+1 Lap,12
+2007,12,istanbul,button,honda,13,21,0,57,+1 Lap,10
+2007,12,istanbul,davidson,super_aguri,14,11,0,57,+1 Lap,17
+2007,12,istanbul,liuzzi,toro_rosso,15,15,0,57,+1 Lap,16
+2007,12,istanbul,trulli,toyota,16,9,0,57,+1 Lap,14
+2007,12,istanbul,barrichello,honda,17,22,0,57,+1 Lap,15
+2007,12,istanbul,sato,super_aguri,18,17,0,57,+1 Lap,18
+2007,12,istanbul,vettel,toro_rosso,19,18,0,57,+1 Lap,19
+2007,12,istanbul,yamamoto,spyker,20,20,0,56,+2 Laps,22
+2007,12,istanbul,sutil,spyker,21,19,0,53,Fuel pressure,20
+2007,12,istanbul,webber,red_bull,22,12,0,9,Hydraulics,21
+2007,13,monza,alonso,mclaren,1,1,10,53,Finished,1
+2007,13,monza,hamilton,mclaren,2,2,8,53,Finished,2
+2007,13,monza,raikkonen,ferrari,3,5,6,53,Finished,3
+2007,13,monza,heidfeld,bmw_sauber,4,4,5,53,Finished,4
+2007,13,monza,kubica,bmw_sauber,5,6,4,53,Finished,5
+2007,13,monza,rosberg,williams,6,8,3,53,Finished,8
+2007,13,monza,kovalainen,renault,7,7,2,53,Finished,7
+2007,13,monza,button,honda,8,10,1,53,Finished,9
+2007,13,monza,webber,red_bull,9,11,0,53,Finished,13
+2007,13,monza,barrichello,honda,10,12,0,53,Finished,12
+2007,13,monza,trulli,toyota,11,9,0,53,Finished,10
+2007,13,monza,fisichella,renault,12,15,0,52,+1 Lap,14
+2007,13,monza,wurz,williams,13,13,0,52,+1 Lap,16
+2007,13,monza,davidson,super_aguri,14,14,0,52,+1 Lap,17
+2007,13,monza,ralf_schumacher,toyota,15,18,0,52,+1 Lap,15
+2007,13,monza,sato,super_aguri,16,17,0,52,+1 Lap,11
+2007,13,monza,liuzzi,toro_rosso,17,19,0,52,+1 Lap,19
+2007,13,monza,vettel,toro_rosso,18,16,0,52,+1 Lap,18
+2007,13,monza,sutil,spyker,19,21,0,52,+1 Lap,20
+2007,13,monza,yamamoto,spyker,20,22,0,52,+1 Lap,21
+2007,13,monza,massa,ferrari,21,3,0,10,Suspension,6
+2007,13,monza,coulthard,red_bull,22,20,0,1,Accident,

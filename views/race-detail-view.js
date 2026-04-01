@@ -183,7 +183,7 @@ export class RaceDetailView extends BaseView {
               <td class="driver-name">
                 <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
               </td>
-              <td class="team-name">${driver ? driver.team : '-'}</td>
+              <td class="team-name">${driver && driver.constructorId ? `<a href="#/constructor/${driver.constructorId}">${driver.team}</a>` : (driver ? driver.team : '-')}</td>
               <td class="time">${result.q1 || '-'}</td>
               <td class="time">${result.q2 || '-'}</td>
               <td class="time">${result.q3 || '-'}</td>
@@ -241,7 +241,7 @@ export class RaceDetailView extends BaseView {
               <td class="driver-name">
                 <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
               </td>
-              <td class="team-name">${driver ? driver.team : '-'}</td>
+              <td class="team-name">${driver && driver.constructorId ? `<a href="#/constructor/${driver.constructorId}">${driver.team}</a>` : (driver ? driver.team : '-')}</td>
               <td class="grid-position">${result.grid || '-'}</td>
               <td class="status">${result.status || '-'}</td>
               <td class="points">${result.points}</td>

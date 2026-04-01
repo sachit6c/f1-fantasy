@@ -1,0 +1,181 @@
+season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
+2009,1,albert_park,button,brawn,1,1,10,58,Finished,3
+2009,1,albert_park,barrichello,brawn,2,2,8,58,Finished,14
+2009,1,albert_park,trulli,toyota,3,20,6,58,Finished,10
+2009,1,albert_park,glock,toyota,4,19,5,58,Finished,6
+2009,1,albert_park,alonso,renault,5,10,4,58,Finished,9
+2009,1,albert_park,rosberg,williams,6,5,3,58,Finished,1
+2009,1,albert_park,buemi,toro_rosso,7,13,2,58,Finished,16
+2009,1,albert_park,bourdais,toro_rosso,8,17,1,58,Finished,17
+2009,1,albert_park,sutil,force_india,9,16,0,58,Finished,11
+2009,1,albert_park,heidfeld,bmw_sauber,10,9,0,58,Finished,5
+2009,1,albert_park,fisichella,force_india,11,15,0,58,Finished,12
+2009,1,albert_park,webber,red_bull,12,8,0,57,+1 Lap,8
+2009,1,albert_park,vettel,red_bull,13,3,0,56,Collision,4
+2009,1,albert_park,kubica,bmw_sauber,14,4,0,55,Collision,2
+2009,1,albert_park,raikkonen,ferrari,15,7,0,55,Differential,7
+2009,1,albert_park,massa,ferrari,16,6,0,45,Suspension,15
+2009,1,albert_park,piquet_jr,renault,17,14,0,24,Spun off,19
+2009,1,albert_park,nakajima,williams,18,11,0,17,Accident,18
+2009,1,albert_park,kovalainen,mclaren,19,12,0,0,Collision,
+2009,1,albert_park,hamilton,mclaren,20,18,0,58,Disqualified,13
+2009,2,sepang,button,brawn,1,1,5,31,Finished,1
+2009,2,sepang,heidfeld,bmw_sauber,2,10,4,31,Finished,10
+2009,2,sepang,glock,toyota,3,3,3,31,Finished,16
+2009,2,sepang,trulli,toyota,4,2,2.5,31,Finished,3
+2009,2,sepang,barrichello,brawn,5,8,2,31,Finished,2
+2009,2,sepang,webber,red_bull,6,5,1.5,31,Finished,5
+2009,2,sepang,hamilton,mclaren,7,12,1,31,Finished,11
+2009,2,sepang,rosberg,williams,8,4,0.5,31,Finished,4
+2009,2,sepang,massa,ferrari,9,16,0,31,Finished,13
+2009,2,sepang,bourdais,toro_rosso,10,15,0,31,Finished,12
+2009,2,sepang,alonso,renault,11,9,0,31,+1 Lap,9
+2009,2,sepang,nakajima,williams,12,11,0,31,+1 Lap,15
+2009,2,sepang,piquet_jr,renault,13,17,0,31,+1 Lap,14
+2009,2,sepang,raikkonen,ferrari,14,7,0,31,+1 Lap,7
+2009,2,sepang,vettel,red_bull,15,13,0,30,Spun off,6
+2009,2,sepang,buemi,toro_rosso,16,20,0,30,Spun off,8
+2009,2,sepang,sutil,force_india,17,19,0,30,+1 Lap,18
+2009,2,sepang,fisichella,force_india,18,18,0,29,Spun off,17
+2009,2,sepang,kubica,bmw_sauber,19,6,0,1,Engine,
+2009,2,sepang,kovalainen,mclaren,20,14,0,0,Spun off,
+2009,3,shanghai,vettel,red_bull,1,1,10,56,Finished,2
+2009,3,shanghai,webber,red_bull,2,3,8,56,Finished,4
+2009,3,shanghai,button,brawn,3,5,6,56,Finished,6
+2009,3,shanghai,barrichello,brawn,4,4,5,56,Finished,1
+2009,3,shanghai,kovalainen,mclaren,5,12,4,56,Finished,10
+2009,3,shanghai,hamilton,mclaren,6,9,3,56,Finished,12
+2009,3,shanghai,glock,toyota,7,19,2,56,Finished,3
+2009,3,shanghai,buemi,toro_rosso,8,10,1,56,Finished,11
+2009,3,shanghai,alonso,renault,9,2,0,56,Finished,9
+2009,3,shanghai,raikkonen,ferrari,10,8,0,56,Finished,15
+2009,3,shanghai,bourdais,toro_rosso,11,15,0,56,Finished,5
+2009,3,shanghai,heidfeld,bmw_sauber,12,11,0,56,Finished,7
+2009,3,shanghai,kubica,bmw_sauber,13,17,0,56,Finished,14
+2009,3,shanghai,fisichella,force_india,14,20,0,55,+1 Lap,18
+2009,3,shanghai,rosberg,williams,15,7,0,55,+1 Lap,8
+2009,3,shanghai,piquet_jr,renault,16,16,0,54,+2 Laps,16
+2009,3,shanghai,sutil,force_india,17,18,0,50,Spun off,13
+2009,3,shanghai,nakajima,williams,18,14,0,43,Retired,17
+2009,3,shanghai,massa,ferrari,19,13,0,20,Electronics,19
+2009,3,shanghai,trulli,toyota,20,6,0,18,Collision,20
+2009,4,bahrain,button,brawn,1,4,10,57,Finished,3
+2009,4,bahrain,vettel,red_bull,2,3,8,57,Finished,4
+2009,4,bahrain,trulli,toyota,3,1,6,57,Finished,1
+2009,4,bahrain,hamilton,mclaren,4,5,5,57,Finished,6
+2009,4,bahrain,barrichello,brawn,5,6,4,57,Finished,5
+2009,4,bahrain,raikkonen,ferrari,6,10,3,57,Finished,11
+2009,4,bahrain,glock,toyota,7,2,2,57,Finished,2
+2009,4,bahrain,alonso,renault,8,7,1,57,Finished,14
+2009,4,bahrain,rosberg,williams,9,9,0,57,Finished,15
+2009,4,bahrain,piquet_jr,renault,10,15,0,57,Finished,10
+2009,4,bahrain,webber,red_bull,11,18,0,57,Finished,8
+2009,4,bahrain,kovalainen,mclaren,12,11,0,57,Finished,12
+2009,4,bahrain,bourdais,toro_rosso,13,20,0,57,Finished,9
+2009,4,bahrain,massa,ferrari,14,8,0,56,+1 Lap,7
+2009,4,bahrain,fisichella,force_india,15,17,0,56,+1 Lap,19
+2009,4,bahrain,sutil,force_india,16,19,0,56,+1 Lap,18
+2009,4,bahrain,buemi,toro_rosso,17,16,0,56,+1 Lap,20
+2009,4,bahrain,kubica,bmw_sauber,18,13,0,56,+1 Lap,13
+2009,4,bahrain,heidfeld,bmw_sauber,19,14,0,56,+1 Lap,16
+2009,4,bahrain,nakajima,williams,20,12,0,48,Oil pressure,17
+2009,5,catalunya,button,brawn,1,1,10,66,Finished,2
+2009,5,catalunya,barrichello,brawn,2,3,8,66,Finished,1
+2009,5,catalunya,webber,red_bull,3,5,6,66,Finished,5
+2009,5,catalunya,vettel,red_bull,4,2,5,66,Finished,4
+2009,5,catalunya,alonso,renault,5,8,4,66,Finished,6
+2009,5,catalunya,massa,ferrari,6,4,3,66,Finished,3
+2009,5,catalunya,heidfeld,bmw_sauber,7,13,2,66,Finished,10
+2009,5,catalunya,rosberg,williams,8,9,1,66,Finished,7
+2009,5,catalunya,hamilton,mclaren,9,14,0,65,+1 Lap,9
+2009,5,catalunya,glock,toyota,10,6,0,65,+1 Lap,12
+2009,5,catalunya,kubica,bmw_sauber,11,10,0,65,+1 Lap,11
+2009,5,catalunya,piquet_jr,renault,12,12,0,65,+1 Lap,14
+2009,5,catalunya,nakajima,williams,13,11,0,65,+1 Lap,13
+2009,5,catalunya,fisichella,force_india,14,20,0,65,+1 Lap,8
+2009,5,catalunya,raikkonen,ferrari,15,16,0,17,Hydraulics,15
+2009,5,catalunya,kovalainen,mclaren,16,18,0,7,Gearbox,16
+2009,5,catalunya,trulli,toyota,17,7,0,0,Collision,
+2009,5,catalunya,buemi,toro_rosso,18,15,0,0,Collision,
+2009,5,catalunya,bourdais,toro_rosso,19,17,0,0,Collision,
+2009,5,catalunya,sutil,force_india,20,19,0,0,Collision,
+2009,6,monaco,button,brawn,1,1,10,78,Finished,2
+2009,6,monaco,barrichello,brawn,2,3,8,78,Finished,7
+2009,6,monaco,raikkonen,ferrari,3,2,6,78,Finished,5
+2009,6,monaco,massa,ferrari,4,5,5,78,Finished,1
+2009,6,monaco,webber,red_bull,5,8,4,78,Finished,3
+2009,6,monaco,rosberg,williams,6,6,3,78,Finished,9
+2009,6,monaco,alonso,renault,7,9,2,78,Finished,4
+2009,6,monaco,bourdais,toro_rosso,8,14,1,78,Finished,13
+2009,6,monaco,fisichella,force_india,9,13,0,78,Finished,16
+2009,6,monaco,glock,toyota,10,20,0,77,+1 Lap,12
+2009,6,monaco,heidfeld,bmw_sauber,11,16,0,77,+1 Lap,15
+2009,6,monaco,hamilton,mclaren,12,19,0,77,+1 Lap,8
+2009,6,monaco,trulli,toyota,13,18,0,77,+1 Lap,11
+2009,6,monaco,sutil,force_india,14,15,0,77,+1 Lap,14
+2009,6,monaco,nakajima,williams,15,10,0,76,Accident,10
+2009,6,monaco,kovalainen,mclaren,16,7,0,51,Accident,6
+2009,6,monaco,kubica,bmw_sauber,17,17,0,28,Brakes,17
+2009,6,monaco,vettel,red_bull,18,4,0,15,Accident,18
+2009,6,monaco,piquet_jr,renault,19,12,0,10,Collision,19
+2009,6,monaco,buemi,toro_rosso,20,11,0,10,Collision,20
+2009,7,istanbul,button,brawn,1,2,10,58,Finished,1
+2009,7,istanbul,webber,red_bull,2,4,8,58,Finished,3
+2009,7,istanbul,vettel,red_bull,3,1,6,58,Finished,2
+2009,7,istanbul,trulli,toyota,4,5,5,58,Finished,4
+2009,7,istanbul,rosberg,williams,5,9,4,58,Finished,11
+2009,7,istanbul,massa,ferrari,6,7,3,58,Finished,9
+2009,7,istanbul,kubica,bmw_sauber,7,10,2,58,Finished,7
+2009,7,istanbul,glock,toyota,8,13,1,58,Finished,5
+2009,7,istanbul,raikkonen,ferrari,9,6,0,58,Finished,8
+2009,7,istanbul,alonso,renault,10,8,0,58,Finished,13
+2009,7,istanbul,heidfeld,bmw_sauber,11,11,0,58,Finished,10
+2009,7,istanbul,nakajima,williams,12,12,0,58,Finished,6
+2009,7,istanbul,hamilton,mclaren,13,16,0,58,Finished,15
+2009,7,istanbul,kovalainen,mclaren,14,14,0,57,+1 Lap,18
+2009,7,istanbul,buemi,toro_rosso,15,18,0,57,+1 Lap,16
+2009,7,istanbul,piquet_jr,renault,16,17,0,57,+1 Lap,12
+2009,7,istanbul,sutil,force_india,17,15,0,57,+1 Lap,19
+2009,7,istanbul,bourdais,toro_rosso,18,20,0,57,+1 Lap,17
+2009,7,istanbul,barrichello,brawn,19,3,0,47,Gearbox,14
+2009,7,istanbul,fisichella,force_india,20,19,0,4,Brakes,20
+2009,8,silverstone,vettel,red_bull,1,1,10,60,Finished,1
+2009,8,silverstone,webber,red_bull,2,3,8,60,Finished,2
+2009,8,silverstone,barrichello,brawn,3,2,6,60,Finished,5
+2009,8,silverstone,massa,ferrari,4,11,5,60,Finished,6
+2009,8,silverstone,rosberg,williams,5,7,4,60,Finished,3
+2009,8,silverstone,button,brawn,6,6,3,60,Finished,4
+2009,8,silverstone,trulli,toyota,7,4,2,60,Finished,9
+2009,8,silverstone,raikkonen,ferrari,8,9,1,60,Finished,7
+2009,8,silverstone,glock,toyota,9,8,0,60,Finished,8
+2009,8,silverstone,fisichella,force_india,10,16,0,60,Finished,10
+2009,8,silverstone,nakajima,williams,11,5,0,60,Finished,11
+2009,8,silverstone,piquet_jr,renault,12,14,0,59,+1 Lap,17
+2009,8,silverstone,kubica,bmw_sauber,13,12,0,59,+1 Lap,14
+2009,8,silverstone,alonso,renault,14,10,0,59,+1 Lap,12
+2009,8,silverstone,heidfeld,bmw_sauber,15,15,0,59,+1 Lap,13
+2009,8,silverstone,hamilton,mclaren,16,18,0,59,+1 Lap,18
+2009,8,silverstone,sutil,force_india,17,20,0,59,+1 Lap,20
+2009,8,silverstone,buemi,toro_rosso,18,19,0,59,+1 Lap,19
+2009,8,silverstone,bourdais,toro_rosso,19,17,0,37,Collision,16
+2009,8,silverstone,kovalainen,mclaren,20,13,0,36,Collision,15
+2009,9,nurburgring,webber,red_bull,1,1,10,60,Finished,3
+2009,9,nurburgring,vettel,red_bull,2,4,8,60,Finished,4
+2009,9,nurburgring,massa,ferrari,3,8,6,60,Finished,8
+2009,9,nurburgring,rosberg,williams,4,15,5,60,Finished,7
+2009,9,nurburgring,button,brawn,5,3,4,60,Finished,6
+2009,9,nurburgring,barrichello,brawn,6,2,3,60,Finished,11
+2009,9,nurburgring,alonso,renault,7,12,2,60,Finished,1
+2009,9,nurburgring,kovalainen,mclaren,8,6,1,60,Finished,17
+2009,9,nurburgring,glock,toyota,9,20,0,60,Finished,16
+2009,9,nurburgring,heidfeld,bmw_sauber,10,11,0,60,Finished,10
+2009,9,nurburgring,fisichella,force_india,11,18,0,60,Finished,13
+2009,9,nurburgring,nakajima,williams,12,13,0,60,Finished,5
+2009,9,nurburgring,piquet_jr,renault,13,10,0,60,Finished,12
+2009,9,nurburgring,kubica,bmw_sauber,14,16,0,60,Finished,9
+2009,9,nurburgring,sutil,force_india,15,7,0,60,Finished,14
+2009,9,nurburgring,buemi,toro_rosso,16,17,0,60,Finished,19
+2009,9,nurburgring,trulli,toyota,17,14,0,60,Finished,2
+2009,9,nurburgring,hamilton,mclaren,18,5,0,59,+1 Lap,15
+2009,9,nurburgring,raikkonen,ferrari,19,9,0,34,Engine,18
+2009,9,nurburgring,bourdais,toro_rosso,20,19,0,18,Hydraulics,20

@@ -32,14 +32,10 @@ export class ConstructorsListView extends BaseView {
   }
 
   renderHeader() {
-    const header = this.createElement('div', 'constructors-header');
-
-    const title = this.createElement('h1', 'page-title', 'Constructors');
-    header.appendChild(title);
-
-    const subtitle = this.createElement('p', 'page-subtitle', `${dataStore.season} F1 Teams`);
-    header.appendChild(subtitle);
-
+    const header = this.createPageHeader(
+      'Constructors',
+      `${dataStore.season} F1 Teams`
+    );
     this.root.appendChild(header);
   }
 

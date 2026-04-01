@@ -238,17 +238,19 @@
 }
 
 .season-year-btn:hover {
+  background: var(--color-bg-elevated); /* fallback for browsers without color-mix() */
   background: color-mix(in srgb, var(--era-accent, #888) 18%, transparent);
-  color: var(--era-text, #fff);
+  color: var(--era-text, var(--color-text-primary));
   border-color: var(--era-accent, #888);
   transform: translateY(-1px);
 }
 
 .season-year-btn.active {
   background: var(--era-accent, #E10600);
-  color: #0F0F0F;
+  color: #0F0F0F; /* intentional: era accents are vivid, dark text readable on all */
   border-color: var(--era-accent, #E10600);
   font-weight: 800;
+  box-shadow: 0 0 8px rgba(128, 128, 128, 0.4); /* fallback */
   box-shadow: 0 0 8px color-mix(in srgb, var(--era-accent, #E10600) 50%, transparent);
 }
 
