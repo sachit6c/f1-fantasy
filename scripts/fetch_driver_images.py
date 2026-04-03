@@ -27,6 +27,28 @@ CONSTRUCTORS_DIR = IMAGES_DIR / 'constructors'
 DRIVERS_DIR.mkdir(parents=True, exist_ok=True)
 CONSTRUCTORS_DIR.mkdir(parents=True, exist_ok=True)
 
+def _wikipedia_get(url, retries=3):
+    """GET a Wikipedia URL with retry/backoff on 429."""
+    for attempt in range(retries):
+        time.sleep(2 + attempt * 3)  # 2s, 5s, 8s
+        try:
+            req = urllib.request.Request(url, headers={
+                'User-Agent': 'F1FantasyLeague/1.0 (Educational Project)'
+            })
+            with urllib.request.urlopen(req, context=ssl_context) as response:
+                return json.loads(response.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                wait = 30 * (attempt + 1)
+                print(f"  Rate limited (429), waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                raise
+        except Exception:
+            raise
+    return None
+
+
 def fetch_wikipedia_image(wiki_url):
     """
     Extract image URL from Wikipedia page using multiple methods.
@@ -38,13 +60,8 @@ def fetch_wikipedia_image(wiki_url):
         
         # Method 1: Try REST API summary
         api_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title}"
-        req = urllib.request.Request(api_url, headers={
-            'User-Agent': 'F1FantasyLeague/1.0 (Educational Project)'
-        })
-        
-        with urllib.request.urlopen(req, context=ssl_context) as response:
-            data = json.loads(response.read())
-            
+        data = _wikipedia_get(api_url)
+        if data:
             if 'thumbnail' in data and 'source' in data['thumbnail']:
                 return data['thumbnail']['source']
             elif 'originalimage' in data and 'source' in data['originalimage']:
@@ -52,14 +69,9 @@ def fetch_wikipedia_image(wiki_url):
         
         # Method 2: Try MediaWiki API to get page images
         query_url = f"https://en.wikipedia.org/w/api.php?action=query&titles={page_title}&prop=pageimages&format=json&pithumbsize=500"
-        req = urllib.request.Request(query_url, headers={
-            'User-Agent': 'F1FantasyLeague/1.0 (Educational Project)'
-        })
-        
-        with urllib.request.urlopen(req, context=ssl_context) as response:
-            data = json.loads(response.read())
+        data = _wikipedia_get(query_url)
+        if data:
             pages = data.get('query', {}).get('pages', {})
-            
             for page_id, page_data in pages.items():
                 if 'thumbnail' in page_data:
                     return page_data['thumbnail']['source']
@@ -71,26 +83,41 @@ def fetch_wikipedia_image(wiki_url):
         print(f"  Error fetching image for {wiki_url}: {e}")
         return None
 
-def download_image(image_url, output_path):
-    """Download image from URL and save to output_path."""
-    try:
-        # Add delay to avoid rate limiting
-        time.sleep(1.5)
-        
-        req = urllib.request.Request(image_url, headers={
-            'User-Agent': 'F1FantasyLeague/1.0 (Educational Project)'
-        })
-        
-        with urllib.request.urlopen(req, context=ssl_context) as response:
-            image_data = response.read()
-            
-        with open(output_path, 'wb') as f:
-            f.write(image_data)
-            
-        return True
-    except Exception as e:
-        print(f"  Error downloading {image_url}: {e}")
-        return False
+def download_image(image_url, output_path, retries=4):
+    """Download image from URL and save to output_path, with retry on 429."""
+    for attempt in range(retries):
+        try:
+            # Increasing delay per attempt to back off on rate limits
+            time.sleep(3 + attempt * 4)  # 3s, 7s, 11s, 15s
+
+            req = urllib.request.Request(image_url, headers={
+                'User-Agent': 'Mozilla/5.0 (compatible; F1FantasyLeague/1.0; +https://github.com/sachitsharma/f1-fantasy)',
+                'Referer': 'https://en.wikipedia.org/',
+                'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
+            })
+
+            with urllib.request.urlopen(req, context=ssl_context, timeout=15) as response:
+                image_data = response.read()
+
+            with open(output_path, 'wb') as f:
+                f.write(image_data)
+
+            return True
+
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                wait = 45 * (attempt + 1)  # 45s, 90s, 135s, 180s
+                print(f"  Rate limited (429) on download, waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"  Error downloading {image_url}: {e}")
+                return False
+        except Exception as e:
+            print(f"  Error downloading {image_url}: {e}")
+            return False
+
+    print(f"  ✗ Failed after {retries} attempts")
+    return False
 
 def fetch_driver_images():
     """Fetch images for all drivers from both seasons."""

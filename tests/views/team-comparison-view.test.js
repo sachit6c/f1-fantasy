@@ -139,8 +139,10 @@ describe('TeamComparisonView', () => {
         ]
       };
       await view.render(container, {});
+      // When draft is completed the label shows player names ("Alice vs Bob"), not "Comparison"
       const comparisonBtn = Array.from(container.querySelectorAll('.tab-btn'))
-        .find(b => b.textContent.includes('Comparison'));
+        .find(b => b.textContent.includes('Alice') || b.textContent.includes('Comparison'));
+      expect(comparisonBtn).not.toBeUndefined();
       expect(comparisonBtn.disabled).toBe(false);
     });
 

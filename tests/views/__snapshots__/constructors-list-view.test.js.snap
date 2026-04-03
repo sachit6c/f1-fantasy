@@ -2,4 +2,13 @@
 
 exports[`ConstructorsListView > snapshot > constructor card (with logo) matches snapshot 1`] = `"<div class="constructor-card" style="cursor: pointer;"><div class="constructor-color-header" style="background: linear-gradient(135deg, #3671C6 0%, #3671C6DD 100%);"><img src="data/images/constructors/red_bull.png" alt="Red Bull Racing" class="constructor-logo-img"></div><div class="constructor-info-section"><h2 class="constructor-name">Red Bull Racing</h2><div class="constructor-nationality">🏁 Austrian</div></div></div>"`;
 
-exports[`ConstructorsListView > snapshot > empty state matches snapshot 1`] = `"<div class="empty-state"><p>No constructor data available</p></div>"`;
+exports[`ConstructorsListView > snapshot > empty state matches snapshot 1`] = `
+"<div class="empty-state">
+      <div class="empty-state-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"></rect>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+        </svg></div>
+      <h3>No constructors found</h3>
+      <p>Team data for this season hasn't been loaded yet.</p>
+    </div>"
+`;

@@ -2,8 +2,12 @@
 
 exports[`DriverProfileView > driver not found > not-found state matches snapshot 1`] = `
 "<div class="empty-state">
-      <h2>Driver Not Found</h2>
-      <p>The driver you're looking for doesn't exist.</p>
-      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
-    </div>"
+      <div class="empty-state-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path>
+        <line x1="17" y1="11" x2="23" y2="11"></line>
+      </svg></div>
+      <h3>Driver not found</h3>
+      <p>The driver you're looking for doesn't exist or has no data for this season.</p>
+    <a href="#/drivers" class="btn btn-outline" style="margin-top: var(--spacing-md);">View all drivers</a></div>"
 `;

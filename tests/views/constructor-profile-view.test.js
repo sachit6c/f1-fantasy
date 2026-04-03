@@ -117,14 +117,14 @@ describe('ConstructorProfileView', () => {
       expect(container.querySelector('.empty-state')).not.toBeNull();
     });
 
-    it('shows "Constructor Not Found" message', async () => {
+    it('shows "Constructor not found" message', async () => {
       await view.render(container, { constructorId: 'unknown_team' });
-      expect(container.textContent).toContain('Constructor Not Found');
+      expect(container.textContent).toContain('Constructor not found');
     });
 
-    it('provides a back link to the calendar', async () => {
+    it('provides a link back to the constructors list', async () => {
       await view.render(container, { constructorId: 'unknown_team' });
-      expect(container.querySelector('a[href="#/calendar"]')).not.toBeNull();
+      expect(container.querySelector('a[href="#/constructors"]')).not.toBeNull();
     });
 
     it('not-found state matches snapshot', async () => {
@@ -146,9 +146,9 @@ describe('ConstructorProfileView', () => {
       expect(container.textContent).toContain('Ferrari');
     });
 
-    it('renders the back link', async () => {
+    it('renders the breadcrumb navigation', async () => {
       await view.render(container, { constructorId: 'ferrari' });
-      expect(container.querySelector('.back-link')).not.toBeNull();
+      expect(container.querySelector('.breadcrumb')).not.toBeNull();
     });
 
     it('renders a drivers section', async () => {
@@ -161,22 +161,16 @@ describe('ConstructorProfileView', () => {
 
   // ─── Back link label ──────────────────────────────────────────────────────
 
-  describe('back link label', () => {
-    it('shows generic back text when no completed draft', async () => {
-      mockDraftStore.draft = null;
+  describe('breadcrumb', () => {
+    it('links back to the constructors list', async () => {
       await view.render(container, { constructorId: 'ferrari' });
-      expect(container.querySelector('.back-link').textContent).toContain('Back to Team Comparison');
+      expect(container.querySelector('a[href="#/constructors"]')).not.toBeNull();
     });
 
-    it('includes player names in back text for completed drafts', async () => {
-      mockDraftStore.draft = {
-        status: 'completed',
-        players: [{ name: 'Alice', roster: [] }, { name: 'Bob', roster: [] }]
-      };
+    it('shows the constructor name as the current breadcrumb page', async () => {
       await view.render(container, { constructorId: 'ferrari' });
-      const backLink = container.querySelector('.back-link');
-      expect(backLink.textContent).toContain('Alice');
-      expect(backLink.textContent).toContain('Bob');
+      const current = container.querySelector('.breadcrumb-current');
+      expect(current.textContent).toContain('Ferrari');
     });
   });
 

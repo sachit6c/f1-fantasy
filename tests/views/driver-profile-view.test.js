@@ -100,14 +100,14 @@ describe('DriverProfileView', () => {
       expect(container.querySelector('.empty-state')).not.toBeNull();
     });
 
-    it('shows "Driver Not Found" message', async () => {
+    it('shows "Driver not found" message', async () => {
       await view.render(container, { driverId: 'unknown_driver' });
-      expect(container.textContent).toContain('Driver Not Found');
+      expect(container.textContent).toContain('Driver not found');
     });
 
-    it('includes a link back to the calendar', async () => {
+    it('includes a link back to the drivers list', async () => {
       await view.render(container, { driverId: 'unknown_driver' });
-      const backLink = container.querySelector('a[href="#/calendar"]');
+      const backLink = container.querySelector('a[href="#/drivers"]');
       expect(backLink).not.toBeNull();
     });
 
@@ -159,31 +159,24 @@ describe('DriverProfileView', () => {
       expect(labels).toContain('Nationality');
     });
 
-    it('renders the back link', async () => {
+    it('renders the breadcrumb navigation', async () => {
       await view.render(container, { driverId: 'max_verstappen' });
-      expect(container.querySelector('.back-link')).not.toBeNull();
+      expect(container.querySelector('.breadcrumb')).not.toBeNull();
     });
   });
 
-  // ─── Back link with completed draft ───────────────────────────────────────
+  // ─── Breadcrumb navigation ────────────────────────────────────────────────
 
-  describe('back link label', () => {
-    it('shows generic back text when no completed draft', async () => {
-      mockDraftStore.draft = null;
+  describe('breadcrumb', () => {
+    it('links back to the drivers list', async () => {
       await view.render(container, { driverId: 'max_verstappen' });
-      const backLink = container.querySelector('.back-link');
-      expect(backLink.textContent).toContain('Back to Team Comparison');
+      expect(container.querySelector('a[href="#/drivers"]')).not.toBeNull();
     });
 
-    it('shows player names in back text when draft is completed', async () => {
-      mockDraftStore.draft = {
-        status: 'completed',
-        players: [{ name: 'Alice' }, { name: 'Bob' }]
-      };
+    it('shows the driver name as the current breadcrumb page', async () => {
       await view.render(container, { driverId: 'max_verstappen' });
-      const backLink = container.querySelector('.back-link');
-      expect(backLink.textContent).toContain('Alice');
-      expect(backLink.textContent).toContain('Bob');
+      const current = container.querySelector('.breadcrumb-current');
+      expect(current.textContent).toContain('Max Verstappen');
     });
   });
 

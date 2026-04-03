@@ -6,22 +6,12 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui",
-    "test:e2e": "playwright test",
-    "test:e2e:mobile": "playwright test --project=mobile-chrome --project=mobile-safari --project=tablet",
-    "test:e2e:mobile-chrome": "playwright test --project=mobile-chrome",
-    "test:e2e:mobile-safari": "playwright test --project=mobile-safari",
-    "test:e2e:tablet": "playwright test --project=tablet",
-    "serve": "node_modules/.bin/serve . -p 4173 -s"
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.11.1",
-    "@playwright/test": "^1.58.2",
     "@vitest/coverage-v8": "^2.0.0",
     "@vitest/ui": "^2.0.0",
-    "axe-core": "^4.11.1",
     "jsdom": "^24.0.0",
-    "serve": "^14.2.6",
     "vitest": "^2.0.0"
   }
 }

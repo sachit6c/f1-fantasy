@@ -83,15 +83,19 @@ export class DriversListView extends BaseView {
       // Driver photo
       const photoWrapper = this.createElement('div', 'driver-photo-wrapper');
       const photo = document.createElement('img');
-      photo.src = driver.photoUrl;
+      photo.src = driver.photoUrl; // starts as .jpg
       photo.alt = driver.name;
       photo.className = 'driver-photo';
       photo.loading = 'lazy';
 
-      // Add fallback styling if image fails to load
+      // Add fallback: try .png before showing initials
       photo.addEventListener('error', () => {
-        // Only fallback for non-data URI sources
         if (!photo.src.startsWith('data:')) {
+          const pngUrl = `data/images/drivers/${driver.driverId}.png`;
+          if (!photo.src.endsWith('.png')) {
+            photo.src = pngUrl;
+            return;
+          }
           photo.style.display = 'none';
           const fallback = this.createElement('div', 'photo-fallback');
           fallback.textContent = driver.code;

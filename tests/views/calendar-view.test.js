@@ -216,9 +216,9 @@ describe('CalendarView', () => {
       expect(container.querySelector('.empty-state').outerHTML).toMatchSnapshot();
     });
 
-    it('header matches snapshot', async () => {
+    it('page header bar matches snapshot', async () => {
       await view.render(container, {});
-      expect(container.querySelector('.calendar-header').outerHTML).toMatchSnapshot();
+      expect(container.querySelector('.page-header-bar').outerHTML).toMatchSnapshot();
     });
   });
 

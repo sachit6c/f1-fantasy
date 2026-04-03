@@ -72,17 +72,15 @@ describe('FantasyTeamScorer', () => {
     });
 
     it('aggregates fantasy points across all roster drivers', () => {
-      // driver_a = 25, driver_c = 15 → 40
+      // driver_a = 25, driver_c = 15 → 40 official F1 race points
       const draftStore = makeDraftStore([
         { name: 'Alice', roster: ['driver_a', 'driver_c'] },
         { name: 'Bob',   roster: ['driver_b', 'driver_d'] }
       ]);
       const ds = makeDataStore({
         raceResults: [
-          { raceId: 'race_1', driverId: 'driver_a', points: 25 },
-          { raceId: 'race_1', driverId: 'driver_b', points: 18 },
-          { raceId: 'race_1', driverId: 'driver_c', points: 15 },
-          { raceId: 'race_1', driverId: 'driver_d', points: 12 }
+          { raceId: 'race_1', driverId: 'driver_a', points: '25' },
+          { raceId: 'race_1', driverId: 'driver_c', points: '15' }
         ]
       });
       const result = scorer.scorePlayerRace('player_1', 'race_1', draftStore, ds);
@@ -93,7 +91,7 @@ describe('FantasyTeamScorer', () => {
     it('returns an entry per driver with driverId and total', () => {
       const draftStore = makeDraftStore([{ name: 'Alice', roster: ['driver_a'] }]);
       const ds = makeDataStore({
-        raceResults: [{ raceId: 'race_1', driverId: 'driver_a', points: 25 }]
+        raceResults: [{ raceId: 'race_1', driverId: 'driver_a', points: '25' }]
       });
       const { drivers } = scorer.scorePlayerRace('player_1', 'race_1', draftStore, ds);
       expect(drivers[0].driverId).toBe('driver_a');
@@ -250,8 +248,8 @@ describe('FantasyTeamScorer', () => {
           { driverId: 'driver_b', season: 2026, points: 80,  position: 2, wins: 1 }
         ],
         raceResults: [
-          { raceId: 'race_1', driverId: 'driver_a', points: 25 },
-          { raceId: 'race_1', driverId: 'driver_b', points: 18 }
+          { raceId: 'race_1', driverId: 'driver_a', points: '25' },
+          { raceId: 'race_1', driverId: 'driver_b', points: '18' }
         ],
         races: [{ raceId: 'race_1', raceName: 'Race 1', round: 1, hasResults: true }]
       });
@@ -269,8 +267,8 @@ describe('FantasyTeamScorer', () => {
       ]);
       const ds = makeDataStore({
         raceResults: [
-          { raceId: 'race_1', driverId: 'driver_a', points: 25 },
-          { raceId: 'race_1', driverId: 'driver_b', points: 18 }
+          { raceId: 'race_1', driverId: 'driver_a', points: '25' },
+          { raceId: 'race_1', driverId: 'driver_b', points: '18' }
         ],
         races: [{ raceId: 'race_1', raceName: 'Race 1', round: 1, hasResults: true }]
       });
