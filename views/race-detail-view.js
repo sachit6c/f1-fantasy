@@ -37,22 +37,32 @@ export class RaceDetailView extends BaseView {
   }
 
   renderNotFound() {
-    const message = this.createElement('div', 'empty-state');
-    message.innerHTML = `
-      <h2>Race Not Found</h2>
-      <p>The race you're looking for doesn't exist.</p>
-      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
-    `;
-    this.root.appendChild(message);
+    const empty = this.createEmptyState(
+      `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+        <path d="M8 14h.01M12 14h.01M16 14h.01"/>
+      </svg>`,
+      'Race not found',
+      'The race you\'re looking for doesn\'t exist or has no data for this season.'
+    );
+    const backBtn = document.createElement('a');
+    backBtn.href = '#/calendar';
+    backBtn.className = 'btn btn-outline';
+    backBtn.style.marginTop = 'var(--spacing-md)';
+    backBtn.textContent = 'Back to Calendar';
+    empty.appendChild(backBtn);
+    this.root.appendChild(empty);
   }
 
   renderHeader() {
     const header = this.createElement('div', 'race-detail-header');
 
-    const backLink = this.createElement('a', 'back-link');
-    backLink.href = '#/calendar';
-    backLink.innerHTML = '← Back to Calendar';
-    header.appendChild(backLink);
+    const breadcrumb = this.createBreadcrumb([
+      { label: 'Calendar', href: '#/calendar' },
+      { label: this.race.raceName }
+    ]);
+    header.appendChild(breadcrumb);
 
     const title = this.createElement('h1', 'page-title', this.race.raceName);
     header.appendChild(title);
@@ -152,42 +162,55 @@ export class RaceDetailView extends BaseView {
     table.innerHTML = `
       <thead>
         <tr>
-          <th>Pos</th>
-          <th>Driver</th>
-          <th>Team</th>
-          <th>Q1</th>
-          <th>Q2</th>
-          <th>Q3</th>
-          ${hasDraft ? '<th>Owner</th>' : ''}
+          <th class="col-pos">Pos</th>
+          <th class="col-driver">Driver</th>
+          <th class="col-team">Team</th>
+          <th class="col-time">Q1</th>
+          <th class="col-time">Q2</th>
+          <th class="col-time">Q3</th>
+          ${hasDraft ? '<th class="col-owner">Owner</th>' : ''}
         </tr>
       </thead>
       <tbody>
         ${results.map(result => {
           const driver = dataStore.indexes.driverById.get(result.driverId);
           let ownerClass = '';
-          let ownerText = '';
+          let ownerBadge = '';
 
           if (hasDraft && driver) {
             if (playerDrivers.player1.includes(result.driverId)) {
               ownerClass = 'player1-owned';
-              ownerText = draftStore.draft.players[0].name;
+              ownerBadge = `<span class="owner-badge owner-p1">${draftStore.draft.players[0].name}</span>`;
             } else if (playerDrivers.player2.includes(result.driverId)) {
               ownerClass = 'player2-owned';
-              ownerText = draftStore.draft.players[1].name;
+              ownerBadge = `<span class="owner-badge owner-p2">${draftStore.draft.players[1].name}</span>`;
             }
           }
 
+          const pos = parseInt(result.position);
+          const posClass = pos <= 3 ? `position position-p${pos}` : 'position';
+          const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : pos;
+
+          const avatarSrc = `data/images/drivers/${result.driverId}.jpg`;
+          const driverCode = driver ? (driver.code || driver.name.slice(0,3).toUpperCase()) : '?';
+          const avatarHtml = `<img class="driver-avatar" src="${avatarSrc}"
+            onerror="var p='data/images/drivers/${result.driverId}.png';if(this.src!==location.origin+'/'+p){this.src=p;}else{this.outerHTML='<span class=\\'driver-avatar driver-avatar-fallback\\'>${driverCode}</span>';}"
+            alt="" loading="lazy">`;
+
           return `
             <tr class="${ownerClass}">
-              <td class="position">${result.position}</td>
+              <td class="${posClass}">${medal}</td>
               <td class="driver-name">
-                <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
+                <div class="driver-cell">
+                  ${avatarHtml}
+                  <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
+                </div>
               </td>
               <td class="team-name">${driver && driver.constructorId ? `<a href="#/constructor/${driver.constructorId}">${driver.team}</a>` : (driver ? driver.team : '-')}</td>
-              <td class="time">${result.q1 || '-'}</td>
-              <td class="time">${result.q2 || '-'}</td>
-              <td class="time">${result.q3 || '-'}</td>
-              ${hasDraft ? `<td class="owner">${ownerText}</td>` : ''}
+              <td class="time">${result.q1 || '<span class="time-dash">—</span>'}</td>
+              <td class="time">${result.q2 || '<span class="time-dash">—</span>'}</td>
+              <td class="time">${result.q3 || '<span class="time-dash">—</span>'}</td>
+              ${hasDraft ? `<td class="owner">${ownerBadge}</td>` : ''}
             </tr>
           `;
         }).join('')}
@@ -210,42 +233,58 @@ export class RaceDetailView extends BaseView {
     table.innerHTML = `
       <thead>
         <tr>
-          <th>Pos</th>
-          <th>Driver</th>
-          <th>Team</th>
-          <th>Grid</th>
-          <th>Status</th>
-          <th>Points</th>
-          ${hasDraft ? '<th>Owner</th>' : ''}
+          <th class="col-pos">Pos</th>
+          <th class="col-driver">Driver</th>
+          <th class="col-team">Team</th>
+          <th class="col-grid">Grid</th>
+          <th class="col-status">Status</th>
+          <th class="col-points">Pts</th>
+          ${hasDraft ? '<th class="col-owner">Owner</th>' : ''}
         </tr>
       </thead>
       <tbody>
         ${results.map(result => {
           const driver = dataStore.indexes.driverById.get(result.driverId);
           let ownerClass = '';
-          let ownerText = '';
+          let ownerBadge = '';
 
           if (hasDraft && driver) {
             if (playerDrivers.player1.includes(result.driverId)) {
               ownerClass = 'player1-owned';
-              ownerText = draftStore.draft.players[0].name;
+              ownerBadge = `<span class="owner-badge owner-p1">${draftStore.draft.players[0].name}</span>`;
             } else if (playerDrivers.player2.includes(result.driverId)) {
               ownerClass = 'player2-owned';
-              ownerText = draftStore.draft.players[1].name;
+              ownerBadge = `<span class="owner-badge owner-p2">${draftStore.draft.players[1].name}</span>`;
             }
           }
 
+          const pos = parseInt(result.position);
+          const posClass = pos <= 3 ? `position position-p${pos}` : 'position';
+          const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : pos;
+
+          const avatarSrc = `data/images/drivers/${result.driverId}.jpg`;
+          const driverCode = driver ? (driver.code || driver.name.slice(0,3).toUpperCase()) : '?';
+          const avatarHtml = `<img class="driver-avatar" src="${avatarSrc}"
+            onerror="var p='data/images/drivers/${result.driverId}.png';if(this.src!==location.origin+'/'+p){this.src=p;}else{this.outerHTML='<span class=\\'driver-avatar driver-avatar-fallback\\'>${driverCode}</span>';}"
+            alt="" loading="lazy">`;
+
+          const pts = parseFloat(result.points);
+          const ptsDisplay = pts > 0 ? `<strong>${pts}</strong>` : `<span class="points-zero">${pts}</span>`;
+
           return `
             <tr class="${ownerClass}">
-              <td class="position">${result.position}</td>
+              <td class="${posClass}">${medal}</td>
               <td class="driver-name">
-                <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
+                <div class="driver-cell">
+                  ${avatarHtml}
+                  <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
+                </div>
               </td>
               <td class="team-name">${driver && driver.constructorId ? `<a href="#/constructor/${driver.constructorId}">${driver.team}</a>` : (driver ? driver.team : '-')}</td>
-              <td class="grid-position">${result.grid || '-'}</td>
-              <td class="status">${result.status || '-'}</td>
-              <td class="points">${result.points}</td>
-              ${hasDraft ? `<td class="owner">${ownerText}</td>` : ''}
+              <td class="grid-position">${result.grid || '—'}</td>
+              <td class="status">${result.status || '—'}</td>
+              <td class="points">${ptsDisplay}</td>
+              ${hasDraft ? `<td class="owner">${ownerBadge}</td>` : ''}
             </tr>
           `;
         }).join('')}

@@ -83,9 +83,9 @@ describe('RaceDetailView', () => {
       expect(container.querySelector('.empty-state')).not.toBeNull();
     });
 
-    it('shows "Race Not Found" message', async () => {
+    it('shows "Race not found" message', async () => {
       await view.render(container, { raceId: 'unknown_race' });
-      expect(container.textContent).toContain('Race Not Found');
+      expect(container.textContent).toContain('Race not found');
     });
 
     it('provides a back link to the calendar', async () => {
@@ -107,11 +107,10 @@ describe('RaceDetailView', () => {
       expect(container.querySelector('.page-title').textContent).toBe('Australian Grand Prix');
     });
 
-    it('renders the back link to calendar', async () => {
+    it('renders the breadcrumb link to calendar', async () => {
       await view.render(container, { raceId: '2026_01' });
-      const backLink = container.querySelector('.back-link');
-      expect(backLink).not.toBeNull();
-      expect(backLink.href).toContain('#/calendar');
+      const calendarLink = container.querySelector('a[href="#/calendar"]');
+      expect(calendarLink).not.toBeNull();
     });
 
     it('shows the round badge', async () => {
