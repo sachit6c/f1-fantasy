@@ -81,14 +81,28 @@ export class DriverProfileView extends BaseView {
     // Driver photo
     const photoContainer = this.createElement('div', 'driver-photo-large-container');
     const photo = this.createElement('img', 'driver-photo-large');
-    photo.src = this.driver.photoUrl;
+    photo.src = this.driver.photoUrl; // starts as .jpg
     photo.alt = this.driver.name;
     photo.onerror = () => {
-      photo.style.display = 'none';
-      const fallback = this.createElement('div', 'driver-photo-large-fallback');
-      fallback.textContent = this.driver.code || this.driver.name.charAt(0);
-      if (this.driver.teamColor) fallback.style.background = this.driver.teamColor;
-      photoContainer.appendChild(fallback);
+      const jpgUrl = `data/images/drivers/${this.driver.driverId}.jpg`;
+      const pngUrl = `data/images/drivers/${this.driver.driverId}.png`;
+      if (photo.src.endsWith('.jpg') || photo.src === jpgUrl) {
+        // Try .png before showing initials
+        photo.onerror = () => {
+          photo.style.display = 'none';
+          const fallback = this.createElement('div', 'driver-photo-large-fallback');
+          fallback.textContent = this.driver.code || this.driver.name.charAt(0);
+          if (this.driver.teamColor) fallback.style.background = this.driver.teamColor;
+          photoContainer.appendChild(fallback);
+        };
+        photo.src = pngUrl;
+      } else {
+        photo.style.display = 'none';
+        const fallback = this.createElement('div', 'driver-photo-large-fallback');
+        fallback.textContent = this.driver.code || this.driver.name.charAt(0);
+        if (this.driver.teamColor) fallback.style.background = this.driver.teamColor;
+        photoContainer.appendChild(fallback);
+      }
     };
     photoContainer.appendChild(photo);
     profileTop.appendChild(photoContainer);

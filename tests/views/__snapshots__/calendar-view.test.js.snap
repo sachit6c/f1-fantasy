@@ -2,9 +2,9 @@
 
 exports[`CalendarView > snapshot > empty state matches snapshot 1`] = `
 "<div class="empty-state" style="padding: var(--spacing-xl); text-align: center; background: var(--color-bg-card); border-radius: var(--radius-lg); margin: var(--spacing-lg);">
-        <p style="font-size: 1.5rem; color: #666;">No race data available for 2026 season</p>
-        <p style="margin-top: 1rem; color: #999;">Please check that races_2026.csv exists in data/canonical/</p>
+        <p style="font-size: 1.5rem; color: var(--color-text-secondary);">No race data available for 2026 season</p>
+        <p style="margin-top: 1rem; color: var(--color-text-muted);">Please check that races_2026.csv exists in data/canonical/</p>
       </div>"
 `;
 
-exports[`CalendarView > snapshot > header matches snapshot 1`] = `"<div class="calendar-header"><h1 class="page-title">Race Calendar</h1><p class="page-subtitle">2026 Formula 1 Season</p><div class="view-switcher"><button class="view-btn active">📅 Grid View</button><button class="view-btn">📆 Week View</button></div></div>"`;
+exports[`CalendarView > snapshot > page header bar matches snapshot 1`] = `"<div class="page-header-bar"><div class="page-header-left"><h1 class="page-title">Race Calendar</h1><p class="page-subtitle">2026 Formula 1 Season</p></div><div class="page-header-right"><div class="view-switcher"><button class="view-btn active"><span class="tab-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg></span><span>Grid View</span></button><button class="view-btn"><span class="tab-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span><span>Week View</span></button></div></div></div>"`;

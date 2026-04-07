@@ -1,12 +1,12 @@
-constructorId,name,nationality,url,teamPrincipal
-alpine,Alpine F1 Team,French,https://en.wikipedia.org/wiki/Alpine_F1_Team,Oliver Oakes
-aston_martin,Aston Martin,British,https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One,Mike Krack
-audi,Audi,German,https://en.wikipedia.org/wiki/Audi_in_Formula_One,Mattia Binotto
-cadillac,Cadillac F1 Team,American,https://en.wikipedia.org/wiki/Cadillac_in_Formula_One,Mario Andretti
-ferrari,Ferrari,Italian,https://en.wikipedia.org/wiki/Scuderia_Ferrari,Fred Vasseur
-haas,Haas F1 Team,American,https://en.wikipedia.org/wiki/Haas_F1_Team,Ayao Komatsu
-mclaren,McLaren,British,https://en.wikipedia.org/wiki/McLaren,Andrea Stella
-mercedes,Mercedes,German,https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One,Toto Wolff
-rb,RB F1 Team,Italian,https://en.wikipedia.org/wiki/Racing_Bulls,Laurent Mekies
-red_bull,Red Bull,Austrian,https://en.wikipedia.org/wiki/Red_Bull_Racing,Christian Horner
-williams,Williams,British,https://en.wikipedia.org/wiki/Williams_Racing,James Vowles
+constructorId,name,nationality,url
+alpine,Alpine F1 Team,French,https://en.wikipedia.org/wiki/Alpine_F1_Team
+aston_martin,Aston Martin,British,https://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One
+audi,Audi,German,https://en.wikipedia.org/wiki/Audi_in_Formula_One
+cadillac,Cadillac F1 Team,American,https://en.wikipedia.org/wiki/Cadillac_in_Formula_One
+ferrari,Ferrari,Italian,https://en.wikipedia.org/wiki/Scuderia_Ferrari
+haas,Haas F1 Team,American,https://en.wikipedia.org/wiki/Haas_F1_Team
+mclaren,McLaren,British,https://en.wikipedia.org/wiki/McLaren
+mercedes,Mercedes,German,https://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One
+rb,RB F1 Team,Italian,https://en.wikipedia.org/wiki/Racing_Bulls
+red_bull,Red Bull,Austrian,https://en.wikipedia.org/wiki/Red_Bull_Racing
+williams,Williams,British,https://en.wikipedia.org/wiki/Williams_Racing

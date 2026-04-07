@@ -1,23 +1,67 @@
 season,round,circuitId,driverId,constructorId,position,grid,points,laps,status,fastestLapRank
-2026,1,albert_park,russell,mercedes,1,,25,58,Finished,
-2026,1,albert_park,antonelli,mercedes,2,,18,58,Finished,
-2026,1,albert_park,leclerc,ferrari,3,,15,58,Finished,
-2026,1,albert_park,hamilton,ferrari,4,,12,58,Finished,
-2026,1,albert_park,norris,mclaren,5,,10,58,Finished,
-2026,1,albert_park,max_verstappen,red_bull,6,,8,58,Finished,1
-2026,1,albert_park,bearman,haas,7,,6,57,Lapped,
-2026,1,albert_park,arvid_lindblad,rb,8,,4,57,Lapped,
-2026,1,albert_park,bortoleto,audi,9,,2,57,Lapped,
-2026,1,albert_park,gasly,alpine,10,,1,57,Lapped,
-2026,1,albert_park,ocon,haas,11,,0,57,Lapped,
-2026,1,albert_park,albon,williams,12,,0,57,Lapped,
-2026,1,albert_park,lawson,rb,13,,0,57,Lapped,
-2026,1,albert_park,colapinto,alpine,14,,0,56,Lapped,
-2026,1,albert_park,sainz,williams,15,,0,56,Lapped,
-2026,1,albert_park,perez,cadillac,16,,0,55,Lapped,
-2026,1,albert_park,stroll,aston_martin,17,,0,43,Lapped,
-2026,1,albert_park,alonso,aston_martin,18,,0,21,Retired,
-2026,1,albert_park,bottas,cadillac,19,,0,15,Retired,
-2026,1,albert_park,hadjar,red_bull,20,,0,10,Retired,
-2026,1,albert_park,piastri,mclaren,21,,0,0,Did not start,
-2026,1,albert_park,hulkenberg,audi,22,,0,0,Did not start,
+2026,1,albert_park,russell,mercedes,1,1,25,58,Finished,6
+2026,1,albert_park,antonelli,mercedes,2,2,18,58,Finished,3
+2026,1,albert_park,leclerc,ferrari,3,4,15,58,Finished,5
+2026,1,albert_park,hamilton,ferrari,4,7,12,58,Finished,4
+2026,1,albert_park,norris,mclaren,5,6,10,58,Finished,2
+2026,1,albert_park,max_verstappen,red_bull,6,20,8,58,Finished,1
+2026,1,albert_park,bearman,haas,7,12,6,57,Lapped,11
+2026,1,albert_park,arvid_lindblad,rb,8,9,4,57,Lapped,12
+2026,1,albert_park,bortoleto,audi,9,10,2,57,Lapped,8
+2026,1,albert_park,gasly,alpine,10,14,1,57,Lapped,15
+2026,1,albert_park,ocon,haas,11,13,0,57,Lapped,14
+2026,1,albert_park,albon,williams,12,15,0,57,Lapped,13
+2026,1,albert_park,lawson,rb,13,8,0,57,Lapped,10
+2026,1,albert_park,colapinto,alpine,14,16,0,56,Lapped,7
+2026,1,albert_park,sainz,williams,15,21,0,56,Lapped,9
+2026,1,albert_park,perez,cadillac,16,18,0,55,Lapped,19
+2026,1,albert_park,stroll,aston_martin,17,22,0,43,Lapped,17
+2026,1,albert_park,alonso,aston_martin,18,17,0,21,Retired,18
+2026,1,albert_park,bottas,cadillac,19,19,0,15,Retired,20
+2026,1,albert_park,hadjar,red_bull,20,3,0,10,Retired,16
+2026,1,albert_park,piastri,mclaren,21,5,0,0,Did not start,
+2026,1,albert_park,hulkenberg,audi,22,11,0,0,Did not start,
+2026,2,shanghai,antonelli,mercedes,1,1,25,56,Finished,1
+2026,2,shanghai,russell,mercedes,2,2,18,56,Finished,2
+2026,2,shanghai,hamilton,ferrari,3,3,15,56,Finished,5
+2026,2,shanghai,leclerc,ferrari,4,4,12,56,Finished,4
+2026,2,shanghai,bearman,haas,5,10,10,56,Finished,8
+2026,2,shanghai,gasly,alpine,6,7,8,56,Finished,9
+2026,2,shanghai,lawson,rb,7,14,6,56,Finished,12
+2026,2,shanghai,hadjar,red_bull,8,9,4,56,Finished,13
+2026,2,shanghai,sainz,williams,9,17,2,55,Lapped,14
+2026,2,shanghai,colapinto,alpine,10,12,1,55,Lapped,10
+2026,2,shanghai,hulkenberg,audi,11,11,0,55,Lapped,7
+2026,2,shanghai,arvid_lindblad,rb,12,15,0,55,Lapped,6
+2026,2,shanghai,bottas,cadillac,13,19,0,55,Lapped,15
+2026,2,shanghai,ocon,haas,14,13,0,55,Lapped,3
+2026,2,shanghai,perez,cadillac,15,21,0,55,Lapped,16
+2026,2,shanghai,max_verstappen,red_bull,16,8,0,45,Retired,11
+2026,2,shanghai,alonso,aston_martin,17,18,0,32,Retired,17
+2026,2,shanghai,stroll,aston_martin,18,20,0,9,Retired,18
+2026,2,shanghai,piastri,mclaren,19,5,0,0,Did not start,
+2026,2,shanghai,norris,mclaren,20,6,0,0,Did not start,
+2026,2,shanghai,bortoleto,audi,21,16,0,0,Did not start,
+2026,2,shanghai,albon,williams,22,22,0,0,Did not start,
+2026,3,suzuka,antonelli,mercedes,1,1,25,53,Finished,1
+2026,3,suzuka,piastri,mclaren,2,3,18,53,Finished,5
+2026,3,suzuka,leclerc,ferrari,3,4,15,53,Finished,3
+2026,3,suzuka,russell,mercedes,4,2,12,53,Finished,2
+2026,3,suzuka,norris,mclaren,5,5,10,53,Finished,6
+2026,3,suzuka,hamilton,ferrari,6,6,8,53,Finished,4
+2026,3,suzuka,gasly,alpine,7,7,6,53,Finished,9
+2026,3,suzuka,max_verstappen,red_bull,8,11,4,53,Finished,8
+2026,3,suzuka,lawson,rb,9,14,2,53,Finished,13
+2026,3,suzuka,ocon,haas,10,12,1,53,Finished,14
+2026,3,suzuka,hulkenberg,audi,11,13,0,53,Finished,10
+2026,3,suzuka,hadjar,red_bull,12,8,0,53,Finished,11
+2026,3,suzuka,bortoleto,audi,13,9,0,53,Finished,12
+2026,3,suzuka,arvid_lindblad,rb,14,10,0,53,Finished,15
+2026,3,suzuka,sainz,williams,15,16,0,53,Finished,17
+2026,3,suzuka,colapinto,alpine,16,15,0,53,Finished,16
+2026,3,suzuka,perez,cadillac,17,19,0,53,Finished,19
+2026,3,suzuka,alonso,aston_martin,18,21,0,52,Lapped,20
+2026,3,suzuka,bottas,cadillac,19,20,0,52,Lapped,21
+2026,3,suzuka,albon,williams,20,17,0,51,Lapped,7
+2026,3,suzuka,stroll,aston_martin,21,22,0,30,Retired,22
+2026,3,suzuka,bearman,haas,22,18,0,20,Retired,18

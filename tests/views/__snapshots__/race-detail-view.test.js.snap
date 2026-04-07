@@ -2,14 +2,18 @@
 
 exports[`RaceDetailView > race not found > not-found state matches snapshot 1`] = `
 "<div class="empty-state">
-      <h2>Race Not Found</h2>
-      <p>The race you're looking for doesn't exist.</p>
-      <a href="#/calendar" class="btn-primary">Back to Calendar</a>
-    </div>"
+      <div class="empty-state-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+        <path d="M16 2v4M8 2v4M3 10h18"></path>
+        <path d="M8 14h.01M12 14h.01M16 14h.01"></path>
+      </svg></div>
+      <h3>Race not found</h3>
+      <p>The race you're looking for doesn't exist or has no data for this season.</p>
+    <a href="#/calendar" class="btn btn-outline" style="margin-top: var(--spacing-md);">Back to Calendar</a></div>"
 `;
 
 exports[`RaceDetailView > snapshot > race detail header matches snapshot 1`] = `
-"<div class="race-detail-header"><a class="back-link" href="#/calendar">← Back to Calendar</a><h1 class="page-title">Australian Grand Prix</h1><div class="race-subtitle">
+"<div class="race-detail-header"><nav class="breadcrumb" aria-label="breadcrumb"><ol class="breadcrumb-list"><li class="breadcrumb-item"><a href="#/calendar">Calendar</a></li><li class="breadcrumb-item breadcrumb-current" aria-current="page">Australian Grand Prix</li></ol></nav><h1 class="page-title">Australian Grand Prix</h1><div class="race-subtitle">
       <span class="round-badge">Round 1</span>
       <span>Albert Park</span>
       <span>Melbourne, Australia</span>

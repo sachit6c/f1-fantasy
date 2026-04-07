@@ -61,6 +61,12 @@ vi.mock('../../lib/data-store.js', () => ({ dataStore: mockDataStore }));
 vi.mock('../../lib/draft-store.js', () => ({ draftStore: mockDraftStore }));
 vi.mock('../../lib/draft-config.js', () => ({
   createDraftConfig: vi.fn().mockReturnValue({ season: 2026, rounds: 5 }),
+  DRAFT_TYPE_META: {
+    snake:        { label: 'Snake Draft',        description: 'Order reverses each round: A→B→B→A→A→B…' },
+    linear:       { label: 'Linear Draft',       description: 'Same order every round: A→B→A→B…' },
+    random_snake: { label: 'Random Snake',       description: 'Coin-flip decides who picks first, then snakes' },
+    full_pick:    { label: 'Player 1 Picks All', description: 'Player 1 chooses all their drivers; Player 2 gets all teammates' }
+  },
   DRAFT_STATUS: { SETUP: 'setup', IN_PROGRESS: 'in_progress', COMPLETED: 'completed' }
 }));
 
@@ -339,7 +345,7 @@ describe('DraftView', () => {
       await Promise.resolve();
       await Promise.resolve();
 
-      expect(mockDraftStore.savePlayerNames).toHaveBeenCalledWith('Alice', 'Bob');
+      expect(mockDraftStore.savePlayerNames).toHaveBeenCalledWith('Alice', 'Bob', 'snake');
     });
 
     it('uses default player names when inputs are empty', async () => {
@@ -351,7 +357,7 @@ describe('DraftView', () => {
       await Promise.resolve();
       await Promise.resolve();
 
-      expect(mockDraftStore.savePlayerNames).toHaveBeenCalledWith('Player 1', 'Player 2');
+      expect(mockDraftStore.savePlayerNames).toHaveBeenCalledWith('Player 1', 'Player 2', 'snake');
     });
   });
 });

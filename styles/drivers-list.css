@@ -1,6 +1,7 @@
 /* styles/drivers-list.css */
-/* Drivers list view styles */
+/* Drivers list view — revamped racing-editorial card design */
 
+/* === PAGE HEADER === */
 .drivers-header {
   margin-bottom: var(--spacing-xl);
   padding: var(--spacing-xl) 0 var(--spacing-lg);
@@ -18,130 +19,284 @@
   margin-bottom: 0;
 }
 
+/* === GRID === */
 .drivers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.125rem;
   margin-bottom: var(--spacing-xl);
 }
 
+/* === DRIVER CARD === */
 .driver-card {
-  background: var(--color-bg-card);
-  border-radius: var(--radius-xl);
+  --team-color: #E10600;
+  background: #181d25;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   position: relative;
-  height: 400px;
+  cursor: pointer;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.28s ease;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
   display: flex;
   flex-direction: column;
 }
 
 .driver-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--color-border-strong);
+  transform: translateY(-7px) scale(1.015);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.09),
+    0 0 56px color-mix(in srgb, var(--team-color) 28%, transparent);
 }
 
-.driver-photo-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* === PHOTO AREA === */
+.driver-card__photo-area {
+  position: relative;
+  height: 200px;
   overflow: hidden;
-  background: var(--color-bg-elevated);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
+  background: linear-gradient(135deg, #1e2330 0%, #252b38 100%);
+  flex-shrink: 0;
 }
 
-.driver-photo {
+/* Bottom fade into info panel */
+.driver-card__photo-area::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(to top, #181d25, transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Large translucent driver code — watermark behind photo */
+.driver-card__code-bg {
+  position: absolute;
+  bottom: -4px;
+  right: -6px;
+  font-size: 6.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--team-color);
+  opacity: 0.08;
+  letter-spacing: -0.04em;
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transition: opacity 0.28s ease;
+}
+
+.driver-card:hover .driver-card__code-bg {
+  opacity: 0.15;
+}
+
+.driver-card__photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.25, 0, 0, 1);
 }
 
-.photo-fallback {
-  width: 100%;
-  height: 100%;
+.driver-card:hover .driver-card__photo {
+  transform: scale(1.06);
+}
+
+/* Initials fallback */
+.driver-card__photo-fallback {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
-  font-weight: var(--font-weight-bold);
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.driver-team-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
+  font-size: 2.75rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
 
-.driver-info-section {
-  position: relative;
-  z-index: 1;
-  margin-top: auto;
-  padding: var(--spacing-lg);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
+/* === POSITION BADGE === */
+.driver-card__position-badge {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  z-index: 4;
+  background: var(--team-color);
+  border-radius: 6px;
+  padding: 4px 8px 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  min-width: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.driver-name {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: white;
-  margin-bottom: var(--spacing-xs);
-  text-align: center;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+.driver-card__position-badge .badge-label {
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.driver-team,
-.driver-nationality {
-  font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  margin-bottom: var(--spacing-xs);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+.driver-card__position-badge .badge-num {
+  font-size: 1.0625rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
 }
 
-.driver-stats-grid {
+/* === TEAM STRIPE === */
+.driver-card__stripe {
+  height: 3px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    var(--team-color) 0%,
+    color-mix(in srgb, var(--team-color) 40%, #000) 100%
+  );
+}
+
+/* === INFO PANEL === */
+.driver-card__info {
+  padding: 13px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.driver-card__name {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: #e8edf3;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.driver-card__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.driver-card__team-name {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--team-color);
+  letter-spacing: 0.01em;
+}
+
+.driver-card__meta-sep {
+  color: #2e343d;
+  font-size: 0.6875rem;
+}
+
+.driver-card__nat {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: #565e6b;
+}
+
+.driver-card__code-chip {
+  margin-left: auto;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.22);
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+}
+
+/* === STATS ROW === */
+.driver-card__stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-sm);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  padding-top: 9px;
+  margin-top: auto;
 }
 
-.driver-stat {
+.driver-card__stat {
   text-align: center;
+  position: relative;
 }
 
-.driver-stat .stat-value {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: white;
-  margin-bottom: var(--spacing-xs);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+.driver-card__stat + .driver-card__stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.055);
 }
 
-.driver-stat .stat-label {
-  font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.8);
+.driver-card__stat-val {
+  display: block;
+  font-size: 1.1875rem;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  color: var(--team-color);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.driver-card__stat-val.empty {
+  color: #2e343d;
+}
+
+.driver-card__stat-key {
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  color: #404854;
 }
 
+/* === SKELETON (loading state) === */
+.driver-card .driver-card__photo-area.skeleton {
+  background: linear-gradient(90deg,
+    #1e2330 25%,
+    #2a3040 50%,
+    #1e2330 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .drivers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .drivers-grid {
     grid-template-columns: 1fr;
+  }
+
+  .driver-card__photo-area {
+    height: 180px;
   }
 }

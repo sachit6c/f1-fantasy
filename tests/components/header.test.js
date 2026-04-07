@@ -56,9 +56,9 @@ describe('Header', () => {
       expect(header.element).toBe(el);
     });
 
-    it('includes a hamburger button for season selection', () => {
+    it('includes a pill button for season selection', () => {
       const el = header.render();
-      expect(el.querySelector('.season-hamburger')).not.toBeNull();
+      expect(el.querySelector('.season-pill-btn')).not.toBeNull();
     });
 
     it('includes a logo with correct aria-label', () => {
@@ -96,12 +96,12 @@ describe('Header', () => {
       expect(el.dataset.era).toBeTruthy();
     });
 
-    it('includes a season badge showing the current season', () => {
+    it('includes a season year in the pill button showing the current season', () => {
       mockDraftStore.currentSeason = 2026;
       const el = header.render();
-      const badge = el.querySelector('.season-current-badge');
-      expect(badge).not.toBeNull();
-      expect(badge.textContent).toBe('2026');
+      const yearEl = el.querySelector('.season-pill-year');
+      expect(yearEl).not.toBeNull();
+      expect(yearEl.textContent).toBe('2026');
     });
 
     it('shows player names when a draft with players exists', () => {
