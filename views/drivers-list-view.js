@@ -74,21 +74,29 @@ export class DriversListView extends BaseView {
     const driversGrid = this.createElement('div', 'drivers-grid');
 
     sortedDrivers.forEach(driver => {
+      const summary = dataStore.getDriverSeasonSummary(dataStore.season, driver.driverId);
+
       const driverCard = this.createElement('div', 'driver-card');
-      driverCard.style.cursor = 'pointer';
+      driverCard.style.setProperty('--team-color', driver.teamColor || '#E10600');
       driverCard.addEventListener('click', () => {
         window.location.hash = `#/driver/${driver.driverId}`;
       });
 
+      // ── Photo area ──────────────────────────────────────────────
+      const photoArea = this.createElement('div', 'driver-card__photo-area');
+
+      // Large translucent code watermark (behind photo)
+      const codeBg = this.createElement('div', 'driver-card__code-bg');
+      codeBg.textContent = driver.code || '';
+      photoArea.appendChild(codeBg);
+
       // Driver photo
-      const photoWrapper = this.createElement('div', 'driver-photo-wrapper');
       const photo = document.createElement('img');
-      photo.src = driver.photoUrl; // starts as .jpg
+      photo.src = driver.photoUrl;
       photo.alt = driver.name;
-      photo.className = 'driver-photo';
+      photo.className = 'driver-card__photo';
       photo.loading = 'lazy';
 
-      // Add fallback: try .png before showing initials
       photo.addEventListener('error', () => {
         if (!photo.src.startsWith('data:')) {
           const pngUrl = `data/images/drivers/${driver.driverId}.png`;
@@ -96,67 +104,74 @@ export class DriversListView extends BaseView {
             photo.src = pngUrl;
             return;
           }
-          photo.style.display = 'none';
-          const fallback = this.createElement('div', 'photo-fallback');
-          fallback.textContent = driver.code;
-          fallback.style.background = driver.teamColor;
-          photoWrapper.appendChild(fallback);
         }
+        photo.remove();
+        const fallback = this.createElement('div', 'driver-card__photo-fallback');
+        fallback.textContent = driver.code || driver.name.slice(0, 3).toUpperCase();
+        fallback.style.background = `linear-gradient(135deg, color-mix(in srgb, ${driver.teamColor || '#E10600'} 20%, #1a1f27), #1a1f27)`;
+        photoArea.appendChild(fallback);
       });
 
-      photoWrapper.appendChild(photo);
-      driverCard.appendChild(photoWrapper);
+      photoArea.appendChild(photo);
 
-      // Team color bar
-      const colorBar = this.createElement('div', 'driver-team-bar');
-      colorBar.style.background = driver.teamColor;
-      driverCard.appendChild(colorBar);
-
-      // Driver info
-      const infoSection = this.createElement('div', 'driver-info-section');
-
-      // Driver code
-      const code = this.createElement('div', 'driver-code', driver.code);
-      code.style.color = driver.teamColor;
-      infoSection.appendChild(code);
-
-      // Driver name
-      const name = this.createElement('h2', 'driver-name', driver.name);
-      infoSection.appendChild(name);
-
-      // Team name
-      const team = this.createElement('div', 'driver-team', driver.team);
-      infoSection.appendChild(team);
-
-      // Nationality
-      const nationality = this.createElement('div', 'driver-nationality', driver.nationality);
-      infoSection.appendChild(nationality);
-
-      // Season stats
-      const summary = dataStore.getDriverSeasonSummary(dataStore.season, driver.driverId);
-      if (summary) {
-        const statsGrid = this.createElement('div', 'driver-stats-grid');
-
-        const stats = [
-          { label: 'Position', value: summary.position },
-          { label: 'Points', value: summary.points },
-          { label: 'Wins', value: summary.wins }
-        ];
-
-        stats.forEach(stat => {
-          const statEl = this.createElement('div', 'driver-stat');
-          const display = (stat.value == null || (typeof stat.value === 'number' && isNaN(stat.value))) ? '—' : stat.value.toString();
-          const value = this.createElement('div', 'stat-value', display);
-          const label = this.createElement('div', 'stat-label', stat.label);
-          statEl.appendChild(value);
-          statEl.appendChild(label);
-          statsGrid.appendChild(statEl);
-        });
-
-        infoSection.appendChild(statsGrid);
+      // Position badge (if championship data available)
+      if (summary && summary.position != null) {
+        const badge = this.createElement('div', 'driver-card__position-badge');
+        const badgeLabel = this.createElement('span', 'badge-label', 'POS');
+        const badgeNum = this.createElement('span', 'badge-num', summary.position.toString());
+        badge.appendChild(badgeLabel);
+        badge.appendChild(badgeNum);
+        photoArea.appendChild(badge);
       }
 
-      driverCard.appendChild(infoSection);
+      driverCard.appendChild(photoArea);
+
+      // ── Team accent stripe ───────────────────────────────────────
+      const stripe = this.createElement('div', 'driver-card__stripe');
+      driverCard.appendChild(stripe);
+
+      // ── Info panel ───────────────────────────────────────────────
+      const info = this.createElement('div', 'driver-card__info');
+
+      // Driver name
+      const name = this.createElement('h2', 'driver-card__name', driver.name);
+      info.appendChild(name);
+
+      // Meta row: team · nationality · code chip
+      const metaRow = this.createElement('div', 'driver-card__meta-row');
+      const teamName = this.createElement('span', 'driver-card__team-name', driver.team || '');
+      const sep = this.createElement('span', 'driver-card__meta-sep', '·');
+      const nat = this.createElement('span', 'driver-card__nat', driver.nationality || '');
+      const codeChip = this.createElement('span', 'driver-card__code-chip', driver.code || '');
+      metaRow.appendChild(teamName);
+      metaRow.appendChild(sep);
+      metaRow.appendChild(nat);
+      metaRow.appendChild(codeChip);
+      info.appendChild(metaRow);
+
+      // Stats row
+      const statsRow = this.createElement('div', 'driver-card__stats');
+      const statDefs = [
+        { key: 'POS',  value: summary?.position },
+        { key: 'PTS',  value: summary?.points },
+        { key: 'WINS', value: summary?.wins }
+      ];
+
+      statDefs.forEach(stat => {
+        const isEmpty = stat.value == null || (typeof stat.value === 'number' && isNaN(stat.value));
+        const display = isEmpty ? '—' : stat.value.toString();
+
+        const statEl = this.createElement('div', 'driver-card__stat');
+        const valEl = this.createElement('span', 'driver-card__stat-val', display);
+        if (isEmpty) valEl.classList.add('empty');
+        const keyEl = this.createElement('span', 'driver-card__stat-key', stat.key);
+        statEl.appendChild(valEl);
+        statEl.appendChild(keyEl);
+        statsRow.appendChild(statEl);
+      });
+
+      info.appendChild(statsRow);
+      driverCard.appendChild(info);
       driversGrid.appendChild(driverCard);
     });
 
@@ -168,12 +183,16 @@ export class DriversListView extends BaseView {
     for (let i = 0; i < count; i++) {
       const card = this.createElement('div', 'driver-card');
       card.innerHTML = `
-        <div class="driver-photo-wrapper skeleton" style="height:160px;border-radius:var(--radius-xl) var(--radius-xl) 0 0;"></div>
-        <div class="skeleton" style="height:4px;"></div>
-        <div class="driver-info-section" style="padding:var(--spacing-md);display:flex;flex-direction:column;gap:var(--spacing-sm);">
-          <div class="skeleton" style="height:13px;width:44px;border-radius:4px;"></div>
-          <div class="skeleton" style="height:17px;width:75%;border-radius:4px;"></div>
-          <div class="skeleton" style="height:13px;width:55%;border-radius:4px;"></div>
+        <div class="driver-card__photo-area skeleton"></div>
+        <div class="driver-card__stripe skeleton" style="height:3px;animation:none;opacity:0.3;"></div>
+        <div class="driver-card__info">
+          <div class="skeleton" style="height:15px;width:72%;border-radius:4px;"></div>
+          <div class="skeleton" style="height:11px;width:52%;border-radius:4px;"></div>
+          <div class="driver-card__stats" style="border-top:none;padding-top:0;">
+            <div class="skeleton" style="height:28px;border-radius:4px;margin:0 4px;"></div>
+            <div class="skeleton" style="height:28px;border-radius:4px;margin:0 4px;"></div>
+            <div class="skeleton" style="height:28px;border-radius:4px;margin:0 4px;"></div>
+          </div>
         </div>
       `;
       grid.appendChild(card);

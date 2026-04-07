@@ -74,29 +74,6 @@ export class DraftView extends BaseView {
     form.appendChild(p1Group);
     form.appendChild(p2Group);
 
-    // Draft type selector
-    const dtGroup = this.createElement('div', 'form-group');
-    const dtLabel = this.createElement('label', [], 'Draft Type');
-    const dtSelect = this.createElement('select');
-    dtSelect.name = 'draftType';
-    const savedDraftType = savedNames?.draftType || 'snake';
-    for (const [key, meta] of Object.entries(DRAFT_TYPE_META)) {
-      const option = this.createElement('option');
-      option.value = key;
-      option.textContent = meta.label;
-      if (key === savedDraftType) option.selected = true;
-      dtSelect.appendChild(option);
-    }
-    const dtDesc = this.createElement('div', 'draft-type-description');
-    dtDesc.textContent = DRAFT_TYPE_META[savedDraftType]?.description || '';
-    dtSelect.addEventListener('change', () => {
-      dtDesc.textContent = DRAFT_TYPE_META[dtSelect.value]?.description || '';
-    });
-    dtGroup.appendChild(dtLabel);
-    dtGroup.appendChild(dtSelect);
-    dtGroup.appendChild(dtDesc);
-    form.appendChild(dtGroup);
-
     // Submit button
     const submitBtn = this.createElement('button', 'btn-primary');
     submitBtn.type = 'submit';
@@ -123,7 +100,9 @@ export class DraftView extends BaseView {
     if (!player1) player1 = 'Player 1';
     if (!player2) player2 = 'Player 2';
 
-    const draftType = formData.get('draftType') || 'snake';
+    // Preserve the last-used draft type (or default to 'snake')
+    const savedNames = draftStore.loadPlayerNames();
+    const draftType = savedNames?.draftType || 'snake';
 
     // Save player names and draft type preference
     draftStore.savePlayerNames(player1, player2, draftType);
@@ -229,12 +208,42 @@ export class DraftView extends BaseView {
       : `Pick ${currentPickNumber} of ${progress.totalPicks}`;
     status.appendChild(progressText);
 
-    // Show draft type badge
-    const draftTypeMeta = DRAFT_TYPE_META[draft.config?.draftType];
-    if (draftTypeMeta) {
-      const typeBadge = this.createElement('div', 'draft-type-badge');
-      typeBadge.textContent = draftTypeMeta.label;
-      status.appendChild(typeBadge);
+    // Draft type: interactive selector before first pick, static badge after
+    const currentDraftType = draft.config?.draftType || 'snake';
+    const picksLocked = draft.picks.length > 0;
+    if (picksLocked) {
+      // Static badge once picks have been made
+      const draftTypeMeta = DRAFT_TYPE_META[currentDraftType];
+      if (draftTypeMeta) {
+        const typeBadge = this.createElement('div', 'draft-type-badge');
+        typeBadge.textContent = draftTypeMeta.label;
+        status.appendChild(typeBadge);
+      }
+    } else {
+      // Interactive selector before any picks
+      const typeGroup = this.createElement('div', 'draft-type-selector-group');
+
+      const typeSelect = this.createElement('select', 'draft-type-select');
+      for (const [key, meta] of Object.entries(DRAFT_TYPE_META)) {
+        const option = this.createElement('option');
+        option.value = key;
+        option.textContent = meta.label;
+        if (key === currentDraftType) option.selected = true;
+        typeSelect.appendChild(option);
+      }
+
+      const typeDesc = this.createElement('div', 'draft-type-description-header');
+      typeDesc.textContent = DRAFT_TYPE_META[currentDraftType]?.description || '';
+
+      typeSelect.addEventListener('change', () => {
+        typeDesc.textContent = DRAFT_TYPE_META[typeSelect.value]?.description || '';
+        draftStore.updateDraftType(typeSelect.value);
+        this.renderExistingDraft();
+      });
+
+      typeGroup.appendChild(typeSelect);
+      typeGroup.appendChild(typeDesc);
+      status.appendChild(typeGroup);
     }
 
     header.appendChild(status);

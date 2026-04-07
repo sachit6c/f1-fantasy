@@ -136,6 +136,10 @@
   width: 60px;
 }
 
+.results-table .driver-name {
+  text-shadow: none;
+}
+
 .results-table .driver-name a {
   color: var(--color-text-primary);
   text-decoration: none;
