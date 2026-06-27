@@ -1351,3 +1351,37 @@
   letter-spacing: 0.5px;
 }
 
+
+/* ===== MOBILE WCAG 2.5.5 PATCHES ===== */
+@media (max-width: 768px) {
+  /* Team-standings & comparison tables: make in-row anchors tappable */
+  .driver-name-link,
+  .team-cell a,
+  .constructor-name-link,
+  td a:not(.btn) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding-block: 0.5rem;
+    padding-inline: 0.25rem;
+    line-height: 1.3;
+  }
+
+  /* Tab buttons need 44px height on mobile */
+  .tab-btn {
+    min-height: 44px;
+    padding: 0.5rem 0.875rem;
+  }
+
+  /* Standings table rows need vertical breathing room on mobile */
+  .standings-table tbody tr,
+  .results-table tbody tr {
+    min-height: 44px;
+  }
+
+  .standings-table th,
+  .standings-table td {
+    padding: 0.625rem 0.5rem;
+  }
+}

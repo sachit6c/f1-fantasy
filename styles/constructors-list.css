@@ -110,6 +110,20 @@
   color: var(--color-primary);
 }
 
+@media (max-width: 768px) {
+  /* WCAG 2.5.5: driver row min-height */
+  .driver-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  .drivers-label {
+    font-size: 0.6875rem; /* 11px */
+  }
+}
+
 .constructor-stats-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -144,6 +158,12 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .constructor-stat .stat-label {
+    font-size: 0.6875rem; /* 11px legibility floor */
+  }
 }
 
 /* Team winner badge */
@@ -209,6 +229,6 @@
   }
 
   .constructor-stat .stat-label {
-    font-size: 0.5rem;
+    font-size: 0.6875rem; /* hold the 11px legibility floor */
   }
 }

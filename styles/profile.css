@@ -663,3 +663,27 @@
     max-height: 300px;
   }
 }
+
+/* ===== MOBILE WCAG 2.5.5 PATCHES ===== */
+@media (max-width: 768px) {
+  .team-logo-inline {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .team-name-badge,
+  .team-link,
+  .driver-stat-item a,
+  .stat-grid a,
+  .driver-detail-name,
+  a.driver-detail-name {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 0.375rem;
+  }
+  /* Raise stat-label above 11px floor on profile pages */
+  .stat-label,
+  .driver-stat-item .stat-label {
+    font-size: 0.6875rem; /* 11px */
+  }
+}

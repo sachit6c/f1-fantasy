@@ -64,13 +64,21 @@ async function init() {
     console.error('[App] Initialization failed:', err);
 
     const appContainer = document.getElementById('app');
-    appContainer.innerHTML = `
-      <div class="error-message">
-        <p class="error-icon">⚠️</p>
-        <p class="error-text">Failed to load application: ${err.message}</p>
-        <p style="margin-top: 1rem;">Check console for details.</p>
-      </div>
-    `;
+    // Use DOM nodes (not innerHTML interpolation) so err.message can't inject markup.
+    appContainer.replaceChildren();
+    const wrap = document.createElement('div');
+    wrap.className = 'error-message';
+    const icon = document.createElement('p');
+    icon.className = 'error-icon';
+    icon.textContent = '⚠️';
+    const text = document.createElement('p');
+    text.className = 'error-text';
+    text.textContent = `Failed to load application: ${err && err.message ? err.message : 'Unknown error'}`;
+    const hint = document.createElement('p');
+    hint.style.marginTop = '1rem';
+    hint.textContent = 'Check console for details.';
+    wrap.append(icon, text, hint);
+    appContainer.appendChild(wrap);
   }
 }
 

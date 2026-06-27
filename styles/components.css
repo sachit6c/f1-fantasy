@@ -190,6 +190,13 @@ button:disabled {
   border-radius: var(--radius-md);
 }
 
+@media (max-width: 768px) {
+  .btn-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 /* ===== CARDS ===== */
 .card {
   background: var(--color-bg-card);
@@ -284,6 +291,19 @@ select {
   background-color: var(--color-bg-elevated);
   color: var(--color-text-primary);
   height: 34px;
+}
+
+@media (max-width: 768px) {
+  /* WCAG 2.5.5 + iOS Safari: 44px min, 16px font prevents focus auto-zoom */
+  input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    height: auto;
+    min-height: 44px;
+    font-size: 16px;
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 input[type="text"]:focus,
@@ -643,6 +663,21 @@ th.num-col {
 
 .app-footer-links a:hover { color: var(--color-text-primary); }
 
+/* WCAG 2.5.5: enlarge footer tap targets on mobile */
+@media (max-width: 768px) {
+  .app-footer-brand,
+  .app-footer-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 0.25rem;
+  }
+  .app-footer-links {
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+}
+
 /* ===== HOME / DASHBOARD VIEW ===== */
 .home-view {
   display: flex;
@@ -883,6 +918,12 @@ th.num-col {
   letter-spacing: var(--letter-spacing-wider);
 }
 
+@media (max-width: 768px) {
+  .home-countdown-label {
+    font-size: 0.6875rem; /* 11px */
+  }
+}
+
 /* Draft status card */
 .home-draft-card {
   background: var(--color-bg-card);
@@ -1023,6 +1064,14 @@ th.num-col {
   height: 30px;
 }
 
+@media (max-width: 768px) {
+  .season-pill-btn {
+    height: auto;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
 .season-pill-btn:hover {
   background: var(--color-bg-card);
   border-color: var(--color-border-strong);
@@ -1106,3 +1155,16 @@ th.num-col {
   opacity: 0.85;
 }
 
+
+/* WCAG 2.5.5: enforce 44px button height on mobile */
+@media (max-width: 768px) {
+  button:not(.btn-icon):not(.btn-sm),
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  .btn-ghost,
+  .btn-danger,
+  .btn-success {
+    min-height: 44px;
+  }
+}

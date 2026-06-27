@@ -217,6 +217,15 @@ a:hover { color: var(--color-primary-hover); }
   color: var(--color-text-primary);
 }
 
+@media (max-width: 768px) {
+  .breadcrumb-item a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 0.25rem;
+  }
+}
+
 .breadcrumb-item:not(:last-child)::after {
   content: '/';
   margin-left: var(--spacing-xs);

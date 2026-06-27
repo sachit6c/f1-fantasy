@@ -178,7 +178,7 @@ describe('DriversListView', () => {
 
       await view.render(container, {});
       const cards = container.querySelectorAll('.driver-card');
-      const names = Array.from(cards).map(c => c.querySelector('.driver-name').textContent);
+      const names = Array.from(cards).map(c => c.querySelector('.driver-card__name').textContent);
 
       // Ranked drivers first
       expect(names.indexOf('Max Verstappen')).toBeLessThan(names.indexOf('Lando Norris'));
@@ -194,7 +194,7 @@ describe('DriversListView', () => {
       });
 
       await view.render(container, {});
-      const names = Array.from(container.querySelectorAll('.driver-name')).map(n => n.textContent);
+      const names = Array.from(container.querySelectorAll('.driver-card__name')).map(n => n.textContent);
       expect(names[0]).toBe('Max Verstappen');
       expect(names[1]).toBe('Charles Leclerc');
       expect(names[2]).toBe('Lando Norris');
@@ -204,10 +204,12 @@ describe('DriversListView', () => {
   // ─── Navigation ──────────────────────────────────────────────────────────
 
   describe('navigation on card click', () => {
-    it('cards have pointer cursor style', async () => {
+    it('clicking a card navigates to that driver profile', async () => {
+      mockDataStore.data.drivers = [MOCK_DRIVERS[0]];
       await view.render(container, {});
       const card = container.querySelector('.driver-card');
-      expect(card.style.cursor).toBe('pointer');
+      card.click();
+      expect(window.location.hash).toBe('#/driver/max_verstappen');
     });
   });
 

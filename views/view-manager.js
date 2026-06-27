@@ -77,7 +77,12 @@ export class ViewManager {
     // Render new view
     const view = this.views.get(viewName);
     if (!view) {
-      contentContainer.innerHTML = `<div class="error-message">View not found: ${viewName}</div>`;
+      // textContent (not innerHTML) so hash-fragment viewName cannot inject markup.
+      const errEl = document.createElement('div');
+      errEl.className = 'error-message';
+      errEl.textContent = `View not found: ${viewName}`;
+      contentContainer.replaceChildren(errEl);
+      this.currentView = null;
       return;
     }
 
@@ -100,11 +105,14 @@ export class ViewManager {
    * @param {number} season
    */
   renderComingSoon(container, season) {
+    // Coerce to integer in [1950, 2100] before interpolation. Defensive against any
+    // bad data ever reaching this from draftStore / localStorage.
+    const safeSeason = Number.isFinite(+season) ? Math.max(1950, Math.min(2100, Math.trunc(+season))) : '';
     container.innerHTML = `
       <div class="coming-soon-page">
         <div class="coming-soon-inner">
           <div class="coming-soon-icon">🏎️</div>
-          <h1 class="coming-soon-title">${season} Season</h1>
+          <h1 class="coming-soon-title">${safeSeason} Season</h1>
           <p class="coming-soon-message">Historical data for this season is coming soon.</p>
           <p class="coming-soon-sub">We currently have data from 2000 to 2026.<br>Select a different season to continue.</p>
           <button class="coming-soon-btn" id="coming-soon-back-btn">Back to Current Season</button>
@@ -128,15 +136,19 @@ export class ViewManager {
   parseParams(viewName, params) {
     const paramsObj = {};
 
+    // IDs are URL-safe slugs: letters, digits, underscore, dash. Anything else is rejected.
+    const ID_RE = /^[A-Za-z0-9_-]{1,64}$/;
+    const safeId = (v) => (typeof v === 'string' && ID_RE.test(v)) ? v : null;
+
     switch (viewName) {
       case 'race':
-        paramsObj.raceId = params[0];
+        paramsObj.raceId = safeId(params[0]);
         break;
       case 'driver':
-        paramsObj.driverId = params[0];
+        paramsObj.driverId = safeId(params[0]);
         break;
       case 'constructor':
-        paramsObj.constructorId = params[0];
+        paramsObj.constructorId = safeId(params[0]);
         break;
       default:
         // For views without params, return empty object

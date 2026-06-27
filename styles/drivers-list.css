@@ -300,3 +300,13 @@
     height: 180px;
   }
 }
+
+/* WCAG: raise driver-card micro-text above 11px legibility floor on mobile */
+@media (max-width: 768px) {
+  .driver-card__position-badge .badge-label,
+  .driver-card__stat-key,
+  .driver-card__code-chip {
+    font-size: 0.6875rem; /* 11px */
+    letter-spacing: 0.08em;
+  }
+}
