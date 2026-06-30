@@ -63,7 +63,7 @@ export class ViewManager {
 
     // Create content container for the view
     const contentContainer = document.createElement('div');
-    contentContainer.className = 'view-content';
+    contentContainer.className = `view-content view-${viewName || 'home'}`;
     this.viewContainer.appendChild(contentContainer);
 
     // Show coming soon page for seasons without local data

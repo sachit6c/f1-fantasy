@@ -15,6 +15,41 @@ export class TeamComparisonView extends BaseView {
     this.highlightedPlayer = null; // Track highlighted player in comparison chart
   }
 
+  // Short 3-letter team code for compact (mobile) display.
+  // Falls back to deriving a code from the team name so any constructor works.
+  getTeamCode(name) {
+    if (!name) return '';
+    const overrides = {
+      'red bull racing': 'RBR',
+      'red bull': 'RBR',
+      'mercedes': 'MER',
+      'ferrari': 'FER',
+      'mclaren': 'MCL',
+      'aston martin': 'AMR',
+      'alpine': 'ALP',
+      'williams': 'WIL',
+      'haas': 'HAA',
+      'haas f1 team': 'HAA',
+      'rb': 'RB',
+      'racing bulls': 'RB',
+      'visa cash app rb': 'RB',
+      'kick sauber': 'SAU',
+      'sauber': 'SAU',
+      'audi': 'AUD',
+      'cadillac': 'CAD',
+      'alfa romeo': 'ALF',
+      'alphatauri': 'AT'
+    };
+    const key = name.trim().toLowerCase();
+    if (overrides[key]) return overrides[key];
+    // Derive: initials of the first up-to-3 words, else first 3 letters.
+    const words = key.split(/\s+/).filter(Boolean);
+    if (words.length >= 2) {
+      return words.slice(0, 3).map(w => w[0]).join('').toUpperCase();
+    }
+    return name.replace(/[^a-z0-9]/gi, '').slice(0, 3).toUpperCase();
+  }
+
   // Helper method to generate unique driver color based on team color
   getDriverColor(teamColor, driverIndex) {
     // Convert hex to HSL, adjust lightness for each driver
@@ -69,6 +104,64 @@ export class TeamComparisonView extends BaseView {
     };
 
     return `#${toHex(r2)}${toHex(g2)}${toHex(b2)}`;
+  }
+
+  // True when the viewport is phone-width. Evaluated at render time so the
+  // desktop chart config is never touched.
+  isMobileViewport() {
+    return typeof window !== 'undefined'
+      && typeof window.matchMedia === 'function'
+      && window.matchMedia('(max-width: 768px)').matches;
+  }
+
+  // Short x-axis labels for progression charts on mobile: "R1", "R2", …
+  // Prefers each race's round number, falling back to sequential index.
+  getMobileRaceLabels(races) {
+    return races.map((r, i) => `R${r.round ?? (i + 1)}`);
+  }
+
+  // Mobile overrides for a progression line chart's options, per the mobile
+  // chart spec. Applied ONLY when isMobileViewport() is true so desktop config
+  // stays byte-for-byte unchanged. Pass the existing y-tick config through so
+  // each chart keeps its own y formatting (P-prefix, log-scale, etc.).
+  applyMobileChartOptions(options, { showLegend = false } = {}) {
+    options.maintainAspectRatio = false;
+    options.responsive = true;
+    delete options.aspectRatio;
+
+    // x-axis: skip labels, no rotation, 11px font
+    options.scales = options.scales || {};
+    options.scales.x = options.scales.x || {};
+    options.scales.x.ticks = {
+      ...(options.scales.x.ticks || {}),
+      autoSkip: true,
+      maxTicksLimit: 6,
+      maxRotation: 0,
+      minRotation: 0,
+      font: { size: 11 }
+    };
+
+    // y-axis: keep existing callback/type, just enforce 11px font
+    options.scales.y = options.scales.y || {};
+    options.scales.y.ticks = {
+      ...(options.scales.y.ticks || {}),
+      font: { size: 11 }
+    };
+
+    // legend (top, small swatches, 11px)
+    options.plugins = options.plugins || {};
+    options.plugins.legend = {
+      ...(options.plugins.legend || {}),
+      display: showLegend,
+      position: 'top',
+      labels: {
+        ...((options.plugins.legend && options.plugins.legend.labels) || {}),
+        boxWidth: 10,
+        font: { size: 11 }
+      }
+    };
+
+    return options;
   }
 
   async render(container, params) {
@@ -904,7 +997,9 @@ export class TeamComparisonView extends BaseView {
       const chart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: chartData.map(d => (d.raceName || 'Race').replace(' Grand Prix', '')),
+          labels: this.isMobileViewport()
+            ? chartData.map((_, i) => `R${i + 1}`)
+            : chartData.map(d => (d.raceName || 'Race').replace(' Grand Prix', '')),
           datasets: [
             {
               label: comparison.player1.name,
@@ -1033,6 +1128,15 @@ export class TeamComparisonView extends BaseView {
         }
       });
       
+      // Mobile: legible short labels + taller chart, via the shared chart spec
+      if (this.isMobileViewport()) {
+        this.applyMobileChartOptions(chart.options, { showLegend: true });
+        if (chart.options.scales && chart.options.scales.y && chart.options.scales.y.title) {
+          chart.options.scales.y.title.display = false;
+        }
+        chart.update('none');
+      }
+
       // Store chart instance for cleanup
       this.chartInstances.set('points-trend', chart);
     }, 100);
@@ -1172,7 +1276,10 @@ export class TeamComparisonView extends BaseView {
           <a href="#/driver/${driver.driverId}" class="driver-name-link">${driver.name}</a>
         </td>
         <td class="team-cell">
-          <a href="#/constructor/${driver.constructorId}">${constructor?.name || driver.constructorId}</a>
+          <a href="#/constructor/${driver.constructorId}">
+            <span class="team-chip" style="background: ${teamColor}" aria-hidden="true">${this.getTeamCode(constructor?.name || driver.constructorId)}</span>
+            <span class="team-name-full">${constructor?.name || driver.constructorId}</span>
+          </a>
         </td>
         <td class="points-cell">${driver.points}</td>
         <td class="wins-cell">${driver.wins}</td>
@@ -1458,7 +1565,9 @@ export class TeamComparisonView extends BaseView {
 
     setTimeout(() => {
       const ctx = canvas.getContext('2d');
-      const raceLabels = races.map(r => r.raceName.replace(' Grand Prix', ''));
+      const raceLabels = this.isMobileViewport()
+        ? this.getMobileRaceLabels(races)
+        : races.map(r => r.raceName.replace(' Grand Prix', ''));
 
       const datasets = [];
       progressionData.forEach((data, driverId) => {
@@ -1561,6 +1670,12 @@ export class TeamComparisonView extends BaseView {
       });
 
       this.chartInstances.set('driver-rank-chart', chart);
+
+      // Mobile-only legibility pass (desktop config untouched)
+      if (this.isMobileViewport()) {
+        this.applyMobileChartOptions(chart.options);
+        chart.update('none');
+      }
     }, 100);
 
     container.appendChild(section);
@@ -1579,7 +1694,9 @@ export class TeamComparisonView extends BaseView {
 
     setTimeout(() => {
       const ctx = canvas.getContext('2d');
-      const raceLabels = races.map(r => r.raceName.replace(' Grand Prix', ''));
+      const raceLabels = this.isMobileViewport()
+        ? this.getMobileRaceLabels(races)
+        : races.map(r => r.raceName.replace(' Grand Prix', ''));
 
       const datasets = [];
       progressionData.forEach((data, driverId) => {
@@ -1679,6 +1796,12 @@ export class TeamComparisonView extends BaseView {
       });
 
       this.chartInstances.set('driver-points-chart', chart);
+
+      // Mobile-only legibility pass (desktop config untouched)
+      if (this.isMobileViewport()) {
+        this.applyMobileChartOptions(chart.options);
+        chart.update('none');
+      }
     }, 100);
 
     container.appendChild(section);
@@ -1794,7 +1917,9 @@ export class TeamComparisonView extends BaseView {
 
     setTimeout(() => {
       const ctx = canvas.getContext('2d');
-      const raceLabels = races.map(r => r.raceName.replace(' Grand Prix', ''));
+      const raceLabels = this.isMobileViewport()
+        ? this.getMobileRaceLabels(races)
+        : races.map(r => r.raceName.replace(' Grand Prix', ''));
 
       const datasets = [];
       progressionData.forEach((data, constructorId) => {
@@ -1897,6 +2022,12 @@ export class TeamComparisonView extends BaseView {
       });
 
       this.chartInstances.set('constructor-rank-chart', chart);
+
+      // Mobile-only legibility pass (desktop config untouched)
+      if (this.isMobileViewport()) {
+        this.applyMobileChartOptions(chart.options);
+        chart.update('none');
+      }
     }, 100);
 
     container.appendChild(section);
@@ -1915,7 +2046,9 @@ export class TeamComparisonView extends BaseView {
 
     setTimeout(() => {
       const ctx = canvas.getContext('2d');
-      const raceLabels = races.map(r => r.raceName.replace(' Grand Prix', ''));
+      const raceLabels = this.isMobileViewport()
+        ? this.getMobileRaceLabels(races)
+        : races.map(r => r.raceName.replace(' Grand Prix', ''));
 
       const datasets = [];
       progressionData.forEach((data, constructorId) => {
@@ -2022,6 +2155,12 @@ export class TeamComparisonView extends BaseView {
       });
 
       this.chartInstances.set('constructor-points-chart', chart);
+
+      // Mobile-only legibility pass (desktop config untouched)
+      if (this.isMobileViewport()) {
+        this.applyMobileChartOptions(chart.options);
+        chart.update('none');
+      }
     }, 100);
 
     container.appendChild(section);

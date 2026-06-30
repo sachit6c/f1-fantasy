@@ -125,6 +125,27 @@ a:hover { color: var(--color-primary-hover); }
   overflow-y: auto;
 }
 
+/* Standard list/standings pages share one horizontal gutter so the page title
+   and the body content (grids, tables, section headings) line up. Bespoke views
+   (home hero, draft, race detail, profiles) manage their own layout. */
+.view-drivers,
+.view-constructors,
+.view-calendar,
+.view-teams {
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .view-drivers,
+  .view-constructors,
+  .view-calendar,
+  .view-teams {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+}
+
 /* ===== PAGE ENTRY ANIMATION ===== */
 @keyframes fadeSlideIn {
   from {
@@ -160,7 +181,7 @@ a:hover { color: var(--color-primary-hover); }
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--spacing-lg);
-  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
   border-bottom: 1px solid var(--color-border-subtle);
   flex-wrap: wrap;
 }
@@ -308,6 +329,13 @@ a:hover { color: var(--color-primary-hover); }
 @media (max-width: 1024px) {
   .container, .container-wide, .container-narrow {
     padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  /* The primary nav is a fixed bottom tab bar on mobile/tablet (styles/header.css,
+     <=1024px). Pad the flex column so the view content AND the in-flow footer
+     (last child of #app) clear the bar instead of being hidden behind it. */
+  #app {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
   }
 }
 

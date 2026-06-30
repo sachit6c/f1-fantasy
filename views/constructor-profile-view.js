@@ -509,11 +509,11 @@ export class ConstructorProfileView extends BaseView {
 
       return `
         <tr>
-          <td>${race ? race.round : '-'}</td>
+          <td class="col-round">${race ? race.round : '-'}</td>
           <td class="race-name">
             <a href="#/race/${raceId}">${race ? race.raceName : raceId}</a>
           </td>
-          <td>${results.map(r => {
+          <td class="col-results">${results.map(r => {
             const driver = dataStore.indexes.driverById.get(r.driverId);
             return `${driver ? driver.code : r.driverId} (P${r.position})`;
           }).join(', ')}</td>
@@ -525,10 +525,10 @@ export class ConstructorProfileView extends BaseView {
     table.innerHTML = `
       <thead>
         <tr>
-          <th>Round</th>
+          <th class="col-round">Round</th>
           <th>Race</th>
-          <th>Results</th>
-          <th>Points</th>
+          <th class="col-results">Results</th>
+          <th class="points">Points</th>
         </tr>
       </thead>
       <tbody>
@@ -628,23 +628,33 @@ export class ConstructorProfileView extends BaseView {
         return;
       }
 
+      // Detect mobile at render time to apply legible chart options
+      const isMobile = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+        && window.matchMedia('(max-width: 768px)').matches;
+
       // Create datasets for all constructors
       const datasets = [];
-      const raceLabels = allConstructorRankData.get(this.constructorId)?.[0]?.raceName ? 
-        allConstructorRankData.get(this.constructorId).map(d => d.raceName) : 
+      const fullLabels = allConstructorRankData.get(this.constructorId)?.[0]?.raceName ?
+        allConstructorRankData.get(this.constructorId).map(d => d.raceName) :
         [...allConstructorRankData.values()][0].map(d => d.raceName);
+      // On mobile use short round codes (R1, R2, …) to avoid overlapping labels
+      const raceLabels = isMobile
+        ? (allConstructorRankData.get(this.constructorId)?.[0]?.round
+            ? allConstructorRankData.get(this.constructorId).map(d => `R${d.round}`)
+            : [...allConstructorRankData.values()][0].map(d => `R${d.round}`))
+        : fullLabels;
 
       allConstructorRankData.forEach((rankData, constructorId) => {
         const constructor = dataStore.data.constructors.find(c => c.constructorId === constructorId);
         const isCurrentConstructor = constructorId === this.constructorId;
-        
+
         datasets.push({
           label: constructor ? constructor.name : constructorId,
           data: rankData.map(d => d.rank),
           borderColor: isCurrentConstructor ? (this.constructor.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.3)',
           backgroundColor: isCurrentConstructor ? ((this.constructor.teamColor || '#E10600') + '33') : 'rgba(160, 160, 160, 0.1)',
           borderWidth: isCurrentConstructor ? 4 : 1.5,
-          pointRadius: isCurrentConstructor ? 6 : 2,
+          pointRadius: isCurrentConstructor ? (isMobile ? 3 : 6) : (isMobile ? 0 : 2),
           pointHoverRadius: isCurrentConstructor ? 8 : 4,
           pointBackgroundColor: isCurrentConstructor ? (this.constructor.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.5)',
           pointBorderColor: isCurrentConstructor ? '#1C2127' : 'rgba(160, 160, 160, 0.3)',
@@ -664,7 +674,7 @@ export class ConstructorProfileView extends BaseView {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: !isMobile,
           aspectRatio: 2.5,
           plugins: {
             legend: {
@@ -673,9 +683,9 @@ export class ConstructorProfileView extends BaseView {
               labels: {
                 color: ct.titleColor,
                 font: {
-                  size: 10
+                  size: isMobile ? 11 : 10
                 },
-                boxWidth: 15,
+                boxWidth: isMobile ? 10 : 15,
                 boxHeight: 2,
                 filter: function(item, chart) {
                   // Show only the current constructor in legend
@@ -710,8 +720,10 @@ export class ConstructorProfileView extends BaseView {
                 font: {
                   size: 11
                 },
-                maxRotation: 45,
-                minRotation: 45
+                autoSkip: isMobile ? true : undefined,
+                maxTicksLimit: isMobile ? 6 : undefined,
+                maxRotation: isMobile ? 0 : 45,
+                minRotation: isMobile ? 0 : 45
               }
             },
             y: {
@@ -724,14 +736,14 @@ export class ConstructorProfileView extends BaseView {
                 stepSize: 1,
                 color: ct.textColor,
                 font: {
-                  size: 12
+                  size: isMobile ? 11 : 12
                 },
                 callback: function(value) {
                   return 'P' + value;
                 }
               },
               title: {
-                display: true,
+                display: !isMobile,
                 text: 'Championship Position',
                 color: ct.titleColor,
                 font: {
@@ -829,23 +841,33 @@ export class ConstructorProfileView extends BaseView {
         return;
       }
 
+      // Detect mobile at render time to apply legible chart options
+      const isMobile = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+        && window.matchMedia('(max-width: 768px)').matches;
+
       // Create datasets for all constructors
       const datasets = [];
-      const raceLabels = allConstructorPointsData.get(this.constructorId)?.[0]?.raceName ? 
-        allConstructorPointsData.get(this.constructorId).map(d => d.raceName) : 
+      const fullLabels = allConstructorPointsData.get(this.constructorId)?.[0]?.raceName ?
+        allConstructorPointsData.get(this.constructorId).map(d => d.raceName) :
         [...allConstructorPointsData.values()][0].map(d => d.raceName);
+      // On mobile use short round codes (R1, R2, …) to avoid overlapping labels
+      const raceLabels = isMobile
+        ? (allConstructorPointsData.get(this.constructorId)?.[0]?.round
+            ? allConstructorPointsData.get(this.constructorId).map(d => `R${d.round}`)
+            : [...allConstructorPointsData.values()][0].map(d => `R${d.round}`))
+        : fullLabels;
 
       allConstructorPointsData.forEach((pointsData, constructorId) => {
         const constructor = dataStore.data.constructors.find(c => c.constructorId === constructorId);
         const isCurrentConstructor = constructorId === this.constructorId;
-        
+
         datasets.push({
           label: constructor ? constructor.name : constructorId,
           data: pointsData.map(d => d.points),
           borderColor: isCurrentConstructor ? (this.constructor.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.3)',
           backgroundColor: isCurrentConstructor ? ((this.constructor.teamColor || '#E10600') + '33') : 'rgba(160, 160, 160, 0.1)',
           borderWidth: isCurrentConstructor ? 4 : 1.5,
-          pointRadius: isCurrentConstructor ? 6 : 2,
+          pointRadius: isCurrentConstructor ? (isMobile ? 3 : 6) : (isMobile ? 0 : 2),
           pointHoverRadius: isCurrentConstructor ? 8 : 4,
           pointBackgroundColor: isCurrentConstructor ? (this.constructor.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.5)',
           pointBorderColor: isCurrentConstructor ? '#1C2127' : 'rgba(160, 160, 160, 0.3)',
@@ -865,7 +887,7 @@ export class ConstructorProfileView extends BaseView {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: !isMobile,
           aspectRatio: 2.5,
           plugins: {
             legend: {
@@ -874,9 +896,9 @@ export class ConstructorProfileView extends BaseView {
               labels: {
                 color: ct.titleColor,
                 font: {
-                  size: 10
+                  size: isMobile ? 11 : 10
                 },
-                boxWidth: 15,
+                boxWidth: isMobile ? 10 : 15,
                 boxHeight: 2,
                 filter: function(item, chart) {
                   // Show only the current constructor in legend
@@ -911,8 +933,10 @@ export class ConstructorProfileView extends BaseView {
                 font: {
                   size: 11
                 },
-                maxRotation: 45,
-                minRotation: 45
+                autoSkip: isMobile ? true : undefined,
+                maxTicksLimit: isMobile ? 6 : undefined,
+                maxRotation: isMobile ? 0 : 45,
+                minRotation: isMobile ? 0 : 45
               }
             },
             y: {
@@ -924,7 +948,7 @@ export class ConstructorProfileView extends BaseView {
               ticks: {
                 color: ct.textColor,
                 font: {
-                  size: 12
+                  size: isMobile ? 11 : 12
                 },
                 callback: function(value) {
                   if (value === 1 || value === 10 || value === 100 || value === 1000) {
@@ -934,7 +958,7 @@ export class ConstructorProfileView extends BaseView {
                 }
               },
               title: {
-                display: true,
+                display: !isMobile,
                 text: 'Cumulative Points (Log Scale)',
                 color: ct.titleColor,
                 font: {

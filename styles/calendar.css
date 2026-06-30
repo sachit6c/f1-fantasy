@@ -189,9 +189,77 @@
 @media (max-width: 768px) {
   .calendar-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* ── Mobile grid race card: clean vertical stack ─────────────────────────
+     Desktop uses an absolutely-positioned round badge + a name column with
+     heavy right padding. On mobile that crams circuit/location into a thin
+     column and overlaps the text. Here we lay the whole card out as a simple
+     top-to-bottom flow: Round badge → GP name → circuit → location → date. */
+  .race-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    min-height: 44px;
+    overflow: visible;
+  }
+
+  /* Round badge becomes a normal in-flow chip pinned to the top-left */
+  .race-round-badge {
+    position: static;
+    align-self: flex-start;
+    margin-bottom: var(--spacing-xs);
+    padding: 0.25rem 0.625rem;
+    font-size: var(--font-size-xs);
+  }
+
+  /* GP name: full width, its own clear line, wraps gracefully if long */
+  .race-name {
+    margin-top: 0;
+    margin-bottom: var(--spacing-xs);
+    padding-right: 0;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-snug);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .race-name a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* Circuit + location + date/time: each a full-width line, no overlap */
+  .circuit-name,
+  .race-location,
+  .race-date,
+  .race-time {
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .circuit-name {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+  }
+
+  .race-status {
+    align-self: flex-start;
+    margin-top: var(--spacing-xs);
   }
 
   /* WCAG 2.5.5: enlarge podium chips and view-switcher buttons */
+  .podium-info {
+    gap: var(--spacing-sm);
+  }
+
   .podium-driver {
     display: inline-flex;
     align-items: center;
@@ -211,25 +279,30 @@
     padding: 0.5rem 0.875rem;
   }
 
-  /* Make Leaflet marker hit areas 44x44 while visual icon stays centered */
+  /* Leaflet markers: keep a 44x44 tap target via the icon wrapper, but render
+     a smaller solid circle (.lf-marker) inside so the dense European cluster
+     reads as distinct dots instead of one overlapping blob. */
   .leaflet-marker-icon {
     width: 44px !important;
     height: 44px !important;
     margin-left: -22px !important;
     margin-top: -22px !important;
-    background-size: 30px 30px !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+    background: none !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Calendar event row links — give them tap padding */
-  .calendar-event,
-  .race-card,
-  a.race-card,
-  a.calendar-event {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+  .lf-marker {
+    width: 26px;
+    height: 26px;
+    border-width: 2px;
+    font-size: var(--font-size-xs);
+  }
+
+  /* The next race sits above its neighbours so it's always tappable */
+  .leaflet-marker-icon:has(.lf-marker--next) {
+    z-index: 1000 !important;
   }
 
   .week-race-name,
@@ -699,8 +772,10 @@
     padding: var(--spacing-md);
   }
 
+  /* Taller map on mobile so it's usable and markers have room to spread,
+     not a cramped sliver with everything overlapping in Europe. */
   .world-map-leaflet {
-    height: 340px;
+    height: 420px;
   }
 
   .world-map-title {
@@ -756,7 +831,7 @@
 
 @media (max-width: 480px) {
   .world-map-leaflet {
-    height: 250px;
+    height: 360px;
   }
 
   .week-section {

@@ -5,6 +5,26 @@ import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
 
+// Short 3-letter team codes keyed by constructorId, used for the compact
+// mobile team chip. Falls back to deriving a code from the team name.
+const TEAM_CODES = {
+  red_bull: 'RBR',
+  ferrari: 'FER',
+  mercedes: 'MER',
+  mclaren: 'MCL',
+  aston_martin: 'AST',
+  alpine: 'ALP',
+  haas: 'HAA',
+  alphatauri: 'APT',
+  rb: 'RB',
+  williams: 'WIL',
+  alfa: 'ALF',
+  sauber: 'SAU',
+  kick_sauber: 'SAU',
+  audi: 'AUD',
+  cadillac: 'CAD'
+};
+
 export class RaceDetailView extends BaseView {
   async render(container, params) {
     this.root = container;
@@ -149,6 +169,26 @@ export class RaceDetailView extends BaseView {
     this.root.appendChild(resultsSection);
   }
 
+  // Build the inner HTML for a Team cell. Renders the full team name (shown on
+  // desktop) and a compact token-coloured chip with a short code (shown on
+  // mobile via CSS). Linked to the constructor page when available.
+  teamCellHtml(driver) {
+    if (!driver) return '<span class="team-empty">-</span>';
+    const teamName = driver.team || '-';
+    const code = TEAM_CODES[driver.constructorId]
+      || teamName.replace(/[^A-Za-z]/g, '').slice(0, 3).toUpperCase()
+      || '—';
+    const color = driver.teamColor || 'var(--color-text-secondary)';
+    const inner = `
+      <span class="team-full">${teamName}</span>
+      <span class="team-chip" style="--team-color:${color}" title="${teamName}">
+        <span class="team-dot" aria-hidden="true"></span><span class="team-code">${code}</span>
+      </span>`;
+    return driver.constructorId
+      ? `<a href="#/constructor/${driver.constructorId}">${inner}</a>`
+      : inner;
+  }
+
   renderQualifyingTable(results) {
     const table = this.createElement('table', 'results-table');
 
@@ -165,9 +205,9 @@ export class RaceDetailView extends BaseView {
           <th class="col-pos">Pos</th>
           <th class="col-driver">Driver</th>
           <th class="col-team">Team</th>
-          <th class="col-time">Q1</th>
-          <th class="col-time">Q2</th>
-          <th class="col-time">Q3</th>
+          <th class="col-time col-q1">Q1</th>
+          <th class="col-time col-q2">Q2</th>
+          <th class="col-time col-q3">Q3</th>
           ${hasDraft ? '<th class="col-owner">Owner</th>' : ''}
         </tr>
       </thead>
@@ -206,10 +246,10 @@ export class RaceDetailView extends BaseView {
                   <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
                 </div>
               </td>
-              <td class="team-name">${driver && driver.constructorId ? `<a href="#/constructor/${driver.constructorId}">${driver.team}</a>` : (driver ? driver.team : '-')}</td>
-              <td class="time">${result.q1 || '<span class="time-dash">—</span>'}</td>
-              <td class="time">${result.q2 || '<span class="time-dash">—</span>'}</td>
-              <td class="time">${result.q3 || '<span class="time-dash">—</span>'}</td>
+              <td class="team-name">${this.teamCellHtml(driver)}</td>
+              <td class="time time-q1">${result.q1 || '<span class="time-dash">—</span>'}</td>
+              <td class="time time-q2">${result.q2 || '<span class="time-dash">—</span>'}</td>
+              <td class="time time-q3">${result.q3 || '<span class="time-dash">—</span>'}</td>
               ${hasDraft ? `<td class="owner">${ownerBadge}</td>` : ''}
             </tr>
           `;
@@ -280,7 +320,7 @@ export class RaceDetailView extends BaseView {
                   <a href="#/driver/${result.driverId}">${driver ? driver.name : result.driverId}</a>
                 </div>
               </td>
-              <td class="team-name">${driver && driver.constructorId ? `<a href="#/constructor/${driver.constructorId}">${driver.team}</a>` : (driver ? driver.team : '-')}</td>
+              <td class="team-name">${this.teamCellHtml(driver)}</td>
               <td class="grid-position">${result.grid || '—'}</td>
               <td class="status">${result.status || '—'}</td>
               <td class="points">${ptsDisplay}</td>

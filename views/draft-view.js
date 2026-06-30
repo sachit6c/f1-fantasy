@@ -299,7 +299,7 @@ export class DraftView extends BaseView {
           <img src="${driver.photoUrl}" alt="" aria-hidden="true" class="driver-photo-small" />
           <div class="driver-code-small">${driver.code}</div>
           <div class="driver-details-small">
-            <div class="driver-name-small">${driver.name}${isAutoPicked ? ' <span class="auto-badge">AUTO</span>' : ''}</div>
+            <div class="driver-name-small"><span class="driver-name-text">${driver.name}</span>${isAutoPicked ? ' <span class="auto-badge">AUTO</span>' : ''}</div>
             <div class="driver-team-small">${driver.team}</div>
           </div>
         `;

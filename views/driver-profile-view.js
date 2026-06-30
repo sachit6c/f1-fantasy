@@ -463,12 +463,12 @@ export class DriverProfileView extends BaseView {
     table.innerHTML = `
       <thead>
         <tr>
-          <th>Round</th>
+          <th class="col-round">Round</th>
           <th>Race</th>
-          <th>Grid</th>
-          <th>Position</th>
-          <th>Points</th>
-          <th>Status</th>
+          <th class="col-grid">Grid</th>
+          <th class="position">Position</th>
+          <th class="points">Points</th>
+          <th class="status">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -476,11 +476,11 @@ export class DriverProfileView extends BaseView {
           const race = dataStore.indexes.raceById.get(result.raceId);
           return `
             <tr>
-              <td>${race ? race.round : '-'}</td>
+              <td class="col-round">${race ? race.round : '-'}</td>
               <td class="race-name">
                 <a href="#/race/${result.raceId}">${race ? race.raceName : result.raceId}</a>
               </td>
-              <td>${result.grid || '-'}</td>
+              <td class="col-grid">${result.grid || '-'}</td>
               <td class="position ${result.position <= 3 ? 'podium' : ''}">${result.position}</td>
               <td class="points">${result.points || 0}</td>
               <td class="status">${result.status || '-'}</td>
@@ -566,23 +566,33 @@ export class DriverProfileView extends BaseView {
         return;
       }
 
+      // Detect mobile at render time to apply legible chart options
+      const isMobile = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+        && window.matchMedia('(max-width: 768px)').matches;
+
       // Create datasets for all drivers
       const datasets = [];
-      const raceLabels = allDriverRankData.get(this.driverId)?.[0]?.raceName ? 
-        allDriverRankData.get(this.driverId).map(d => d.raceName) : 
+      const fullLabels = allDriverRankData.get(this.driverId)?.[0]?.raceName ?
+        allDriverRankData.get(this.driverId).map(d => d.raceName) :
         [...allDriverRankData.values()][0].map(d => d.raceName);
+      // On mobile use short round codes (R1, R2, …) to avoid overlapping labels
+      const raceLabels = isMobile
+        ? (allDriverRankData.get(this.driverId)?.[0]?.round
+            ? allDriverRankData.get(this.driverId).map(d => `R${d.round}`)
+            : [...allDriverRankData.values()][0].map(d => `R${d.round}`))
+        : fullLabels;
 
       allDriverRankData.forEach((rankData, driverId) => {
         const driver = dataStore.data.drivers.find(d => d.driverId === driverId);
         const isCurrentDriver = driverId === this.driverId;
-        
+
         datasets.push({
           label: driver ? driver.name : driverId,
           data: rankData.map(d => d.rank),
           borderColor: isCurrentDriver ? (this.driver.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.3)',
           backgroundColor: isCurrentDriver ? ((this.driver.teamColor || '#E10600') + '33') : 'rgba(160, 160, 160, 0.1)',
           borderWidth: isCurrentDriver ? 4 : 1.5,
-          pointRadius: isCurrentDriver ? 6 : 2,
+          pointRadius: isCurrentDriver ? (isMobile ? 3 : 6) : (isMobile ? 0 : 2),
           pointHoverRadius: isCurrentDriver ? 8 : 4,
           pointBackgroundColor: isCurrentDriver ? (this.driver.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.5)',
           pointBorderColor: isCurrentDriver ? '#1C2127' : 'rgba(160, 160, 160, 0.3)',
@@ -602,7 +612,7 @@ export class DriverProfileView extends BaseView {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: !isMobile,
           aspectRatio: 2.5,
           plugins: {
             legend: {
@@ -611,9 +621,9 @@ export class DriverProfileView extends BaseView {
               labels: {
                 color: ct.titleColor,
                 font: {
-                  size: 10
+                  size: isMobile ? 11 : 10
                 },
-                boxWidth: 15,
+                boxWidth: isMobile ? 10 : 15,
                 boxHeight: 2,
                 filter: function(item, chart) {
                   // Show only the current driver in legend
@@ -648,8 +658,10 @@ export class DriverProfileView extends BaseView {
                 font: {
                   size: 11
                 },
-                maxRotation: 45,
-                minRotation: 45
+                autoSkip: isMobile ? true : undefined,
+                maxTicksLimit: isMobile ? 6 : undefined,
+                maxRotation: isMobile ? 0 : 45,
+                minRotation: isMobile ? 0 : 45
               }
             },
             y: {
@@ -662,14 +674,14 @@ export class DriverProfileView extends BaseView {
                 stepSize: 1,
                 color: ct.textColor,
                 font: {
-                  size: 12
+                  size: isMobile ? 11 : 12
                 },
                 callback: function(value) {
                   return 'P' + value;
                 }
               },
               title: {
-                display: true,
+                display: !isMobile,
                 text: 'Championship Position',
                 color: ct.titleColor,
                 font: {
@@ -761,23 +773,33 @@ export class DriverProfileView extends BaseView {
         return;
       }
 
+      // Detect mobile at render time to apply legible chart options
+      const isMobile = typeof window !== 'undefined' && typeof window.matchMedia === 'function'
+        && window.matchMedia('(max-width: 768px)').matches;
+
       // Create datasets for all drivers
       const datasets = [];
-      const raceLabels = allDriverPointsData.get(this.driverId)?.[0]?.raceName ? 
-        allDriverPointsData.get(this.driverId).map(d => d.raceName) : 
+      const fullLabels = allDriverPointsData.get(this.driverId)?.[0]?.raceName ?
+        allDriverPointsData.get(this.driverId).map(d => d.raceName) :
         [...allDriverPointsData.values()][0].map(d => d.raceName);
+      // On mobile use short round codes (R1, R2, …) to avoid overlapping labels
+      const raceLabels = isMobile
+        ? (allDriverPointsData.get(this.driverId)?.[0]?.round
+            ? allDriverPointsData.get(this.driverId).map(d => `R${d.round}`)
+            : [...allDriverPointsData.values()][0].map(d => `R${d.round}`))
+        : fullLabels;
 
       allDriverPointsData.forEach((pointsData, driverId) => {
         const driver = dataStore.data.drivers.find(d => d.driverId === driverId);
         const isCurrentDriver = driverId === this.driverId;
-        
+
         datasets.push({
           label: driver ? driver.name : driverId,
           data: pointsData.map(d => d.points),
           borderColor: isCurrentDriver ? (this.driver.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.3)',
           backgroundColor: isCurrentDriver ? ((this.driver.teamColor || '#E10600') + '33') : 'rgba(160, 160, 160, 0.1)',
           borderWidth: isCurrentDriver ? 4 : 1.5,
-          pointRadius: isCurrentDriver ? 6 : 2,
+          pointRadius: isCurrentDriver ? (isMobile ? 3 : 6) : (isMobile ? 0 : 2),
           pointHoverRadius: isCurrentDriver ? 8 : 4,
           pointBackgroundColor: isCurrentDriver ? (this.driver.teamColor || '#E10600') : 'rgba(160, 160, 160, 0.5)',
           pointBorderColor: isCurrentDriver ? '#1C2127' : 'rgba(160, 160, 160, 0.3)',
@@ -797,7 +819,7 @@ export class DriverProfileView extends BaseView {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: !isMobile,
           aspectRatio: 2.5,
           plugins: {
             legend: {
@@ -806,9 +828,9 @@ export class DriverProfileView extends BaseView {
               labels: {
                 color: ct.titleColor,
                 font: {
-                  size: 10
+                  size: isMobile ? 11 : 10
                 },
-                boxWidth: 15,
+                boxWidth: isMobile ? 10 : 15,
                 boxHeight: 2,
                 filter: function(item, chart) {
                   // Show only the current driver in legend
@@ -843,8 +865,10 @@ export class DriverProfileView extends BaseView {
                 font: {
                   size: 11
                 },
-                maxRotation: 45,
-                minRotation: 45
+                autoSkip: isMobile ? true : undefined,
+                maxTicksLimit: isMobile ? 6 : undefined,
+                maxRotation: isMobile ? 0 : 45,
+                minRotation: isMobile ? 0 : 45
               }
             },
             y: {
@@ -856,7 +880,7 @@ export class DriverProfileView extends BaseView {
               ticks: {
                 color: ct.textColor,
                 font: {
-                  size: 12
+                  size: isMobile ? 11 : 12
                 },
                 callback: function(value) {
                   if (value === 1 || value === 10 || value === 100 || value === 1000) {
@@ -866,7 +890,7 @@ export class DriverProfileView extends BaseView {
                 }
               },
               title: {
-                display: true,
+                display: !isMobile,
                 text: 'Cumulative Points (Log Scale)',
                 color: ct.titleColor,
                 font: {

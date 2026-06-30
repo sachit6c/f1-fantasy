@@ -138,7 +138,7 @@ export class HomeView extends BaseView {
       return card;
     }
 
-    const raceDate = race.date ? new Date(race.date) : null;
+    const raceDate = this._parseRaceDateTime(race);
 
     card.innerHTML = `
       <div class="home-card-label">
@@ -170,6 +170,20 @@ export class HomeView extends BaseView {
     }
 
     return card;
+  }
+
+  // Combine the race date with its start time so the countdown targets the
+  // actual lights-out moment, not UTC midnight. The CSV `time` is in UTC
+  // (e.g. "15:00:00Z"); `new Date("YYYY-MM-DD")` alone parses as UTC midnight.
+  _parseRaceDateTime(race) {
+    if (!race || !race.date) return null;
+    if (race.time) {
+      const t = race.time.endsWith('Z') ? race.time : `${race.time}Z`;
+      const dt = new Date(`${race.date}T${t}`);
+      if (!isNaN(dt)) return dt;
+    }
+    const d = new Date(race.date);
+    return isNaN(d) ? null : d;
   }
 
   _startCountdown(el, targetDate) {

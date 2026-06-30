@@ -283,30 +283,183 @@
   animation: shimmer 1.4s ease infinite;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE — MOBILE ROW LAYOUT (≤768px) === */
+/*
+ * On mobile the tall photo cards make the 22-driver field a ~15000px scroll and
+ * drivers with missing/dark photos render as ugly black blocks. We collapse each
+ * card into a compact horizontal ROW: position badge + small round avatar + name
+ * on one line + a couple of key stats inline. The whole field now fits in a few
+ * screen-heights and every driver reads identically regardless of photo quality.
+ */
 @media (max-width: 768px) {
   .drivers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .drivers-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
   }
 
+  /* Card becomes a single horizontal row */
+  .driver-card {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-height: 64px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    /* Thin team-coloured edge replaces the full-width stripe */
+    border-left: 3px solid var(--team-color);
+  }
+
+  /* Disable the lift/scale hover transform on touch; keep a subtle press cue */
+  .driver-card:hover {
+    transform: none;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+  .driver-card:active {
+    transform: scale(0.985);
+  }
+
+  /* Photo area → fixed round avatar. object-fit:cover already set above keeps
+     faces framed; the team-tinted gradient guarantees a consistent placeholder
+     for missing/dark images. */
   .driver-card__photo-area {
-    height: 180px;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--team-color) 35%, #1a1f27),
+      #1a1f27
+    );
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  /* Hide the giant watermark + bottom fade — irrelevant at avatar size */
+  .driver-card__photo-area::after,
+  .driver-card__code-bg {
+    display: none;
+  }
+
+  .driver-card__photo {
+    object-position: center 20%;
+  }
+
+  /* Initials fallback scaled down to fit the avatar */
+  .driver-card__photo-fallback {
+    font-size: 1.125rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Position badge sits inline at the very start of the row */
+  .driver-card__position-badge {
+    position: static;
+    flex-shrink: 0;
+    order: -1;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 3px;
+    padding: 5px 8px;
+    min-width: 40px;
+    border-radius: var(--radius-md);
+  }
+  .driver-card__position-badge .badge-label {
+    display: none; /* the number alone reads clearly inline */
+  }
+  .driver-card__position-badge .badge-num {
+    font-size: 1rem;
+  }
+
+  /* The full-width stripe is redundant beside the avatar + border accent */
+  .driver-card__stripe {
+    display: none;
+  }
+
+  /* Info panel flows horizontally and takes the remaining width */
+  .driver-card__info {
+    flex: 1;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: 0;
+  }
+
+  /* Name grows to fill the row and truncates cleanly on one line */
+  .driver-card__name {
+    flex: 1 1 auto;
+    font-size: var(--font-size-base); /* 15px */
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Trim the meta row to just the team name; hide the small extras */
+  .driver-card__meta-row {
+    flex-shrink: 0;
+  }
+  .driver-card__meta-sep,
+  .driver-card__nat,
+  .driver-card__code-chip {
+    display: none;
+  }
+  .driver-card__team-name {
+    font-size: var(--font-size-xs); /* 11px */
+  }
+
+  /* Stats become a compact inline cluster pinned to the right */
+  .driver-card__stats {
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--spacing-md);
+    border-top: none;
+    padding-top: 0;
+    margin: 0 0 0 auto; /* pin the stat cluster to the right edge */
+  }
+  .driver-card__stat {
+    min-width: 30px;
+  }
+  .driver-card__stat + .driver-card__stat::before {
+    display: none; /* no vertical dividers in the horizontal cluster */
+  }
+  .driver-card__stat-val {
+    font-size: var(--font-size-md); /* 16px */
+    margin-bottom: 2px;
+  }
+
+  /* WCAG: keep micro-text at/above the 11px legibility floor */
+  .driver-card__stat-key {
+    font-size: var(--font-size-xs); /* 11px */
+    letter-spacing: 0.08em;
   }
 }
 
-/* WCAG: raise driver-card micro-text above 11px legibility floor on mobile */
-@media (max-width: 768px) {
-  .driver-card__position-badge .badge-label,
-  .driver-card__stat-key,
-  .driver-card__code-chip {
-    font-size: 0.6875rem; /* 11px */
-    letter-spacing: 0.08em;
+/* Even tighter on very small phones: hide the team line and the duplicate POS
+   stat (already shown in the badge) so the name has more room. */
+@media (max-width: 480px) {
+  .driver-card {
+    gap: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  .driver-card__info {
+    gap: var(--spacing-sm);
+  }
+
+  /* On the narrowest screens show only the name on the left (team line hidden) */
+  .driver-card__meta-row {
+    display: none;
+  }
+
+  /* Keep the two most useful stats (PTS + WINS); POS already shown in the badge */
+  .driver-card__stats {
+    gap: var(--spacing-sm);
+  }
+  .driver-card__stat:first-child {
+    display: none; /* hide the duplicate POS stat — it's in the badge */
   }
 }

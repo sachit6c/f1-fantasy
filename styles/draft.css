@@ -601,6 +601,14 @@
     overflow-y: auto;
   }
 
+  /* Panels are side-by-side (and narrow) from here down — the full driver name
+     and team crowd the split, so drop them and let the photo + code identify
+     each driver. Auto-picks stay marked by the dashed border + AUTO badge. */
+  .roster-driver-new .driver-name-text,
+  .roster-driver-new .driver-team-small {
+    display: none;
+  }
+
   .teams-grid-new {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }

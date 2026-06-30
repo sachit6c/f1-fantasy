@@ -2,9 +2,8 @@
 /* Team comparison view styles */
 
 .comparison-header {
-  margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-xl) 0 var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .comparison-header .page-title {
@@ -212,42 +211,47 @@
     padding: var(--spacing-md, 1rem);
   }
 
-  .matchup-header-row {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-
-  .matchup-team-logo-container {
-    order: -1;
-    flex-direction: row;
-    padding: var(--spacing-sm);
-  }
-
-  .matchup-header-row > .matchup-driver-header:first-child {
-    justify-content: flex-start;
-  }
-
-  .matchup-header-row > .matchup-driver-header:first-child .matchup-driver-info {
-    text-align: left;
-  }
-
+  /* Teammate battle stat rows → value | label | value (bars dropped on phones).
+     The header layout lives in a dedicated block at the end of this file — it
+     must come after the base .matchup-* rules to win on source order. */
   .matchup-stat-row {
-    grid-template-columns: 1fr 100px 1fr;
+    grid-template-columns: 2.75rem 1fr 2.75rem;
     gap: var(--spacing-sm);
+    align-items: center;
+    margin-bottom: 0;
+    min-height: 34px;
   }
+
+  .matchup-stat-row .bar { display: none; }
+
+  .bar-container-left,
+  .bar-container-right {
+    position: static;
+    height: auto;
+    justify-content: center;
+  }
+
+  .bar-value-left,
+  .bar-value-right {
+    position: static;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+  }
+  /* Higher-specificity so the player colours beat the base .bar-value rule */
+  .matchup-stat-row .bar-value-left  { color: #0EA5E9; }
+  .matchup-stat-row .bar-value-right { color: #F97316; }
 
   .matchup-stat-label {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
     min-width: 0;
+    padding: 0;
   }
 
-  .matchup-driver-header .driver-name-large {
-    font-size: 1.125rem;
-  }
-
-  .matchup-driver-photo {
-    width: 48px;
-    height: 64px;
+  /* Hide carousel arrows on mobile — swipe + dots handle navigation, and the
+     arrows otherwise squeeze the card (the base .carousel-nav-btn display:flex
+     rule comes later in the file and defeats the ≤480 display:none). */
+  .matchup-carousel .carousel-nav-btn {
+    display: none;
   }
 }
 
@@ -624,6 +628,46 @@
 .race-breakdown-table .winner-cell {
   font-weight: 700;
   color: var(--color-success);
+}
+
+/* Mobile: the breakdown table reuses the global .race-name class, which
+   calendar.css styles at 22px bold — that crushes GP names into mid-word
+   wraps ("Austral ian GP") in a narrow cell, and the 5th column overflows.
+   Fit it to the phone: compact GP names, even columns, drop the Winner
+   column (the green-highlighted score already shows who won). */
+@media (max-width: 768px) {
+  .race-breakdown-table {
+    table-layout: fixed;
+  }
+
+  .race-breakdown-table th,
+  .race-breakdown-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .race-breakdown-table .round {
+    width: 2.25rem;
+    text-align: center;
+  }
+
+  .race-breakdown-table .race-name {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    padding-right: 0;
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .race-breakdown-table .score {
+    width: 3rem;
+  }
+
+  .race-breakdown-table th:nth-child(5),
+  .race-breakdown-table .winner-cell {
+    display: none;
+  }
 }
 
 /* Points Trend */
@@ -1005,6 +1049,15 @@
   min-width: 120px;
 }
 
+/* Compact team code chip — desktop shows the full name, mobile shows the chip */
+.team-chip {
+  display: none;
+}
+
+.team-name-full {
+  display: inline;
+}
+
 .team-cell a {
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -1125,50 +1178,200 @@
     padding: var(--spacing-sm) var(--spacing-md);
   }
 
-  /* Standings Table */
+  /* ── Standings Tables: compact, even, fits the viewport ──
+     Fixed layout so columns honour our widths and never overflow the page.
+     The container's overflow-x:auto is kept as a safety net only. */
+  .standings-table-container {
+    overflow-x: hidden;
+  }
+
   .standings-table {
+    table-layout: fixed;
+    width: 100%;
     font-size: var(--font-size-sm);
   }
 
   .standings-table th,
   .standings-table td {
     padding: var(--spacing-sm) var(--spacing-xs);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
+  /* Short column headers (Pos/Team/Points) should hard-clip, not show a
+     stray "…" that reads like a rendering bug. */
+  .standings-table th {
+    text-overflow: clip;
+  }
+
+  /* POS: small fixed column with a snug badge */
+  .standings-table .position-cell {
+    width: 40px;
+    padding-left: 0;
+    padding-right: var(--spacing-xs);
+  }
+
+  .standings-table .position-badge {
+    min-width: 34px;
+    padding: 2px 4px;
+    font-size: var(--font-size-xs);
+  }
+
+  /* DRIVER: take the remaining room, keep name on ONE line with ellipsis */
   .driver-cell {
-    min-width: 150px;
+    min-width: 0;
     gap: var(--spacing-sm);
+    overflow: hidden;
   }
 
   .driver-photo-small {
     width: 30px;
     height: 30px;
+    flex-shrink: 0;
   }
 
-  .team-cell-with-logo {
-    min-width: 150px;
-    gap: var(--spacing-sm);
+  .driver-name-link {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* TEAM: swap full name for a small token-coloured code chip */
+  .team-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    line-height: 1.4;
+  }
+
+  .team-name-full {
+    display: none;
+  }
+
+  .team-cell {
+    width: 54px;
+    min-width: 0;
+  }
+
+  /* Constructor table: keep POS | logo | TEAM | POINTS, drop the rest */
+  #tab-constructor-standings .team-name-cell {
+    min-width: 0;
+  }
+
+  #tab-constructor-standings .constructor-name-link {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  #tab-constructor-standings .logo-cell {
+    width: 44px;
+    padding-left: 0 !important;
+    padding-right: var(--spacing-xs) !important;
   }
 
   .constructor-logo-small {
-    width: 35px;
-    max-height: 25px;
+    width: 32px;
+    max-height: 24px;
   }
 
-  .drivers-cell {
-    font-size: 0.7rem;
-    max-width: 150px;
-  }
-
+  /* POINTS: compact but readable, the one stat we keep */
   .points-cell {
-    font-size: 1rem;
-    min-width: 60px;
+    width: 48px;
+    min-width: 0;
+    font-size: var(--font-size-base);
+    text-align: right;
   }
 
-  /* Chart Containers */
+  /* Right-align the POINTS header so it lines up with the values */
+  #tab-driver-standings .standings-table th:nth-child(4),
+  #tab-constructor-standings .standings-table th:nth-child(5) {
+    text-align: right;
+  }
+
+  /* table-layout:fixed derives column widths from the HEADER row, but the
+     width classes live on the <td>s — so size the narrow header cells here.
+     This leaves the NAME column (driver col 2 / team col 3) the remaining
+     width instead of an even 1/4 split that crushed names to "An…". */
+  #tab-driver-standings .standings-table th:nth-child(1),      /* Pos */
+  #tab-constructor-standings .standings-table th:nth-child(1) { /* Pos */
+    width: 40px;
+  }
+  #tab-constructor-standings .standings-table th:nth-child(2) { /* Logo */
+    width: 44px;
+  }
+  #tab-driver-standings .standings-table th:nth-child(3) {      /* Team */
+    width: 54px;
+  }
+  #tab-driver-standings .standings-table th:nth-child(4),       /* Points */
+  #tab-constructor-standings .standings-table th:nth-child(5) {
+    width: 52px;
+  }
+
+  /* Let the name link consume the freed-up column width before ellipsizing */
+  .driver-name-link {
+    flex: 1;
+  }
+
+  /* Hide secondary stat columns on mobile to keep rows even and on-screen.
+     (DOM is intact — desktop and tests still see these cells.) */
+  #tab-driver-standings .standings-table th:nth-child(5),
+  #tab-driver-standings .standings-table th:nth-child(6),
+  #tab-driver-standings .standings-table th:nth-child(7),
+  #tab-driver-standings .standings-table th:nth-child(8),
+  #tab-driver-standings .wins-cell,
+  #tab-driver-standings .podiums-cell,
+  #tab-driver-standings .poles-cell,
+  #tab-driver-standings .fl-cell,
+  #tab-constructor-standings .standings-table th:nth-child(4),
+  #tab-constructor-standings .standings-table th:nth-child(6),
+  #tab-constructor-standings .standings-table th:nth-child(7),
+  #tab-constructor-standings .drivers-cell,
+  #tab-constructor-standings .wins-cell,
+  #tab-constructor-standings .podiums-cell {
+    display: none;
+  }
+
+  /* Even ~48px rows; vertically centre cell content */
+  .standings-table tbody tr {
+    height: 48px;
+  }
+
+  .standings-table td {
+    vertical-align: middle;
+  }
+
+  /* Chart Containers — give progression charts real height + legible labels.
+     applyMobileChartOptions() sets maintainAspectRatio:false so the canvas
+     fills this wrapper instead of collapsing. */
   .rank-progression .chart-container,
-  .points-progression .chart-container {
+  .points-progression .chart-container,
+  .points-trend .chart-container {
     padding: var(--spacing-md);
+  }
+
+  .rank-progression .chart-container,
+  .points-progression .chart-container,
+  .points-trend .chart-container {
+    height: 280px;
+  }
+
+  .rank-progression .chart-container canvas,
+  .points-progression .chart-container canvas,
+  .points-trend .chart-container canvas {
+    max-height: none;
   }
 
   .contributions-grid {
@@ -1178,13 +1381,8 @@
 
 @media (max-width: 480px) {
   .matchup-stat-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2.5rem 1fr 2.5rem;
     gap: var(--spacing-xs);
-    text-align: center;
-  }
-
-  .matchup-stat-label {
-    order: -1;
   }
 
   .player-card {
@@ -1383,5 +1581,92 @@
   .standings-table th,
   .standings-table td {
     padding: 0.625rem 0.5rem;
+  }
+}
+
+/* ===== MOBILE: single-line ellipsis for standings name links =====
+   Placed after the WCAG patch so it wins the `display` cascade. The links
+   keep a 44px tap height (min-height + line-height) while their text clamps
+   to one line with an ellipsis instead of wrapping into tall, uneven rows. */
+@media (max-width: 768px) {
+  #tab-driver-standings .driver-name-link,
+  #tab-constructor-standings .constructor-name-link {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 44px;
+    line-height: 44px;
+    padding-block: 0;
+  }
+
+  /* The driver/team anchors are inside flex/auto cells — let them shrink */
+  #tab-driver-standings .driver-cell .driver-name-link {
+    flex: 1 1 auto;
+  }
+}
+
+/* ───────────────────────────────────────────
+   Teammate-battle header — mobile.
+   Declared here (after the base .matchup-* rules) and parent-scoped so it
+   wins on BOTH specificity and source order. The earlier @media block sits
+   before the base component rules, so its header overrides were defeated
+   (equal specificity, base declared later) — leaving the desktop 3-column
+   grid + row-layout drivers, which clipped driver 2 on a phone.
+─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .teammate-matchup-card { padding: var(--spacing-md); }
+
+  .teammate-matchup-card .matchup-header-row {
+    display: flex;
+    align-items: stretch;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .teammate-matchup-card .matchup-driver-header {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+  }
+
+  .teammate-matchup-card .matchup-header-row > .matchup-driver-header:first-child,
+  .teammate-matchup-card .matchup-header-row > .matchup-driver-header:last-child {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .teammate-matchup-card .matchup-header-row > .matchup-driver-header:first-child .matchup-driver-info,
+  .teammate-matchup-card .matchup-header-row > .matchup-driver-header:last-child .matchup-driver-info {
+    text-align: center;
+    align-items: center;
+  }
+
+  .teammate-matchup-card .matchup-team-logo-container {
+    flex: 0 0 auto;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-xs);
+  }
+
+  .teammate-matchup-card .matchup-team-logo { width: 34px; height: 34px; }
+  .teammate-matchup-card .matchup-team-header { font-size: var(--font-size-xs); }
+  /* Photo first in both driver headers so the two sides are symmetric
+     (markup order differs: driver 1 is photo→info, driver 2 is info→photo) */
+  .teammate-matchup-card .matchup-driver-photo {
+    width: 44px;
+    height: 56px;
+    order: -1;
+  }
+
+  .teammate-matchup-card .matchup-driver-header .player-label {
+    font-size: var(--font-size-xs);
+    margin-bottom: 0;
+  }
+  .teammate-matchup-card .matchup-driver-header .driver-name-large {
+    font-size: var(--font-size-base);
   }
 }

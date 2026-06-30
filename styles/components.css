@@ -478,11 +478,26 @@ tbody tr[style*="cursor: pointer"]:hover {
   th {
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: 0.625rem;
+    /* Tighter tracking + no wrapping so headers (e.g. "GRID") never clip. */
+    letter-spacing: 0.01em;
+    white-space: nowrap;
   }
 
   td {
     padding: var(--spacing-xs) var(--spacing-sm);
     font-size: var(--font-size-xs);
+  }
+
+  /* Let tables shrink to the viewport when their own layout allows it.
+     Tables whose content is genuinely wider still scroll via overflow-x. */
+  .table-responsive table {
+    min-width: 0;
+  }
+
+  /* Right-aligned numeric columns read better tucked off the edge. */
+  td.num-col,
+  th.num-col {
+    padding-inline: var(--spacing-sm);
   }
 }
 

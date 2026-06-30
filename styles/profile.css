@@ -534,6 +534,16 @@
   font-weight: var(--font-weight-bold);
 }
 
+/* The global .race-name rule (calendar.css) leaks into profile result tables,
+   forcing a 22px bold font and a large right padding. Neutralise it here so the
+   race column behaves like a normal table cell on every viewport. */
+.race-history-card .race-name {
+  margin: 0;
+  padding-right: var(--spacing-sm);
+  font-size: inherit;
+  font-weight: var(--font-weight-normal);
+}
+
 @media (max-width: 768px) {
   .profile-top {
     flex-direction: column;
@@ -559,13 +569,29 @@
 
   .info-grid,
   .drivers-grid,
-  .drivers-comparison-grid,
-  .driver-stats-grid {
+  .drivers-comparison-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .drivers-comparison-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Constructor per-driver stats: compact tile grid matching the
+     driver-profile stats aesthetic (3 small tiles per row) instead of the
+     tall one-stat-per-row stack. */
+  .driver-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .driver-stat-item {
+    padding: var(--spacing-sm);
+    min-height: 64px;
+  }
+
+  .driver-stat-item .stat-value {
+    font-size: var(--font-size-md);
   }
 
   .driver-detail-photo {
@@ -581,6 +607,67 @@
     white-space: pre-line;
     max-width: 90vw !important;
     word-wrap: break-word;
+  }
+
+  /* Race Results tables: fit the viewport (no h-scroll), keep ROUND narrow,
+     give RACE the remaining width on one line with ellipsis. */
+  .race-history-card .table-responsive {
+    overflow-x: visible;
+  }
+
+  .race-history-card .results-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .race-history-card .results-table th,
+  .race-history-card .results-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  /* ROUND column — small fixed width */
+  .race-history-card .results-table .col-round {
+    width: 2.5rem;
+    text-align: center;
+  }
+
+  /* Trailing numeric columns — small fixed widths so RACE keeps the rest. */
+  .race-history-card .results-table .col-grid,
+  .race-history-card .results-table .position,
+  .race-history-card .results-table .points {
+    width: 3rem;
+    text-align: center;
+  }
+
+  .race-history-card .results-table .status {
+    width: 4.5rem;
+  }
+
+  /* RACE / multi-driver RESULTS columns take the remaining space */
+  .race-history-card .results-table .race-name,
+  .race-history-card .results-table .col-results {
+    width: auto;
+  }
+
+  /* The constructor RESULTS cell holds short driver codes — let it wrap
+     rather than truncate, so no information is lost. */
+  .race-history-card .results-table .col-results {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .race-history-card .results-table .race-name a {
+    display: block;
+    min-height: 44px;
+    line-height: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -615,9 +702,20 @@
   }
 
   .info-grid,
-  .drivers-grid,
-  .driver-stats-grid {
+  .drivers-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Keep the constructor per-driver stats as a compact tile grid even on the
+     narrowest phones — never collapse to one stat per row. */
+  .driver-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .driver-stat-item {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    min-height: 60px;
   }
 
   .driver-mini-card {
@@ -653,14 +751,26 @@
 
 /* Responsive adjustments for charts */
 @media (max-width: 768px) {
+  .rank-progression,
+  .points-progression {
+    padding: var(--spacing-md);
+  }
+
+  /* Charts render with maintainAspectRatio:false on mobile, so the canvas
+     fills the container. Give it a legible fixed height (>= 260px spec). */
   .rank-progression .chart-container,
   .points-progression .chart-container {
     padding: var(--spacing-md);
+    position: relative;
+    height: 280px;
+    min-height: 260px;
   }
 
   .rank-progression canvas,
   .points-progression canvas {
-    max-height: 300px;
+    max-height: none;
+    height: 100% !important;
+    width: 100% !important;
   }
 }
 
