@@ -38,6 +38,14 @@ export class CalendarView extends BaseView {
 
       // Race calendar
       this.renderCalendar();
+
+      // Re-render when the background auto-refresh lands (it can change the calendar and results)
+      this._detachRefreshListener();
+      this._onRefreshed = () => {
+        this._detachRefreshListener();
+        if (this.root) this.render(this.root, params);
+      };
+      window.addEventListener('datastore:refreshed', this._onRefreshed);
     } catch (error) {
       console.error('[CalendarView] Error rendering calendar:', error);
       this.root.innerHTML = `
@@ -48,6 +56,22 @@ export class CalendarView extends BaseView {
         </div>
       `;
     }
+  }
+
+  _detachRefreshListener() {
+    if (this._onRefreshed) {
+      window.removeEventListener('datastore:refreshed', this._onRefreshed);
+      this._onRefreshed = null;
+    }
+  }
+
+  destroy() {
+    this._detachRefreshListener();
+    if (this._leafletMap) {
+      this._leafletMap.remove();
+      this._leafletMap = null;
+    }
+    super.destroy();
   }
 
   renderHeader() {

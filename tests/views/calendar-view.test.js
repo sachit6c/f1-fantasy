@@ -354,6 +354,25 @@ describe('CalendarView', () => {
 
   // ─── getPodiumResults ─────────────────────────────────────────────────────
 
+  describe('background refresh', () => {
+    it('re-renders when datastore:refreshed fires', async () => {
+      await view.render(container, {});
+      expect(container.querySelectorAll('.race-card')).toHaveLength(MOCK_RACES.length);
+
+      mockDataStore.data.races = MOCK_RACES.slice(0, 1);
+      window.dispatchEvent(new CustomEvent('datastore:refreshed'));
+      await vi.waitFor(() => expect(container.querySelectorAll('.race-card')).toHaveLength(1));
+    });
+
+    it('stops listening once destroyed', async () => {
+      await view.render(container, {});
+      const renderSpy = vi.spyOn(view, 'render');
+      view.destroy();
+      window.dispatchEvent(new CustomEvent('datastore:refreshed'));
+      expect(renderSpy).not.toHaveBeenCalled();
+    });
+  });
+
   describe('getPodiumResults()', () => {
     it('returns top-3 drivers sorted by position', () => {
       mockDataStore.data.raceResults = [

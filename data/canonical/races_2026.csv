@@ -14,10 +14,11 @@ season,round,raceName,circuitId,circuitName,locality,country,lat,long,date,time
 2026,13,Italian Grand Prix,monza,Autodromo Nazionale di Monza,Monza,Italy,45.6156,9.28111,2026-09-06,13:00:00Z
 2026,14,Spanish Grand Prix,madring,Madring,Madrid,Spain,40.46528,-3.61528,2026-09-13,13:00:00Z
 2026,15,Azerbaijan Grand Prix,baku,Baku City Circuit,Baku,Azerbaijan,40.3725,49.8533,2026-09-26,11:00:00Z
-2026,16,Singapore Grand Prix,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,1.2914,103.864,2026-10-11,12:00:00Z
-2026,17,United States Grand Prix,americas,Circuit of the Americas,Austin,USA,30.1328,-97.6411,2026-10-25,20:00:00Z
-2026,18,Mexico City Grand Prix,rodriguez,Autódromo Hermanos Rodríguez,Mexico City,Mexico,19.4042,-99.0907,2026-11-01,20:00:00Z
-2026,19,Brazilian Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2026-11-08,17:00:00Z
-2026,20,Las Vegas Grand Prix,vegas,Las Vegas Strip Street Circuit,Las Vegas,USA,36.1147,-115.173,2026-11-22,04:00:00Z
-2026,21,Qatar Grand Prix,losail,Losail International Circuit,Lusail,Qatar,25.49,51.4542,2026-11-29,16:00:00Z
-2026,22,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2026-12-06,13:00:00Z
+2026,16,Bahrain Grand Prix in Malaysia,sepang,Sepang International Circuit,Kuala Lumpur,Malaysia,2.76083,101.738,2026-10-04,07:00:00Z
+2026,17,Singapore Grand Prix,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,1.2914,103.864,2026-10-11,12:00:00Z
+2026,18,United States Grand Prix,americas,Circuit of the Americas,Austin,USA,30.1328,-97.6411,2026-10-25,20:00:00Z
+2026,19,Mexico City Grand Prix,rodriguez,Autódromo Hermanos Rodríguez,Mexico City,Mexico,19.4042,-99.0907,2026-11-01,20:00:00Z
+2026,20,Brazilian Grand Prix,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,-23.7036,-46.6997,2026-11-08,17:00:00Z
+2026,21,Las Vegas Grand Prix,vegas,Las Vegas Strip Street Circuit,Las Vegas,USA,36.1147,-115.173,2026-11-22,04:00:00Z
+2026,22,Qatar Grand Prix,losail,Lusail International Circuit,Lusail,Qatar,25.49,51.4542,2026-11-29,16:00:00Z
+2026,23,Abu Dhabi Grand Prix,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,24.4672,54.6031,2026-12-06,13:00:00Z
