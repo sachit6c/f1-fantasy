@@ -2,37 +2,40 @@
 /* CSS Custom Properties */
 
 :root {
-  /* Colors - Dark Mode Theme */
-  --color-primary: #E10600;              /* F1 Red */
-  --color-primary-hover: #C10500;        /* Darker red */
-  --color-primary-subtle: rgba(225, 6, 0, 0.08); /* Tint background */
-  --color-secondary: #000000;            /* Black */
-  --color-accent: #C9A227;               /* Amber gold — refined from #FFD700 */
+  /* Colors - Dark Mode Theme
+     Palette: Radix Colors 3.0 (gray / red / green / amber / blue, dark scales) —
+     https://www.radix-ui.com/colors. Neutral surfaces step up gray-1 → gray-4. */
+  --color-primary: #E5484D;              /* red-9 */
+  --color-primary-hover: #EC5D5E;        /* red-10 */
+  --color-primary-subtle: rgba(229, 72, 77, 0.10); /* Tint background */
+  --color-primary-text: #FF9592;         /* red-11 — red used as text on dark surfaces */
+  --color-secondary: #000000;
+  --color-accent: #FFC53D;               /* amber-9 */
 
-  --color-bg-primary: #0F1419;           /* Page background */
-  --color-bg-secondary: #1C2127;         /* Section background */
-  --color-bg-card: #242930;              /* Card surface */
-  --color-bg-elevated: #2E343D;          /* Elevated elements (dropdowns, popovers) */
-  --color-bg-overlay: rgba(0, 0, 0, 0.5); /* Modal overlays */
+  --color-bg-primary: #111111;           /* gray-1  Page background */
+  --color-bg-secondary: #191919;         /* gray-2  Section background */
+  --color-bg-card: #191919;              /* gray-2  Card surface */
+  --color-bg-elevated: #222222;          /* gray-3  Elevated elements (dropdowns, popovers) */
+  --color-bg-overlay: rgba(0, 0, 0, 0.6); /* Modal overlays */
 
-  --color-text-primary: #E6EDF3;         /* Primary text */
-  --color-text-secondary: #8B949E;       /* Secondary / label text */
-  --color-text-muted: #484F58;           /* Disabled / placeholder */
+  --color-text-primary: #EEEEEE;         /* gray-12 */
+  --color-text-secondary: #B4B4B4;       /* gray-11 */
+  --color-text-muted: #7B7B7B;           /* gray-10 */
   --color-text-on-primary: #FFFFFF;      /* Text on red background */
 
-  --color-border: #30363D;               /* Default border */
-  --color-border-strong: #484F58;        /* Emphasized border */
-  --color-border-subtle: #21262D;        /* Subtle dividers */
+  --color-border: #313131;               /* gray-5  Default border */
+  --color-border-strong: #484848;        /* gray-7  Emphasized border */
+  --color-border-subtle: #222222;        /* gray-3  Subtle dividers */
 
   /* Status colors */
-  --color-success: #3FB950;
-  --color-success-subtle: rgba(63, 185, 80, 0.08);
-  --color-warning: #D29922;
-  --color-warning-subtle: rgba(210, 153, 34, 0.08);
-  --color-danger: #F85149;
-  --color-danger-subtle: rgba(248, 81, 73, 0.08);
-  --color-info: #388BFD;
-  --color-info-subtle: rgba(56, 139, 253, 0.08);
+  --color-success: #30A46C;              /* green-9 */
+  --color-success-subtle: rgba(48, 164, 108, 0.12);
+  --color-warning: #FFC53D;              /* amber-9 */
+  --color-warning-subtle: rgba(255, 197, 61, 0.12);
+  --color-danger: #E5484D;               /* red-9 */
+  --color-danger-subtle: rgba(229, 72, 77, 0.12);
+  --color-info: #0090FF;                 /* blue-9 */
+  --color-info-subtle: rgba(0, 144, 255, 0.12);
 
   /* Spacing */
   --spacing-xs: 0.25rem;    /*  4px */
@@ -43,9 +46,9 @@
   --spacing-xxl: 3rem;      /* 48px */
 
   /* Typography */
-  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-family-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-family-mono: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  --font-family-base: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-display: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: 'Geist Mono', 'SF Mono', 'Fira Code', ui-monospace, monospace;
 
   --font-size-xs: 0.6875rem; /* 11px */
   --font-size-sm: 0.8125rem; /* 13px */
@@ -74,18 +77,18 @@
   /* Border radius */
   --radius-sm: 0.25rem;   /*  4px */
   --radius-md: 0.5rem;    /*  8px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
+  --radius-lg: 0.625rem;  /* 10px */
+  --radius-xl: 0.875rem;  /* 14px */
   --radius-2xl: 1.5rem;   /* 24px */
   --radius-full: 9999px;
 
-  /* Shadows - optimized for dark mode */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.7), 0 8px 16px rgba(0, 0, 0, 0.5);
-  --shadow-glow-primary: 0 0 20px rgba(225, 6, 0, 0.3);
+  /* Shadows - flat surfaces: separation comes from borders, shadows stay subtle */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-glow-primary: 0 0 0 3px rgba(229, 72, 77, 0.2);
 
   /* Transitions */
   --transition-fast: 120ms ease;
@@ -100,26 +103,41 @@
 /* System default: applied when OS is light & user hasn't forced dark       */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --color-bg-primary:    #FFFFFF;
-    --color-bg-secondary:  #F6F8FA;
+    --color-primary:        #E5484D;
+    --color-primary-hover:  #DC3E42;
+    --color-primary-subtle: rgba(229, 72, 77, 0.08);
+    --color-primary-text:   #CE2C31;       /* red-11 */
+    --color-accent:         #AB6400;       /* amber-11 */
+
+    --color-bg-primary:    #FCFCFC;        /* gray-1 */
+    --color-bg-secondary:  #F9F9F9;        /* gray-2 */
     --color-bg-card:       #FFFFFF;
     --color-bg-elevated:   #FFFFFF;
     --color-bg-overlay:    rgba(0, 0, 0, 0.4);
 
-    --color-text-primary:   #1F2328;
-    --color-text-secondary: #57606A;
-    --color-text-muted:     #8C959F;
+    --color-text-primary:   #202020;       /* gray-12 */
+    --color-text-secondary: #646464;       /* gray-11 */
+    --color-text-muted:     #838383;       /* gray-10 */
 
-    --color-border:        #D0D7DE;
-    --color-border-strong: #8C959F;
-    --color-border-subtle: #EAF0F6;
+    --color-border:        #E0E0E0;        /* gray-5 */
+    --color-border-strong: #CECECE;        /* gray-7 */
+    --color-border-subtle: #F0F0F0;        /* gray-3 */
 
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.08);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
-    --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-    --shadow-glow-primary: 0 0 20px rgba(225, 6, 0, 0.15);
+    --color-success: #218358;              /* green-11 */
+    --color-success-subtle: rgba(48, 164, 108, 0.12);
+    --color-warning: #AB6400;              /* amber-11 */
+    --color-warning-subtle: rgba(255, 197, 61, 0.2);
+    --color-danger: #CE2C31;               /* red-11 */
+    --color-danger-subtle: rgba(229, 72, 77, 0.1);
+    --color-info: #0D74CE;                 /* blue-11 */
+    --color-info-subtle: rgba(0, 144, 255, 0.1);
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.14);
+    --shadow-glow-primary: 0 0 0 3px rgba(229, 72, 77, 0.18);
 
     color-scheme: light;
   }
@@ -127,26 +145,41 @@
 
 /* Explicit override: user has chosen light in the app                      */
 [data-theme="light"] {
-  --color-bg-primary:    #FFFFFF;
-  --color-bg-secondary:  #F6F8FA;
+  --color-primary:        #E5484D;
+  --color-primary-hover:  #DC3E42;
+  --color-primary-subtle: rgba(229, 72, 77, 0.08);
+  --color-primary-text:   #CE2C31;       /* red-11 */
+  --color-accent:         #AB6400;       /* amber-11 */
+
+  --color-bg-primary:    #FCFCFC;        /* gray-1 */
+  --color-bg-secondary:  #F9F9F9;        /* gray-2 */
   --color-bg-card:       #FFFFFF;
   --color-bg-elevated:   #FFFFFF;
   --color-bg-overlay:    rgba(0, 0, 0, 0.4);
 
-  --color-text-primary:   #1F2328;
-  --color-text-secondary: #57606A;
-  --color-text-muted:     #8C959F;
+  --color-text-primary:   #202020;       /* gray-12 */
+  --color-text-secondary: #646464;       /* gray-11 */
+  --color-text-muted:     #838383;       /* gray-10 */
 
-  --color-border:        #D0D7DE;
-  --color-border-strong: #8C959F;
-  --color-border-subtle: #EAF0F6;
+  --color-border:        #E0E0E0;        /* gray-5 */
+  --color-border-strong: #CECECE;        /* gray-7 */
+  --color-border-subtle: #F0F0F0;        /* gray-3 */
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.08);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-glow-primary: 0 0 20px rgba(225, 6, 0, 0.15);
+  --color-success: #218358;              /* green-11 */
+  --color-success-subtle: rgba(48, 164, 108, 0.12);
+  --color-warning: #AB6400;              /* amber-11 */
+  --color-warning-subtle: rgba(255, 197, 61, 0.2);
+  --color-danger: #CE2C31;               /* red-11 */
+  --color-danger-subtle: rgba(229, 72, 77, 0.1);
+  --color-info: #0D74CE;                 /* blue-11 */
+  --color-info-subtle: rgba(0, 144, 255, 0.1);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.14);
+  --shadow-glow-primary: 0 0 0 3px rgba(229, 72, 77, 0.18);
 
   color-scheme: light;
 }

@@ -125,26 +125,76 @@ a:hover { color: var(--color-primary-hover); }
   overflow-y: auto;
 }
 
-/* Standard list/standings pages share one horizontal gutter so the page title
-   and the body content (grids, tables, section headings) line up. Bespoke views
-   (home hero, draft, race detail, profiles) manage their own layout. */
+/* Every page except the bespoke home hero and the draft card shares one horizontal
+   gutter, so titles, breadcrumbs, cards and tables line up with the header on
+   every route (lists, standings, calendar, race and profile detail pages). */
 .view-drivers,
 .view-constructors,
 .view-calendar,
-.view-teams {
+.view-teams,
+.view-race,
+.view-driver,
+.view-constructor {
   padding-left: var(--spacing-xl);
   padding-right: var(--spacing-xl);
+}
+
+/* Detail pages open with a breadcrumb; give it the same top rhythm that the
+   list pages get from .page-header-bar. */
+.view-race,
+.view-driver,
+.view-constructor {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-xl);
 }
 
 @media (max-width: 768px) {
   .view-drivers,
   .view-constructors,
   .view-calendar,
-  .view-teams {
+  .view-teams,
+  .view-race,
+  .view-driver,
+  .view-constructor {
     padding-left: var(--spacing-lg);
     padding-right: var(--spacing-lg);
   }
+
+  .view-race,
+  .view-driver,
+  .view-constructor {
+    padding-top: var(--spacing-md);
+  }
 }
+
+/* ===== ICONS (lib/icons.js) ===== */
+.icon {
+  flex-shrink: 0;
+  vertical-align: -0.15em;
+}
+
+.tone-gold   { color: var(--color-accent); }
+.tone-purple { color: #8E4EC6; }     /* radix purple-9 — fastest lap */
+.tone-green  { color: var(--color-success); }
+.tone-yellow { color: var(--color-warning); }
+.tone-red    { color: var(--color-danger); }
+
+/* Podium position disc (gold / silver / bronze) */
+.medal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+  color: #1A1A1A;
+}
+.medal-1 { background: #FFC53D; }   /* radix amber-9 */
+.medal-2 { background: #B4B4B4; }   /* radix gray-11 */
+.medal-3 { background: #D8884A; }   /* bronze */
 
 /* ===== PAGE ENTRY ANIMATION ===== */
 @keyframes fadeSlideIn {

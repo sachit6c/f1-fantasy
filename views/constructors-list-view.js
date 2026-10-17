@@ -4,6 +4,7 @@
 import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
+import { icon, statIcon } from '../lib/icons.js';
 
 export class ConstructorsListView extends BaseView {
   async render(container, params) {
@@ -124,7 +125,7 @@ export class ConstructorsListView extends BaseView {
 
       // Nationality
       const nationality = this.createElement('div', 'constructor-nationality');
-      nationality.innerHTML = `🏁 ${constructor.nationality}`;
+      nationality.innerHTML = `${icon('flag', 12)} ${constructor.nationality}`;
       infoSection.appendChild(nationality);
 
       // Get drivers for this team
@@ -181,7 +182,7 @@ export class ConstructorsListView extends BaseView {
           stats.forEach(stat => {
             const statEl = this.createElement('div', 'constructor-stat');
             const value = this.createElement('div', 'stat-value');
-            value.innerHTML = `<span class="stat-icon">${stat.icon}</span>${stat.value}`;
+            value.innerHTML = `<span class="stat-icon">${statIcon(stat.icon, 14)}</span>${stat.value}`;
             const label = this.createElement('div', 'stat-label', stat.label);
             statEl.appendChild(value);
             statEl.appendChild(label);

@@ -30,27 +30,22 @@
 /* === DRIVER CARD === */
 .driver-card {
   --team-color: #E10600;
-  background: #181d25;
-  border-radius: 14px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  border: 1px solid var(--color-border);
   transition:
-    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.28s ease;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
+    transform 0.2s ease,
+    border-color 0.2s ease;
   display: flex;
   flex-direction: column;
 }
 
 .driver-card:hover {
-  transform: translateY(-7px) scale(1.015);
-  box-shadow:
-    0 20px 48px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.09),
-    0 0 56px color-mix(in srgb, var(--team-color) 28%, transparent);
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--team-color) 55%, var(--color-border));
 }
 
 /* === PHOTO AREA === */
@@ -58,7 +53,7 @@
   position: relative;
   height: 200px;
   overflow: hidden;
-  background: linear-gradient(135deg, #1e2330 0%, #252b38 100%);
+  background: var(--color-bg-secondary);
   flex-shrink: 0;
 }
 
@@ -70,7 +65,7 @@
   left: 0;
   right: 0;
   height: 56px;
-  background: linear-gradient(to top, #181d25, transparent);
+  background: linear-gradient(to top, var(--color-bg-card), transparent);
   z-index: 3;
   pointer-events: none;
 }
@@ -81,7 +76,7 @@
   bottom: -4px;
   right: -6px;
   font-size: 6.5rem;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1;
   color: var(--team-color);
   opacity: 0.08;
@@ -120,7 +115,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2.75rem;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
@@ -154,7 +149,7 @@
 
 .driver-card__position-badge .badge-num {
   font-size: 1.0625rem;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: #fff;
 }
@@ -182,7 +177,7 @@
 .driver-card__name {
   font-size: 0.9375rem;
   font-weight: 800;
-  color: #e8edf3;
+  color: var(--color-text-primary);
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin: 0;
@@ -203,14 +198,14 @@
 }
 
 .driver-card__meta-sep {
-  color: #2e343d;
+  color: var(--color-border-strong);
   font-size: 0.6875rem;
 }
 
 .driver-card__nat {
   font-size: 0.6875rem;
   font-weight: 500;
-  color: #565e6b;
+  color: var(--color-text-muted);
 }
 
 .driver-card__code-chip {
@@ -252,7 +247,7 @@
 .driver-card__stat-val {
   display: block;
   font-size: 1.1875rem;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: -0.035em;
   color: var(--team-color);
   line-height: 1;
@@ -260,7 +255,7 @@
 }
 
 .driver-card__stat-val.empty {
-  color: #2e343d;
+  color: var(--color-border-strong);
 }
 
 .driver-card__stat-key {
@@ -269,15 +264,15 @@
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: #404854;
+  color: var(--color-text-muted);
 }
 
 /* === SKELETON (loading state) === */
 .driver-card .driver-card__photo-area.skeleton {
   background: linear-gradient(90deg,
-    #1e2330 25%,
-    #2a3040 50%,
-    #1e2330 75%
+    var(--color-bg-secondary) 25%,
+    var(--color-bg-elevated) 50%,
+    var(--color-bg-secondary) 75%
   );
   background-size: 600px 100%;
   animation: shimmer 1.4s ease infinite;
@@ -313,9 +308,6 @@
   /* Disable the lift/scale hover transform on touch; keep a subtle press cue */
   .driver-card:hover {
     transform: none;
-    box-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.45),
-      0 0 0 1px rgba(255, 255, 255, 0.04);
   }
   .driver-card:active {
     transform: scale(0.985);
@@ -332,8 +324,8 @@
     overflow: hidden;
     background: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--team-color) 35%, #1a1f27),
-      #1a1f27
+      color-mix(in srgb, var(--team-color) 35%, var(--color-bg-card)),
+      var(--color-bg-card)
     );
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   }

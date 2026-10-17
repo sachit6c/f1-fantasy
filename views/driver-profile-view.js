@@ -5,6 +5,7 @@ import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
 import { getChartTheme } from '../lib/theme.js';
+import { statIcon } from '../lib/icons.js';
 
 export class DriverProfileView extends BaseView {
   async render(container, params) {
@@ -383,7 +384,7 @@ export class DriverProfileView extends BaseView {
       }
       
       statItem.innerHTML = `
-        <div class="stat-value">${stat.icon} ${stat.value}</div>
+        <div class="stat-value">${statIcon(stat.icon, 18)} ${stat.value}</div>
         <div class="stat-label">${stat.label}</div>
       `;
       

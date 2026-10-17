@@ -59,7 +59,7 @@
 .setup-form .season-select-group select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.3);
 }
 
 /* Player-themed input groups */
@@ -130,7 +130,7 @@
 .setup-form select[name="draftType"]:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.2);
 }
 
 .draft-type-description {

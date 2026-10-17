@@ -42,7 +42,7 @@
 .player-card-name {
   font-size: 1.5rem;
   margin-bottom: var(--spacing-md, 1rem);
-  color: #E10600;
+  color: var(--color-primary-text);
   font-weight: 700;
 }
 
@@ -72,15 +72,17 @@
 }
 
 .player-card .stat-icon {
-  font-size: 1rem;
+  display: inline-flex;
   line-height: 1;
   flex-shrink: 0;
+  color: var(--color-text-muted);
 }
 
 .stat-value {
   font-weight: 700;
   font-size: 1.125rem;
-  color: #E10600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
   margin-bottom: 0;
 }
 
@@ -120,11 +122,11 @@
 }
 
 .legend-color.player1-color {
-  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  background: #0EA5E9;
 }
 
 .legend-color.player2-color {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: #F97316;
 }
 
 .diverging-chart {
@@ -157,13 +159,13 @@
 }
 
 .diverging-bar-left {
-  background: linear-gradient(90deg, #0284C7 0%, #0EA5E9 100%);
+  background: #0EA5E9;
   justify-content: flex-end;
   padding-right: 10px;
 }
 
 .diverging-bar-right {
-  background: linear-gradient(90deg, #F97316 0%, #EA580C 100%);
+  background: #F97316;
   justify-content: flex-start;
   padding-left: 10px;
 }
@@ -309,7 +311,7 @@
   text-align: center;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #E10600;
+  color: var(--color-primary-text);
   text-decoration: none;
   transition: opacity 0.2s ease;
   text-transform: uppercase;
@@ -463,11 +465,11 @@
 }
 
 .bar-player1 {
-  background: linear-gradient(90deg, #0EA5E9 0%, #0284C7 100%);
+  background: #0EA5E9;
 }
 
 .bar-player2 {
-  background: linear-gradient(90deg, #F97316 0%, #EA580C 100%);
+  background: #F97316;
 }
 
 .bar-value-left {
@@ -521,7 +523,7 @@
 .contribution-header {
   text-align: center;
   margin-bottom: var(--spacing-md, 1rem);
-  color: #E10600;
+  color: var(--color-primary-text);
   font-size: 1.25rem;
 }
 
@@ -553,7 +555,7 @@
 }
 
 .contribution-table .driver-name a {
-  color: #E10600;
+  color: var(--color-primary-text);
   text-decoration: none;
   font-weight: 500;
 }
@@ -820,7 +822,7 @@
 .contribution-text {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #E10600;
+  color: var(--color-primary-text);
   margin-top: 0.5rem;
 }
 
@@ -991,7 +993,7 @@
 }
 
 .standings-row.highlighted {
-  background: rgba(225, 6, 0, 0.1);
+  background: rgba(229, 72, 77, 0.1);
   border-left: 4px solid var(--color-primary);
 }
 
@@ -1022,6 +1024,20 @@
   align-items: center;
   gap: var(--spacing-md);
   min-width: 200px;
+}
+
+/* In the standings table the cell itself must stay a real table-cell, otherwise
+   the row's bottom border skips it; the flex layout lives on the inner wrapper. */
+td.driver-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.driver-cell-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 0;
 }
 
 .driver-photo-small {
@@ -1222,6 +1238,10 @@
     min-width: 0;
     gap: var(--spacing-sm);
     overflow: hidden;
+  }
+
+  .driver-cell-inner {
+    gap: var(--spacing-sm);
   }
 
   .driver-photo-small {
@@ -1460,9 +1480,9 @@
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  border: 2px solid #E10600;
+  border: 2px solid var(--color-primary);
   background: transparent;
-  color: #E10600;
+  color: var(--color-primary-text);
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
@@ -1474,7 +1494,7 @@
 }
 
 .carousel-nav-btn:hover:not(:disabled) {
-  background: #E10600;
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -1531,8 +1551,8 @@
 }
 
 .carousel-dot.active {
-  border-color: #E10600;
-  background: rgba(225, 6, 0, 0.1);
+  border-color: var(--color-primary);
+  background: rgba(229, 72, 77, 0.1);
   opacity: 1;
 }
 

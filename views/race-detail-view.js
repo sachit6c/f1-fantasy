@@ -4,6 +4,7 @@
 import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
+import { medalIcon } from '../lib/icons.js';
 
 // Short 3-letter team codes keyed by constructorId, used for the compact
 // mobile team chip. Falls back to deriving a code from the team name.
@@ -229,7 +230,7 @@ export class RaceDetailView extends BaseView {
 
           const pos = parseInt(result.position);
           const posClass = pos <= 3 ? `position position-p${pos}` : 'position';
-          const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : pos;
+          const medal = medalIcon(pos);
 
           const avatarSrc = `data/images/drivers/${result.driverId}.jpg`;
           const driverCode = driver ? (driver.code || driver.name.slice(0,3).toUpperCase()) : '?';
@@ -300,7 +301,7 @@ export class RaceDetailView extends BaseView {
 
           const pos = parseInt(result.position);
           const posClass = pos <= 3 ? `position position-p${pos}` : 'position';
-          const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : pos;
+          const medal = medalIcon(pos);
 
           const avatarSrc = `data/images/drivers/${result.driverId}.jpg`;
           const driverCode = driver ? (driver.code || driver.name.slice(0,3).toUpperCase()) : '?';

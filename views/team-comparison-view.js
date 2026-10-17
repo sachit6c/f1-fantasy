@@ -5,6 +5,7 @@ import { BaseView } from './base-view.js';
 import { fantasyTeamScorer } from '../lib/fantasy-team-scorer.js';
 import { draftStore } from '../lib/draft-store.js';
 import { dataStore } from '../lib/data-store.js';
+import { icon, statIcon } from '../lib/icons.js';
 
 export class TeamComparisonView extends BaseView {
   constructor() {
@@ -403,7 +404,7 @@ export class TeamComparisonView extends BaseView {
     if (isLeader && player.totalPoints > 0) {
       const trophy = document.createElement('span');
       trophy.classList.add('trophy-icon');
-      trophy.textContent = ' 🏆';
+      trophy.innerHTML = icon('trophy', 18);
       name.appendChild(trophy);
     }
     card.appendChild(name);
@@ -430,7 +431,7 @@ export class TeamComparisonView extends BaseView {
     stats.forEach(stat => {
       const statRow = this.createElement('div', 'stat-row');
       const label = this.createElement('span', 'stat-label');
-      label.innerHTML = `<span class="stat-icon">${stat.icon}</span>${stat.label}:`;
+      label.innerHTML = `<span class="stat-icon">${statIcon(stat.icon, 14)}</span>${stat.label}:`;
       const value = this.createElement('span', 'stat-value', String(stat.value || 0));
       statRow.appendChild(label);
       statRow.appendChild(value);
@@ -704,7 +705,7 @@ export class TeamComparisonView extends BaseView {
         
         // Stat label (center column)
         const statLabel = this.createElement('div', 'matchup-stat-label');
-        statLabel.innerHTML = `<span class="stat-icon">${stat.icon}</span> ${stat.label}`;
+        statLabel.innerHTML = `<span class="stat-icon">${statIcon(stat.icon, 14)}</span> ${stat.label}`;
         statRow.appendChild(statLabel);
         
         // Driver 2 bar (right column)
@@ -1272,8 +1273,10 @@ export class TeamComparisonView extends BaseView {
           <span class="position-badge" style="background: ${teamColor}">P${displayPos}</span>
         </td>
         <td class="driver-cell">
-          <img src="${driver.photoUrl}" alt="" aria-hidden="true" class="driver-photo-small" onerror="this.style.display='none'">
-          <a href="#/driver/${driver.driverId}" class="driver-name-link">${driver.name}</a>
+          <div class="driver-cell-inner">
+            <img src="${driver.photoUrl}" alt="" aria-hidden="true" class="driver-photo-small" onerror="this.style.display='none'">
+            <a href="#/driver/${driver.driverId}" class="driver-name-link">${driver.name}</a>
+          </div>
         </td>
         <td class="team-cell">
           <a href="#/constructor/${driver.constructorId}">

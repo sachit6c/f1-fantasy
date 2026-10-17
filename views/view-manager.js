@@ -3,6 +3,7 @@
 
 import { Header } from '../components/header.js';
 import { draftStore } from '../lib/draft-store.js';
+import { icon } from '../lib/icons.js';
 
 // Seasons with local CSV data available
 const FIRST_SUPPORTED_SEASON = 2000;
@@ -111,7 +112,7 @@ export class ViewManager {
     container.innerHTML = `
       <div class="coming-soon-page">
         <div class="coming-soon-inner">
-          <div class="coming-soon-icon">🏎️</div>
+          <div class="coming-soon-icon">${icon('gauge', 48)}</div>
           <h1 class="coming-soon-title">${safeSeason} Season</h1>
           <p class="coming-soon-message">Historical data for this season is coming soon.</p>
           <p class="coming-soon-sub">We currently have data from 2000 to 2026.<br>Select a different season to continue.</p>

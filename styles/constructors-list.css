@@ -140,7 +140,8 @@
 .constructor-stat .stat-value {
   font-size: 0.85rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
   margin-bottom: 0.15rem;
   display: flex;
   align-items: center;
@@ -150,7 +151,8 @@
 }
 
 .constructor-stat .stat-icon {
-  font-size: 0.9rem;
+  display: inline-flex;
+  color: var(--color-text-muted);
 }
 
 .constructor-stat .stat-label {
@@ -180,14 +182,14 @@
 
 /* Player 1 Winner Badge - Sky Blue */
 .team-winner-badge.player-player_1 {
-  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  background: #0EA5E9;
   border: 1px solid #0EA5E9;
   box-shadow: 0 2px 6px rgba(14, 165, 233, 0.3);
 }
 
 /* Player 2 Winner Badge - Orange */
 .team-winner-badge.player-player_2 {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: #F97316;
   border: 1px solid #F97316;
   box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
 }

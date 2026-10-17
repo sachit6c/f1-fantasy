@@ -198,9 +198,10 @@
 .stat-item {
   text-align: center;
   padding: var(--spacing-xl);
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), background var(--transition-base);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,19 +212,26 @@
 }
 
 .stat-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
   background: var(--color-bg-elevated);
-  border: 1px solid var(--color-primary);
+  border-color: var(--color-border-strong);
   z-index: 2001;
 }
 
 .stat-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
   font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
   word-break: break-word;
+}
+
+.stat-value .icon:not([class*='tone-']) {
+  color: var(--color-text-muted);
 }
 
 .stat-label {
@@ -401,14 +409,14 @@
 
 /* Player 1 Badge - Sky Blue */
 .driver-owner-badge.player-player_1 {
-  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  background: #0EA5E9;
   border: 2px solid #0EA5E9;
   box-shadow: 0 2px 8px rgba(14, 165, 233, 0.4);
 }
 
 /* Player 2 Badge - Orange */
 .driver-owner-badge.player-player_2 {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: #F97316;
   border: 2px solid #F97316;
   box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
 }
@@ -485,7 +493,8 @@
 .driver-stat-item .stat-value {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
   word-break: break-word;
 }
@@ -527,10 +536,7 @@
 }
 
 .race-history-card .podium {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #DAA520 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent);
   font-weight: var(--font-weight-bold);
 }
 

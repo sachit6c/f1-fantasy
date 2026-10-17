@@ -5,6 +5,7 @@ import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
 import { getChartTheme } from '../lib/theme.js';
+import { statIcon } from '../lib/icons.js';
 
 export class ConstructorProfileView extends BaseView {
   async render(container, params) {
@@ -364,7 +365,7 @@ export class ConstructorProfileView extends BaseView {
         }
         
         statItem.innerHTML = `
-          <div class="stat-value">${stat.icon} ${stat.value}</div>
+          <div class="stat-value">${statIcon(stat.icon, 18)} ${stat.value}</div>
           <div class="stat-label">${stat.label}</div>
         `;
         if (tooltipText) {
@@ -453,7 +454,7 @@ export class ConstructorProfileView extends BaseView {
     stats.forEach(stat => {
       const statItem = this.createElement('div', 'stat-item');
       statItem.innerHTML = `
-        <div class="stat-value">${stat.icon} ${stat.value}</div>
+        <div class="stat-value">${statIcon(stat.icon, 18)} ${stat.value}</div>
         <div class="stat-label">${stat.label}</div>
       `;
       statsGrid.appendChild(statItem);

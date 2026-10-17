@@ -4,6 +4,7 @@
 import { BaseView } from './base-view.js';
 import { dataStore } from '../lib/data-store.js';
 import { draftStore } from '../lib/draft-store.js';
+import { icon, medalIcon } from '../lib/icons.js';
 
 export class CalendarView extends BaseView {
   constructor() {
@@ -128,7 +129,8 @@ export class CalendarView extends BaseView {
   renderWorldMap(races) {
     const mapContainer = this.createElement('div', 'world-map-container');
 
-    const mapHeader = this.createElement('h2', 'world-map-title', '🌍 Race Locations Around the World');
+    const mapHeader = this.createElement('h2', 'world-map-title');
+    mapHeader.innerHTML = `${icon('globe', 18)} Race Locations Around the World`;
     mapContainer.appendChild(mapHeader);
 
     const mapWrapper = this.createElement('div', 'world-map-wrapper');
@@ -149,22 +151,34 @@ export class CalendarView extends BaseView {
       return;
     }
 
+    // Basemap is vendored Natural Earth country polygons drawn as vector paths, so
+    // there is no tile server, API key or usage quota involved (styled via .map-land).
     const map = L.map(mapEl, {
       center: [25, 15],
       zoom: 2,
       minZoom: 1,
-      maxZoom: 10,
+      maxZoom: 5,
       zoomControl: true,
       scrollWheelZoom: false,
-      worldCopyJump: true,
+      maxBounds: [[-60, -200], [85, 200]],
+      maxBoundsViscosity: 1,
+      attributionControl: false,
     });
     this._leafletMap = map;
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19,
-    }).addTo(map);
+    L.control.attribution({ prefix: false })
+      .addAttribution('Map data &copy; <a href="https://www.naturalearthdata.com">Natural Earth</a>')
+      .addTo(map);
+
+    fetch('data/world-countries-110m.geojson')
+      .then(res => res.json())
+      .then(land => {
+        if (this._leafletMap !== map) return; // view was re-rendered or destroyed meanwhile
+        L.geoJSON(land, { interactive: false, style: { className: 'map-land', weight: 0.75 } })
+          .addTo(map)
+          .bringToBack();
+      })
+      .catch(err => console.warn('[CalendarView] Could not load map outlines:', err.message));
 
     // Ensure the map fills its container correctly after layout
     setTimeout(() => map.invalidateSize(), 100);
@@ -200,7 +214,7 @@ export class CalendarView extends BaseView {
         ? 'lf-marker lf-marker--next'
         : 'lf-marker';
 
-      const icon = L.divIcon({
+      const markerIcon = L.divIcon({
         html: `<div class="${markerClass}">${race.round}</div>`,
         className: '',
         iconSize: [30, 30],
@@ -214,7 +228,7 @@ export class CalendarView extends BaseView {
       const statusLabel = isCompleted
         ? '<span class="lf-status lf-status--done">✓ Completed</span>'
         : isNext
-        ? '<span class="lf-status lf-status--next">▶ Next Race</span>'
+        ? `<span class="lf-status lf-status--next">${icon('play', 11)} Next Race</span>`
         : '<span class="lf-status lf-status--upcoming">→ Upcoming</span>';
 
       const popupHtml = `
@@ -224,13 +238,13 @@ export class CalendarView extends BaseView {
             ${statusLabel}
           </div>
           <div class="lf-popup-name">${race.raceName}</div>
-          <div class="lf-popup-detail">🏁 ${race.circuitName}</div>
-          <div class="lf-popup-detail">📍 ${race.locality}, ${race.country}</div>
-          <div class="lf-popup-detail">📅 ${dateStr}</div>
+          <div class="lf-popup-detail">${icon('flag', 14)} ${race.circuitName}</div>
+          <div class="lf-popup-detail">${icon('map-pin', 14)} ${race.locality}, ${race.country}</div>
+          <div class="lf-popup-detail">${icon('calendar', 14)} ${dateStr}</div>
           <a class="lf-popup-link" href="#/race/${race.raceId}">View Details →</a>
         </div>`;
 
-      L.marker([lat, lng], { icon })
+      L.marker([lat, lng], { icon: markerIcon })
         .bindPopup(popupHtml, { maxWidth: 300, className: 'lf-popup-wrapper' })
         .addTo(map);
     });
@@ -269,7 +283,7 @@ export class CalendarView extends BaseView {
 
       // Location
       const location = this.createElement('div', 'race-location');
-      location.innerHTML = `📍 ${race.locality}, ${race.country}`;
+      location.innerHTML = `${icon('map-pin', 14)} ${race.locality}, ${race.country}`;
       raceCard.appendChild(location);
 
       // Date
@@ -292,7 +306,7 @@ export class CalendarView extends BaseView {
           minute: '2-digit',
           timeZoneName: 'short'
         });
-        timeEl.innerHTML = `🕐 ${localTime} (local)`;
+        timeEl.innerHTML = `${icon('clock', 14)} ${localTime} (local)`;
         raceCard.appendChild(timeEl);
       }
 
@@ -335,9 +349,8 @@ export class CalendarView extends BaseView {
               const podiumItem = this.createElement('div', 'podium-item');
               
               // Position badge with medals
-              const medals = ['🥇', '🥈', '🥉'];
               const positionBadge = this.createElement('span', ['podium-position', `podium-p${result.position}`]);
-              positionBadge.textContent = medals[result.position - 1];
+              positionBadge.innerHTML = medalIcon(result.position);
               podiumItem.appendChild(positionBadge);
               
               // Driver link
@@ -360,7 +373,7 @@ export class CalendarView extends BaseView {
           if (fastestLapDriver) {
             const driverData = dataStore.indexes.driverById.get(fastestLapDriver.driverId);
             const fastestLapEl = this.createElement('div', 'fastest-lap-info');
-            fastestLapEl.innerHTML = `🟣 Fastest Lap: ${driverData ? driverData.code : fastestLapDriver.driverId} <span class="fastest-lap-bonus">+1</span>`;
+            fastestLapEl.innerHTML = `${icon('timer', 14, 'tone-purple')} Fastest Lap: ${driverData ? driverData.code : fastestLapDriver.driverId} <span class="fastest-lap-bonus">+1</span>`;
             raceCard.appendChild(fastestLapEl);
           }
         }
@@ -484,7 +497,7 @@ export class CalendarView extends BaseView {
       });
       
       const weekTitle = isCurrentWeek ? 
-        `<h3 class="week-title">Week ${weekData.week} • ${weekStartDate} - ${weekEndStr} <span class="current-week-badge">📍 Current Week</span></h3>` :
+        `<h3 class="week-title">Week ${weekData.week} • ${weekStartDate} - ${weekEndStr} <span class="current-week-badge">${icon('map-pin', 12)} Current Week</span></h3>` :
         `<h3 class="week-title">Week ${weekData.week} • ${weekStartDate} - ${weekEndStr}</h3>`;
       
       const raceCountHtml = weekData.races.length > 1 ?
@@ -499,7 +512,7 @@ export class CalendarView extends BaseView {
       
       if (weekData.races.length === 0) {
         const emptyMessage = this.createElement('div', 'week-no-race-message');
-        emptyMessage.textContent = '🏖️ No race this week - enjoy the break!';
+        emptyMessage.innerHTML = `${icon('coffee', 16)} No race this week - enjoy the break!`;
         weekRaces.appendChild(emptyMessage);
       }
       
@@ -530,8 +543,8 @@ export class CalendarView extends BaseView {
         
         const raceDetails = this.createElement('div', 'week-race-details');
         raceDetails.innerHTML = `
-          <div class="week-race-circuit">🏁 ${race.circuitName}</div>
-          <div class="week-race-location">📍 ${race.locality}, ${race.country}</div>
+          <div class="week-race-circuit">${icon('flag', 14)} ${race.circuitName}</div>
+          <div class="week-race-location">${icon('map-pin', 14)} ${race.locality}, ${race.country}</div>
         `;
         
         const raceDate = new Date(race.date);
@@ -577,7 +590,7 @@ export class CalendarView extends BaseView {
                 });
                 
                 const position = idx + 1;
-                const medal = position === 1 ? '🥇' : position === 2 ? '🥈' : '🥉';
+                const medal = medalIcon(position);
                 
                 podiumItem.innerHTML = `
                   <span class="podium-position">${medal}</span>
