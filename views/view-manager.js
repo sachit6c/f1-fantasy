@@ -185,7 +185,7 @@ export class ViewManager {
           <a href="#/drivers">Drivers</a>
           <a href="#/constructors">Constructors</a>
         </div>
-        <span class="app-footer-meta">v2.2</span>
+        <span class="app-footer-meta">v2.3</span>
       </div>
     `;
     this.viewContainer.appendChild(footer);
